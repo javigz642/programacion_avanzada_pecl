@@ -24,6 +24,7 @@ public class Aeropuerto {
     
     public void funcionMiaImportante(){
         int perra = 5;
+        int perro = 7;
     }
    public void a(){
        
