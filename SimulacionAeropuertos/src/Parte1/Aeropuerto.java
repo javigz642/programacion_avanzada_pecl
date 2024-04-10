@@ -9,7 +9,7 @@ package Parte1;
  *
  * @author ediso
  */
-public class Aeropuerto {
+public class Aeropuerto extends Thread{
     private int  personasDentro;
     
     public void recogerPasajerosAutobus(Autobus a){
@@ -18,20 +18,6 @@ public class Aeropuerto {
     public void irCiudadAutobus(Autobus a){
         
     }
-    //perro loko joe 
-    //onniichan
-    //importante
-    
-    public void funcionMiaImportante(){
-        int perra = 5;
-        int perro = 7;
-        int payasotu = 69;
-    }
-   public void a(){
-       
-       System.out.println("JIJIJIJIJ");
-       
-   }
    
-   //jsadfjasiofjoisdjfijsofjaodijf
+    
 }

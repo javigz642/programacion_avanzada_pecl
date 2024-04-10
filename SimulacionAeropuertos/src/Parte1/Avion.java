@@ -8,16 +8,20 @@ package Parte1;
  *
  * @author ediso
  */
-public class Avion {
+public class Avion extends Thread{
     private String identificador;
-    private int pasajeros;
+    private int numero;
     private final int pasajerosMax;
 
     //Constructor NO definitivo!!
-    public Avion(String identificador, int pasajeros, int pasajerosMax) {
-        this.identificador = identificador;
-        this.pasajeros = pasajeros;
-        this.pasajerosMax = pasajerosMax;
+    public Avion(String identificador, int numero) {
+        this.identificador = identificador +"-"+ numero;
+        this.numero = numero;
+        this.pasajerosMax = (int) (Math.random()*200) +100;
+    }
+    
+    public void run(){
+        
     }
     
     
