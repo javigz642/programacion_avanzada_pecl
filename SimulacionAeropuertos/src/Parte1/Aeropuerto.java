@@ -20,4 +20,9 @@ public class Aeropuerto {
     }
     //perro loko joe 
     //onniichan
+   public void a(){
+       
+       System.out.println("JIJIJIJIJ");
+       
+   }
 }
