@@ -25,4 +25,9 @@ public class Aeropuerto {
     public void funcionMiaImportante(){
         
     }
+   public void a(){
+       
+       System.out.println("JIJIJIJIJ");
+       
+   }
 }
