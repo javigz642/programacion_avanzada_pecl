@@ -10,9 +10,15 @@ package Parte1;
  */
 public class Ciudad {
     public void recogerPasajerosAutobus(Autobus a){
-        
+        int pasajerosParada = (int) (Math.random()*50);
+        System.out.println("El autobus va a recoger a " + pasajerosParada + " personas.");
     }
     public void irAeropuertoAutobus(Autobus a){
-        
+        try {
+            System.out.println("El autobus va hacia el aeropuerto.");
+            Thread.sleep((int) (Math.random()*5001)+5000);
+            System.out.println("El autobus ha llegado al aeropuerto.");
+        } catch (Exception e) {
+        }
     }
 }
