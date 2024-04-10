@@ -10,7 +10,7 @@ package Parte1;
  * @author ediso
  */
 public class Aeropuerto {
-    private int personasDentro;
+    private int  personasDentro;
     
     public void recogerPasajerosAutobus(Autobus a){
         
