@@ -15,11 +15,19 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 public class Hangar {
     
     private Queue<Avion> aviones = new ConcurrentLinkedQueue<Avion>();
+    private String ciudad;
+        
+    public Hangar(String ciudad){
+        
+        this.ciudad = ciudad;
+    }
     
     
     public void entrarHangar(Avion avion){
         
+        
         aviones.offer(avion);
+        System.out.println(avion.getIdentificador()+ " ha entrado al hangar de " + ciudad);
     }
     
 }
