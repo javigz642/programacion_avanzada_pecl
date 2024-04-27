@@ -9,16 +9,34 @@ package Parte1;
  * @author ediso
  */
 public class Ciudad {
+    private String nombre;
+
+    public Ciudad(String nombre) {
+        this.nombre = nombre;
+        
+    }
+
+    
+    
     public void recogerPasajerosAutobus(Autobus a){
         int pasajerosParada = (int) (Math.random()*50);
-        System.out.println("El autobus va a recoger a " + pasajerosParada + " personas.");
+        System.out.println("El autobus " + a.getIdentificador() + " va a recoger a " + pasajerosParada + " personas.");
     }
     public void irAeropuertoAutobus(Autobus a){
         try {
-            System.out.println("El autobus va hacia el aeropuerto.");
+            System.out.println("El autobus " + a.getIdentificador() + " va hacia el aeropuerto de " + nombre);
             Thread.sleep((int) (Math.random()*5001)+5000);
-            System.out.println("El autobus ha llegado al aeropuerto.");
+            System.out.println("El autobus " + a.getIdentificador() + " ha llegado al aeropuerto " + nombre);
         } catch (Exception e) {
         }
+    }
+    
+    public void bajarPasajerosAutobus(Autobus a){
+        a.setPasajeros(0);
+        System.out.println("Se han bajado todos los pasajeros del autobus " + a.getIdentificador());
+    }
+    
+    public String getNombre(){
+        return nombre;
     }
 }
