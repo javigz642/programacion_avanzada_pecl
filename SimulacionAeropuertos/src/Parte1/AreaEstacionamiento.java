@@ -6,56 +6,52 @@ package Parte1;
 
 import java.util.ArrayList;
 import java.util.Queue;
-import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
  *
- * @author sombe
+ * @author Miguel
  */
-public class Hangar {
-    
+public class AreaEstacionamiento {
+
     private Aeropuerto aeropuerto;
     private Semaphore control = new Semaphore(1);
     private ArrayList<Avion> aviones = new ArrayList<>();
-        
-    public Hangar(Aeropuerto aeropuerto){
-        
+
+    public AreaEstacionamiento(Aeropuerto aeropuerto) {
+
         this.aeropuerto = aeropuerto;
     }
-    
-    
-    public void entrarHangar(Avion avion){
-        
-        
+
+    public void entrarArea(Avion avion) {
+
         try {
             control.acquire();
             aviones.add(avion);
-            System.out.println(avion.getIdentificador()+ " ha entrado al hangar de " + aeropuerto.ciudad.getNombre());
+            System.out.println(avion.getIdentificador() + " ha entrado al hangar de " + aeropuerto.ciudad.getNombre());
 
         } catch (InterruptedException ex) {
             Logger.getLogger(Hangar.class.getName()).log(Level.SEVERE, null, ex);
-        } finally{
+        } finally {
             control.release();
         }
-        
+
     }
-    
-    public void salirHangar(Avion avion){
-        
+
+    public void salirArea(Avion avion) {
+
         try {
             control.acquire();
             aviones.remove(avion);
-            System.out.println(avion.getIdentificador()+ " ha salido del hangar de " + aeropuerto.ciudad.getNombre());
+            System.out.println(avion.getIdentificador() + " ha salido del hangar de " + aeropuerto.ciudad.getNombre());
         } catch (InterruptedException ex) {
             Logger.getLogger(Hangar.class.getName()).log(Level.SEVERE, null, ex);
-        } finally{
+        } finally {
             control.release();
         }
     }
-    
+
 }

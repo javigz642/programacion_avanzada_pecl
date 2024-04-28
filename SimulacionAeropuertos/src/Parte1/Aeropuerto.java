@@ -15,13 +15,15 @@ import java.util.concurrent.locks.ReentrantLock;
 public class Aeropuerto extends Thread {
 
     private int personasDentro;
-    private Lock puertaSalida ;
-    private Condition vacio;
-    private Ciudad ciudad;
+    private Lock puertaSalida = new ReentrantLock();
+    private Condition vacio = puertaSalida.newCondition();
+    protected Ciudad ciudad;
+    protected Hangar hangar = new Hangar(this);
+    protected AreaEstacionamiento areaEstacionamiento = new AreaEstacionamiento(this);
+    protected Taller taller = new Taller(this);
 
     public Aeropuerto(int personasDentro, Ciudad ciudad) {
-        puertaSalida = new ReentrantLock();
-        vacio = puertaSalida.newCondition();
+
         this.personasDentro = personasDentro;
         this.ciudad = ciudad;
     }

@@ -10,11 +10,12 @@ package Parte1;
  */
 public class Taller {
     
-    private String ciudad;
+    protected Aeropuerto aeropuerto;
+    private int max = 20; //maximo de aviones por taller
     
-    public Taller(String ciudad){
+    public Taller(Aeropuerto aeropuerto){
         
-        this.ciudad = ciudad;
+        this.aeropuerto = aeropuerto;
     }
     
 }

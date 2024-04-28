@@ -10,14 +10,15 @@ package Parte1;
  */
 public class Ciudad {
     private String nombre;
+    protected Aeropuerto aeropuerto = new Aeropuerto(100, this);
+    
 
     public Ciudad(String nombre) {
         this.nombre = nombre;
         
     }
 
-    
-    
+
     public void recogerPasajerosAutobus(Autobus a){
         int pasajerosParada = (int) (Math.random()*50);
         System.out.println("El autobus " + a.getIdentificador() + " va a recoger a " + pasajerosParada + " personas.");

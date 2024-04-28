@@ -4,6 +4,10 @@
  */
 package Parte1;
 // Esto es un cambio
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author ediso
@@ -13,18 +17,25 @@ public class Avion extends Thread{
     private int numero;
     private final int pasajerosMax;
     private Hangar hangar;
+    private AreaEstacionamiento areaEstacionamiento;
+    private Ciudad ciudad;
 
     //Constructor NO definitivo!!
-    public Avion(String identificador, int numero, Hangar hangar) {
+    public Avion(String identificador, int numero, Ciudad ciudad) {
         this.identificador = identificador +"-"+ String.format("%04d", numero);
         this.numero = numero;
         this.pasajerosMax = (int) (Math.random()*201) +100;
-        this.hangar = hangar;
+        this.ciudad = ciudad;
     }
     
     public void run(){
         
-        hangar.entrarHangar(this);
+        try {
+            ciudad.aeropuerto.hangar.entrarHangar(this);
+            Thread.sleep(0);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Avion.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }
 
