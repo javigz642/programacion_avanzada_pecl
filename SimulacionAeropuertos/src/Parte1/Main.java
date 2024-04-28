@@ -29,11 +29,11 @@ public class Main {
             String identificador = ""+abc[r1]+abc[r2]+"";
             
             if (i%2==0){
-                Avion avion = new Avion(identificador, i, madrid);
+                Avion avion = new Avion(identificador, i, madrid, barcelona);
                 avion.start();
             }
             else{
-                Avion avion = new Avion(identificador, i, barcelona);
+                Avion avion = new Avion(identificador, i, barcelona, madrid);
                 avion.start();
             }
             

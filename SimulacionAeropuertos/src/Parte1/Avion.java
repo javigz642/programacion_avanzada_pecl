@@ -14,7 +14,8 @@ import java.util.logging.Logger;
  */
 public class Avion extends Thread{
     
-    private Ciudad ciudad;
+    private Ciudad origen;
+    private Ciudad destino;
     
     private String identificador;
     private int numero;
@@ -24,23 +25,26 @@ public class Avion extends Thread{
     private boolean embarque;
     
     //Constructor NO definitivo!!
-    public Avion(String identificador, int numero, Ciudad ciudad) {
+    public Avion(String identificador, int numero, Ciudad origen, Ciudad destino) {
         this.identificador = identificador +"-"+ String.format("%04d", numero);
         this.numero = numero;
         this.pasajerosMax = (int) (Math.random()*201) +100;
-        this.ciudad = ciudad;
+        this.origen = origen;
+        this.destino = destino;
     }
     
     public void run(){
         
         try {
-            ciudad.aeropuerto.hangar.entrarHangar(this);
+            origen.aeropuerto.hangar.entrarHangar(this);
             Thread.sleep(0);
-            ciudad.aeropuerto.areaEstacionamiento.entrarArea(this);
+            origen.aeropuerto.areaEstacionamiento.entrarArea(this);
             embarque = true;
-            ciudad.aeropuerto.puertaEmbarque.entrarPuerta(this);
-            ciudad.aeropuerto.areaRodaje.entrarAreaRodaje(this);
-            ciudad.aeropuerto.pista.accederPista(this);
+            origen.aeropuerto.puertaEmbarque.entrarPuerta(this);
+            origen.aeropuerto.areaRodaje.entrarAreaRodaje(this);
+            origen.aeropuerto.pista.accederPista(this);
+            origen.aeropuerto.aerovia.volar(this);
+            embarque = false;
             
         } catch (InterruptedException ex) {
             Logger.getLogger(Avion.class.getName()).log(Level.SEVERE, null, ex);
@@ -67,6 +71,16 @@ public class Avion extends Thread{
     public boolean isEmbarque() {
         return embarque;
     }
+
+    public Ciudad getOrigen() {
+        return origen;
+    }
+
+    public Ciudad getDestino() {
+        return destino;
+    }
+    
+    
     
     
     

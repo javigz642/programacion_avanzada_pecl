@@ -79,8 +79,9 @@ public class PuertaEmbarque {
 
     }
 
-    private void PuertaDesembarque(Avion avion) {
+    private void PuertaDesembarque(Avion avion) throws InterruptedException {
         
+        aeropuerto.bajarPasajerosAvion(avion.getPasajerosActual());
         puertaDesembarque.release();
     }
     

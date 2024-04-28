@@ -24,6 +24,7 @@ public class Aeropuerto extends Thread {
     protected PuertaEmbarque puertaEmbarque = new PuertaEmbarque(this);
     protected AreaRodaje areaRodaje = new AreaRodaje(this);
     protected Pista pista = new Pista(this);
+    protected Aerovia aerovia = new Aerovia(ciudad);
 
     private int personasDentro = 300;
     
@@ -112,8 +113,10 @@ public class Aeropuerto extends Thread {
         return pasajerosCogidos;
     }
     
-    public void bajarPasajerosAvion(int pasajeros){
-        
+    public void bajarPasajerosAvion(int pasajeros) throws InterruptedException{
+        control.acquire();
+        personasDentro += pasajeros;
+        control.release();
     }
 
     public int getPersonasDentro() {
