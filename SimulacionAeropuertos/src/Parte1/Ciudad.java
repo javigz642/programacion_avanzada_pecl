@@ -12,7 +12,7 @@ public class Ciudad {
     
     private String nombre;
     
-    protected Aeropuerto aeropuerto = new Aeropuerto(100, this);
+    protected Aeropuerto aeropuerto = new Aeropuerto(this);
     
 
     public Ciudad(String nombre) {
