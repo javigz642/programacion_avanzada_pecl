@@ -38,6 +38,7 @@ public class Avion extends Thread{
             Thread.sleep(0);
             ciudad.aeropuerto.areaEstacionamiento.entrarArea(this);
             embarque = true;
+            ciudad.aeropuerto.puertaEmbarque.PuertaEmbarque(this);
         } catch (InterruptedException ex) {
             Logger.getLogger(Avion.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -59,6 +60,12 @@ public class Avion extends Thread{
     public void setPasajerosActual(int pasajerosActual) {
         this.pasajerosActual = pasajerosActual;
     }
+
+    public boolean isEmbarque() {
+        return embarque;
+    }
+    
+    
     
     
     

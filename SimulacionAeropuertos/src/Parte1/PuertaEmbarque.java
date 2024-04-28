@@ -27,10 +27,10 @@ public class PuertaEmbarque {
         this.aeropuerto = aeropuerto;
     }
 
-    public void entrarPuerta(Avion avion, boolean embarque) {
+    public void entrarPuerta(Avion avion) {
 
         try {
-            if (embarque) {
+            if (avion.isEmbarque()) {
 
                 if(puertaEmbarque.tryAcquire()){
                     System.out.println(avion.getIdentificador() + " ha entrado en la puerta de embarque de " + aeropuerto.ciudad.getNombre());
@@ -68,15 +68,25 @@ public class PuertaEmbarque {
             intentos++;
             Thread.sleep((int) (Math.random() * 4000) + 1001);
             
-        }    
+        }
+        puertaEmbarque.release();
 
     }
 
     public void PuertaDesembarque(Avion avion) {
-
+        
+        puertaDesembarque.release();
     }
     
-    public void PuertaLibre(Avion avion){
+    public void PuertaLibre(Avion avion) throws InterruptedException{
+        
+        if (avion.isEmbarque()){
+            PuertaEmbarque(avion);
+        }
+        else{
+            PuertaDesembarque(avion);
+        }
+        puertasLibres.release();
         
     }
 

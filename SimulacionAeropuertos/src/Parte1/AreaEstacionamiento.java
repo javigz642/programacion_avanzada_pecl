@@ -35,7 +35,7 @@ public class AreaEstacionamiento {
             control.acquire();
             aeropuerto.hangar.salirHangar(avion);
             aviones.add(avion);
-            System.out.println(avion.getIdentificador() + " ha entrado al area de estacionamiento de " + aeropuerto.ciudad.getNombre());
+            System.out.println(avion.getIdentificador() + " ha entrado al area de estacionamiento del aeropuerto de " + aeropuerto.ciudad.getNombre());
 
         } catch (InterruptedException ex) {
             Logger.getLogger(Hangar.class.getName()).log(Level.SEVERE, null, ex);

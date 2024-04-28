@@ -20,13 +20,17 @@ public class Aeropuerto extends Thread {
     protected Hangar hangar = new Hangar(this);
     protected AreaEstacionamiento areaEstacionamiento = new AreaEstacionamiento(this);
     protected Taller taller = new Taller(this);
+    protected PuertaEmbarque puertaEmbarque = new PuertaEmbarque(this);
+    protected AreaRodaje areaRodaje = new AreaRodaje(this);
 
-    private AtomicInteger personasDentro;
+    private AtomicInteger personasDentro = new AtomicInteger(0);
+    
 
     private Lock puertaSalida = new ReentrantLock();
 
     public Aeropuerto(Ciudad ciudad) {
-
+        
+        
         this.ciudad = ciudad;
     }
 
@@ -90,6 +94,10 @@ public class Aeropuerto extends Thread {
         }
         Thread.sleep((int) (Math.random() * 2000) + 1001);
         return pasajerosCogidos;
+    }
+    
+    public void bajarPasajerosAvion(int pasajeros){
+        
     }
 
     public int getPersonasDentro() {
