@@ -22,7 +22,7 @@ public class Main {
         
         //creacion de los hilos de aviones
 
-        for (int i=0; i<4;i++){  //deberian ser 8000
+        for (int i=0; i<4;i+=2){  //deberian ser 8000
             
             int r1 = (int) (Math.random()*26);
             int r2 = (int) (Math.random()*26);

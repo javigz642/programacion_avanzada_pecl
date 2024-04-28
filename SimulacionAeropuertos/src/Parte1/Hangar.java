@@ -38,7 +38,7 @@ public class Hangar {
         try {
             control.acquire();
             aviones.add(avion);
-            System.out.println(avion.getIdentificador()+ " ha entrado al hangar del aeropuerto de " + aeropuerto.ciudad.getNombre());
+            //System.out.println(avion.getIdentificador()+ " ha entrado al hangar del aeropuerto de " + aeropuerto.ciudad.getNombre());
 
         } catch (InterruptedException ex) {
             Logger.getLogger(Hangar.class.getName()).log(Level.SEVERE, null, ex);
@@ -53,7 +53,7 @@ public class Hangar {
         try {
             control.acquire();
             aviones.remove(avion);
-            System.out.println(avion.getIdentificador()+ " ha salido del hangar de " + aeropuerto.ciudad.getNombre());
+            //System.out.println(avion.getIdentificador()+ " ha salido del hangar de " + aeropuerto.ciudad.getNombre());
         } catch (InterruptedException ex) {
             Logger.getLogger(Hangar.class.getName()).log(Level.SEVERE, null, ex);
         } finally{

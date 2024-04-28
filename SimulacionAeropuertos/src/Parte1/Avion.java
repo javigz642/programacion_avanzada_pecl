@@ -38,7 +38,9 @@ public class Avion extends Thread{
             Thread.sleep(0);
             ciudad.aeropuerto.areaEstacionamiento.entrarArea(this);
             embarque = true;
-            ciudad.aeropuerto.puertaEmbarque.PuertaEmbarque(this);
+            ciudad.aeropuerto.puertaEmbarque.entrarPuerta(this);
+            ciudad.aeropuerto.areaRodaje.entrarAreaRodaje(this);
+            
         } catch (InterruptedException ex) {
             Logger.getLogger(Avion.class.getName()).log(Level.SEVERE, null, ex);
         }

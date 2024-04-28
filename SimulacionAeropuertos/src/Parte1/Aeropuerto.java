@@ -1,5 +1,6 @@
 package Parte1;
 
+import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
@@ -23,10 +24,12 @@ public class Aeropuerto extends Thread {
     protected PuertaEmbarque puertaEmbarque = new PuertaEmbarque(this);
     protected AreaRodaje areaRodaje = new AreaRodaje(this);
 
-    private AtomicInteger personasDentro = new AtomicInteger(0);
+    private int personasDentro = 300;
+    
+    private Semaphore control = new Semaphore(1, true);
     
 
-    private Lock puertaSalida = new ReentrantLock();
+    
 
     public Aeropuerto(Ciudad ciudad) {
         
@@ -39,23 +42,23 @@ public class Aeropuerto extends Thread {
         int pasajerosParada;
         do {
             pasajerosParada = (int) (Math.random() * 51);
-        } while (pasajerosParada > personasDentro.get());
+        } while (pasajerosParada > personasDentro);
 
-        puertaSalida.lock();
 
         try {
             System.out.println("Hay " + personasDentro + " dentro");
 
-            if (personasDentro.get() > 0) {
-                personasDentro.addAndGet(pasajerosParada);
+            if (personasDentro > 0) {
+                control.acquire();
+                personasDentro -= (pasajerosParada);
                 System.out.println("El autobus " + a.getIdentificador() + " va a recoger a " + pasajerosParada + " personas.");
-
+                control.release();
             }
             Thread.sleep((int) (Math.random() * 3000) + 2001);
         } catch (Exception e) {
 
         } finally {
-            puertaSalida.unlock();
+
             
         }
     }
@@ -71,27 +74,37 @@ public class Aeropuerto extends Thread {
     }
 
     public void bajarPasajerosAutobus(Autobus a) {
-        puertaSalida.lock();
+
         try {
-            personasDentro.addAndGet(a.getPasajeros());
+            control.acquire();
+            personasDentro += a.getPasajeros();
         } catch (Exception e) {
         } finally {
-            puertaSalida.unlock();
+            control.release();
         }
     }
 
     public int recogerPasajerosAvion(int pasajeros) throws InterruptedException {
 
         int pasajerosCogidos;
-
-        if (personasDentro.get() >= pasajeros) {
-            personasDentro.addAndGet(pasajeros);
+        
+        control.acquire();
+        if (personasDentro >= pasajeros) {
+            System.out.println("PERSONAS DENTRO: " + personasDentro);
+            personasDentro -= pasajeros;
+            System.out.println("PERSONAS DENTRO 2: " + personasDentro);
             pasajerosCogidos = pasajeros;
+            System.out.println("Cogiendo " + pasajerosCogidos);
         } else {
-            pasajerosCogidos = personasDentro.get();
-            personasDentro.set(0);
+            
+            pasajerosCogidos = personasDentro;
+            System.out.println("Cogiendo menos del maximo: " + pasajerosCogidos);
+            personasDentro = 0;
+
 
         }
+        control.release();
+        System.out.println("Esperando a que se suban los mamertos");
         Thread.sleep((int) (Math.random() * 2000) + 1001);
         return pasajerosCogidos;
     }
@@ -101,7 +114,7 @@ public class Aeropuerto extends Thread {
     }
 
     public int getPersonasDentro() {
-        return personasDentro.get();
+        return personasDentro;
     }
 
 }

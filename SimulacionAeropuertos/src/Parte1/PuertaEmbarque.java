@@ -33,18 +33,24 @@ public class PuertaEmbarque {
             if (avion.isEmbarque()) {
 
                 if(puertaEmbarque.tryAcquire()){
-                    System.out.println(avion.getIdentificador() + " ha entrado en la puerta de embarque de " + aeropuerto.ciudad.getNombre());
+                    System.out.println(avion.getIdentificador() + " ha entrado en la puerta de embarque del aeropuerto de " + aeropuerto.ciudad.getNombre());
+                    PuertaEmbarque(avion);
                 }
                 else{
                     puertasLibres.acquire();
+                    System.out.println(avion.getIdentificador() + " ha entrado en la puerta LIBRE del aeropuerto de " + aeropuerto.ciudad.getNombre());
+                    PuertaLibre(avion);
                 
                 }              
             } else {
                 if(puertaDesembarque.tryAcquire()){
-                    System.out.println(avion.getIdentificador() + " ha entrado en la puerta de desembarque de " + aeropuerto.ciudad.getNombre());
+                    System.out.println(avion.getIdentificador() + " ha entrado en la puerta de desembarque del aeropuerto de " + aeropuerto.ciudad.getNombre());
+                    PuertaDesembarque(avion);
                 }
                 else{
                     puertasLibres.acquire();
+                    System.out.println(avion.getIdentificador() + " ha entrado en la puerta libre del aeropuerto de " + aeropuerto.ciudad.getNombre());
+                    PuertaLibre(avion);
                 }
             }
 
@@ -54,7 +60,7 @@ public class PuertaEmbarque {
 
     }
 
-    public void PuertaEmbarque(Avion avion) throws InterruptedException {
+    private void PuertaEmbarque(Avion avion) throws InterruptedException {
 
         int max = avion.getPasajerosMax();
         int intentos = 0;
@@ -73,13 +79,14 @@ public class PuertaEmbarque {
 
     }
 
-    public void PuertaDesembarque(Avion avion) {
+    private void PuertaDesembarque(Avion avion) {
         
         puertaDesembarque.release();
     }
     
-    public void PuertaLibre(Avion avion) throws InterruptedException{
+    private void PuertaLibre(Avion avion) throws InterruptedException{
         
+        System.out.println(avion.getIdentificador() + " AQUI ESTOY ");
         if (avion.isEmbarque()){
             PuertaEmbarque(avion);
         }
