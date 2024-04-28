@@ -34,6 +34,7 @@ public class Pista {
         
         System.out.println(avion.getIdentificador() + " despegando de la pista del aeropuerto de " + aeropuerto.ciudad.getNombre());
         Thread.sleep((int) (Math.random() * 4000) + 1001);
+        pistas.release();
         
     }
 }
