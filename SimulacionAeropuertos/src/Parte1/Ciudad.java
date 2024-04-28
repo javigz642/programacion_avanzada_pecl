@@ -9,7 +9,9 @@ package Parte1;
  * @author ediso
  */
 public class Ciudad {
+    
     private String nombre;
+    
     protected Aeropuerto aeropuerto = new Aeropuerto(100, this);
     
 
@@ -20,7 +22,7 @@ public class Ciudad {
 
 
     public void recogerPasajerosAutobus(Autobus a){
-        int pasajerosParada = (int) (Math.random()*50);
+        int pasajerosParada = (int) (Math.random()*51);
         System.out.println("El autobus " + a.getIdentificador() + " va a recoger a " + pasajerosParada + " personas.");
     }
     public void irAeropuertoAutobus(Autobus a){
