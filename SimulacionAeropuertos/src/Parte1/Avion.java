@@ -13,13 +13,16 @@ import java.util.logging.Logger;
  * @author ediso
  */
 public class Avion extends Thread{
+    
+    private Ciudad ciudad;
+    
     private String identificador;
     private int numero;
+    
+    private int pasajerosActual;
     private final int pasajerosMax;
-    private Hangar hangar;
-    private AreaEstacionamiento areaEstacionamiento;
-    private Ciudad ciudad;
-
+    private boolean embarque;
+    
     //Constructor NO definitivo!!
     public Avion(String identificador, int numero, Ciudad ciudad) {
         this.identificador = identificador +"-"+ String.format("%04d", numero);
@@ -33,6 +36,8 @@ public class Avion extends Thread{
         try {
             ciudad.aeropuerto.hangar.entrarHangar(this);
             Thread.sleep(0);
+            ciudad.aeropuerto.areaEstacionamiento.entrarArea(this);
+            embarque = true;
         } catch (InterruptedException ex) {
             Logger.getLogger(Avion.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -42,6 +47,22 @@ public class Avion extends Thread{
     public String getIdentificador() {
         return identificador;
     }
+
+    public int getPasajerosMax() {
+        return pasajerosMax;
+    }
+
+    public int getPasajerosActual() {
+        return pasajerosActual;
+    }
+
+    public void setPasajerosActual(int pasajerosActual) {
+        this.pasajerosActual = pasajerosActual;
+    }
+    
+    
+    
+    
 
     
     

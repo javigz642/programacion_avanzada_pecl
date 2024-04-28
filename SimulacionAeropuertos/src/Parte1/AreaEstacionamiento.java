@@ -18,8 +18,11 @@ import java.util.logging.Logger;
 public class AreaEstacionamiento {
 
     private Aeropuerto aeropuerto;
-    private Semaphore control = new Semaphore(1);
+    
     private ArrayList<Avion> aviones = new ArrayList<>();
+    
+    private Semaphore control = new Semaphore(1);
+    
 
     public AreaEstacionamiento(Aeropuerto aeropuerto) {
 
@@ -30,8 +33,9 @@ public class AreaEstacionamiento {
 
         try {
             control.acquire();
+            aeropuerto.hangar.salirHangar(avion);
             aviones.add(avion);
-            System.out.println(avion.getIdentificador() + " ha entrado al hangar de " + aeropuerto.ciudad.getNombre());
+            System.out.println(avion.getIdentificador() + " ha entrado al area de estacionamiento de " + aeropuerto.ciudad.getNombre());
 
         } catch (InterruptedException ex) {
             Logger.getLogger(Hangar.class.getName()).log(Level.SEVERE, null, ex);
@@ -46,7 +50,7 @@ public class AreaEstacionamiento {
         try {
             control.acquire();
             aviones.remove(avion);
-            System.out.println(avion.getIdentificador() + " ha salido del hangar de " + aeropuerto.ciudad.getNombre());
+            System.out.println(avion.getIdentificador() + " ha salido del area de estacionamiento de " + aeropuerto.ciudad.getNombre());
         } catch (InterruptedException ex) {
             Logger.getLogger(Hangar.class.getName()).log(Level.SEVERE, null, ex);
         } finally {

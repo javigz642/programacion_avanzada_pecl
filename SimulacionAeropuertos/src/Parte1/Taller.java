@@ -11,6 +11,7 @@ package Parte1;
 public class Taller {
     
     protected Aeropuerto aeropuerto;
+    
     private int max = 20; //maximo de aviones por taller
     
     public Taller(Aeropuerto aeropuerto){

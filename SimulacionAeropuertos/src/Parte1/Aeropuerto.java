@@ -13,14 +13,19 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author ediso
  */
 public class Aeropuerto extends Thread {
-
-    private int personasDentro;
-    private Lock puertaSalida = new ReentrantLock();
-    private Condition vacio = puertaSalida.newCondition();
-    protected Ciudad ciudad;
+    
+    protected Ciudad ciudad; 
+    
     protected Hangar hangar = new Hangar(this);
     protected AreaEstacionamiento areaEstacionamiento = new AreaEstacionamiento(this);
     protected Taller taller = new Taller(this);
+    
+    private int personasDentro;
+    
+    private Lock puertaSalida = new ReentrantLock();
+    private Condition vacio = puertaSalida.newCondition();
+    
+    
 
     public Aeropuerto(int personasDentro, Ciudad ciudad) {
 
@@ -32,7 +37,7 @@ public class Aeropuerto extends Thread {
 
         int pasajerosParada;
         do{
-         pasajerosParada = (int) (Math.random() * 50);
+         pasajerosParada = (int) (Math.random() * 51);
         }while(pasajerosParada > personasDentro);
         
         puertaSalida.lock();
@@ -46,7 +51,7 @@ public class Aeropuerto extends Thread {
             
             personasDentro -= pasajerosParada;
             System.out.println("El autobus " + a.getIdentificador() + " va a recoger a " + pasajerosParada + " personas.");
-            Thread.sleep((int) (Math.random() * 3001) + 2000);
+            Thread.sleep((int) (Math.random() * 3000) + 2001);
         } catch (Exception e) {
             
         }finally{
@@ -58,7 +63,7 @@ public class Aeropuerto extends Thread {
         
         try {
             System.out.println("El autobus " + a.getIdentificador() + " va hacia la ciudad de " + ciudad.getNombre());
-            Thread.sleep((int) (Math.random() * 5001) + 5000);
+            Thread.sleep((int) (Math.random() * 5000) + 5001);
             System.out.println("El autobus " + a.getIdentificador() + " ha llegado a la ciudad");
         } catch (Exception e) {
         }
@@ -73,4 +78,28 @@ public class Aeropuerto extends Thread {
             puertaSalida.unlock();
         }
     }
+    
+    public int recogerPasajerosAvion(int pasajeros) throws InterruptedException{
+        
+        int pasajerosCogidos;
+        
+        if (personasDentro >= pasajeros){
+            personasDentro -= pasajeros;
+            pasajerosCogidos = pasajeros;
+        }
+        else{
+            pasajerosCogidos = personasDentro;
+            personasDentro = 0;
+    
+        }
+        Thread.sleep((int) (Math.random() * 2000) + 1001);
+        return pasajerosCogidos;
+    }
+
+    public int getPersonasDentro() {
+        return personasDentro;
+    }
+    
+    
+            
 }

@@ -20,8 +20,11 @@ import java.util.logging.Logger;
 public class Hangar {
     
     private Aeropuerto aeropuerto;
-    private Semaphore control = new Semaphore(1);
+    
     private ArrayList<Avion> aviones = new ArrayList<>();
+    
+    private Semaphore control = new Semaphore(1);
+    
         
     public Hangar(Aeropuerto aeropuerto){
         
