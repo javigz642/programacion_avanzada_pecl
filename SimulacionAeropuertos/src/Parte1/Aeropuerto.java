@@ -23,6 +23,7 @@ public class Aeropuerto extends Thread {
     protected Taller taller = new Taller(this);
     protected PuertaEmbarque puertaEmbarque = new PuertaEmbarque(this);
     protected AreaRodaje areaRodaje = new AreaRodaje(this);
+    protected Pista pista = new Pista(this);
 
     private int personasDentro = 300;
     
@@ -104,8 +105,10 @@ public class Aeropuerto extends Thread {
 
         }
         control.release();
-        System.out.println("Esperando a que se suban los mamertos");
-        Thread.sleep((int) (Math.random() * 2000) + 1001);
+        if (pasajerosCogidos > 0){
+            System.out.println("Esperando a que se suban los mamertos");
+            Thread.sleep((int) (Math.random() * 2000) + 1001);
+        }
         return pasajerosCogidos;
     }
     

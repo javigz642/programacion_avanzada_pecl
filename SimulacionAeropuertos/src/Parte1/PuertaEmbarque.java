@@ -38,7 +38,7 @@ public class PuertaEmbarque {
                 }
                 else{
                     puertasLibres.acquire();
-                    System.out.println(avion.getIdentificador() + " ha entrado en la puerta LIBRE del aeropuerto de " + aeropuerto.ciudad.getNombre());
+                    System.out.println(avion.getIdentificador() + " ha entrado en la puerta libre del aeropuerto de " + aeropuerto.ciudad.getNombre());
                     PuertaLibre(avion);
                 
                 }              
@@ -67,7 +67,7 @@ public class PuertaEmbarque {
         
         avion.setPasajerosActual(aeropuerto.recogerPasajerosAvion(max));
         
-        while(intentos < 3 && avion.getPasajerosActual() < max){
+        while(intentos < 2 && avion.getPasajerosActual() < max){
             
             avion.setPasajerosActual(aeropuerto.recogerPasajerosAvion(max - avion.getPasajerosActual()));
             
@@ -86,7 +86,6 @@ public class PuertaEmbarque {
     
     private void PuertaLibre(Avion avion) throws InterruptedException{
         
-        System.out.println(avion.getIdentificador() + " AQUI ESTOY ");
         if (avion.isEmbarque()){
             PuertaEmbarque(avion);
         }
