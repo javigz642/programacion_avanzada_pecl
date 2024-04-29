@@ -3,18 +3,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Parte1;
-
+import javax.swing.JTextField;
 /**
  *
  * @author ediso
  */
 public class ProgramaPrincipal extends Thread{
-
+    JTextField jTextFieldTransferAeropuertoAutobusMadrid;
+    public ProgramaPrincipal(JTextField jTextFieldTransferAeropuertoAutobusMadrid){
+        this.jTextFieldTransferAeropuertoAutobusMadrid = jTextFieldTransferAeropuertoAutobusMadrid;
+    }
     public void run() {
 
 
-        Ciudad barcelona = new Ciudad("Barcelona");
-        Ciudad madrid = new Ciudad("Madrid");
+//        Ciudad barcelona = new Ciudad("Barcelona",jTextFieldTransferAeropuertoAutobusMadrid);
+        Ciudad madrid = new Ciudad("Madrid",jTextFieldTransferAeropuertoAutobusMadrid);
 
 
 

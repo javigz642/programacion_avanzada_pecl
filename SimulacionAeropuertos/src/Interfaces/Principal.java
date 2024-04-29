@@ -15,7 +15,7 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
-        ProgramaPrincipal principal = new ProgramaPrincipal( );
+        ProgramaPrincipal principal = new ProgramaPrincipal(jTextFieldTransferAeropuertoAutobusMadrid);
         principal.run();
     }
 
@@ -105,7 +105,7 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Transfers Aeropuerto:");
+        jLabel1.setText("Hacia Aeropuerto:");
 
         jTextFieldTransferAeropuertoAutobusMadrid.setEditable(false);
         jTextFieldTransferAeropuertoAutobusMadrid.addActionListener(new java.awt.event.ActionListener() {
@@ -114,7 +114,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Transfers Ciudad:");
+        jLabel2.setText("Hacia Ciudad:");
 
         jTextFieldTransferCiudadAutobusMadrid.setEditable(false);
 
@@ -286,7 +286,7 @@ public class Principal extends javax.swing.JFrame {
 
         jTextFieldGate2AeropuertoBarcelona.setEditable(false);
 
-        jLabel33.setText("Transfers Aeropuerto:");
+        jLabel33.setText("Hacia Aeropuerto:");
 
         jTextFieldTransferAeropuertoAutobusBarcelona.setEditable(false);
         jTextFieldTransferAeropuertoAutobusBarcelona.addActionListener(new java.awt.event.ActionListener() {
@@ -295,7 +295,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel34.setText("Transfers Ciudad:");
+        jLabel34.setText("Hacia Ciudad:");
 
         jTextFieldTransferCiudadBarcelona.setEditable(false);
 
@@ -328,9 +328,9 @@ public class Principal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -339,9 +339,9 @@ public class Principal extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel18)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldAeroviaMadrid_Barcelona, javax.swing.GroupLayout.PREFERRED_SIZE, 868, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jTextFieldAeroviaMadrid_Barcelona, javax.swing.GroupLayout.PREFERRED_SIZE, 868, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(layout.createSequentialGroup()
@@ -492,8 +492,8 @@ public class Principal extends javax.swing.JFrame {
                                     .addComponent(jTextFieldTransferCiudadBarcelona, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(150, 150, 150)
-                                .addComponent(jLabel37)))
-                        .addGap(49, 49, 49))))
+                                .addComponent(jLabel37)))))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

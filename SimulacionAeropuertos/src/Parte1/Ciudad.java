@@ -25,12 +25,11 @@ public class Ciudad {
     
 
     //declaracion de los text field;
-    JTextField jTextFieldTransferCiudadAutobusMadrid;
-    JTextField jTextFieldTransferCiudadAutobusBarcelona;
+    JTextField jTextFieldTransferAeropuertoAutobus;
 
-    public Ciudad(String nombre) {
+    public Ciudad(String nombre, JTextField jTextFieldTransferAeropuertoAutobus) {
         this.nombre = nombre;
-
+        this.jTextFieldTransferAeropuertoAutobus = jTextFieldTransferAeropuertoAutobus;
     }
 
     public void recogerPasajerosAutobus(Autobus a) {
@@ -42,13 +41,21 @@ public class Ciudad {
 
         try {
             lockAutobusesCirculando.acquire();
+            
             autobusesCirculando.add(a);
+            imprimirArrayAutobus();
             System.out.println("El autobus " + a.getIdentificador() + " va hacia el aeropuerto de " + nombre);
             lockAutobusesCirculando.release();
+            dormirAutobus(5000, 10000);
+            lockAutobusesCirculando.acquire();
+            autobusesCirculando.remove(a);
+            lockAutobusesCirculando.release();
+            
         } catch (Exception e) {
         } finally {
-            imprimirArrayAutobus();
-            dormirAutobus(50000, 10000);
+            
+            
+            
             System.out.println("El autobus " + a.getIdentificador() + " ha llegado al aeropuerto " + nombre);
         }
     }
@@ -71,9 +78,14 @@ public class Ciudad {
     }
     
     public void imprimirArrayAutobus(){
+        String arrayAux = "";
         for (int i = 0; i < autobusesCirculando.size(); i++) {
+            arrayAux += autobusesCirculando.get(i).getIdentificador() + " / ";
             System.out.println(autobusesCirculando.get(i).getIdentificador() + " circulando");
+            
         }
+        jTextFieldTransferAeropuertoAutobus.setText(arrayAux);
         System.out.println("");
+        System.out.println(arrayAux);
     }
 }

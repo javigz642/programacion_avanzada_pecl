@@ -35,7 +35,7 @@ public class Aeropuerto extends Thread {
 
     
 
-    public Aeropuerto(Ciudad ciudad ) {
+    public Aeropuerto(Ciudad ciudad) {
         this.ciudad = ciudad;
     }
 
