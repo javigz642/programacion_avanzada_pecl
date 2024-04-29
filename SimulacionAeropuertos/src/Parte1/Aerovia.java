@@ -6,6 +6,8 @@ package Parte1;
 
 import java.util.ArrayList;
 import java.util.concurrent.Semaphore;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -23,15 +25,36 @@ public class Aerovia {
         this.aeropuerto = aeropuerto;
     }
     
-    public void volar(Avion avion) throws InterruptedException{
+    public void entrarAerovia(Avion avion) {
         
 
-        System.out.println(avion.getIdentificador() + " volando desde " + avion.getOrigen().getNombre() + " con destino " + avion.getDestino().getNombre());
-        control.acquire();
-        aviones.add(avion);
-        control.release();
-        Thread.sleep((int) (Math.random() * 15000) +15001);
+        try {
+            control.acquire();
+            aeropuerto.pista.salirPista(avion);
+            aviones.add(avion);
+            control.release();
+            System.out.println(avion.getIdentificador() + " volando desde " + avion.getOrigen().getNombre() + " con destino " + avion.getDestino().getNombre());
+            Thread.sleep((int) (Math.random() * 15000) +15001);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Aerovia.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
+    
+    public void abandonarAerovia(Avion avion) {
+        
+
+        try {
+            control.acquire();
+            aviones.remove(avion);
+            control.release();
+            System.out.println(avion.getIdentificador() + " llegando a " + avion.getDestino().getNombre() + " desde " + avion.getOrigen().getNombre());
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Aerovia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+    
+    
     
 }

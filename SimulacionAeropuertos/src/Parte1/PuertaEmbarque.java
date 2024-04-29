@@ -4,6 +4,7 @@
  */
 package Parte1;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
@@ -43,6 +44,7 @@ public class PuertaEmbarque {
                     avionEmbarque.remove(avion);
                     System.out.println(avion.getIdentificador() + " ha salido de la puerta de embarque del aeropuerto de " + aeropuerto.ciudad.getNombre());
                     puertaEmbarque.release();
+                    aeropuerto.areaRodaje.entrarAreaRodaje(avion); //entra solo al Area de Rodaje
                     
                 } else {
                     puertasLibres.acquire();
@@ -53,36 +55,43 @@ public class PuertaEmbarque {
                     avionesLibres.remove(avion);
                     System.out.println(avion.getIdentificador() + " ha salido de la puerta libre del aeropuerto de " + aeropuerto.ciudad.getNombre());
                     puertasLibres.release();
+                    aeropuerto.areaRodaje.entrarAreaRodaje(avion); //entra solo al Area de Rodaje
+                    
                     
                 }
             } else {
                 if (puertaDesembarque.tryAcquire()) {
-                    aeropuerto.areaEstacionamiento.salirArea(avion);
+                    aeropuerto.areaRodaje.salirAreaRodaje(avion);
+                    System.out.println(avion.getIdentificador() + " yendo desde Area de Rodaje a Embarque del aeropuerto de " + aeropuerto.ciudad.getNombre());
+                    Thread.sleep((int) (Math.random() * 2000) + 3001); //paso de Area de Rodaje a Embarque
                     avionDesembarque.add(avion);
                     System.out.println(avion.getIdentificador() + " ha entrado en la puerta de desembarque del aeropuerto de " + aeropuerto.ciudad.getNombre());
                     PuertaDesembarque(avion);
                     avionDesembarque.remove(avion);
                     System.out.println(avion.getIdentificador() + " ha salido de la puerta de desembarque del aeropuerto de " + aeropuerto.ciudad.getNombre());
                     puertaDesembarque.release();
+                    aeropuerto.areaEstacionamiento.entrarArea(avion); //entra solo al Area de Estacionamiento
                     
                 } else {
                     puertasLibres.acquire();
-                    aeropuerto.areaEstacionamiento.salirArea(avion);
+                    aeropuerto.areaRodaje.salirAreaRodaje(avion);
+                    System.out.println(avion.getIdentificador() + " yendo desde Area de Rodaje a Embarque del aeropuerto de " + aeropuerto.ciudad.getNombre());
+                    Thread.sleep((int) (Math.random() * 2000) + 3001); //paso de Area de Rodaje a Embarque
                     avionesLibres.add(avion);
                     System.out.println(avion.getIdentificador() + " ha entrado en la puerta libre del aeropuerto de " + aeropuerto.ciudad.getNombre());
                     PuertaLibre(avion);
                     avionesLibres.remove(avion);
                     System.out.println(avion.getIdentificador() + " ha salido de la puerta libre del aeropuerto de " + aeropuerto.ciudad.getNombre());
                     puertasLibres.release();
+                    aeropuerto.areaEstacionamiento.entrarArea(avion); //entra solo al Area de Estacionamiento
+                    
                 }
             }
 
         } catch (InterruptedException ex) {
             Logger.getLogger(PuertaEmbarque.class.getName()).log(Level.SEVERE, null, ex);
         }
-        finally{
-            aeropuerto.areaRodaje.entrarAreaRodaje(avion);
-        }
+        
 
     }
 
@@ -129,6 +138,7 @@ public class PuertaEmbarque {
         puertasLibres.release();
 
     }
+    
     
 
 }
