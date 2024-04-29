@@ -28,12 +28,12 @@ public class Autobus extends Thread {
     
     public void run() {
         
-            ciudad.recogerPasajerosAutobus(this);
+            ciudad.recogerPasajerosCiudadAutobus(this);
             ciudad.irAeropuertoAutobus(this);
-            ciudad.aeropuerto.bajarPasajerosAutobus(this);
-            ciudad.aeropuerto.recogerPasajerosAutobus(this);
-            ciudad.aeropuerto.irCiudadAutobus(this);
-            ciudad.bajarPasajerosAutobus(this);
+            ciudad.bajarPasajerosAlAeropuertoAutobus(this);
+            ciudad.recogerPasajerosAeropuertoAutobus(this);
+            ciudad.irCiudadAutobus(this);
+            ciudad.bajarPasajerosACiudadAutobus(this);
        
     }
 

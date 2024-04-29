@@ -29,11 +29,8 @@ public class Aeropuerto extends Thread {
     protected Aerovia aerovia = new Aerovia(this);
 
     private int personasDentro = 300;
-    
-    private Semaphore control = new Semaphore(1, true);
-    
 
-    
+    private Semaphore control = new Semaphore(1, true);
 
     public Aeropuerto(Ciudad ciudad) {
         this.ciudad = ciudad;
@@ -45,10 +42,9 @@ public class Aeropuerto extends Thread {
             pasajerosParada = (int) (Math.random() * 51);
         } while (pasajerosParada > personasDentro);
 
-
         try {
             System.out.println("Hay " + personasDentro + " dentro");
-
+            Thread.sleep((int) (Math.random() * 3000) + 2001);
             if (personasDentro > 0) {
                 control.acquire();
                 personasDentro -= pasajerosParada;
@@ -56,13 +52,10 @@ public class Aeropuerto extends Thread {
                 System.out.println("En el aeropuerto hay " + personasDentro + " personas.");
                 control.release();
             }
-            Thread.sleep((int) (Math.random() * 3000) + 2001);
+
         } catch (Exception e) {
 
-        } finally {
-
-            
-        }
+        } 
     }
 
     public void irCiudadAutobus(Autobus a) {
@@ -86,8 +79,8 @@ public class Aeropuerto extends Thread {
         }
     }
 
-    public int recogerPasajerosAvion(int pasajeros){
-        
+    public int recogerPasajerosAvion(int pasajeros) {
+
         int pasajerosCogidos = 0;
 
         try {
@@ -99,33 +92,33 @@ public class Aeropuerto extends Thread {
                 pasajerosCogidos = pasajeros;
                 System.out.println("Cogiendo " + pasajerosCogidos);
             } else {
-                
+
                 pasajerosCogidos = personasDentro;
                 System.out.println("Cogiendo menos del maximo: " + pasajerosCogidos);
-                personasDentro = 0;  
+                personasDentro = 0;
                 control.release();
             }
-            
-            if (pasajerosCogidos > 0){
+
+            if (pasajerosCogidos > 0) {
                 System.out.println("Esperando a que se suban los mamertos");
                 Thread.sleep((int) (Math.random() * 2000) + 1001);
             }
-            
+
         } catch (InterruptedException ex) {
             Logger.getLogger(Aeropuerto.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         return pasajerosCogidos;
     }
-    
-    public void bajarPasajerosAvion(int pasajeros){
+
+    public void bajarPasajerosAvion(int pasajeros) {
         try {
             control.acquire();
             personasDentro += pasajeros;
-            
+
         } catch (InterruptedException ex) {
             Logger.getLogger(Aeropuerto.class.getName()).log(Level.SEVERE, null, ex);
-        } finally{
+        } finally {
             control.release();
         }
     }

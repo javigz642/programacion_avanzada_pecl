@@ -15,7 +15,7 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
-        ProgramaPrincipal principal = new ProgramaPrincipal(jTextFieldTransferAeropuertoAutobusMadrid);
+        ProgramaPrincipal principal = new ProgramaPrincipal(jTextFieldTransferAeropuertoAutobusMadrid,jTextFieldTransferCiudadAutobusMadrid);
         principal.run();
     }
 

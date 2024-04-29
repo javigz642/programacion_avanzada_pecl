@@ -10,14 +10,16 @@ import javax.swing.JTextField;
  */
 public class ProgramaPrincipal extends Thread{
     JTextField jTextFieldTransferAeropuertoAutobusMadrid;
-    public ProgramaPrincipal(JTextField jTextFieldTransferAeropuertoAutobusMadrid){
+    JTextField jTextFieldTransferCiudadAutobus;
+    public ProgramaPrincipal(JTextField jTextFieldTransferAeropuertoAutobusMadrid, JTextField jTextFieldTransferCiudadAutobus){
         this.jTextFieldTransferAeropuertoAutobusMadrid = jTextFieldTransferAeropuertoAutobusMadrid;
+        this.jTextFieldTransferCiudadAutobus = jTextFieldTransferCiudadAutobus;
     }
     public void run() {
 
 
 //        Ciudad barcelona = new Ciudad("Barcelona",jTextFieldTransferAeropuertoAutobusMadrid);
-        Ciudad madrid = new Ciudad("Madrid",jTextFieldTransferAeropuertoAutobusMadrid);
+        Ciudad madrid = new Ciudad("Madrid",jTextFieldTransferAeropuertoAutobusMadrid, jTextFieldTransferCiudadAutobus);
 
 
 

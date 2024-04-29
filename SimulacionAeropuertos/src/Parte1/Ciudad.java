@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
+import javax.swing.JFrame;
 import javax.swing.JTextField;
 
 /**
@@ -15,24 +16,27 @@ import javax.swing.JTextField;
  * @author ediso
  */
 public class Ciudad {
-    
+
     protected Aeropuerto aeropuerto = new Aeropuerto(this);
-    
+
     private String nombre;
-    private ArrayList<Autobus> autobusesCirculando = new ArrayList<>();
-    
-    private Semaphore lockAutobusesCirculando = new Semaphore(1);
-    
+    private ArrayList<Autobus> autobusesHaciaAeropuerto = new ArrayList<>();
+    private ArrayList<Autobus> autobusesHaciaCiudad = new ArrayList<>();
+
+    private Semaphore SemAutobusesHaciaAeropuerto = new Semaphore(1);
+    private Semaphore SemAutobusesHaciaCiudad = new Semaphore(1);
 
     //declaracion de los text field;
     JTextField jTextFieldTransferAeropuertoAutobus;
+    JTextField jTextFieldTransferCiudadAutobus;
 
-    public Ciudad(String nombre, JTextField jTextFieldTransferAeropuertoAutobus) {
+    public Ciudad(String nombre, JTextField jTextFieldTransferAeropuertoAutobus, JTextField jTextFieldTransferCiudadAutobus) {
         this.nombre = nombre;
         this.jTextFieldTransferAeropuertoAutobus = jTextFieldTransferAeropuertoAutobus;
+        this.jTextFieldTransferCiudadAutobus = jTextFieldTransferCiudadAutobus;
     }
 
-    public void recogerPasajerosAutobus(Autobus a) {
+    public void recogerPasajerosCiudadAutobus(Autobus a) {
         int pasajerosParada = (int) (Math.random() * 51);
         System.out.println("El autobus " + a.getIdentificador() + " va a recoger a " + pasajerosParada + " personas.");
     }
@@ -40,29 +44,84 @@ public class Ciudad {
     public void irAeropuertoAutobus(Autobus a) {
 
         try {
-            lockAutobusesCirculando.acquire();
-            
-            autobusesCirculando.add(a);
-            imprimirArrayAutobus();
+            SemAutobusesHaciaAeropuerto.acquire();
+
+            autobusesHaciaAeropuerto.add(a);
+            imprimirArrayAutobus(jTextFieldTransferAeropuertoAutobus,autobusesHaciaAeropuerto);
             System.out.println("El autobus " + a.getIdentificador() + " va hacia el aeropuerto de " + nombre);
-            lockAutobusesCirculando.release();
+            SemAutobusesHaciaAeropuerto.release();
             dormirAutobus(5000, 10000);
-            lockAutobusesCirculando.acquire();
-            autobusesCirculando.remove(a);
-            lockAutobusesCirculando.release();
-            
+            SemAutobusesHaciaAeropuerto.acquire();
+            autobusesHaciaAeropuerto.remove(a);
+            SemAutobusesHaciaAeropuerto.release();
+
         } catch (Exception e) {
         } finally {
-            
-            
-            
+
             System.out.println("El autobus " + a.getIdentificador() + " ha llegado al aeropuerto " + nombre);
         }
     }
 
-    public void bajarPasajerosAutobus(Autobus a) {
+    public void bajarPasajerosAlAeropuertoAutobus(Autobus a) {
+        try {
+            SemAutobusesHaciaAeropuerto.acquire();
+            autobusesHaciaAeropuerto.remove(a);
+            aeropuerto.bajarPasajerosAutobus(a);
+            imprimirArrayAutobus(jTextFieldTransferAeropuertoAutobus, autobusesHaciaAeropuerto);
+            SemAutobusesHaciaAeropuerto.release();
+
+        } catch (Exception e) {
+        } finally {
+
+        }
         a.setPasajeros(0);
         System.out.println("Se han bajado todos los pasajeros del autobus " + a.getIdentificador());
+    }
+
+    public void recogerPasajerosAeropuertoAutobus(Autobus a) {
+        try {
+            aeropuerto.recogerPasajerosAutobus(a);
+
+        } catch (Exception e) {
+        } finally {
+
+        }
+
+    }
+
+    public void irCiudadAutobus(Autobus a) {
+        try {
+            SemAutobusesHaciaCiudad.acquire();
+            autobusesHaciaCiudad.add(a);
+            imprimirArrayAutobus(jTextFieldTransferCiudadAutobus, autobusesHaciaCiudad);
+            System.out.println("El autobus " + a.getIdentificador() + " va hacia la ciudad de " + nombre);
+            SemAutobusesHaciaCiudad.release();
+            dormirAutobus(5000, 10000);
+            SemAutobusesHaciaCiudad.acquire();
+            autobusesHaciaCiudad.remove(a);
+            imprimirArrayAutobus(jTextFieldTransferCiudadAutobus, autobusesHaciaCiudad);
+            SemAutobusesHaciaCiudad.release();
+
+        } catch (Exception e) {
+        } finally {
+
+        }
+        a.setPasajeros(0);
+        System.out.println("Se han bajado todos los pasajeros del autobus " + a.getIdentificador());
+    }
+
+    public void bajarPasajerosACiudadAutobus(Autobus a) {
+        try {
+
+            a.setPasajeros(0);
+
+
+
+        } catch (Exception e) {
+        } finally {
+
+            System.out.println("El autobus " + a.getIdentificador() + " ha llegado a su destino " + nombre);
+        }
     }
 
     public String getNombre() {
@@ -76,16 +135,15 @@ public class Ciudad {
         } catch (Exception e) {
         }
     }
-    
-    public void imprimirArrayAutobus(){
-        String arrayAux = "";
-        for (int i = 0; i < autobusesCirculando.size(); i++) {
-            arrayAux += autobusesCirculando.get(i).getIdentificador() + " / ";
-            System.out.println(autobusesCirculando.get(i).getIdentificador() + " circulando");
-            
+
+    public void imprimirArrayAutobus(JTextField jTextFieldDestino,ArrayList<Autobus> arrayBuses) {
+        String stringAux = "";
+        for (int i = 0; i < arrayBuses.size(); i++) {
+            stringAux += arrayBuses.get(i).getIdentificador() + " / ";
+            System.out.println(arrayBuses.get(i).getIdentificador() + " circulando");
+
         }
-        jTextFieldTransferAeropuertoAutobus.setText(arrayAux);
-        System.out.println("");
-        System.out.println(arrayAux);
+        jTextFieldDestino.setText(stringAux);
+        System.out.println(stringAux);
     }
 }
