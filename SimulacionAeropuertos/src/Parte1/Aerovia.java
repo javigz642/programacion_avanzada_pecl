@@ -4,6 +4,7 @@
  */
 package Parte1;
 
+import java.util.ArrayList;
 import java.util.concurrent.Semaphore;
 
 /**
@@ -12,20 +13,24 @@ import java.util.concurrent.Semaphore;
  */
 public class Aerovia {
     
-    Ciudad origen;
-
+    private Aeropuerto aeropuerto;
+    
+    private ArrayList<Avion> aviones = new ArrayList<>();
     
     private Semaphore control = new Semaphore(1, true);
 
-    public Aerovia(Ciudad origen) {
-        this.origen = origen;
+    public Aerovia(Aeropuerto aeropuerto) {
+        this.aeropuerto = aeropuerto;
     }
     
     public void volar(Avion avion) throws InterruptedException{
         
 
         System.out.println(avion.getIdentificador() + " volando desde " + avion.getOrigen().getNombre() + " con destino " + avion.getDestino().getNombre());
-        Thread.sleep((int) (Math.random() * 15000) +15000);
+        control.acquire();
+        aviones.add(avion);
+        control.release();
+        Thread.sleep((int) (Math.random() * 15000) +15001);
 
     }
     

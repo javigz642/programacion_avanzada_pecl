@@ -4,6 +4,7 @@
  */
 package Parte1;
 
+import java.util.ArrayList;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -13,14 +14,16 @@ import java.util.logging.Logger;
  * @author Miguel
  */
 public class PuertaEmbarque {
-    
+
     protected Aeropuerto aeropuerto;
+    
+    private ArrayList<Avion> avionesLibres = new ArrayList<>();
+    private ArrayList<Avion> avionEmbarque = new ArrayList<>();
+    private ArrayList<Avion> avionDesembarque = new ArrayList<>();
 
     private Semaphore puertasLibres = new Semaphore(4, true);
     private Semaphore puertaEmbarque = new Semaphore(1, true);
     private Semaphore puertaDesembarque = new Semaphore(1, true);
-
-    
 
     public PuertaEmbarque(Aeropuerto aeropuerto) {
 
@@ -32,69 +35,100 @@ public class PuertaEmbarque {
         try {
             if (avion.isEmbarque()) {
 
-                if(puertaEmbarque.tryAcquire()){
+                if (puertaEmbarque.tryAcquire()) {
+                    aeropuerto.areaEstacionamiento.salirArea(avion);
+                    avionEmbarque.add(avion);
                     System.out.println(avion.getIdentificador() + " ha entrado en la puerta de embarque del aeropuerto de " + aeropuerto.ciudad.getNombre());
                     PuertaEmbarque(avion);
-                }
-                else{
+                    avionEmbarque.remove(avion);
+                    System.out.println(avion.getIdentificador() + " ha salido de la puerta de embarque del aeropuerto de " + aeropuerto.ciudad.getNombre());
+                    puertaEmbarque.release();
+                    
+                } else {
                     puertasLibres.acquire();
+                    aeropuerto.areaEstacionamiento.salirArea(avion);
+                    avionesLibres.add(avion);
                     System.out.println(avion.getIdentificador() + " ha entrado en la puerta libre del aeropuerto de " + aeropuerto.ciudad.getNombre());
                     PuertaLibre(avion);
-                
-                }              
+                    avionesLibres.remove(avion);
+                    System.out.println(avion.getIdentificador() + " ha salido de la puerta libre del aeropuerto de " + aeropuerto.ciudad.getNombre());
+                    puertasLibres.release();
+                    
+                }
             } else {
-                if(puertaDesembarque.tryAcquire()){
+                if (puertaDesembarque.tryAcquire()) {
+                    aeropuerto.areaEstacionamiento.salirArea(avion);
+                    avionDesembarque.add(avion);
                     System.out.println(avion.getIdentificador() + " ha entrado en la puerta de desembarque del aeropuerto de " + aeropuerto.ciudad.getNombre());
                     PuertaDesembarque(avion);
-                }
-                else{
+                    avionDesembarque.remove(avion);
+                    System.out.println(avion.getIdentificador() + " ha salido de la puerta de desembarque del aeropuerto de " + aeropuerto.ciudad.getNombre());
+                    puertaDesembarque.release();
+                    
+                } else {
                     puertasLibres.acquire();
+                    aeropuerto.areaEstacionamiento.salirArea(avion);
+                    avionesLibres.add(avion);
                     System.out.println(avion.getIdentificador() + " ha entrado en la puerta libre del aeropuerto de " + aeropuerto.ciudad.getNombre());
                     PuertaLibre(avion);
+                    avionesLibres.remove(avion);
+                    System.out.println(avion.getIdentificador() + " ha salido de la puerta libre del aeropuerto de " + aeropuerto.ciudad.getNombre());
+                    puertasLibres.release();
                 }
             }
 
         } catch (InterruptedException ex) {
             Logger.getLogger(PuertaEmbarque.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-    }
-
-    private void PuertaEmbarque(Avion avion) throws InterruptedException {
-
-        int max = avion.getPasajerosMax();
-        int intentos = 0;
-        
-        avion.setPasajerosActual(aeropuerto.recogerPasajerosAvion(max));
-        
-        while(intentos < 2 && avion.getPasajerosActual() < max){
-            
-            avion.setPasajerosActual(aeropuerto.recogerPasajerosAvion(max - avion.getPasajerosActual()));
-            
-            intentos++;
-            Thread.sleep((int) (Math.random() * 4000) + 1001);
-            
+        finally{
+            aeropuerto.areaRodaje.entrarAreaRodaje(avion);
         }
-        puertaEmbarque.release();
 
     }
 
-    private void PuertaDesembarque(Avion avion) throws InterruptedException {
+    private void PuertaEmbarque(Avion avion) {
+
+        try {
+            int max = avion.getPasajerosMax();
+            int intentos = 0;
+            
+            System.out.println(avion.getIdentificador() + " cogiendo pasajeros en el aeropuerto de " + aeropuerto.ciudad.getNombre());
+            avion.setPasajerosActual(aeropuerto.recogerPasajerosAvion(max));
+            
+            while (intentos < 2 && avion.getPasajerosActual() < max) {
+                
+                avion.setPasajerosActual(aeropuerto.recogerPasajerosAvion(max - avion.getPasajerosActual()));
+                
+                intentos++;
+                Thread.sleep((int) (Math.random() * 4000) + 1001);    
+            }
+            
+        } catch (InterruptedException ex) {
+            Logger.getLogger(PuertaEmbarque.class.getName()).log(Level.SEVERE, null, ex);
+        } finally{
+            puertaEmbarque.release();
+        }
+
+    }
+
+    private void PuertaDesembarque(Avion avion) {
         
+        System.out.println(avion.getIdentificador() + " dejando pasajeros en el aeropuerto de " + aeropuerto.ciudad.getNombre());
         aeropuerto.bajarPasajerosAvion(avion.getPasajerosActual());
         puertaDesembarque.release();
+
     }
-    
-    private void PuertaLibre(Avion avion) throws InterruptedException{
-        
-        if (avion.isEmbarque()){
+
+    private void PuertaLibre(Avion avion) {
+
+        if (avion.isEmbarque()) {
             PuertaEmbarque(avion);
-        }
-        else{
+        } else {
             PuertaDesembarque(avion);
         }
         puertasLibres.release();
-        
+
     }
+    
 
 }
