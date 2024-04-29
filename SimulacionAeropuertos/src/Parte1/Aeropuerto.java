@@ -5,6 +5,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -24,7 +26,7 @@ public class Aeropuerto extends Thread {
     protected PuertaEmbarque puertaEmbarque = new PuertaEmbarque(this);
     protected AreaRodaje areaRodaje = new AreaRodaje(this);
     protected Pista pista = new Pista(this);
-    protected Aerovia aerovia = new Aerovia(ciudad);
+    protected Aerovia aerovia = new Aerovia(this);
 
     private int personasDentro = 300;
     
@@ -84,37 +86,48 @@ public class Aeropuerto extends Thread {
         }
     }
 
-    public int recogerPasajerosAvion(int pasajeros) throws InterruptedException {
-
-        int pasajerosCogidos;
+    public int recogerPasajerosAvion(int pasajeros){
         
-        control.acquire();
-        if (personasDentro >= pasajeros) {
-            System.out.println("PERSONAS DENTRO: " + personasDentro);
-            personasDentro -= pasajeros;
-            System.out.println("PERSONAS DENTRO 2: " + personasDentro);
-            pasajerosCogidos = pasajeros;
-            System.out.println("Cogiendo " + pasajerosCogidos);
-        } else {
+        int pasajerosCogidos = 0;
+
+        try {
+            control.acquire();
+            if (personasDentro >= pasajeros) {
+                System.out.println("PERSONAS DENTRO: " + personasDentro);
+                personasDentro -= pasajeros;
+                System.out.println("PERSONAS DENTRO 2: " + personasDentro);
+                pasajerosCogidos = pasajeros;
+                System.out.println("Cogiendo " + pasajerosCogidos);
+            } else {
+                
+                pasajerosCogidos = personasDentro;
+                System.out.println("Cogiendo menos del maximo: " + pasajerosCogidos);
+                personasDentro = 0;  
+                control.release();
+            }
             
-            pasajerosCogidos = personasDentro;
-            System.out.println("Cogiendo menos del maximo: " + pasajerosCogidos);
-            personasDentro = 0;
-
-
+            if (pasajerosCogidos > 0){
+                System.out.println("Esperando a que se suban los mamertos");
+                Thread.sleep((int) (Math.random() * 2000) + 1001);
+            }
+            
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Aeropuerto.class.getName()).log(Level.SEVERE, null, ex);
         }
-        control.release();
-        if (pasajerosCogidos > 0){
-            System.out.println("Esperando a que se suban los mamertos");
-            Thread.sleep((int) (Math.random() * 2000) + 1001);
-        }
+        
         return pasajerosCogidos;
     }
     
-    public void bajarPasajerosAvion(int pasajeros) throws InterruptedException{
-        control.acquire();
-        personasDentro += pasajeros;
-        control.release();
+    public void bajarPasajerosAvion(int pasajeros){
+        try {
+            control.acquire();
+            personasDentro += pasajeros;
+            
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Aeropuerto.class.getName()).log(Level.SEVERE, null, ex);
+        } finally{
+            control.release();
+        }
     }
 
     public int getPersonasDentro() {
