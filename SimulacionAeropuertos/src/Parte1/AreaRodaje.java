@@ -44,7 +44,7 @@ public class AreaRodaje {
             control.acquire();
             aviones.remove(avion);
             control.release();
-            System.out.println(avion.getIdentificador() + " ha entrado al area de rodaje del aeropuerto de " + aeropuerto.ciudad.getNombre());
+            System.out.println(avion.getIdentificador() + " ha salido del area de rodaje del aeropuerto de " + aeropuerto.ciudad.getNombre());
             Thread.sleep((int) (Math.random() * 4000) + 1001);
         } catch (InterruptedException ex) {
             Logger.getLogger(AreaRodaje.class.getName()).log(Level.SEVERE, null, ex);

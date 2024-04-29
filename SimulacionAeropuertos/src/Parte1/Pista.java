@@ -23,6 +23,7 @@ public class Pista {
     public void accederPista(Avion avion) throws InterruptedException{
         
         pistas.acquire();
+        aeropuerto.areaRodaje.salirAreaRodaje(avion);
         System.out.println(avion.getIdentificador() + " accediendo a pista del aeropuerto de " + aeropuerto.ciudad.getNombre());
         System.out.println(avion.getIdentificador() + " realizando verificaciones");
         Thread.sleep((int) (Math.random() * 2000) + 1001);

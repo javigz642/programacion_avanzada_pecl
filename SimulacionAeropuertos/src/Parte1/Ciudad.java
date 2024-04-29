@@ -15,13 +15,14 @@ import javax.swing.JTextField;
  * @author ediso
  */
 public class Ciudad {
-
-    private String nombre;
-
+    
     protected Aeropuerto aeropuerto = new Aeropuerto(this);
-
-    private Semaphore lockAutobusesCirculando = new Semaphore(1);
+    
+    private String nombre;
     private ArrayList<Autobus> autobusesCirculando = new ArrayList<>();
+    
+    private Semaphore lockAutobusesCirculando = new Semaphore(1);
+    
 
     //declaracion de los text field;
     JTextField jTextFieldTransferCiudadAutobusMadrid;
