@@ -52,8 +52,9 @@ public class Aeropuerto extends Thread {
 
             if (personasDentro > 0) {
                 control.acquire();
-                personasDentro -= (pasajerosParada);
+                personasDentro -= pasajerosParada;
                 System.out.println("El autobus " + a.getIdentificador() + " va a recoger a " + pasajerosParada + " personas.");
+                System.out.println("En el aeropuerto hay " + personasDentro + " personas.");
                 control.release();
             }
             Thread.sleep((int) (Math.random() * 3000) + 2001);

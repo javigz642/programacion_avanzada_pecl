@@ -18,7 +18,7 @@ public class Autobus extends Thread {
     //private final int pasajerosMax = 50;
     
 
-    public Autobus(String identificador, int numero, int pasajeros, Ciudad ciudad, Aeropuerto aeropuerto) {
+    public Autobus(String identificador, int numero, int pasajeros, Ciudad ciudad) {
         this.identificador = identificador +"-"+ String.format("%04d", numero);
         this.numero = numero;
         this.pasajeros = pasajeros;
@@ -27,13 +27,13 @@ public class Autobus extends Thread {
 
     
     public void run() {
-//        
-//            ciudad.recogerPasajerosAutobus(this);
-//            ciudad.irAeropuertoAutobus(this);
-//            ciudad.aeropuerto.bajarPasajerosAutobus(this);
-//            ciudad.aeropuerto.recogerPasajerosAutobus(this);
-//            ciudad.aeropuerto.irCiudadAutobus(this);
-//            ciudad.bajarPasajerosAutobus(this);
+        
+            ciudad.recogerPasajerosAutobus(this);
+            ciudad.irAeropuertoAutobus(this);
+            ciudad.aeropuerto.bajarPasajerosAutobus(this);
+            ciudad.aeropuerto.recogerPasajerosAutobus(this);
+            ciudad.aeropuerto.irCiudadAutobus(this);
+            ciudad.bajarPasajerosAutobus(this);
        
     }
 
