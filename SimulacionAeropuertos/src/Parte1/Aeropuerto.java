@@ -33,14 +33,11 @@ public class Aeropuerto extends Thread {
 
     
 
-    public Aeropuerto(Ciudad ciudad) {
-        
-        
+    public Aeropuerto(Ciudad ciudad ) {
         this.ciudad = ciudad;
     }
 
     public void recogerPasajerosAutobus(Autobus a) {
-
         int pasajerosParada;
         do {
             pasajerosParada = (int) (Math.random() * 51);

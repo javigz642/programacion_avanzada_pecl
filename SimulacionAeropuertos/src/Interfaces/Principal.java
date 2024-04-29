@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Interfaces;
-
+import Parte1.ProgramaPrincipal;
 /**
  *
  * @author ediso
@@ -15,6 +15,8 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        ProgramaPrincipal principal = new ProgramaPrincipal( );
+        principal.run();
     }
 
     /**
@@ -105,6 +107,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel1.setText("Transfers Aeropuerto:");
 
+        jTextFieldTransferAeropuertoAutobusMadrid.setEditable(false);
         jTextFieldTransferAeropuertoAutobusMadrid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldTransferAeropuertoAutobusMadridActionPerformed(evt);
@@ -113,10 +116,15 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel2.setText("Transfers Ciudad:");
 
+        jTextFieldTransferCiudadAutobusMadrid.setEditable(false);
+
         jLabel3.setText("Nº de Pasajeros en Aeropuerto");
+
+        jTextFieldNumeroPasajerosAeropuertoMadrid.setEditable(false);
 
         jLabel4.setText("Hangar:");
 
+        jTextFieldHangarAeropuertoMadrid.setEditable(false);
         jTextFieldHangarAeropuertoMadrid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldHangarAeropuertoMadridActionPerformed(evt);
@@ -125,8 +133,11 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel5.setText("Taller:");
 
+        jTextFieldTallerAeropuertoMadrid.setEditable(false);
+
         jLabel6.setText("Area de Estacionamiento:");
 
+        jTextFieldAreaEstacionamientoAeropuertoMadrid.setEditable(false);
         jTextFieldAreaEstacionamientoAeropuertoMadrid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldAreaEstacionamientoAeropuertoMadridActionPerformed(evt);
@@ -135,12 +146,19 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel7.setText("Gate 1:");
 
+        jTextFieldGate1AeropuertoMadrid.setEditable(false);
+
         jLabel8.setText("Gate 4:");
+
+        jTextFieldGate4AeropuertoMadrid.setEditable(false);
 
         jLabel9.setText("Gate 2:");
 
+        jTextFieldGate2AeropuertoMadrid.setEditable(false);
+
         jLabel10.setText("Gate 5:");
 
+        jTextFieldGate5AeropuertoMadrid.setEditable(false);
         jTextFieldGate5AeropuertoMadrid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldGate5AeropuertoMadridActionPerformed(evt);
@@ -149,12 +167,19 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel11.setText("Gate 3:");
 
+        jTextField1Gate3AeropuertoMadrid.setEditable(false);
+
         jLabel12.setText("Gate 6:");
+
+        jTextFieldGate6AeropuertoMadrid.setEditable(false);
 
         jLabel13.setText("Pista 1:");
 
+        jTextFieldPista1AeropuertoMadrid.setEditable(false);
+
         jLabel14.setText("Pista 3:");
 
+        jTextFieldPista3AeropuertoMadrid.setEditable(false);
         jTextFieldPista3AeropuertoMadrid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldPista3AeropuertoMadridActionPerformed(evt);
@@ -163,8 +188,11 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel15.setText("Pista 2:");
 
+        jTextFieldPista2AeropuertoMadrid.setEditable(false);
+
         jLabel16.setText("Pista 4:");
 
+        jTextFieldPista4AeropuertoMadrid.setEditable(false);
         jTextFieldPista4AeropuertoMadrid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldPista4AeropuertoMadridActionPerformed(evt);
@@ -173,6 +201,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel17.setText("Area de Rodaje:");
 
+        jTextFieldAreaRodajeAeropuertoMadrid.setEditable(false);
         jTextFieldAreaRodajeAeropuertoMadrid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldAreaRodajeAeropuertoMadridActionPerformed(evt);
@@ -181,18 +210,29 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel18.setText("Aerovia Madrid-Barcelona:");
 
+        jTextFieldAeroviaMadrid_Barcelona.setEditable(false);
+
         jLabel19.setText("Aerovia Barcelona-Madrid:");
+
+        jTextFieldAeroviaBarcelona_Madrid.setEditable(false);
 
         jLabel20.setText("AEROPUERTO DE MADRID");
 
         jLabel21.setText("Gate 3:");
 
+        jTextField1Gate3AeropuertoBarcelona.setEditable(false);
+
         jLabel22.setText("Gate 6:");
+
+        jTextFieldGate6AeropuertoBarcelona.setEditable(false);
 
         jLabel23.setText("Pista 1:");
 
+        jTextFieldPista1AeropuertoBarcelona.setEditable(false);
+
         jLabel24.setText("Pista 3:");
 
+        jTextFieldPista3AeropuertoBarcelona.setEditable(false);
         jTextFieldPista3AeropuertoBarcelona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldPista3AeropuertoBarcelonaActionPerformed(evt);
@@ -201,10 +241,15 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel25.setText("Pista 2:");
 
+        jTextFieldPista2AeropuertoBarcelona.setEditable(false);
+
         jLabel26.setText("Taller:");
 
         jLabel27.setText("Pista 4:");
 
+        jTextFieldTallerAeropuertoBarcelona.setEditable(false);
+
+        jTextFieldPista4AeropuertoBarcelona.setEditable(false);
         jTextFieldPista4AeropuertoBarcelona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldPista4AeropuertoBarcelonaActionPerformed(evt);
@@ -215,12 +260,14 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel29.setText("Area de Rodaje:");
 
+        jTextFieldAreaEstacionamientoAeropuertoBarcelona.setEditable(false);
         jTextFieldAreaEstacionamientoAeropuertoBarcelona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldAreaEstacionamientoAeropuertoBarcelonaActionPerformed(evt);
             }
         });
 
+        jTextFieldAreaRodajeAeropuertoBarcelona.setEditable(false);
         jTextFieldAreaRodajeAeropuertoBarcelona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldAreaRodajeAeropuertoBarcelonaActionPerformed(evt);
@@ -229,12 +276,19 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel30.setText("Gate 1:");
 
+        jTextFieldGate1AeropuertoBarcelona.setEditable(false);
+
         jLabel31.setText("Gate 4:");
+
+        jTextFieldGate4AeropuertoBarcelona.setEditable(false);
 
         jLabel32.setText("Gate 2:");
 
+        jTextFieldGate2AeropuertoBarcelona.setEditable(false);
+
         jLabel33.setText("Transfers Aeropuerto:");
 
+        jTextFieldTransferAeropuertoAutobusBarcelona.setEditable(false);
         jTextFieldTransferAeropuertoAutobusBarcelona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldTransferAeropuertoAutobusBarcelonaActionPerformed(evt);
@@ -243,10 +297,15 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel34.setText("Transfers Ciudad:");
 
+        jTextFieldTransferCiudadBarcelona.setEditable(false);
+
         jLabel35.setText("Nº de Pasajeros en Aeropuerto");
+
+        jTextFieldNumeroPasajerosAeropuertoBarcelona.setEditable(false);
 
         jLabel36.setText("Hangar:");
 
+        jTextFieldHangarAeropuertoBarcelona.setEditable(false);
         jTextFieldHangarAeropuertoBarcelona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldHangarAeropuertoBarcelonaActionPerformed(evt);
@@ -257,6 +316,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel38.setText("Gate 5:");
 
+        jTextFieldGate5AeropuertoBarcelona.setEditable(false);
         jTextFieldGate5AeropuertoBarcelona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldGate5AeropuertoBarcelonaActionPerformed(evt);

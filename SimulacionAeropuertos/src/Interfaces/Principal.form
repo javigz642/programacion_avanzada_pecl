@@ -399,6 +399,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldTransferAeropuertoAutobusMadrid">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldTransferAeropuertoAutobusMadridActionPerformed"/>
       </Events>
@@ -409,6 +412,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldTransferCiudadAutobusMadrid">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
@@ -416,6 +422,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldNumeroPasajerosAeropuertoMadrid">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
@@ -423,6 +432,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldHangarAeropuertoMadrid">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldHangarAeropuertoMadridActionPerformed"/>
       </Events>
@@ -433,6 +445,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldTallerAeropuertoMadrid">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
@@ -440,6 +455,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldAreaEstacionamientoAeropuertoMadrid">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldAreaEstacionamientoAeropuertoMadridActionPerformed"/>
       </Events>
@@ -450,6 +468,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldGate1AeropuertoMadrid">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
@@ -457,6 +478,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldGate4AeropuertoMadrid">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
       <Properties>
@@ -464,6 +488,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldGate2AeropuertoMadrid">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel10">
       <Properties>
@@ -471,6 +498,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldGate5AeropuertoMadrid">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldGate5AeropuertoMadridActionPerformed"/>
       </Events>
@@ -481,6 +511,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField1Gate3AeropuertoMadrid">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel12">
       <Properties>
@@ -488,6 +521,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldGate6AeropuertoMadrid">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel13">
       <Properties>
@@ -495,6 +531,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldPista1AeropuertoMadrid">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel14">
       <Properties>
@@ -502,6 +541,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldPista3AeropuertoMadrid">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldPista3AeropuertoMadridActionPerformed"/>
       </Events>
@@ -512,6 +554,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldPista2AeropuertoMadrid">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel16">
       <Properties>
@@ -519,6 +564,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldPista4AeropuertoMadrid">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldPista4AeropuertoMadridActionPerformed"/>
       </Events>
@@ -529,6 +577,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldAreaRodajeAeropuertoMadrid">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldAreaRodajeAeropuertoMadridActionPerformed"/>
       </Events>
@@ -539,6 +590,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldAeroviaMadrid_Barcelona">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel19">
       <Properties>
@@ -546,6 +600,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldAeroviaBarcelona_Madrid">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel20">
       <Properties>
@@ -558,6 +615,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField1Gate3AeropuertoBarcelona">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel22">
       <Properties>
@@ -565,6 +625,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldGate6AeropuertoBarcelona">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel23">
       <Properties>
@@ -572,6 +635,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldPista1AeropuertoBarcelona">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel24">
       <Properties>
@@ -579,6 +645,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldPista3AeropuertoBarcelona">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldPista3AeropuertoBarcelonaActionPerformed"/>
       </Events>
@@ -589,6 +658,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldPista2AeropuertoBarcelona">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel26">
       <Properties>
@@ -601,8 +673,14 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldTallerAeropuertoBarcelona">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldPista4AeropuertoBarcelona">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldPista4AeropuertoBarcelonaActionPerformed"/>
       </Events>
@@ -618,11 +696,17 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldAreaEstacionamientoAeropuertoBarcelona">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldAreaEstacionamientoAeropuertoBarcelonaActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldAreaRodajeAeropuertoBarcelona">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldAreaRodajeAeropuertoBarcelonaActionPerformed"/>
       </Events>
@@ -633,6 +717,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldGate1AeropuertoBarcelona">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel31">
       <Properties>
@@ -640,6 +727,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldGate4AeropuertoBarcelona">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel32">
       <Properties>
@@ -647,6 +737,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldGate2AeropuertoBarcelona">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel33">
       <Properties>
@@ -654,6 +747,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldTransferAeropuertoAutobusBarcelona">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldTransferAeropuertoAutobusBarcelonaActionPerformed"/>
       </Events>
@@ -664,6 +760,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldTransferCiudadBarcelona">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel35">
       <Properties>
@@ -671,6 +770,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldNumeroPasajerosAeropuertoBarcelona">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel36">
       <Properties>
@@ -678,6 +780,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldHangarAeropuertoBarcelona">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldHangarAeropuertoBarcelonaActionPerformed"/>
       </Events>
@@ -693,6 +798,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldGate5AeropuertoBarcelona">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldGate5AeropuertoBarcelonaActionPerformed"/>
       </Events>
