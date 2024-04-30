@@ -57,10 +57,9 @@ public class Pista {
         
         try {
             System.out.println(avion.getIdentificador() + " realizando verificaciones PISTA");
-            //Thread.sleep((int) (Math.random() * 2000) + 1001);
+            Thread.sleep((int) (Math.random() * 2000) + 1001);
             System.out.println(avion.getIdentificador() + " despegando con " + avion.getPasajerosActual() + " pasajeros desde la PISTA " + (avion.getNumero()+1));
-            //Thread.sleep((int) (Math.random() * 4000) + 1001);
-            Thread.sleep((int) (Math.random() * 00) + 01);
+            Thread.sleep((int) (Math.random() * 4000) + 1001);
             System.out.println(avion.getIdentificador() + " ha dejado libre la PISTA " + (avion.getNumero()+1));
             aviones[avion.getNumero()%4] = null;
             pistas[avion.getNumero()%4].release();
@@ -76,8 +75,7 @@ public class Pista {
 
         try {
             System.out.println(avion.getIdentificador() + " aterrizando con " + avion.getPasajerosActual() + " pasajeros en la PISTA " + (avion.getNumero()+1));
-            //Thread.sleep((int) (Math.random() * 4000) + 1001); 
-            Thread.sleep((int) (Math.random() * 00) + 1);
+            Thread.sleep((int) (Math.random() * 4000) + 1001); 
             System.out.println(avion.getIdentificador() + " ha dejado libre la PISTA " + (avion.getNumero()+1));
             aviones[avion.getNumero()%4] = null;
             pistas[avion.getNumero()%4].release();
