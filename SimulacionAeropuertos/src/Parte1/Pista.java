@@ -17,28 +17,35 @@ public class Pista {
     
     private Aeropuerto aeropuerto;
     
-    private ArrayList<Avion> aviones = new ArrayList<>();
+    private Avion[] aviones = new Avion[4];
     
-    private Semaphore pistas = new Semaphore(4, true);
+    private Semaphore pista1 = new Semaphore(1, true);
+    private Semaphore pista2 = new Semaphore(1, true);
+    private Semaphore pista3 = new Semaphore(1, true);
+    private Semaphore pista4 = new Semaphore(1, true);
+    private Semaphore[] pistas = {pista1, pista2, pista3, pista4};
 
     public Pista(Aeropuerto aeropuerto) {
         this.aeropuerto = aeropuerto;
     }
     
-    
-
-
     public void pedirPista(Avion avion) {
         
         try {
             if (avion.isEmbarque()) {
-                accederPista(avion);
+                pistas[avion.getNumero()%4].acquire();
+                aviones[avion.getNumero()%4] = avion;
+                System.out.println(avion.getIdentificador() + " tiene libre la PISTA " + (avion.getNumero()+1) + " para despegar"); 
+                despegar(avion);
+                
             } else {
-                while (!pistas.tryAcquire()) {
-                    System.out.println(avion.getIdentificador() + " dando un rodeo para pedir pista en el aeropuerto de " + aeropuerto.ciudad.getNombre());
+                while (!pistas[avion.getNumero()%4].tryAcquire()) {
+                    System.out.println(avion.getIdentificador() + " dando un rodeo para tener pista libre");
                     Thread.sleep((int) (Math.random() * 4000) + 1001);
                 }
-                aterrizarPista(avion);
+                aviones[avion.getNumero()%4] = avion;
+                System.out.println(avion.getIdentificador() + " tiene libre la PISTA " + (avion.getNumero()+1) + " para aterrizar");
+                aterrizar(avion);
             }
         } catch (InterruptedException ex) {
             Logger.getLogger(Pista.class.getName()).log(Level.SEVERE, null, ex);
@@ -46,51 +53,37 @@ public class Pista {
 
     }
     
-    private void accederPista(Avion avion) {
+    private void despegar(Avion avion){
         
         try {
-            pistas.acquire();
-            aeropuerto.areaRodaje.salirAreaRodaje(avion);
-            aviones.add(avion);
-            System.out.println(avion.getIdentificador() + " accediendo a la pista " + (aviones.indexOf(avion)+1) + " del aeropuerto de " + aeropuerto.ciudad.getNombre()); 
-            System.out.println(avion.getIdentificador() + " realizando verificaciones");
+            System.out.println(avion.getIdentificador() + " realizando verificaciones PISTA");
             Thread.sleep((int) (Math.random() * 2000) + 1001);
+            System.out.println(avion.getIdentificador() + " despegando con " + avion.getPasajerosActual() + " pasajeros desde la PISTA " + (avion.getNumero()+1));
+            Thread.sleep((int) (Math.random() * 4000) + 1001);
+            System.out.println(avion.getIdentificador() + " ha dejado libre la PISTA " + (avion.getNumero()+1));
+            aviones[avion.getNumero()%4] = null;
+            pistas[avion.getNumero()%4].release();
+            
             
         } catch (InterruptedException ex) {
             Logger.getLogger(Pista.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+      
     }
 
-    private void aterrizarPista(Avion avion) {
+    private void aterrizar(Avion avion) {
 
         try {
-            aviones.add(avion);
-            System.out.println(avion.getIdentificador() + " aterrizando a la pista " + (aviones.indexOf(avion) + 1) + " del aeropuerto de " + aeropuerto.ciudad.getNombre());
-            Thread.sleep((int) (Math.random() * 4000) + 1001);
-            System.out.println(avion.getIdentificador() + " aterrizado en el aeropuerto de " + aeropuerto.ciudad.getNombre());
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Pista.class.getName()).log(Level.SEVERE, null, ex);
-        } 
-    }
-    
-    public void salirPista(Avion avion) {
-
-        try {
-            if(avion.isEmbarque()){
-                System.out.println(avion.getIdentificador() + " despegando de la pista " + (aviones.indexOf(avion) + 1) + " del aeropuerto de " + aeropuerto.ciudad.getNombre());
-                Thread.sleep((int) (Math.random() * 4000) + 1001);
-            }
-            else{
-                System.out.println(avion.getIdentificador() + " saliendo de la pista " + (aviones.indexOf(avion) + 1) + " del aeropuerto de " + aeropuerto.ciudad.getNombre());            
-            }
-            aviones.remove(avion);
-            pistas.release();
-            System.out.println(avion.getIdentificador() + " ha abandonado la pista del aeropuerto de " + aeropuerto.ciudad.getNombre());
+            System.out.println(avion.getIdentificador() + " aterrizando con " + avion.getPasajerosActual() + " pasajeros en la PISTA " + (avion.getNumero()+1));
+            Thread.sleep((int) (Math.random() * 4000) + 1001); 
+            System.out.println(avion.getIdentificador() + " ha dejado libre la PISTA " + (avion.getNumero()+1));
+            aviones[avion.getNumero()%4] = null;
+            pistas[avion.getNumero()%4].release();
         } catch (InterruptedException ex) {
             Logger.getLogger(Pista.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
+
 
 }

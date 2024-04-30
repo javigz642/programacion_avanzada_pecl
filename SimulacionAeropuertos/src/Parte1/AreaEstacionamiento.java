@@ -33,18 +33,17 @@ public class AreaEstacionamiento {
 
         try {
             control.acquire();
-            if(avion.isEmbarque()){
-                aeropuerto.hangar.salirHangar(avion);
-            }
             aviones.add(avion);
-            System.out.println(avion.getIdentificador() + " ha entrado al area de estacionamiento del aeropuerto de " + aeropuerto.ciudad.getNombre());
+            control.release();
+            System.out.println(avion.getIdentificador() + " entrando ESTACIONAMIENTO");
+            if(!avion.isEmbarque()){
+                System.out.println(avion.getIdentificador() + " realizando comprobaciones ESTACIONAMIENTO (tras Desembarque)");
+                Thread.sleep((int) (Math.random() * 4000) + 1001); 
+            }
 
         } catch (InterruptedException ex) {
             Logger.getLogger(Hangar.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            control.release();
-        }
-
+        } 
     }
 
     public void salirArea(Avion avion) {
@@ -52,12 +51,11 @@ public class AreaEstacionamiento {
         try {
             control.acquire();
             aviones.remove(avion);
-            System.out.println(avion.getIdentificador() + " ha salido del area de estacionamiento de " + aeropuerto.ciudad.getNombre());
+            control.release();
+            System.out.println(avion.getIdentificador() + " saliendo ESTACIONAMIENTO");
         } catch (InterruptedException ex) {
             Logger.getLogger(Hangar.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            control.release();
-        }
+        } 
     }
 
 }

@@ -38,14 +38,12 @@ public class Hangar {
         try {
             control.acquire();
             aviones.add(avion);
-            System.out.println(avion.getIdentificador()+ " ha entrado al hangar del aeropuerto de " + aeropuerto.ciudad.getNombre());
+            control.release();
+            System.out.println(avion.getIdentificador()+ " entrando HANGAR");
 
         } catch (InterruptedException ex) {
             Logger.getLogger(Hangar.class.getName()).log(Level.SEVERE, null, ex);
-        } finally{
-            control.release();
-        }
-        
+        }  
     }
     
     public void salirHangar(Avion avion){
@@ -53,12 +51,25 @@ public class Hangar {
         try {
             control.acquire();
             aviones.remove(avion);
-            System.out.println(avion.getIdentificador()+ " ha salido del hangar de " + aeropuerto.ciudad.getNombre());
+            control.release();
+            System.out.println(avion.getIdentificador()+ " saliendo HANGAR");
         } catch (InterruptedException ex) {
             Logger.getLogger(Hangar.class.getName()).log(Level.SEVERE, null, ex);
-        } finally{
+        } 
+    }
+    
+    public void reposar (Avion avion){
+        
+        try {
+            control.acquire();
+            aviones.add(avion);
             control.release();
+            System.out.println(avion.getIdentificador()+ " reposando HANGAR");
+            Thread.sleep((int) (Math.random() * 15000) + 15001);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hangar.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }
     
 }
