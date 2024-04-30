@@ -33,7 +33,7 @@ public class Aerovia {
             aviones.add(avion);
             control.release();
             System.out.println(avion.getIdentificador() + " volando desde " + avion.getOrigen().getNombre() + " con destino " + avion.getDestino().getNombre() );
-            //Thread.sleep((int) (Math.random() * 15000) +15001);
+            Thread.sleep((int) (Math.random() * 15000) +15001);
         } catch (InterruptedException ex) {
             Logger.getLogger(Aerovia.class.getName()).log(Level.SEVERE, null, ex);
         }

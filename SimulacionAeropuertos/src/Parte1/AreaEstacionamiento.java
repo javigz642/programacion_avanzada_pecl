@@ -38,7 +38,7 @@ public class AreaEstacionamiento {
             System.out.println(avion.getIdentificador() + " entrando ESTACIONAMIENTO");
             if(!avion.isEmbarque()){
                 System.out.println(avion.getIdentificador() + " realizando comprobaciones ESTACIONAMIENTO (tras Desembarque)");
-                //Thread.sleep((int) (Math.random() * 4000) + 1001); 
+                Thread.sleep((int) (Math.random() * 4000) + 1001); 
             }
 
         } catch (InterruptedException ex) {

@@ -65,7 +65,7 @@ public class Hangar {
             aviones.add(avion);
             control.release();
             System.out.println(avion.getIdentificador()+ " reposando HANGAR");
-            //Thread.sleep((int) (Math.random() * 15000) + 15001);
+            Thread.sleep((int) (Math.random() * 15000) + 15001);
         } catch (InterruptedException ex) {
             Logger.getLogger(Hangar.class.getName()).log(Level.SEVERE, null, ex);
         }

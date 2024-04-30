@@ -104,7 +104,7 @@ public class PuertaEmbarque {
 
             if (pasajeros > 0) {
                 System.out.println(avion.getIdentificador() + " EMBARCANDO " + pasajeros + " pasajeros");
-                //Thread.sleep((int) (Math.random() * 2000) + 1001);
+                Thread.sleep((int) (Math.random() * 2000) + 1001);
             }
 
             while (intentos < 2 && avion.getPasajerosActual() < max) {
@@ -116,7 +116,7 @@ public class PuertaEmbarque {
 
                 if (pasajeros > 0) {
                     System.out.println(avion.getIdentificador() + " EMBARCANDO " + pasajeros + " pasajeros ");
-                    //Thread.sleep((int) (Math.random() * 2000) + 1001);
+                    Thread.sleep((int) (Math.random() * 2000) + 1001);
                 }
 
                 intentos++;
