@@ -5,6 +5,7 @@
 package Parte1;
 // Esto es un cambio
 
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -12,53 +13,106 @@ import java.util.logging.Logger;
  *
  * @author ediso
  */
-public class Avion extends Thread{
-    
+public class Avion extends Thread {
+
     private Ciudad origen;
     private Ciudad destino;
-    
+    private Ciudad aux;
+
     private String identificador;
     private int numero;
-    
+    Random random = new Random();
+
     private int pasajerosActual;
     private final int pasajerosMax;
     private boolean embarque;
-    
+    private int vuelos = 0;
+
     //Constructor NO definitivo!!
     public Avion(String identificador, int numero, Ciudad origen, Ciudad destino) {
-        this.identificador = identificador +"-"+ String.format("%04d", numero);
+        this.identificador = identificador + "-" + String.format("%04d", numero);
         this.numero = numero;
-        this.pasajerosMax = (int) (Math.random()*201) +100;
+        this.pasajerosMax = (int) (Math.random() * 201) + 100;
         this.origen = origen;
         this.destino = destino;
     }
-    
-    public void run(){
-        
+
+    public void run() {
+
         try {
-            embarque = true;
+            
+            System.out.println("Avion " + this.getIdentificador() + " creado");
+            
             origen.aeropuerto.hangar.entrarHangar(this);
-            Thread.sleep(0);
-            origen.aeropuerto.areaEstacionamiento.entrarArea(this);
-            origen.aeropuerto.puertaEmbarque.entrarPuerta(this);
-            //entra en area de rodaje desde puerta de embarque por si solo
-            origen.aeropuerto.pista.pedirPista(this);
-            origen.aeropuerto.aerovia.entrarAerovia(this);
-            embarque = false;
-            origen.aeropuerto.aerovia.abandonarAerovia(this);
-            destino.aeropuerto.pista.pedirPista(this);
-            destino.aeropuerto.areaRodaje.entrarAreaRodaje(this);
-            destino.aeropuerto.puertaEmbarque.entrarPuerta(this);
-            //entra solo al area de estacionmiento por si mismo
-            System.out.println("FIN");
+            origen.aeropuerto.hangar.salirHangar(this);
+                
+            while (true) {
+                
+                embarque = true; //indica que va a embarcar
+
+                
+
+                Thread.sleep(0);
+
+                origen.aeropuerto.areaEstacionamiento.entrarArea(this);
+                origen.aeropuerto.areaEstacionamiento.salirArea(this);
+
+                origen.aeropuerto.puertaEmbarque.entrarPuerta(this);
+                //sale solo de la puerta de embarque
+
+                origen.aeropuerto.areaRodaje.entrarAreaRodaje(this);
+                origen.aeropuerto.areaRodaje.salirAreaRodaje(this);
+
+                origen.aeropuerto.pista.pedirPista(this);
+                //sale solo de la pista
+
+                origen.aeropuerto.aerovia.entrarAerovia(this);
+                origen.aeropuerto.aerovia.abandonarAerovia(this);
+
+                vuelos++;
+
+                embarque = false; //indica que va a desembarcar
+
+                destino.aeropuerto.pista.pedirPista(this);
+                //sale solo de la pista
+
+                destino.aeropuerto.areaRodaje.entrarAreaRodaje(this);
+                //sale por si solo del area cuando tiene puerta para desembarcar
+
+                destino.aeropuerto.puertaEmbarque.entrarPuerta(this);
+                //sale solo de la puerta
+
+                destino.aeropuerto.areaEstacionamiento.entrarArea(this);
+                destino.aeropuerto.areaEstacionamiento.salirArea(this);
+
+                destino.aeropuerto.taller.entrarTaller(this);
+                destino.aeropuerto.taller.salirTaller(this);
+
+                if (random.nextInt(2) == 0) {
+
+                    destino.aeropuerto.hangar.reposar(this);
+                    destino.aeropuerto.hangar.salirHangar(this);
+
+                }
+
+                aux = origen;
+                origen = destino;
+                destino = aux;
+            }
+
+
         } catch (InterruptedException ex) {
             Logger.getLogger(Avion.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
 
     public String getIdentificador() {
         return identificador;
+    }
+
+    public int getNumero() {
+        return numero;
     }
 
     public int getPasajerosMax() {
@@ -84,6 +138,16 @@ public class Avion extends Thread{
     public Ciudad getDestino() {
         return destino;
     }
+
+    public int getVuelos() {
+        return vuelos;
+    }
+    
+    
+
+    
+    
+    
     
     
     

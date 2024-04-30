@@ -89,27 +89,24 @@ public class Aeropuerto extends Thread {
     public int recogerPasajerosAvion(int pasajeros){
         
         int pasajerosCogidos = 0;
-
+        
         try {
             control.acquire();
             if (personasDentro >= pasajeros) {
-                System.out.println("PERSONAS DENTRO: " + personasDentro);
+                //System.out.println("Personas en el aeropuerto: " + personasDentro);
                 personasDentro -= pasajeros;
-                System.out.println("PERSONAS DENTRO 2: " + personasDentro);
+                //System.out.println("Personas en el aeropuerto tras EMBARQUE: " + personasDentro);
                 pasajerosCogidos = pasajeros;
-                System.out.println("Cogiendo " + pasajerosCogidos);
+                //System.out.println("Cogiendo " + pasajerosCogidos);
             } else {
                 
                 pasajerosCogidos = personasDentro;
-                System.out.println("Cogiendo menos del maximo: " + pasajerosCogidos);
+                //System.out.println("Cogiendo menos del maximo: " + pasajerosCogidos);
                 personasDentro = 0;     
             }
             control.release();
             
-            if (pasajerosCogidos > 0){
-                System.out.println("Esperando a que se suban los mamertos");
-                Thread.sleep((int) (Math.random() * 2000) + 1001);
-            }
+            
             
         } catch (InterruptedException ex) {
             Logger.getLogger(Aeropuerto.class.getName()).log(Level.SEVERE, null, ex);
@@ -121,11 +118,11 @@ public class Aeropuerto extends Thread {
     public void bajarPasajerosAvion(int pasajeros){
         try {
             control.acquire();
+            //System.out.println("DENTRO: " + personasDentro);
             personasDentro += pasajeros;
+            //System.out.println("DENTRO 2: " + personasDentro);
             control.release();
-            if (pasajeros > 0){
-                Thread.sleep((int) (Math.random() * 4000) + 1001);
-            }
+            
             
         } catch (InterruptedException ex) {
             Logger.getLogger(Aeropuerto.class.getName()).log(Level.SEVERE, null, ex);

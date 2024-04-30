@@ -29,15 +29,17 @@ public class AreaRodaje {
 
         try {
             control.acquire();
-            if(!avion.isEmbarque()){
-                aeropuerto.pista.salirPista(avion);
-            }
-            
             aviones.add(avion);
             control.release();
-            System.out.println(avion.getIdentificador() + " ha entrado al area de rodaje del aeropuerto de " + aeropuerto.ciudad.getNombre());
-            Thread.sleep((int) (Math.random() * 4000) + 1001);
-            System.out.println(avion.getIdentificador() + " haciendo comprobaciones en el Area de Rodaje de " + aeropuerto.ciudad.getNombre());
+            System.out.println(avion.getIdentificador() + " entrando RODAJE");
+            if (avion.isEmbarque()){
+                Thread.sleep((int) (Math.random() * 4000) + 1001);
+                System.out.println(avion.getIdentificador() + " haciendo comprobaciones RODAJE");
+            }
+            else{
+                
+            }
+            
         } catch (InterruptedException ex) {
             Logger.getLogger(AreaRodaje.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -49,7 +51,7 @@ public class AreaRodaje {
             control.acquire();
             aviones.remove(avion);
             control.release();
-            System.out.println(avion.getIdentificador() + " ha salido del area de rodaje del aeropuerto de " + aeropuerto.ciudad.getNombre());
+            System.out.println(avion.getIdentificador() + " saliendo RODAJE");
         } catch (InterruptedException ex) {
             Logger.getLogger(AreaRodaje.class.getName()).log(Level.SEVERE, null, ex);
         }
