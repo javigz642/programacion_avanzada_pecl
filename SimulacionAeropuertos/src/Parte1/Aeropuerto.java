@@ -28,7 +28,10 @@ public class Aeropuerto extends Thread {
     protected Pista pista = new Pista(this);
     protected Aerovia aerovia = new Aerovia(this);
 
-    private int personasDentro = 300;
+    private int personasDentro = 3000;
+    
+
+    
 
     private Semaphore control = new Semaphore(1, true);
 
@@ -95,11 +98,11 @@ public class Aeropuerto extends Thread {
 
                 pasajerosCogidos = personasDentro;
                 System.out.println("Cogiendo menos del maximo: " + pasajerosCogidos);
-                personasDentro = 0;
-                control.release();
+                personasDentro = 0;     
             }
-
-            if (pasajerosCogidos > 0) {
+            control.release();
+            
+            if (pasajerosCogidos > 0){
                 System.out.println("Esperando a que se suban los mamertos");
                 Thread.sleep((int) (Math.random() * 2000) + 1001);
             }
@@ -115,11 +118,15 @@ public class Aeropuerto extends Thread {
         try {
             control.acquire();
             personasDentro += pasajeros;
-
+            control.release();
+            if (pasajeros > 0){
+                Thread.sleep((int) (Math.random() * 4000) + 1001);
+            }
+            
         } catch (InterruptedException ex) {
             Logger.getLogger(Aeropuerto.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            control.release();
+        } finally{
+            
         }
     }
 

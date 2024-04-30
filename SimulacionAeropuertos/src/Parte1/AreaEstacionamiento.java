@@ -33,7 +33,9 @@ public class AreaEstacionamiento {
 
         try {
             control.acquire();
-            aeropuerto.hangar.salirHangar(avion);
+            if(avion.isEmbarque()){
+                aeropuerto.hangar.salirHangar(avion);
+            }
             aviones.add(avion);
             System.out.println(avion.getIdentificador() + " ha entrado al area de estacionamiento del aeropuerto de " + aeropuerto.ciudad.getNombre());
 

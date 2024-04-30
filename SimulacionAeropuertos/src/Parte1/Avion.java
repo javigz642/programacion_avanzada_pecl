@@ -36,16 +36,21 @@ public class Avion extends Thread{
     public void run(){
         
         try {
+            embarque = true;
             origen.aeropuerto.hangar.entrarHangar(this);
             Thread.sleep(0);
             origen.aeropuerto.areaEstacionamiento.entrarArea(this);
-            embarque = true;
             origen.aeropuerto.puertaEmbarque.entrarPuerta(this);
-            origen.aeropuerto.areaRodaje.entrarAreaRodaje(this);
-            origen.aeropuerto.pista.accederPista(this);
-            origen.aeropuerto.aerovia.volar(this);
+            //entra en area de rodaje desde puerta de embarque por si solo
+            origen.aeropuerto.pista.pedirPista(this);
+            origen.aeropuerto.aerovia.entrarAerovia(this);
             embarque = false;
-            
+            origen.aeropuerto.aerovia.abandonarAerovia(this);
+            destino.aeropuerto.pista.pedirPista(this);
+            destino.aeropuerto.areaRodaje.entrarAreaRodaje(this);
+            destino.aeropuerto.puertaEmbarque.entrarPuerta(this);
+            //entra solo al area de estacionmiento por si mismo
+            System.out.println("FIN");
         } catch (InterruptedException ex) {
             Logger.getLogger(Avion.class.getName()).log(Level.SEVERE, null, ex);
         }
