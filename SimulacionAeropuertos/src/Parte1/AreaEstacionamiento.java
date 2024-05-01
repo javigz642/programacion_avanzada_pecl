@@ -17,8 +17,6 @@ import javax.swing.JTextField;
  * @author Miguel
  */
 public class AreaEstacionamiento {
-
-
     
     private ArrayList<Avion> aviones = new ArrayList<>();
     

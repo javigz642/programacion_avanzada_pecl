@@ -19,12 +19,12 @@ import javax.swing.JTextField;
  */
 public class Aeropuerto extends Thread {
 
-    private int personasDentro = 3000;
+    private int personasDentro = 300;
 
     protected Hangar hangar;
     protected AreaEstacionamiento areaEstacionamiento;
     protected Taller taller;
-    protected PuertaEmbarque puertaEmbarque = new PuertaEmbarque(this);
+    protected PuertaEmbarque puertaEmbarque;
     protected AreaRodaje areaRodaje;
     protected Pista pista;
     protected Aerovia aerovia;
@@ -43,7 +43,7 @@ public class Aeropuerto extends Thread {
 
     private Semaphore control = new Semaphore(1, true);
 
-    public Aeropuerto(Hangar hangar, AreaEstacionamiento areaEstacionamiento, Taller taller,
+    public Aeropuerto(Hangar hangar, AreaEstacionamiento areaEstacionamiento, PuertaEmbarque puertaEmbarque, Taller taller,
             AreaRodaje areaRodaje, Pista pista, Aerovia aerovia,
             JTextField jTextFieldGate1Aeropuerto, JTextField jTextFieldGate2Aeropuerto, 
             JTextField jTextFieldGate3Aeropuerto, JTextField jTextFieldGate4Aeropuerto, 
@@ -52,6 +52,7 @@ public class Aeropuerto extends Thread {
     ) {
         this.hangar = hangar;
         this.areaEstacionamiento = areaEstacionamiento;
+        this.puertaEmbarque = puertaEmbarque;
         this.taller = taller;
         this.areaRodaje = areaRodaje;
         this.pista = pista;
@@ -76,30 +77,33 @@ public class Aeropuerto extends Thread {
         } while (pasajerosParada > personasDentro);
 
         try {
-            System.out.println("Hay " + personasDentro + " dentro");
+            System.out.println("Hay " + personasDentro + " personas dentro");
             Thread.sleep((int) (Math.random() * 3000) + 2001);
             if (personasDentro > 0) {
                 control.acquire();
                 personasDentro -= pasajerosParada;
                 imprimirPasajerosEnAeropuerto(jTextFieldNumeroPasajerosAeropuerto, personasDentro);
-                System.out.println("El autobus " + a.getIdentificador() + " va a recoger a " + pasajerosParada + " personas.");
-                System.out.println("En el aeropuerto hay " + personasDentro + " personas.");
+                System.out.println("El autobus " + a.getIdentificador() + " va a recoger a " + pasajerosParada + " personas");
+                System.out.println("En el aeropuerto hay " + personasDentro + " personas");
                 control.release();
             }
 
-        } catch (Exception e) {
-
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Aeropuerto.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     public void irCiudadAutobus(Autobus a) {
 
+        
         try {
             System.out.println("El autobus " + a.getIdentificador() + " va hacia la ciudad de " + a.getCiudad().getNombre());
             Thread.sleep((int) (Math.random() * 5000) + 5001);
             System.out.println("El autobus " + a.getIdentificador() + " ha llegado a la ciudad");
-        } catch (Exception e) {
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Aeropuerto.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }
 
     public void bajarPasajerosAutobus(Autobus a) {
@@ -107,11 +111,12 @@ public class Aeropuerto extends Thread {
         try {
             control.acquire();
             personasDentro += a.getPasajeros();
+            System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA "+ a.getPasajeros());
             imprimirPasajerosEnAeropuerto(jTextFieldNumeroPasajerosAeropuerto, personasDentro);
-        } catch (Exception e) {
-        } finally {
             control.release();
-        }
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Aeropuerto.class.getName()).log(Level.SEVERE, null, ex);
+        } 
     }
 
     //ha ocurrido en el programa en un instante un valor de personas dentro = -2 puede ser en esta parte
@@ -122,24 +127,17 @@ public class Aeropuerto extends Thread {
         try {
             control.acquire();
             if (personasDentro > pasajeros) {
-                //System.out.println("Personas en el aeropuerto: " + personasDentro);
                 personasDentro -= pasajeros;
                 imprimirPasajerosEnAeropuerto(jTextFieldNumeroPasajerosAeropuerto, personasDentro);
-                //System.out.println("Personas en el aeropuerto tras EMBARQUE: " + personasDentro);
                 pasajerosCogidos = pasajeros;
-                //System.out.println("Cogiendo " + pasajerosCogidos);
             } else {
 
                 pasajerosCogidos = personasDentro;
-                //System.out.println("Cogiendo menos del maximo: " + pasajerosCogidos);
-                personasDentro = 0;
+                personasDentro -= personasDentro;
+                imprimirPasajerosEnAeropuerto(jTextFieldNumeroPasajerosAeropuerto, personasDentro);
             }
             control.release();
 
-            if (pasajerosCogidos > 0) {
-                System.out.println("Esperando a que se suban los mamertos");
-                Thread.sleep((int) (Math.random() * 2000) + 1001);
-            }
 
         } catch (InterruptedException ex) {
             Logger.getLogger(Aeropuerto.class.getName()).log(Level.SEVERE, null, ex);
@@ -151,17 +149,13 @@ public class Aeropuerto extends Thread {
     public void bajarPasajerosAvion(int pasajeros) {
         try {
             control.acquire();
-            //System.out.println("DENTRO: " + personasDentro);
             personasDentro += pasajeros;
             imprimirPasajerosEnAeropuerto(jTextFieldNumeroPasajerosAeropuerto, personasDentro);
-            //System.out.println("DENTRO 2: " + personasDentro);
             control.release();
 
         } catch (InterruptedException ex) {
             Logger.getLogger(Aeropuerto.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-
-        }
+        } 
     }
 
     public void imprimirPasajerosEnAeropuerto(JTextField j, int personas) {

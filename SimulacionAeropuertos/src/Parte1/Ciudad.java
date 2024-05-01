@@ -5,6 +5,7 @@
 package Parte1;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -22,6 +23,9 @@ public class Ciudad {
     private String nombre;
     private ArrayList<Autobus> autobusesHaciaAeropuerto = new ArrayList<>();
     private ArrayList<Autobus> autobusesHaciaCiudad = new ArrayList<>();
+    
+    Random random = new Random();
+    int pasajerosParada;
 
     private Semaphore SemAutobusesHaciaAeropuerto = new Semaphore(1);
     private Semaphore SemAutobusesHaciaCiudad = new Semaphore(1);
@@ -38,7 +42,7 @@ public class Ciudad {
     }
 
     public void recogerPasajerosCiudadAutobus(Autobus a) {
-        int pasajerosParada = (int) (Math.random() * 51);
+        pasajerosParada = random.nextInt(51);
         System.out.println("El autobus " + a.getIdentificador() + " va a recoger a " + pasajerosParada + " personas.");
     }
 

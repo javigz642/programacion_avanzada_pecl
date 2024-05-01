@@ -109,13 +109,15 @@ public class ProgramaPrincipal extends Thread {
 
         Hangar hangarMadrid = new Hangar(jTextFieldHangarAeropuertoMadrid);
         AreaEstacionamiento areaEstacionamientoMadrid = new AreaEstacionamiento(jTextFieldAreaEstacionamientoAeropuertoMadrid);
+        PuertaEmbarque puertaEmbarqueMadrid = new PuertaEmbarque();
         Taller tallerMadrid = new Taller(jTextFieldTallerAeropuertoMadrid);
         AreaRodaje areaRodajeMadrid = new AreaRodaje(jTextFieldAreaRodajeAeropuertoMadrid);
         Pista pistaMadrid = new Pista(jTextFieldPista1AeropuertoMadrid, jTextFieldPista2AeropuertoMadrid, jTextFieldPista3AeropuertoMadrid, jTextFieldPista4AeropuertoMadrid);
         Aerovia aeroviaMadrid = new Aerovia(jTextFieldAeroviaMadrid_Barcelona, jTextFieldAeroviaBarcelona_Madrid);
         
+        
         Aeropuerto aeropuertoMadrid = new Aeropuerto(hangarMadrid,
-                areaEstacionamientoMadrid, tallerMadrid, areaRodajeMadrid,
+                areaEstacionamientoMadrid, puertaEmbarqueMadrid, tallerMadrid, areaRodajeMadrid,
                 pistaMadrid, aeroviaMadrid, jTextFieldGate1AeropuertoMadrid,
                 jTextFieldGate2AeropuertoMadrid, jTextFieldGate3AeropuertoMadrid,
                 jTextFieldGate4AeropuertoMadrid, jTextFieldGate5AeropuertoMadrid,
@@ -123,13 +125,14 @@ public class ProgramaPrincipal extends Thread {
 
         Hangar hangarBarcelona = new Hangar(jTextFieldHangarAeropuertoBarcelona);
         AreaEstacionamiento areaEstacionamientoBarcelona = new AreaEstacionamiento(jTextFieldAreaEstacionamientoAeropuertoBarcelona);
+        PuertaEmbarque puertaEmbarqueBarcelona = new PuertaEmbarque();
         Taller tallerBarcelona = new Taller(jTextFieldTallerAeropuertoBarcelona);
         AreaRodaje areaRodajeBarcelona = new AreaRodaje(jTextFieldAreaRodajeAeropuertoBarcelona);
         Pista pistaBarcelona = new Pista(jTextFieldPista1AeropuertoBarcelona, jTextFieldPista2AeropuertoBarcelona, jTextFieldPista3AeropuertoBarcelona, jTextFieldPista4AeropuertoBarcelona);
         Aerovia aeroviaBarcelona = new Aerovia(jTextFieldAeroviaMadrid_Barcelona, jTextFieldAeroviaBarcelona_Madrid);
         
         Aeropuerto aeropuertoBarcelona = new Aeropuerto(hangarBarcelona,
-                areaEstacionamientoBarcelona, tallerBarcelona, areaRodajeBarcelona,
+                areaEstacionamientoBarcelona, puertaEmbarqueBarcelona, tallerBarcelona, areaRodajeBarcelona,
                 pistaBarcelona, aeroviaBarcelona, jTextFieldGate1AeropuertoBarcelona,
                 jTextFieldGate2AeropuertoBarcelona, jTextFieldGate3AeropuertoBarcelona,
                 jTextFieldGate4AeropuertoBarcelona, jTextFieldGate5AeropuertoBarcelona,
@@ -147,7 +150,7 @@ public class ProgramaPrincipal extends Thread {
 //        
 //        //creacion de los hilos de aviones
 //
-        for (int i = 0; i < 40; i ++) {  //deberian ser 8000
+        for (int i = 0; i < 4; i ++) {  //deberian ser 8000
 
             int r1 = (int) (Math.random() * 26);
             int r2 = (int) (Math.random() * 26);
@@ -165,19 +168,20 @@ public class ProgramaPrincipal extends Thread {
         }
         //El numero de autobuses se cambia luego el 100 es por pruebas
         //creacion de los hilos de autobuses
-        for (int i = 0; i < 4; i++) { //deberian ser 4000
-
-            String identificador = "B";
-
-            if (i % 2 == 0) {
-                Autobus autobusMadrid = new Autobus(identificador, i, 0, madrid);
-                autobusMadrid.start();
-            } 
-            else {
-                Autobus autobusBarcelona = new Autobus(identificador, i, 0, barcelona);
-                autobusBarcelona.start();
-            }
-
-        }
-    }
+//        for (int i = 0; i < 4; i++) { //deberian ser 4000
+//
+//            String identificador = "B";
+//
+//            if (i % 2 == 0) {
+//                Autobus autobusMadrid = new Autobus(identificador, i, 0, madrid);
+//                autobusMadrid.start();
+//            } 
+//            else {
+//                Autobus autobusBarcelona = new Autobus(identificador, i, 0, barcelona);
+//                autobusBarcelona.start();
+//            }
+//
+//        }
+//    }
+}
 }
