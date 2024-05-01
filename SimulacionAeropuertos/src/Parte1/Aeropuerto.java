@@ -64,6 +64,8 @@ public class Aeropuerto extends Thread {
         this.jTextFieldGate6Aeropuerto = jTextFieldGate6Aeropuerto;
 
         this.jTextFieldNumeroPasajerosAeropuerto = jTextFieldNumeroPasajerosAeropuerto;
+        
+        imprimirPasajerosEnAeropuerto(jTextFieldNumeroPasajerosAeropuerto, personasDentro);
 
     }
 
@@ -112,15 +114,17 @@ public class Aeropuerto extends Thread {
         }
     }
 
+    //ha ocurrido en el programa en un instante un valor de personas dentro = -2 puede ser en esta parte
     public int recogerPasajerosAvion(int pasajeros) {
 
         int pasajerosCogidos = 0;
 
         try {
             control.acquire();
-            if (personasDentro >= pasajeros) {
+            if (personasDentro > pasajeros) {
                 //System.out.println("Personas en el aeropuerto: " + personasDentro);
                 personasDentro -= pasajeros;
+                imprimirPasajerosEnAeropuerto(jTextFieldNumeroPasajerosAeropuerto, personasDentro);
                 //System.out.println("Personas en el aeropuerto tras EMBARQUE: " + personasDentro);
                 pasajerosCogidos = pasajeros;
                 //System.out.println("Cogiendo " + pasajerosCogidos);
@@ -149,6 +153,7 @@ public class Aeropuerto extends Thread {
             control.acquire();
             //System.out.println("DENTRO: " + personasDentro);
             personasDentro += pasajeros;
+            imprimirPasajerosEnAeropuerto(jTextFieldNumeroPasajerosAeropuerto, personasDentro);
             //System.out.println("DENTRO 2: " + personasDentro);
             control.release();
 
