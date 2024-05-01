@@ -28,7 +28,6 @@ public class Avion extends Thread {
     private boolean embarque;
     private int vuelos = 0;
 
-    //Constructor NO definitivo!!
     public Avion(String identificador, int numero, Ciudad origen, Ciudad destino) {
         this.identificador = identificador + "-" + String.format("%04d", numero);
         this.numero = numero;
