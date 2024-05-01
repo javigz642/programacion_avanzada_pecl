@@ -130,7 +130,6 @@ public class PuertaEmbarque {
     }
 
     private void puertaDesembarque(Avion avion) {
-
         try {
             
             if (avion.getPasajerosActual() > 0) {

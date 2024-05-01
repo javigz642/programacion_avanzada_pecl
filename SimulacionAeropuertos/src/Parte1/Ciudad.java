@@ -17,7 +17,7 @@ import javax.swing.JTextField;
  */
 public class Ciudad {
 
-    protected Aeropuerto aeropuerto = new Aeropuerto(this);
+    protected Aeropuerto aeropuerto;
 
     private String nombre;
     private ArrayList<Autobus> autobusesHaciaAeropuerto = new ArrayList<>();
@@ -30,8 +30,9 @@ public class Ciudad {
     JTextField jTextFieldTransferAeropuertoAutobus;
     JTextField jTextFieldTransferCiudadAutobus;
 
-    public Ciudad(String nombre, JTextField jTextFieldTransferAeropuertoAutobus, JTextField jTextFieldTransferCiudadAutobus) {
+    public Ciudad(String nombre,Aeropuerto aeropuerto, JTextField jTextFieldTransferAeropuertoAutobus, JTextField jTextFieldTransferCiudadAutobus) {
         this.nombre = nombre;
+        this.aeropuerto = aeropuerto;
         this.jTextFieldTransferAeropuertoAutobus = jTextFieldTransferAeropuertoAutobus;
         this.jTextFieldTransferCiudadAutobus = jTextFieldTransferCiudadAutobus;
     }

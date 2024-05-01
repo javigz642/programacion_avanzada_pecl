@@ -85,7 +85,7 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="jLabel11" min="-2" pref="41" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField1Gate3AeropuertoMadrid" min="-2" pref="108" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldGate3AeropuertoMadrid" min="-2" pref="108" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                                   <Component id="jLabel12" min="-2" pref="41" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -177,7 +177,7 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="jLabel21" min="-2" pref="41" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField1Gate3AeropuertoBarcelona" min="-2" pref="108" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldGate3AeropuertoBarcelona" min="-2" pref="108" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                                   <Component id="jLabel22" min="-2" pref="41" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -217,7 +217,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextFieldTransferCiudadBarcelona" min="-2" pref="140" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldTransferCiudadAutobusBarcelona" min="-2" pref="140" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -282,7 +282,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField1Gate3AeropuertoMadrid" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldGate3AeropuertoMadrid" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jTextFieldGate6AeropuertoMadrid" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -313,7 +313,7 @@
                           <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jTextFieldTransferAeropuertoAutobusBarcelona" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextFieldTransferCiudadBarcelona" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldTransferCiudadAutobusBarcelona" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -352,7 +352,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField1Gate3AeropuertoBarcelona" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldGate3AeropuertoBarcelona" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jTextFieldGate6AeropuertoBarcelona" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -510,7 +510,7 @@
         <Property name="text" type="java.lang.String" value="Gate 3:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1Gate3AeropuertoMadrid">
+    <Component class="javax.swing.JTextField" name="jTextFieldGate3AeropuertoMadrid">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
       </Properties>
@@ -614,7 +614,7 @@
         <Property name="text" type="java.lang.String" value="Gate 3:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1Gate3AeropuertoBarcelona">
+    <Component class="javax.swing.JTextField" name="jTextFieldGate3AeropuertoBarcelona">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
       </Properties>
@@ -759,7 +759,7 @@
         <Property name="text" type="java.lang.String" value="Hacia Ciudad:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldTransferCiudadBarcelona">
+    <Component class="javax.swing.JTextField" name="jTextFieldTransferCiudadAutobusBarcelona">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
       </Properties>

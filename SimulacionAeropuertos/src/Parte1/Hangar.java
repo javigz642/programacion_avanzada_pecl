@@ -12,6 +12,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JTextField;
 
 /**
  *
@@ -25,10 +26,11 @@ public class Hangar {
     
     private Semaphore control = new Semaphore(1);
     
-        
-    public Hangar(Aeropuerto aeropuerto){
+    private JTextField jTextFieldHangarAeropuerto;     
+    public Hangar(Aeropuerto aeropuerto,JTextField jTextFieldHangarAeropuerto){
         
         this.aeropuerto = aeropuerto;
+        this.jTextFieldHangarAeropuerto = jTextFieldHangarAeropuerto;
     }
     
     
@@ -38,6 +40,7 @@ public class Hangar {
         try {
             control.acquire();
             aviones.add(avion);
+            imprimirArrayAviones(jTextFieldHangarAeropuerto, aviones);
             control.release();
             System.out.println(avion.getIdentificador()+ " entrando HANGAR");
 
@@ -51,6 +54,7 @@ public class Hangar {
         try {
             control.acquire();
             aviones.remove(avion);
+            imprimirArrayAviones(jTextFieldHangarAeropuerto, aviones);
             control.release();
             System.out.println(avion.getIdentificador()+ " saliendo HANGAR");
         } catch (InterruptedException ex) {
@@ -70,6 +74,14 @@ public class Hangar {
             Logger.getLogger(Hangar.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+    }
+    public void imprimirArrayAviones(JTextField jTextFieldDestino,ArrayList<Avion> arrayAviones) {
+        String stringAux = "";
+        for (int i = 0; i < arrayAviones.size(); i++) {
+            stringAux += arrayAviones.get(i).getIdentificador() + " / ";
+        }
+        jTextFieldDestino.setText(stringAux);
+        System.out.println(stringAux);
     }
     
 }

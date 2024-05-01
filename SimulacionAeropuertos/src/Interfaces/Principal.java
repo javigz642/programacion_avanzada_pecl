@@ -15,8 +15,27 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
-        ProgramaPrincipal principal = new ProgramaPrincipal(jTextFieldTransferAeropuertoAutobusMadrid,jTextFieldTransferCiudadAutobusMadrid);
+        ProgramaPrincipal principal = new ProgramaPrincipal(jTextFieldGate3AeropuertoBarcelona, 
+                jTextFieldGate3AeropuertoMadrid, jTextFieldAeroviaBarcelona_Madrid, 
+                jTextFieldAeroviaMadrid_Barcelona, jTextFieldAreaEstacionamientoAeropuertoBarcelona, 
+                jTextFieldAreaEstacionamientoAeropuertoMadrid, jTextFieldAreaRodajeAeropuertoBarcelona, 
+                jTextFieldAreaRodajeAeropuertoMadrid, jTextFieldGate1AeropuertoBarcelona, 
+                jTextFieldGate1AeropuertoMadrid, jTextFieldGate2AeropuertoBarcelona, 
+                jTextFieldGate2AeropuertoMadrid, jTextFieldGate4AeropuertoBarcelona, 
+                jTextFieldGate4AeropuertoMadrid, jTextFieldGate5AeropuertoBarcelona, 
+                jTextFieldGate5AeropuertoMadrid, jTextFieldGate6AeropuertoBarcelona, 
+                jTextFieldGate6AeropuertoMadrid, jTextFieldHangarAeropuertoBarcelona, 
+                jTextFieldHangarAeropuertoMadrid, jTextFieldNumeroPasajerosAeropuertoBarcelona, 
+                jTextFieldNumeroPasajerosAeropuertoMadrid, jTextFieldPista1AeropuertoBarcelona, 
+                jTextFieldPista1AeropuertoMadrid, jTextFieldPista2AeropuertoBarcelona, 
+                jTextFieldPista2AeropuertoMadrid, jTextFieldPista3AeropuertoBarcelona, 
+                jTextFieldPista3AeropuertoMadrid, jTextFieldPista4AeropuertoBarcelona, 
+                jTextFieldPista4AeropuertoMadrid, jTextFieldTallerAeropuertoBarcelona, 
+                jTextFieldTallerAeropuertoMadrid, jTextFieldTransferAeropuertoAutobusBarcelona, 
+                jTextFieldTransferAeropuertoAutobusMadrid, jTextFieldTransferCiudadAutobusMadrid, 
+                jTextFieldTransferCiudadAutobusBarcelona);
         principal.run();
+        
     }
 
     /**
@@ -49,7 +68,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jTextFieldGate5AeropuertoMadrid = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jTextField1Gate3AeropuertoMadrid = new javax.swing.JTextField();
+        jTextFieldGate3AeropuertoMadrid = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jTextFieldGate6AeropuertoMadrid = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
@@ -68,7 +87,7 @@ public class Principal extends javax.swing.JFrame {
         jTextFieldAeroviaBarcelona_Madrid = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        jTextField1Gate3AeropuertoBarcelona = new javax.swing.JTextField();
+        jTextFieldGate3AeropuertoBarcelona = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         jTextFieldGate6AeropuertoBarcelona = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
@@ -94,7 +113,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel33 = new javax.swing.JLabel();
         jTextFieldTransferAeropuertoAutobusBarcelona = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
-        jTextFieldTransferCiudadBarcelona = new javax.swing.JTextField();
+        jTextFieldTransferCiudadAutobusBarcelona = new javax.swing.JTextField();
         jLabel35 = new javax.swing.JLabel();
         jTextFieldNumeroPasajerosAeropuertoBarcelona = new javax.swing.JTextField();
         jLabel36 = new javax.swing.JLabel();
@@ -167,7 +186,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel11.setText("Gate 3:");
 
-        jTextField1Gate3AeropuertoMadrid.setEditable(false);
+        jTextFieldGate3AeropuertoMadrid.setEditable(false);
 
         jLabel12.setText("Gate 6:");
 
@@ -220,7 +239,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel21.setText("Gate 3:");
 
-        jTextField1Gate3AeropuertoBarcelona.setEditable(false);
+        jTextFieldGate3AeropuertoBarcelona.setEditable(false);
 
         jLabel22.setText("Gate 6:");
 
@@ -297,7 +316,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel34.setText("Hacia Ciudad:");
 
-        jTextFieldTransferCiudadBarcelona.setEditable(false);
+        jTextFieldTransferCiudadAutobusBarcelona.setEditable(false);
 
         jLabel35.setText("Nº de Pasajeros en Aeropuerto");
 
@@ -380,7 +399,7 @@ public class Principal extends javax.swing.JFrame {
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextField1Gate3AeropuertoMadrid, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldGate3AeropuertoMadrid, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(73, 73, 73)
                                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -456,7 +475,7 @@ public class Principal extends javax.swing.JFrame {
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextField1Gate3AeropuertoBarcelona, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldGate3AeropuertoBarcelona, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(73, 73, 73)
                                     .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -489,7 +508,7 @@ public class Principal extends javax.swing.JFrame {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jLabel34)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextFieldTransferCiudadBarcelona, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jTextFieldTransferCiudadAutobusBarcelona, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(150, 150, 150)
                                 .addComponent(jLabel37)))))
@@ -539,7 +558,7 @@ public class Principal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
-                            .addComponent(jTextField1Gate3AeropuertoMadrid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldGate3AeropuertoMadrid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel12)
                             .addComponent(jTextFieldGate6AeropuertoMadrid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -565,7 +584,7 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(jLabel33)
                             .addComponent(jTextFieldTransferAeropuertoAutobusBarcelona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel34)
-                            .addComponent(jTextFieldTransferCiudadBarcelona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextFieldTransferCiudadAutobusBarcelona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel35)
@@ -597,7 +616,7 @@ public class Principal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel21)
-                            .addComponent(jTextField1Gate3AeropuertoBarcelona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldGate3AeropuertoBarcelona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel22)
                             .addComponent(jTextFieldGate6AeropuertoBarcelona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -760,8 +779,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1Gate3AeropuertoBarcelona;
-    private javax.swing.JTextField jTextField1Gate3AeropuertoMadrid;
     private javax.swing.JTextField jTextFieldAeroviaBarcelona_Madrid;
     private javax.swing.JTextField jTextFieldAeroviaMadrid_Barcelona;
     private javax.swing.JTextField jTextFieldAreaEstacionamientoAeropuertoBarcelona;
@@ -772,6 +789,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldGate1AeropuertoMadrid;
     private javax.swing.JTextField jTextFieldGate2AeropuertoBarcelona;
     private javax.swing.JTextField jTextFieldGate2AeropuertoMadrid;
+    private javax.swing.JTextField jTextFieldGate3AeropuertoBarcelona;
+    private javax.swing.JTextField jTextFieldGate3AeropuertoMadrid;
     private javax.swing.JTextField jTextFieldGate4AeropuertoBarcelona;
     private javax.swing.JTextField jTextFieldGate4AeropuertoMadrid;
     private javax.swing.JTextField jTextFieldGate5AeropuertoBarcelona;
@@ -794,7 +813,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldTallerAeropuertoMadrid;
     private javax.swing.JTextField jTextFieldTransferAeropuertoAutobusBarcelona;
     private javax.swing.JTextField jTextFieldTransferAeropuertoAutobusMadrid;
+    private javax.swing.JTextField jTextFieldTransferCiudadAutobusBarcelona;
     private javax.swing.JTextField jTextFieldTransferCiudadAutobusMadrid;
-    private javax.swing.JTextField jTextFieldTransferCiudadBarcelona;
     // End of variables declaration//GEN-END:variables
 }

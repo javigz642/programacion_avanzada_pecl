@@ -48,4 +48,9 @@ public class Autobus extends Thread {
     public String getIdentificador() {
         return identificador;
     }
+
+    public Ciudad getCiudad() {
+        return ciudad;
+    }
+    
 }
