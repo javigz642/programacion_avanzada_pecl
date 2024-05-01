@@ -15,26 +15,27 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
-        ProgramaPrincipal principal = new ProgramaPrincipal(jTextFieldGate3AeropuertoBarcelona, 
-                jTextFieldGate3AeropuertoMadrid, jTextFieldAeroviaBarcelona_Madrid, 
+        ProgramaPrincipal principal = new ProgramaPrincipal(jTextFieldAeroviaBarcelona_Madrid, 
                 jTextFieldAeroviaMadrid_Barcelona, jTextFieldAreaEstacionamientoAeropuertoBarcelona, 
                 jTextFieldAreaEstacionamientoAeropuertoMadrid, jTextFieldAreaRodajeAeropuertoBarcelona, 
                 jTextFieldAreaRodajeAeropuertoMadrid, jTextFieldGate1AeropuertoBarcelona, 
                 jTextFieldGate1AeropuertoMadrid, jTextFieldGate2AeropuertoBarcelona, 
-                jTextFieldGate2AeropuertoMadrid, jTextFieldGate4AeropuertoBarcelona, 
+                jTextFieldGate2AeropuertoMadrid, jTextFieldGate3AeropuertoBarcelona, 
+                jTextFieldGate3AeropuertoMadrid, jTextFieldGate4AeropuertoBarcelona, 
                 jTextFieldGate4AeropuertoMadrid, jTextFieldGate5AeropuertoBarcelona, 
                 jTextFieldGate5AeropuertoMadrid, jTextFieldGate6AeropuertoBarcelona, 
-                jTextFieldGate6AeropuertoMadrid, jTextFieldHangarAeropuertoBarcelona, 
+                jTextFieldGate6AeropuertoMadrid, jTextFieldHangarAeropuertoBarcelona,
                 jTextFieldHangarAeropuertoMadrid, jTextFieldNumeroPasajerosAeropuertoBarcelona, 
-                jTextFieldNumeroPasajerosAeropuertoMadrid, jTextFieldPista1AeropuertoBarcelona, 
+                jTextFieldNumeroPasajerosAeropuertoMadrid, jTextFieldPista1AeropuertoBarcelona,
                 jTextFieldPista1AeropuertoMadrid, jTextFieldPista2AeropuertoBarcelona, 
                 jTextFieldPista2AeropuertoMadrid, jTextFieldPista3AeropuertoBarcelona, 
-                jTextFieldPista3AeropuertoMadrid, jTextFieldPista4AeropuertoBarcelona, 
-                jTextFieldPista4AeropuertoMadrid, jTextFieldTallerAeropuertoBarcelona, 
-                jTextFieldTallerAeropuertoMadrid, jTextFieldTransferAeropuertoAutobusBarcelona, 
-                jTextFieldTransferAeropuertoAutobusMadrid, jTextFieldTransferCiudadAutobusMadrid, 
+                jTextFieldPista3AeropuertoMadrid, jTextFieldPista4AeropuertoBarcelona,
+                jTextFieldPista4AeropuertoMadrid, jTextFieldTallerAeropuertoBarcelona,
+                jTextFieldTallerAeropuertoMadrid, jTextFieldTransferAeropuertoAutobusBarcelona,
+                jTextFieldTransferAeropuertoAutobusMadrid, jTextFieldTransferCiudadAutobusMadrid,
                 jTextFieldTransferCiudadAutobusBarcelona);
         principal.run();
+        
         
     }
 

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JTextField;
 
 /**
  *
@@ -15,21 +16,22 @@ import java.util.logging.Logger;
  */
 public class AreaRodaje {
     
-    private Aeropuerto aeropuerto;
     
     private ArrayList<Avion> aviones = new ArrayList<>();
     
     private Semaphore control = new Semaphore(1);
+    private JTextField jTextFieldAreaRodajeAeropuerto;
 
-    public AreaRodaje(Aeropuerto aeropuerto) {
-        this.aeropuerto = aeropuerto;
+    public AreaRodaje(JTextField jTextFieldAreaRodajeAeropuerto) {
+        this.jTextFieldAreaRodajeAeropuerto = jTextFieldAreaRodajeAeropuerto;
     }
-    
+
     public void entrarAreaRodaje(Avion avion){
 
         try {
             control.acquire();
             aviones.add(avion);
+            imprimirArrayAviones(jTextFieldAreaRodajeAeropuerto, aviones);
             control.release();
             System.out.println(avion.getIdentificador() + " entrando RODAJE");
             if (avion.isEmbarque()){
@@ -50,6 +52,7 @@ public class AreaRodaje {
         try {
             control.acquire();
             aviones.remove(avion);
+            imprimirArrayAviones(jTextFieldAreaRodajeAeropuerto, aviones);
             control.release();
             System.out.println(avion.getIdentificador() + " saliendo RODAJE");
         } catch (InterruptedException ex) {
@@ -57,5 +60,13 @@ public class AreaRodaje {
         }
     }
     
+        public void imprimirArrayAviones(JTextField jTextFieldDestino, ArrayList<Avion> arrayAviones) {
+        String stringAux = "";
+        for (int i = 0; i < arrayAviones.size(); i++) {
+            stringAux += arrayAviones.get(i).getIdentificador() + " / ";
+        }
+        jTextFieldDestino.setText(stringAux);
+        System.out.println(stringAux);
+    }
     
 }

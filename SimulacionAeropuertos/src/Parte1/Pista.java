@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JTextField;
 
 /**
  *
@@ -15,7 +16,7 @@ import java.util.logging.Logger;
  */
 public class Pista {
     
-    private Aeropuerto aeropuerto;
+
     
     private Avion[] aviones = new Avion[4];
     
@@ -25,9 +26,19 @@ public class Pista {
     private Semaphore pista4 = new Semaphore(1, true);
     private Semaphore[] pistas = {pista1, pista2, pista3, pista4};
 
-    public Pista(Aeropuerto aeropuerto) {
-        this.aeropuerto = aeropuerto;
+
+    private JTextField jTextFieldPista1Aeropuerto;
+    private JTextField jTextFieldPista2Aeropuerto;
+    private JTextField jTextFieldPista3Aeropuerto;
+    private JTextField jTextFieldPista4Aeropuerto;
+
+    public Pista(JTextField jTextFieldPista1Aeropuerto, JTextField jTextFieldPista2Aeropuerto, JTextField jTextFieldPista3Aeropuerto, JTextField jTextFieldPista4Aeropuerto) {
+        this.jTextFieldPista1Aeropuerto = jTextFieldPista1Aeropuerto;
+        this.jTextFieldPista2Aeropuerto = jTextFieldPista2Aeropuerto;
+        this.jTextFieldPista3Aeropuerto = jTextFieldPista3Aeropuerto;
+        this.jTextFieldPista4Aeropuerto = jTextFieldPista4Aeropuerto;
     }
+
     
     public void pedirPista(Avion avion) {
         
@@ -84,6 +95,8 @@ public class Pista {
         }
 
     }
+    
+
 
 
 }

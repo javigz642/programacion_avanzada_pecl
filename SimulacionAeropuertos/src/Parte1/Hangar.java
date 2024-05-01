@@ -20,16 +20,15 @@ import javax.swing.JTextField;
  */
 public class Hangar {
     
-    private Aeropuerto aeropuerto;
     
     private ArrayList<Avion> aviones = new ArrayList<>();
     
     private Semaphore control = new Semaphore(1);
     
     private JTextField jTextFieldHangarAeropuerto;     
-    public Hangar(Aeropuerto aeropuerto,JTextField jTextFieldHangarAeropuerto){
+    public Hangar(JTextField jTextFieldHangarAeropuerto){
         
-        this.aeropuerto = aeropuerto;
+
         this.jTextFieldHangarAeropuerto = jTextFieldHangarAeropuerto;
     }
     

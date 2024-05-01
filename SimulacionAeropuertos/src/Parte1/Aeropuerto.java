@@ -19,65 +19,54 @@ import javax.swing.JTextField;
  */
 public class Aeropuerto extends Thread {
 
-
-
     private int personasDentro = 3000;
-    
 
+    protected Hangar hangar;
+    protected AreaEstacionamiento areaEstacionamiento;
+    protected Taller taller;
+    protected PuertaEmbarque puertaEmbarque = new PuertaEmbarque(this);
+    protected AreaRodaje areaRodaje;
+    protected Pista pista;
+    protected Aerovia aerovia;
     //declaracion de los jtextField
 
 
-    private JTextField jTextFieldAerovia;
-    private JTextField jTextFieldAreaEstacionamientoAeropuerto;
-    private JTextField jTextFieldAreaRodajeAeropuerto;
     private JTextField jTextFieldGate1Aeropuerto;
     private JTextField jTextFieldGate2Aeropuerto;
     private JTextField jTextFieldGate3Aeropuerto;
     private JTextField jTextFieldGate4Aeropuerto;
     private JTextField jTextFieldGate5Aeropuerto;
     private JTextField jTextFieldGate6Aeropuerto;
-    private JTextField jTextFieldHangarAeropuerto;
-    private JTextField jTextFieldNumeroPasajerosAeropuerto;
-    private JTextField jTextFieldPista1Aeropuerto;
-    private JTextField jTextFieldPista2Aeropuerto;
-    private JTextField jTextFieldPista3Aeropuerto;
-    private JTextField jTextFieldPista4Aeropuerto;
-    private JTextField jTextFieldTallerAeropuerto;
 
-    protected Hangar hangar = new Hangar(this, jTextFieldHangarAeropuerto);
-    protected AreaEstacionamiento areaEstacionamiento = new AreaEstacionamiento(this);
-    protected Taller taller = new Taller(this);
-    protected PuertaEmbarque puertaEmbarque = new PuertaEmbarque(this);
-    protected AreaRodaje areaRodaje = new AreaRodaje(this);
-    protected Pista pista = new Pista(this);
-    protected Aerovia aerovia = new Aerovia(this);
+    private JTextField jTextFieldNumeroPasajerosAeropuerto;
+
 
     private Semaphore control = new Semaphore(1, true);
 
-    public Aeropuerto(JTextField jTextFieldAerovia, JTextField jTextFieldAreaEstacionamientoAeropuerto, JTextField jTextFieldAreaRodajeAeropuerto, JTextField jTextFieldGate1Aeropuerto, JTextField jTextFieldGate2Aeropuerto, JTextField jTextFieldGate3Aeropuerto, JTextField jTextFieldGate4Aeropuerto, JTextField jTextFieldGate5Aeropuerto, JTextField jTextFieldGate6Aeropuerto, JTextField jTextFieldHangarAeropuerto, JTextField jTextFieldNumeroPasajerosAeropuerto, JTextField jTextFieldPista1Aeropuerto, JTextField jTextFieldPista2Aeropuerto, JTextField jTextFieldPista3Aeropuerto, JTextField jTextFieldPista4Aeropuerto, JTextField jTextFieldTallerAeropuerto) {
-        this.jTextFieldAerovia = jTextFieldAerovia;
-        this.jTextFieldAreaEstacionamientoAeropuerto = jTextFieldAreaEstacionamientoAeropuerto;
-        this.jTextFieldAreaRodajeAeropuerto = jTextFieldAreaRodajeAeropuerto;
+    public Aeropuerto(Hangar hangar, AreaEstacionamiento areaEstacionamiento, Taller taller,
+            AreaRodaje areaRodaje, Pista pista, Aerovia aerovia,
+            JTextField jTextFieldGate1Aeropuerto, JTextField jTextFieldGate2Aeropuerto, 
+            JTextField jTextFieldGate3Aeropuerto, JTextField jTextFieldGate4Aeropuerto, 
+            JTextField jTextFieldGate5Aeropuerto, JTextField jTextFieldGate6Aeropuerto, 
+            JTextField jTextFieldNumeroPasajerosAeropuerto
+    ) {
+        this.hangar = hangar;
+        this.areaEstacionamiento = areaEstacionamiento;
+        this.taller = taller;
+        this.areaRodaje = areaRodaje;
+        this.pista = pista;
+        this.aerovia = aerovia;
         this.jTextFieldGate1Aeropuerto = jTextFieldGate1Aeropuerto;
         this.jTextFieldGate2Aeropuerto = jTextFieldGate2Aeropuerto;
         this.jTextFieldGate3Aeropuerto = jTextFieldGate3Aeropuerto;
         this.jTextFieldGate4Aeropuerto = jTextFieldGate4Aeropuerto;
         this.jTextFieldGate5Aeropuerto = jTextFieldGate5Aeropuerto;
         this.jTextFieldGate6Aeropuerto = jTextFieldGate6Aeropuerto;
-        this.jTextFieldHangarAeropuerto = jTextFieldHangarAeropuerto;
+
         this.jTextFieldNumeroPasajerosAeropuerto = jTextFieldNumeroPasajerosAeropuerto;
-        this.jTextFieldPista1Aeropuerto = jTextFieldPista1Aeropuerto;
-        this.jTextFieldPista2Aeropuerto = jTextFieldPista2Aeropuerto;
-        this.jTextFieldPista3Aeropuerto = jTextFieldPista3Aeropuerto;
-        this.jTextFieldPista4Aeropuerto = jTextFieldPista4Aeropuerto;
-        this.jTextFieldTallerAeropuerto = jTextFieldTallerAeropuerto;
-        
-        imprimirPasajerosEnAeropuerto(jTextFieldNumeroPasajerosAeropuerto, personasDentro);
+
     }
 
-
-
-    
     public void recogerPasajerosAutobus(Autobus a) {
         int pasajerosParada;
         do {
@@ -98,7 +87,7 @@ public class Aeropuerto extends Thread {
 
         } catch (Exception e) {
 
-        } 
+        }
     }
 
     public void irCiudadAutobus(Autobus a) {
@@ -126,7 +115,7 @@ public class Aeropuerto extends Thread {
     public int recogerPasajerosAvion(int pasajeros) {
 
         int pasajerosCogidos = 0;
-        
+
         try {
             control.acquire();
             if (personasDentro >= pasajeros) {
@@ -139,11 +128,11 @@ public class Aeropuerto extends Thread {
 
                 pasajerosCogidos = personasDentro;
                 //System.out.println("Cogiendo menos del maximo: " + pasajerosCogidos);
-                personasDentro = 0;     
+                personasDentro = 0;
             }
             control.release();
-            
-            if (pasajerosCogidos > 0){
+
+            if (pasajerosCogidos > 0) {
                 System.out.println("Esperando a que se suban los mamertos");
                 Thread.sleep((int) (Math.random() * 2000) + 1001);
             }
@@ -162,17 +151,18 @@ public class Aeropuerto extends Thread {
             personasDentro += pasajeros;
             //System.out.println("DENTRO 2: " + personasDentro);
             control.release();
-            
-            
+
         } catch (InterruptedException ex) {
             Logger.getLogger(Aeropuerto.class.getName()).log(Level.SEVERE, null, ex);
-        } finally{
-            
+        } finally {
+
         }
     }
-    public void imprimirPasajerosEnAeropuerto(JTextField j,int personas){
-        j.setText(personas+"");
+
+    public void imprimirPasajerosEnAeropuerto(JTextField j, int personas) {
+        j.setText(personas + "");
     }
+
     public int getPersonasDentro() {
         return personasDentro;
     }

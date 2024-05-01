@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JTextField;
 
 /**
  *
@@ -15,18 +16,20 @@ import java.util.logging.Logger;
  */
 public class Taller {
     
-    protected Aeropuerto aeropuerto;
+
     
     private ArrayList<Avion> aviones = new ArrayList<>();
     
     private Semaphore espaciosTaller = new Semaphore(20, true);
     private Semaphore control = new Semaphore(1, true);
     
-    
-    public Taller(Aeropuerto aeropuerto){
-        
-        this.aeropuerto = aeropuerto;
+        private JTextField jTextFieldTallerAeropuerto;
+
+    public Taller(JTextField jTextFieldTallerAeropuerto) {
+        this.jTextFieldTallerAeropuerto = jTextFieldTallerAeropuerto;
     }
+    
+
     
     public void entrarTaller (Avion avion){
         
@@ -36,6 +39,7 @@ public class Taller {
             System.out.println(avion.getIdentificador() + " entrando TALLER");
             Thread.sleep(1000);
             aviones.add(avion);
+            imprimirArrayAviones(jTextFieldTallerAeropuerto, aviones);
             control.release();
             if (avion.getVuelos()%15 == 0){
                 System.out.println(avion.getIdentificador() + " realizando REVISION PROFUNDA");
@@ -59,6 +63,7 @@ public class Taller {
             System.out.println(avion.getIdentificador() + " saliendo TALLER");
             Thread.sleep(1000);
             aviones.remove(avion);
+            imprimirArrayAviones(jTextFieldTallerAeropuerto, aviones);
             control.release();
             espaciosTaller.release();
             
@@ -66,6 +71,15 @@ public class Taller {
             Logger.getLogger(Taller.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+    }
+    
+        public void imprimirArrayAviones(JTextField jTextFieldDestino, ArrayList<Avion> arrayAviones) {
+        String stringAux = "";
+        for (int i = 0; i < arrayAviones.size(); i++) {
+            stringAux += arrayAviones.get(i).getIdentificador() + " / ";
+        }
+        jTextFieldDestino.setText(stringAux);
+        System.out.println(stringAux);
     }
     
 }
