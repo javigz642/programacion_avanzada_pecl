@@ -13,14 +13,13 @@ public class Autobus extends Thread {
     private Ciudad ciudad;
 
     private String identificador;
-    private int numero;
     private int pasajeros;
+    
     //private final int pasajerosMax = 50;
     
 
     public Autobus(String identificador, int numero, int pasajeros, Ciudad ciudad) {
         this.identificador = identificador +"-"+ String.format("%04d", numero);
-        this.numero = numero;
         this.pasajeros = pasajeros;
         this.ciudad = ciudad;
     }

@@ -106,14 +106,16 @@ public class ProgramaPrincipal extends Thread {
     }
 
     public void run() {
+        
+        TextLog logger = new TextLog("evolucionAeropuerto.txt");
 
-        Hangar hangarMadrid = new Hangar(jTextFieldHangarAeropuertoMadrid);
-        AreaEstacionamiento areaEstacionamientoMadrid = new AreaEstacionamiento(jTextFieldAreaEstacionamientoAeropuertoMadrid);
-        PuertaEmbarque puertaEmbarqueMadrid = new PuertaEmbarque();
-        Taller tallerMadrid = new Taller(jTextFieldTallerAeropuertoMadrid);
-        AreaRodaje areaRodajeMadrid = new AreaRodaje(jTextFieldAreaRodajeAeropuertoMadrid);
-        Pista pistaMadrid = new Pista(jTextFieldPista1AeropuertoMadrid, jTextFieldPista2AeropuertoMadrid, jTextFieldPista3AeropuertoMadrid, jTextFieldPista4AeropuertoMadrid);
-        Aerovia aeroviaMadrid = new Aerovia(jTextFieldAeroviaMadrid_Barcelona, jTextFieldAeroviaBarcelona_Madrid);
+        Hangar hangarMadrid = new Hangar(jTextFieldHangarAeropuertoMadrid, "Madrid", logger);
+        AreaEstacionamiento areaEstacionamientoMadrid = new AreaEstacionamiento(jTextFieldAreaEstacionamientoAeropuertoMadrid, "Madrid", logger);
+        PuertaEmbarque puertaEmbarqueMadrid = new PuertaEmbarque("Madrid", logger);
+        Taller tallerMadrid = new Taller(jTextFieldTallerAeropuertoMadrid, "Madrid", logger);
+        AreaRodaje areaRodajeMadrid = new AreaRodaje(jTextFieldAreaRodajeAeropuertoMadrid, "Madrid", logger);
+        Pista pistaMadrid = new Pista(jTextFieldPista1AeropuertoMadrid, jTextFieldPista2AeropuertoMadrid, jTextFieldPista3AeropuertoMadrid, jTextFieldPista4AeropuertoMadrid, "Madrid", logger);
+        Aerovia aeroviaMadrid = new Aerovia(jTextFieldAeroviaMadrid_Barcelona, jTextFieldAeroviaBarcelona_Madrid, logger);
         
         
         Aeropuerto aeropuertoMadrid = new Aeropuerto(hangarMadrid,
@@ -123,13 +125,13 @@ public class ProgramaPrincipal extends Thread {
                 jTextFieldGate4AeropuertoMadrid, jTextFieldGate5AeropuertoMadrid,
                 jTextFieldGate6AeropuertoMadrid, jTextFieldNumeroPasajerosAeropuertoMadrid);
 
-        Hangar hangarBarcelona = new Hangar(jTextFieldHangarAeropuertoBarcelona);
-        AreaEstacionamiento areaEstacionamientoBarcelona = new AreaEstacionamiento(jTextFieldAreaEstacionamientoAeropuertoBarcelona);
-        PuertaEmbarque puertaEmbarqueBarcelona = new PuertaEmbarque();
-        Taller tallerBarcelona = new Taller(jTextFieldTallerAeropuertoBarcelona);
-        AreaRodaje areaRodajeBarcelona = new AreaRodaje(jTextFieldAreaRodajeAeropuertoBarcelona);
-        Pista pistaBarcelona = new Pista(jTextFieldPista1AeropuertoBarcelona, jTextFieldPista2AeropuertoBarcelona, jTextFieldPista3AeropuertoBarcelona, jTextFieldPista4AeropuertoBarcelona);
-        Aerovia aeroviaBarcelona = new Aerovia(jTextFieldAeroviaMadrid_Barcelona, jTextFieldAeroviaBarcelona_Madrid);
+        Hangar hangarBarcelona = new Hangar(jTextFieldHangarAeropuertoBarcelona, "Barcelona", logger);
+        AreaEstacionamiento areaEstacionamientoBarcelona = new AreaEstacionamiento(jTextFieldAreaEstacionamientoAeropuertoBarcelona, "Barcelona", logger);
+        PuertaEmbarque puertaEmbarqueBarcelona = new PuertaEmbarque("Barcelona", logger);
+        Taller tallerBarcelona = new Taller(jTextFieldTallerAeropuertoBarcelona, "Barcelona", logger);
+        AreaRodaje areaRodajeBarcelona = new AreaRodaje(jTextFieldAreaRodajeAeropuertoBarcelona, "Barcelona", logger);
+        Pista pistaBarcelona = new Pista(jTextFieldPista1AeropuertoBarcelona, jTextFieldPista2AeropuertoBarcelona, jTextFieldPista3AeropuertoBarcelona, jTextFieldPista4AeropuertoBarcelona, "Barcelona", logger);
+        Aerovia aeroviaBarcelona = new Aerovia(jTextFieldAeroviaMadrid_Barcelona, jTextFieldAeroviaBarcelona_Madrid, logger);
         
         Aeropuerto aeropuertoBarcelona = new Aeropuerto(hangarBarcelona,
                 areaEstacionamientoBarcelona, puertaEmbarqueBarcelona, tallerBarcelona, areaRodajeBarcelona,

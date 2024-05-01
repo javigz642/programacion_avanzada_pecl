@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 public class PuertaEmbarque {
 
     private Avion[] aviones = new Avion[6];
-  
+
     private Semaphore puertaEmbarque = new Semaphore(1, true);
     private Semaphore puertaDesembarque = new Semaphore(1, true);
     
@@ -26,6 +26,16 @@ public class PuertaEmbarque {
     private Semaphore puertaLibre3 = new Semaphore(1, true);
     private Semaphore puertaLibre4 = new Semaphore(1, true);
     private Semaphore[] puertasLibres = {puertaLibre1, puertaLibre2, puertaLibre3, puertaLibre4};
+    
+    //textfield
+    
+    private String nombreCiudad;
+    private TextLog logger;
+
+    public PuertaEmbarque(String nombreCiudad, TextLog logger) {
+        this.nombreCiudad = nombreCiudad;
+        this.logger = logger;
+    }
 
 
     public void entrarPuerta(Avion avion) {
@@ -53,7 +63,7 @@ public class PuertaEmbarque {
                 }
             } else {
                 if (puertaDesembarque.tryAcquire()) {
-                    avion.getOrigen().aeropuerto.areaRodaje.salirAreaRodaje(avion); //tiene que tener una puerta de desembarque libre antes de avanzar
+                    avion.getDestino().aeropuerto.areaRodaje.salirAreaRodaje(avion); //tiene que tener una puerta de desembarque libre antes de avanzar
                     System.out.println(avion.getIdentificador() + " tiene Gate 6 libre. Yendo desde RODAJE hacia Desembarque");
                     Thread.sleep((int) (Math.random() * 2000) + 3001); //paso de Area de Rodaje a Desembarque
                     aviones[5] = avion;
@@ -65,7 +75,7 @@ public class PuertaEmbarque {
 
                 } else {
                     puertasLibres[avion.getNumero()%4].acquire();
-                    avion.getOrigen().aeropuerto.areaRodaje.salirAreaRodaje(avion); //tiene que tener una puerta de desembarque libre antes de avanzar
+                    avion.getDestino().aeropuerto.areaRodaje.salirAreaRodaje(avion); //tiene que tener una puerta de desembarque libre antes de avanzar
                     System.out.println(avion.getIdentificador() + " tiene Gate " + (avion.getNumero()%4 + 3) + " libre. Yendo desde RODAJE hacia Desembarque");
                     Thread.sleep((int) (Math.random() * 2000) + 3001); //paso de Area de Rodaje a Desembarque
                     aviones[avion.getNumero()%4] = avion;;

@@ -14,17 +14,23 @@ import javax.swing.JTextField;
  *
  * @author Miguel
  */
-public class AreaRodaje {
-    
+public class AreaRodaje { 
     
     private ArrayList<Avion> aviones = new ArrayList<>();
     
     private Semaphore control = new Semaphore(1);
+    
     private JTextField jTextFieldAreaRodajeAeropuerto;
+    
+    private String nombreCiudad;
+    private TextLog logger;
 
-    public AreaRodaje(JTextField jTextFieldAreaRodajeAeropuerto) {
+    public AreaRodaje(JTextField jTextFieldAreaRodajeAeropuerto, String nombreCiudad, TextLog logger) {
         this.jTextFieldAreaRodajeAeropuerto = jTextFieldAreaRodajeAeropuerto;
+        this.nombreCiudad = nombreCiudad;
+        this.logger = logger;
     }
+    
 
     public void entrarAreaRodaje(Avion avion){
 

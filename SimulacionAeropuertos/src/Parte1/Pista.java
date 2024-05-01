@@ -16,9 +16,8 @@ import javax.swing.JTextField;
  */
 public class Pista {
     
-
-    
     private Avion[] aviones = new Avion[4];
+    
     
     private Semaphore pista1 = new Semaphore(1, true);
     private Semaphore pista2 = new Semaphore(1, true);
@@ -31,13 +30,20 @@ public class Pista {
     private JTextField jTextFieldPista2Aeropuerto;
     private JTextField jTextFieldPista3Aeropuerto;
     private JTextField jTextFieldPista4Aeropuerto;
+    
+    private String nombreCiudad;
+    private TextLog logger;
 
-    public Pista(JTextField jTextFieldPista1Aeropuerto, JTextField jTextFieldPista2Aeropuerto, JTextField jTextFieldPista3Aeropuerto, JTextField jTextFieldPista4Aeropuerto) {
+    public Pista(JTextField jTextFieldPista1Aeropuerto, JTextField jTextFieldPista2Aeropuerto, JTextField jTextFieldPista3Aeropuerto, JTextField jTextFieldPista4Aeropuerto, String nombreCiudad, TextLog logger) {
         this.jTextFieldPista1Aeropuerto = jTextFieldPista1Aeropuerto;
         this.jTextFieldPista2Aeropuerto = jTextFieldPista2Aeropuerto;
         this.jTextFieldPista3Aeropuerto = jTextFieldPista3Aeropuerto;
         this.jTextFieldPista4Aeropuerto = jTextFieldPista4Aeropuerto;
+        this.nombreCiudad = nombreCiudad;
+        this.logger = logger;
     }
+    
+    
 
     
     public void pedirPista(Avion avion) {

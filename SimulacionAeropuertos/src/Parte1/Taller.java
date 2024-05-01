@@ -20,15 +20,20 @@ public class Taller {
     
     private ArrayList<Avion> aviones = new ArrayList<>();
     
+    
     private Semaphore espaciosTaller = new Semaphore(20, true);
     private Semaphore control = new Semaphore(1, true);
     
-        private JTextField jTextFieldTallerAeropuerto;
-
-    public Taller(JTextField jTextFieldTallerAeropuerto) {
-        this.jTextFieldTallerAeropuerto = jTextFieldTallerAeropuerto;
-    }
+    private JTextField jTextFieldTallerAeropuerto;
     
+    private String nombreCiudad;
+    private TextLog logger;
+
+    public Taller(JTextField jTextFieldTallerAeropuerto, String nombreCiudad, TextLog logger) {
+        this.jTextFieldTallerAeropuerto = jTextFieldTallerAeropuerto;
+        this.nombreCiudad = nombreCiudad;
+        this.logger = logger;
+    }
 
     
     public void entrarTaller (Avion avion){

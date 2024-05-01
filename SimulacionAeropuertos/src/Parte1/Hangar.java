@@ -19,21 +19,22 @@ import javax.swing.JTextField;
  * @author sombe
  */
 public class Hangar {
-    
-    
+
     private ArrayList<Avion> aviones = new ArrayList<>();
+    private String nombreCiudad;
+    private TextLog logger;
     
     private Semaphore control = new Semaphore(1);
     
-    private JTextField jTextFieldHangarAeropuerto;     
-    public Hangar(JTextField jTextFieldHangarAeropuerto){
-        
+    private JTextField jTextFieldHangarAeropuerto;  
 
+    public Hangar(JTextField jTextFieldHangarAeropuerto, String nombreCiudad, TextLog logger) {
+        this.nombreCiudad = nombreCiudad;
         this.jTextFieldHangarAeropuerto = jTextFieldHangarAeropuerto;
+        this.logger = logger;
     }
     
-    
-    public void entrarHangar(Avion avion){
+      public void entrarHangar(Avion avion){
         
         
         try {
