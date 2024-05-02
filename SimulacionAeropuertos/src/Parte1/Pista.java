@@ -34,6 +34,7 @@ public class Pista {
     private String nombreCiudad;
     private TextLog logger;
     private PasoPistas pasoPistas;
+    
     public Pista(JTextField jTextFieldPista1Aeropuerto, JTextField jTextFieldPista2Aeropuerto,
             JTextField jTextFieldPista3Aeropuerto, JTextField jTextFieldPista4Aeropuerto, 
             String nombreCiudad, TextLog logger, PasoPistas pasoPistas) {

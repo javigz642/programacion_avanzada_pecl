@@ -55,7 +55,7 @@ public class Ciudad {
             autobusesHaciaAeropuerto.add(a);
             imprimirArrayAutobus(jTextFieldTransferAeropuertoAutobus,autobusesHaciaAeropuerto);
             paso.mirar();
-            System.out.println("El autobus " + a.getIdentificador() + " va hacia el aeropuerto de " + nombre + "con " + a.getPasajeros() + " pasajeros");
+            System.out.println("El autobus " + a.getIdentificador() + " va hacia el aeropuerto de " + nombre + " con " + a.getPasajeros() + " pasajeros");
             SemAutobusesHaciaAeropuerto.release();
             dormirAutobus(5000, 10000);
             paso.mirar();

@@ -19,7 +19,6 @@ public class Aerovia {
     private ArrayList<Avion> aviones = new ArrayList<>();
     private String avionesDentro;
     private Semaphore control = new Semaphore(1, true);
-    private Semaphore control2aviones = new Semaphore(2, true);
 
     private JTextField jTextFieldAeroviaMadrid_Barcelona;
     private JTextField jTextFieldAeroviaBarcelona_Madrid;
@@ -37,7 +36,6 @@ public class Aerovia {
     public void entrarAerovia(Avion avion) {
 
         try {
-            control2aviones.acquire();
             control.acquire();
             aviones.add(avion);
             if (avion.getOrigen().getNombre().equals("Madrid")) {
@@ -67,7 +65,6 @@ public class Aerovia {
                 jTextFieldAeroviaBarcelona_Madrid.setText(getStringArrayAviones(aviones));
             }
             control.release();
-            control2aviones.release();
             //System.out.println(avion.getIdentificador() + " abandonando AEROVIA " + avion.getDestino().getNombre() + "-" + avion.getOrigen().getNombre());
         } catch (InterruptedException ex) {
             Logger.getLogger(Aerovia.class.getName()).log(Level.SEVERE, null, ex);

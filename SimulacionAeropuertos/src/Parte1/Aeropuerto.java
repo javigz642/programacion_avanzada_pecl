@@ -19,7 +19,7 @@ import javax.swing.JTextField;
  */
 public class Aeropuerto extends Thread {
 
-    private int personasDentro = 300000;
+    private int personasDentro = 1000;
 
     protected Hangar hangar;
     protected AreaEstacionamiento areaEstacionamiento;
