@@ -15,17 +15,14 @@ import javax.swing.JTextField;
  * @author sombe
  */
 public class Taller {
-    
 
-    
     private ArrayList<Avion> aviones = new ArrayList<>();
-    
-    
+    private int avionesDentro;
     private Semaphore espaciosTaller = new Semaphore(20, true);
     private Semaphore control = new Semaphore(1, true);
-    
+
     private JTextField jTextFieldTallerAeropuerto;
-    
+
     private String nombreCiudad;
     private TextLog logger;
 
@@ -35,50 +32,50 @@ public class Taller {
         this.logger = logger;
     }
 
-    
-    public void entrarTaller (Avion avion){
-        
+    public void entrarTaller(Avion avion) {
+
         try {
             espaciosTaller.acquire();
             control.acquire();
             System.out.println(avion.getIdentificador() + " entrando TALLER");
             Thread.sleep(1000);
             aviones.add(avion);
+            avionesDentro++;
             imprimirArrayAviones(jTextFieldTallerAeropuerto, aviones);
             control.release();
-            if (avion.getVuelos()%15 == 0){
+            if (avion.getVuelos() % 15 == 0) {
                 System.out.println(avion.getIdentificador() + " realizando REVISION PROFUNDA");
                 Thread.sleep((int) (Math.random() * 5000) + 5001);
-            }
-            else{
+            } else {
                 System.out.println(avion.getIdentificador() + " realizando REVISION NORMAL");
                 Thread.sleep((int) (Math.random() * 4000) + 1001);
             }
-            
+
         } catch (InterruptedException ex) {
             Logger.getLogger(Taller.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
-    
-    public void salirTaller (Avion avion){
-        
+
+    public void salirTaller(Avion avion) {
+
         try {
             control.acquire();
             System.out.println(avion.getIdentificador() + " saliendo TALLER");
             Thread.sleep(1000);
             aviones.remove(avion);
+            avionesDentro--;
             imprimirArrayAviones(jTextFieldTallerAeropuerto, aviones);
             control.release();
             espaciosTaller.release();
-            
+
         } catch (InterruptedException ex) {
             Logger.getLogger(Taller.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
-    
-        public void imprimirArrayAviones(JTextField jTextFieldDestino, ArrayList<Avion> arrayAviones) {
+
+    public void imprimirArrayAviones(JTextField jTextFieldDestino, ArrayList<Avion> arrayAviones) {
         String stringAux = "";
         for (int i = 0; i < arrayAviones.size(); i++) {
             stringAux += arrayAviones.get(i).getIdentificador() + " / ";
@@ -86,5 +83,13 @@ public class Taller {
         jTextFieldDestino.setText(stringAux);
         System.out.println(stringAux);
     }
-    
+
+    public int getAvionesDentro() {
+        int avionesAux = 0;
+
+        avionesAux = avionesDentro;
+
+        return avionesAux;
+    }
+
 }

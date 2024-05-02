@@ -21,6 +21,7 @@ import javax.swing.JTextField;
 public class Hangar {
 
     private ArrayList<Avion> aviones = new ArrayList<>();
+    private int avionesDentro;
     private String nombreCiudad;
     private TextLog logger;
     
@@ -40,9 +41,10 @@ public class Hangar {
         try {
             control.acquire();
             aviones.add(avion);
+            avionesDentro++;
             imprimirArrayAviones(jTextFieldHangarAeropuerto, aviones);
             control.release();
-            System.out.println(avion.getIdentificador()+ " entrando HANGAR");
+            //System.out.println(avion.getIdentificador()+ " entrando HANGAR");
 
         } catch (InterruptedException ex) {
             Logger.getLogger(Hangar.class.getName()).log(Level.SEVERE, null, ex);
@@ -54,9 +56,10 @@ public class Hangar {
         try {
             control.acquire();
             aviones.remove(avion);
+            avionesDentro--;
             imprimirArrayAviones(jTextFieldHangarAeropuerto, aviones);
             control.release();
-            System.out.println(avion.getIdentificador()+ " saliendo HANGAR");
+            //System.out.println(avion.getIdentificador()+ " saliendo HANGAR");
         } catch (InterruptedException ex) {
             Logger.getLogger(Hangar.class.getName()).log(Level.SEVERE, null, ex);
         } 
@@ -67,8 +70,10 @@ public class Hangar {
         try {
             control.acquire();
             aviones.add(avion);
+            avionesDentro++;
+            imprimirArrayAviones(jTextFieldHangarAeropuerto, aviones);
             control.release();
-            System.out.println(avion.getIdentificador()+ " reposando HANGAR");
+            //System.out.println(avion.getIdentificador()+ " reposando HANGAR");
             Thread.sleep((int) (Math.random() * 15000) + 15001);
         } catch (InterruptedException ex) {
             Logger.getLogger(Hangar.class.getName()).log(Level.SEVERE, null, ex);
@@ -81,7 +86,16 @@ public class Hangar {
             stringAux += arrayAviones.get(i).getIdentificador() + " / ";
         }
         jTextFieldDestino.setText(stringAux);
-        System.out.println(stringAux);
+        //System.out.println(stringAux);
     }
+    
+        public int getAvionesDentro() {
+        int avionesAux = 0;
+  
+            avionesAux = avionesDentro;
+  
+        return avionesAux;
+    }
+
     
 }

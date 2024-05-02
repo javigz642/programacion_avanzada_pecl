@@ -17,7 +17,7 @@ import javax.swing.JTextField;
 public class Aerovia {
 
     private ArrayList<Avion> aviones = new ArrayList<>();
-    
+    private String avionesDentro;
     private Semaphore control = new Semaphore(1, true);
     private Semaphore control2aviones = new Semaphore(2, true);
 
@@ -41,13 +41,14 @@ public class Aerovia {
             control.acquire();
             aviones.add(avion);
             if (avion.getOrigen().getNombre().equals("Madrid")) {
-                imprimirArrayAviones(jTextFieldAeroviaMadrid_Barcelona, aviones);
+                jTextFieldAeroviaMadrid_Barcelona.setText(getStringArrayAviones(aviones));
+                
             } else {
-                imprimirArrayAviones(jTextFieldAeroviaBarcelona_Madrid, aviones);
+                jTextFieldAeroviaBarcelona_Madrid.setText(getStringArrayAviones(aviones));
             }
 
             control.release();
-            System.out.println(avion.getIdentificador() + " entrando AEROVIA " + avion.getOrigen().getNombre() + "-" + avion.getDestino().getNombre());
+            //System.out.println(avion.getIdentificador() + " entrando AEROVIA " + avion.getOrigen().getNombre() + "-" + avion.getDestino().getNombre());
             Thread.sleep((int) (Math.random() * 15000) + 15001);
         } catch (InterruptedException ex) {
             Logger.getLogger(Aerovia.class.getName()).log(Level.SEVERE, null, ex);
@@ -61,20 +62,20 @@ public class Aerovia {
             control.acquire();
             aviones.remove(avion);
             if (avion.getOrigen().getNombre().equals("Madrid")) {
-                imprimirArrayAviones(jTextFieldAeroviaMadrid_Barcelona, aviones);
+                jTextFieldAeroviaMadrid_Barcelona.setText(getStringArrayAviones(aviones));
             } else {
-                imprimirArrayAviones(jTextFieldAeroviaBarcelona_Madrid, aviones);
+                jTextFieldAeroviaBarcelona_Madrid.setText(getStringArrayAviones(aviones));
             }
             control.release();
             control2aviones.release();
-            System.out.println(avion.getIdentificador() + " abandonando AEROVIA " + avion.getDestino().getNombre() + "-" + avion.getOrigen().getNombre());
+            //System.out.println(avion.getIdentificador() + " abandonando AEROVIA " + avion.getDestino().getNombre() + "-" + avion.getOrigen().getNombre());
         } catch (InterruptedException ex) {
             Logger.getLogger(Aerovia.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
 
-    public void imprimirArrayAviones(JTextField jTextFieldDestino, ArrayList<Avion> arrayAviones) {
+    public String getStringArrayAviones(ArrayList<Avion> arrayAviones) {
         String stringAux = "";
         String identificadorAux = "";
         int numeroPasejosAvionAux = 0;
@@ -83,8 +84,12 @@ public class Aerovia {
             numeroPasejosAvionAux = arrayAviones.get(i).getPasajerosActual();
             stringAux += identificadorAux +"("+numeroPasejosAvionAux+")"+ " / ";
         }
-        jTextFieldDestino.setText(stringAux);
-        System.out.println(stringAux);
+        avionesDentro = stringAux;
+        //System.out.println(stringAux);
+        return avionesDentro;
+    }
+    public String getStringArrayAviones() {
+        return avionesDentro;
     }
 
 }

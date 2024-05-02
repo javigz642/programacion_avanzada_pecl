@@ -163,7 +163,12 @@ public class Aeropuerto extends Thread {
     }
 
     public int getPersonasDentro() {
-        return personasDentro;
+        int personasAux = 0;
+
+            personasAux = personasDentro;
+            control.release();
+
+        return personasAux;
     }
 
 }

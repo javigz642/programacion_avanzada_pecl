@@ -49,6 +49,7 @@ public class Main extends Thread {
     private JTextField jTextFieldTransferCiudadAutobusMadrid;
     private JTextField jTextFieldTransferCiudadAutobusBarcelona;
     private Paso paso;
+    private PasoPistas pasoPistas;
     public Main(JTextField jTextFieldAeroviaBarcelona_Madrid, JTextField jTextFieldAeroviaMadrid_Barcelona, 
             JTextField jTextFieldAreaEstacionamientoAeropuertoBarcelona, JTextField jTextFieldAreaEstacionamientoAeropuertoMadrid,
             JTextField jTextFieldAreaRodajeAeropuertoBarcelona, JTextField jTextFieldAreaRodajeAeropuertoMadrid,
@@ -67,7 +68,7 @@ public class Main extends Thread {
             JTextField jTextFieldTallerAeropuertoBarcelona, JTextField jTextFieldTallerAeropuertoMadrid, 
             JTextField jTextFieldTransferAeropuertoAutobusBarcelona, JTextField jTextFieldTransferAeropuertoAutobusMadrid,
             JTextField jTextFieldTransferCiudadAutobusMadrid, JTextField jTextFieldTransferCiudadAutobusBarcelona,
-        Paso paso) {
+        Paso paso, PasoPistas pasoPistas) {
         this.jTextFieldAeroviaBarcelona_Madrid = jTextFieldAeroviaBarcelona_Madrid;
         this.jTextFieldAeroviaMadrid_Barcelona = jTextFieldAeroviaMadrid_Barcelona;
         this.jTextFieldAreaEstacionamientoAeropuertoBarcelona = jTextFieldAreaEstacionamientoAeropuertoBarcelona;
@@ -105,6 +106,7 @@ public class Main extends Thread {
         this.jTextFieldTransferCiudadAutobusMadrid = jTextFieldTransferCiudadAutobusMadrid;
         this.jTextFieldTransferCiudadAutobusBarcelona = jTextFieldTransferCiudadAutobusBarcelona;
         this.paso = paso;
+        this.pasoPistas = pasoPistas;
     }
 
     public void run() {
@@ -115,7 +117,7 @@ public class Main extends Thread {
         PuertaEmbarque puertaEmbarqueMadrid = new PuertaEmbarque("Madrid", logger, jTextFieldGate1AeropuertoMadrid, jTextFieldGate2AeropuertoMadrid, jTextFieldGate3AeropuertoMadrid, jTextFieldGate4AeropuertoMadrid, jTextFieldGate5AeropuertoMadrid, jTextFieldGate6AeropuertoMadrid);
         Taller tallerMadrid = new Taller(jTextFieldTallerAeropuertoMadrid, "Madrid", logger);
         AreaRodaje areaRodajeMadrid = new AreaRodaje(jTextFieldAreaRodajeAeropuertoMadrid, "Madrid", logger);
-        Pista pistaMadrid = new Pista(jTextFieldPista1AeropuertoMadrid, jTextFieldPista2AeropuertoMadrid, jTextFieldPista3AeropuertoMadrid, jTextFieldPista4AeropuertoMadrid, "Madrid", logger);
+        Pista pistaMadrid = new Pista(jTextFieldPista1AeropuertoMadrid, jTextFieldPista2AeropuertoMadrid, jTextFieldPista3AeropuertoMadrid, jTextFieldPista4AeropuertoMadrid, "Madrid", logger, pasoPistas);
         Aerovia aeroviaMadrid = new Aerovia(jTextFieldAeroviaMadrid_Barcelona, jTextFieldAeroviaBarcelona_Madrid, logger);
 
         Aeropuerto aeropuertoMadrid = new Aeropuerto(hangarMadrid,
@@ -131,7 +133,7 @@ public class Main extends Thread {
 
         Taller tallerBarcelona = new Taller(jTextFieldTallerAeropuertoBarcelona, "Barcelona", logger);
         AreaRodaje areaRodajeBarcelona = new AreaRodaje(jTextFieldAreaRodajeAeropuertoBarcelona, "Barcelona", logger);
-        Pista pistaBarcelona = new Pista(jTextFieldPista1AeropuertoBarcelona, jTextFieldPista2AeropuertoBarcelona, jTextFieldPista3AeropuertoBarcelona, jTextFieldPista4AeropuertoBarcelona, "Barcelona", logger);
+        Pista pistaBarcelona = new Pista(jTextFieldPista1AeropuertoBarcelona, jTextFieldPista2AeropuertoBarcelona, jTextFieldPista3AeropuertoBarcelona, jTextFieldPista4AeropuertoBarcelona, "Barcelona", logger, pasoPistas);
         Aerovia aeroviaBarcelona = new Aerovia(jTextFieldAeroviaMadrid_Barcelona, jTextFieldAeroviaBarcelona_Madrid, logger);
 
         Aeropuerto aeropuertoBarcelona = new Aeropuerto(hangarBarcelona,
@@ -150,5 +152,8 @@ public class Main extends Thread {
         ProgramaPrincipalAutobuses pp2 = new ProgramaPrincipalAutobuses(madrid, barcelona,paso);
         pp1.start();
         pp2.start();
+        
+        Servidor server = new Servidor(aeropuertoMadrid, aeropuertoBarcelona);
+        server.start();
     }
 }

@@ -19,7 +19,7 @@ import javax.swing.JTextField;
 public class AreaEstacionamiento {
     
     private ArrayList<Avion> aviones = new ArrayList<>();
-    
+    private int avionesDentro;
     private Semaphore control = new Semaphore(1);
     
     private JTextField jTextFieldAreaEstacionamientoAeropuerto;
@@ -39,9 +39,10 @@ public class AreaEstacionamiento {
         try {
             control.acquire();
             aviones.add(avion);
+            avionesDentro++;
             imprimirArrayAviones(jTextFieldAreaEstacionamientoAeropuerto, aviones);
             control.release();
-            System.out.println(avion.getIdentificador() + " entrando ESTACIONAMIENTO");
+            //System.out.println(avion.getIdentificador() + " entrando ESTACIONAMIENTO");
             if(!avion.isEmbarque()){
                 System.out.println(avion.getIdentificador() + " realizando comprobaciones ESTACIONAMIENTO (tras Desembarque)");
                 Thread.sleep((int) (Math.random() * 4000) + 1001); 
@@ -57,9 +58,10 @@ public class AreaEstacionamiento {
         try {
             control.acquire();
             aviones.remove(avion);
+            avionesDentro--;
             imprimirArrayAviones(jTextFieldAreaEstacionamientoAeropuerto, aviones);
             control.release();
-            System.out.println(avion.getIdentificador() + " saliendo ESTACIONAMIENTO");
+            //System.out.println(avion.getIdentificador() + " saliendo ESTACIONAMIENTO");
         } catch (InterruptedException ex) {
             Logger.getLogger(Hangar.class.getName()).log(Level.SEVERE, null, ex);
         } 
@@ -71,7 +73,13 @@ public class AreaEstacionamiento {
             stringAux += arrayAviones.get(i).getIdentificador() + " / ";
         }
         jTextFieldDestino.setText(stringAux);
-        System.out.println(stringAux);
+        //System.out.println(stringAux);
     }
-
+        public int getAvionesDentro() {
+        int avionesAux = 0;
+  
+            avionesAux = avionesDentro;
+  
+        return avionesAux;
+    }
 }

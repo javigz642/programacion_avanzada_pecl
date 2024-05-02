@@ -13,6 +13,8 @@ import Parte1.*;
 public class Principal extends javax.swing.JFrame {
 
     Paso paso = new Paso();
+    PasoPistas pasoPistas = new PasoPistas();
+    
 
     /**
      * Creates new form Principal
@@ -37,7 +39,7 @@ public class Principal extends javax.swing.JFrame {
                 jTextFieldPista4AeropuertoMadrid, jTextFieldTallerAeropuertoBarcelona,
                 jTextFieldTallerAeropuertoMadrid, jTextFieldTransferAeropuertoAutobusBarcelona,
                 jTextFieldTransferAeropuertoAutobusMadrid, jTextFieldTransferCiudadAutobusMadrid,
-                jTextFieldTransferCiudadAutobusBarcelona,paso);
+                jTextFieldTransferCiudadAutobusBarcelona,paso, pasoPistas);
         principal.run();
 
     }
