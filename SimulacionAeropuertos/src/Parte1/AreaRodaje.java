@@ -44,9 +44,9 @@ public class AreaRodaje {
                 Thread.sleep((int) (Math.random() * 4000) + 1001);
                 System.out.println(avion.getIdentificador() + " haciendo comprobaciones RODAJE");
             }
-            else{
-                
-            }
+//            else{
+//                Thread.sleep(2000);
+//            }
             
         } catch (InterruptedException ex) {
             Logger.getLogger(AreaRodaje.class.getName()).log(Level.SEVERE, null, ex);

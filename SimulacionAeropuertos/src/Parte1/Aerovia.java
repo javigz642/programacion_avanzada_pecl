@@ -76,8 +76,12 @@ public class Aerovia {
 
     public void imprimirArrayAviones(JTextField jTextFieldDestino, ArrayList<Avion> arrayAviones) {
         String stringAux = "";
+        String identificadorAux = "";
+        int numeroPasejosAvionAux = 0;
         for (int i = 0; i < arrayAviones.size(); i++) {
-            stringAux += arrayAviones.get(i).getIdentificador() + " / ";
+            identificadorAux = arrayAviones.get(i).getIdentificador();
+            numeroPasejosAvionAux = arrayAviones.get(i).getPasajerosActual();
+            stringAux += identificadorAux +"("+numeroPasejosAvionAux+")"+ " / ";
         }
         jTextFieldDestino.setText(stringAux);
         System.out.println(stringAux);

@@ -3,40 +3,43 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Interfaces;
-import Parte1.ProgramaPrincipal;
+
+import Parte1.*;
+
 /**
  *
  * @author ediso
  */
 public class Principal extends javax.swing.JFrame {
 
+    Paso paso = new Paso();
+
     /**
      * Creates new form Principal
      */
     public Principal() {
         initComponents();
-        ProgramaPrincipal principal = new ProgramaPrincipal(jTextFieldAeroviaBarcelona_Madrid, 
-                jTextFieldAeroviaMadrid_Barcelona, jTextFieldAreaEstacionamientoAeropuertoBarcelona, 
-                jTextFieldAreaEstacionamientoAeropuertoMadrid, jTextFieldAreaRodajeAeropuertoBarcelona, 
-                jTextFieldAreaRodajeAeropuertoMadrid, jTextFieldGate1AeropuertoBarcelona, 
-                jTextFieldGate1AeropuertoMadrid, jTextFieldGate2AeropuertoBarcelona, 
-                jTextFieldGate2AeropuertoMadrid, jTextFieldGate3AeropuertoBarcelona, 
-                jTextFieldGate3AeropuertoMadrid, jTextFieldGate4AeropuertoBarcelona, 
-                jTextFieldGate4AeropuertoMadrid, jTextFieldGate5AeropuertoBarcelona, 
-                jTextFieldGate5AeropuertoMadrid, jTextFieldGate6AeropuertoBarcelona, 
+        Main principal = new Main(jTextFieldAeroviaBarcelona_Madrid,
+                jTextFieldAeroviaMadrid_Barcelona, jTextFieldAreaEstacionamientoAeropuertoBarcelona,
+                jTextFieldAreaEstacionamientoAeropuertoMadrid, jTextFieldAreaRodajeAeropuertoBarcelona,
+                jTextFieldAreaRodajeAeropuertoMadrid, jTextFieldGate1AeropuertoBarcelona,
+                jTextFieldGate1AeropuertoMadrid, jTextFieldGate2AeropuertoBarcelona,
+                jTextFieldGate2AeropuertoMadrid, jTextFieldGate3AeropuertoBarcelona,
+                jTextFieldGate3AeropuertoMadrid, jTextFieldGate4AeropuertoBarcelona,
+                jTextFieldGate4AeropuertoMadrid, jTextFieldGate5AeropuertoBarcelona,
+                jTextFieldGate5AeropuertoMadrid, jTextFieldGate6AeropuertoBarcelona,
                 jTextFieldGate6AeropuertoMadrid, jTextFieldHangarAeropuertoBarcelona,
-                jTextFieldHangarAeropuertoMadrid, jTextFieldNumeroPasajerosAeropuertoBarcelona, 
+                jTextFieldHangarAeropuertoMadrid, jTextFieldNumeroPasajerosAeropuertoBarcelona,
                 jTextFieldNumeroPasajerosAeropuertoMadrid, jTextFieldPista1AeropuertoBarcelona,
-                jTextFieldPista1AeropuertoMadrid, jTextFieldPista2AeropuertoBarcelona, 
-                jTextFieldPista2AeropuertoMadrid, jTextFieldPista3AeropuertoBarcelona, 
+                jTextFieldPista1AeropuertoMadrid, jTextFieldPista2AeropuertoBarcelona,
+                jTextFieldPista2AeropuertoMadrid, jTextFieldPista3AeropuertoBarcelona,
                 jTextFieldPista3AeropuertoMadrid, jTextFieldPista4AeropuertoBarcelona,
                 jTextFieldPista4AeropuertoMadrid, jTextFieldTallerAeropuertoBarcelona,
                 jTextFieldTallerAeropuertoMadrid, jTextFieldTransferAeropuertoAutobusBarcelona,
                 jTextFieldTransferAeropuertoAutobusMadrid, jTextFieldTransferCiudadAutobusMadrid,
-                jTextFieldTransferCiudadAutobusBarcelona);
+                jTextFieldTransferCiudadAutobusBarcelona,paso);
         principal.run();
-        
-        
+
     }
 
     /**
@@ -122,6 +125,8 @@ public class Principal extends javax.swing.JFrame {
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         jTextFieldGate5AeropuertoBarcelona = new javax.swing.JTextField();
+        jButtonPausar = new javax.swing.JButton();
+        jButtonReanudar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -332,7 +337,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel37.setText("AEROPUERTO DE MADRID");
+        jLabel37.setText("AEROPUERTO DE BARCELONA");
 
         jLabel38.setText("Gate 5:");
 
@@ -340,6 +345,21 @@ public class Principal extends javax.swing.JFrame {
         jTextFieldGate5AeropuertoBarcelona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldGate5AeropuertoBarcelonaActionPerformed(evt);
+            }
+        });
+
+        jButtonPausar.setText("Pausar");
+        jButtonPausar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPausarActionPerformed(evt);
+            }
+        });
+
+        jButtonReanudar.setText("Reanudar");
+        jButtonReanudar.setEnabled(false);
+        jButtonReanudar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonReanudarActionPerformed(evt);
             }
         });
 
@@ -512,13 +532,22 @@ public class Principal extends javax.swing.JFrame {
                                     .addComponent(jTextFieldTransferCiudadAutobusBarcelona, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(150, 150, 150)
-                                .addComponent(jLabel37)))))
+                                .addComponent(jLabel37))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(445, 445, 445)
+                        .addComponent(jButtonPausar)
+                        .addGap(44, 44, 44)
+                        .addComponent(jButtonReanudar)))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(68, Short.MAX_VALUE)
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonPausar)
+                    .addComponent(jButtonReanudar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel20)
@@ -706,6 +735,20 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldGate5AeropuertoBarcelonaActionPerformed
 
+    private void jButtonPausarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPausarActionPerformed
+        // TODO add your handling code here:
+        paso.cerrar();
+        jButtonPausar.setEnabled(false);
+        jButtonReanudar.setEnabled(true);
+    }//GEN-LAST:event_jButtonPausarActionPerformed
+
+    private void jButtonReanudarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonReanudarActionPerformed
+        // TODO add your handling code here:
+        paso.abrir();
+        jButtonReanudar.setEnabled(false);
+        jButtonPausar.setEnabled(true);
+    }//GEN-LAST:event_jButtonReanudarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -742,6 +785,8 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonPausar;
+    private javax.swing.JButton jButtonReanudar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

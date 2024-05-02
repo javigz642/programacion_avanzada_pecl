@@ -18,6 +18,7 @@ public class Avion extends Thread {
     private Ciudad origen;
     private Ciudad destino;
     private Ciudad aux;
+        private Paso paso;
 
     private String identificador;
     private int numero;
@@ -28,12 +29,13 @@ public class Avion extends Thread {
     private boolean embarque;
     private int vuelos = 0;
 
-    public Avion(String identificador, int numero, Ciudad origen, Ciudad destino) {
+    public Avion(String identificador, int numero, Ciudad origen, Ciudad destino, Paso paso) {
         this.identificador = identificador + "-" + String.format("%04d", numero);
         this.numero = numero;
         this.pasajerosMax = (int) (Math.random() * 201) + 100;
         this.origen = origen;
         this.destino = destino;
+        this.paso = paso;
     }
 
     public void run() {
@@ -41,10 +43,11 @@ public class Avion extends Thread {
         try {
             
             System.out.println("Avion " + this.getIdentificador() + " creado");
-            
+            paso.mirar();
             origen.aeropuerto.hangar.entrarHangar(this);
+            paso.mirar();
             origen.aeropuerto.hangar.salirHangar(this);
-                
+
             while (true) {
                 
                 embarque = true; //indica que va a embarcar
@@ -52,45 +55,57 @@ public class Avion extends Thread {
                 
 
                 Thread.sleep(0);
-
+                paso.mirar();
                 origen.aeropuerto.areaEstacionamiento.entrarArea(this);
+                paso.mirar();
                 origen.aeropuerto.areaEstacionamiento.salirArea(this);
-
+paso.mirar();
                 origen.aeropuerto.puertaEmbarque.entrarPuerta(this);
                 //sale solo de la puerta de embarque
-
+paso.mirar();
                 origen.aeropuerto.areaRodaje.entrarAreaRodaje(this);
+                paso.mirar();
                 origen.aeropuerto.areaRodaje.salirAreaRodaje(this);
-
+paso.mirar();
                 origen.aeropuerto.pista.pedirPista(this);
                 //sale solo de la pista
-
+paso.mirar();
                 origen.aeropuerto.aerovia.entrarAerovia(this);
+                paso.mirar();
                 origen.aeropuerto.aerovia.abandonarAerovia(this);
-
+paso.mirar();
                 vuelos++;
 
                 embarque = false; //indica que va a desembarcar
 
                 destino.aeropuerto.pista.pedirPista(this);
+                paso.mirar();
                 //sale solo de la pista
 
                 destino.aeropuerto.areaRodaje.entrarAreaRodaje(this);
+                paso.mirar();
                 //sale por si solo del area cuando tiene puerta para desembarcar
 
                 destino.aeropuerto.puertaEmbarque.entrarPuerta(this);
+                paso.mirar();
                 //sale solo de la puerta
 
                 destino.aeropuerto.areaEstacionamiento.entrarArea(this);
+                paso.mirar();
                 destino.aeropuerto.areaEstacionamiento.salirArea(this);
+                paso.mirar();
 
                 destino.aeropuerto.taller.entrarTaller(this);
+                paso.mirar();
                 destino.aeropuerto.taller.salirTaller(this);
+                paso.mirar();
 
                 if (random.nextInt(2) == 0) {
 
                     destino.aeropuerto.hangar.reposar(this);
+                    paso.mirar();
                     destino.aeropuerto.hangar.salirHangar(this);
+                    paso.mirar();
 
                 }
 

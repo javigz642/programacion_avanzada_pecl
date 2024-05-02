@@ -52,6 +52,7 @@ public class Pista {
             if (avion.isEmbarque()) {
                 pistas[avion.getNumero()%4].acquire();
                 aviones[avion.getNumero()%4] = avion;
+                imprimirArrayAviones(aviones, avion.getNumero()%4);
                 System.out.println(avion.getIdentificador() + " tiene libre la PISTA " + (avion.getNumero()+1) + " para despegar"); 
                 despegar(avion);
                 
@@ -79,6 +80,7 @@ public class Pista {
             Thread.sleep((int) (Math.random() * 4000) + 1001);
             System.out.println(avion.getIdentificador() + " ha dejado libre la PISTA " + (avion.getNumero()+1));
             aviones[avion.getNumero()%4] = null;
+            imprimirArrayAviones(aviones, avion.getNumero()%4);
             pistas[avion.getNumero()%4].release();
             
             
@@ -91,10 +93,12 @@ public class Pista {
     private void aterrizar(Avion avion) {
 
         try {
+            imprimirArrayAviones(aviones, avion.getNumero()%4);
             System.out.println(avion.getIdentificador() + " aterrizando con " + avion.getPasajerosActual() + " pasajeros en la PISTA " + (avion.getNumero()+1));
             Thread.sleep((int) (Math.random() * 4000) + 1001); 
             System.out.println(avion.getIdentificador() + " ha dejado libre la PISTA " + (avion.getNumero()+1));
             aviones[avion.getNumero()%4] = null;
+            imprimirArrayAviones(aviones, avion.getNumero()%4);
             pistas[avion.getNumero()%4].release();
         } catch (InterruptedException ex) {
             Logger.getLogger(Pista.class.getName()).log(Level.SEVERE, null, ex);
@@ -103,6 +107,31 @@ public class Pista {
     }
     
 
+    public void imprimirArrayAviones(Avion[] arrayAviones, int numeroPista) {
+        String stringAux = "";
+        if(arrayAviones[numeroPista] != null){
+            stringAux = arrayAviones[numeroPista].getIdentificador();
+        }
+                
 
+        switch (numeroPista+1) {
+            case 1:
+                jTextFieldPista1Aeropuerto.setText(stringAux);
+                break;
+            case 2:
+                jTextFieldPista2Aeropuerto.setText(stringAux);
+                break;
+            case 3:
+                jTextFieldPista3Aeropuerto.setText(stringAux);
+                break;
+            case 4:
+                jTextFieldPista4Aeropuerto.setText(stringAux);
+                break;
+            default:
+                throw new AssertionError();
+        }
+        
+        System.out.println(stringAux);
+    }
 
 }

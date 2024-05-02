@@ -9,32 +9,38 @@ package Parte1;
  * @author ediso
  */
 public class Autobus extends Thread {
-    
+
     private Ciudad ciudad;
 
     private String identificador;
     private int pasajeros;
-    
+    private Paso paso;
     //private final int pasajerosMax = 50;
-    
 
-    public Autobus(String identificador, int numero, int pasajeros, Ciudad ciudad) {
-        this.identificador = identificador +"-"+ String.format("%04d", numero);
+    public Autobus(String identificador, int numero, int pasajeros, Ciudad ciudad, Paso paso) {
+        this.identificador = identificador + "-" + String.format("%04d", numero);
         this.pasajeros = pasajeros;
         this.ciudad = ciudad;
+        this.paso = paso;
     }
 
-    
     public void run() {
-            while(true){
+        while (true) {
+            paso.mirar();
             ciudad.recogerPasajerosCiudadAutobus(this);
+            paso.mirar();
             ciudad.irAeropuertoAutobus(this);
+            paso.mirar();
             ciudad.bajarPasajerosAlAeropuertoAutobus(this);
+            paso.mirar();
             ciudad.recogerPasajerosAeropuertoAutobus(this);
+            paso.mirar();
             ciudad.irCiudadAutobus(this);
+            paso.mirar();
             ciudad.bajarPasajerosACiudadAutobus(this);
-            }
-       
+
+        }
+
     }
 
     public int getPasajeros() {
@@ -52,5 +58,5 @@ public class Autobus extends Thread {
     public Ciudad getCiudad() {
         return ciudad;
     }
-    
+
 }

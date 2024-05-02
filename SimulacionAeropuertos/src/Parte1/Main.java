@@ -10,8 +10,8 @@ import javax.swing.JTextField;
  *
  * @author ediso
  */
-public class ProgramaPrincipal extends Thread {
-
+public class Main extends Thread {
+    
     private JTextField jTextFieldAeroviaBarcelona_Madrid;
     private JTextField jTextFieldAeroviaMadrid_Barcelona;
     private JTextField jTextFieldAreaEstacionamientoAeropuertoBarcelona;
@@ -48,25 +48,26 @@ public class ProgramaPrincipal extends Thread {
     private JTextField jTextFieldTransferAeropuertoAutobusMadrid;
     private JTextField jTextFieldTransferCiudadAutobusMadrid;
     private JTextField jTextFieldTransferCiudadAutobusBarcelona;
-
-    public ProgramaPrincipal(JTextField jTextFieldAeroviaBarcelona_Madrid, JTextField jTextFieldAeroviaMadrid_Barcelona,
+    private Paso paso;
+    public Main(JTextField jTextFieldAeroviaBarcelona_Madrid, JTextField jTextFieldAeroviaMadrid_Barcelona, 
             JTextField jTextFieldAreaEstacionamientoAeropuertoBarcelona, JTextField jTextFieldAreaEstacionamientoAeropuertoMadrid,
             JTextField jTextFieldAreaRodajeAeropuertoBarcelona, JTextField jTextFieldAreaRodajeAeropuertoMadrid,
-            JTextField jTextFieldGate1AeropuertoBarcelona, JTextField jTextFieldGate1AeropuertoMadrid,
-            JTextField jTextFieldGate2AeropuertoBarcelona, JTextField jTextFieldGate2AeropuertoMadrid,
-            JTextField jTextFieldGate3AeropuertoBarcelona, JTextField jTextFieldGate3AeropuertoMadrid,
-            JTextField jTextFieldGate4AeropuertoBarcelona, JTextField jTextFieldGate4AeropuertoMadrid,
+            JTextField jTextFieldGate1AeropuertoBarcelona, JTextField jTextFieldGate1AeropuertoMadrid, 
+            JTextField jTextFieldGate2AeropuertoBarcelona, JTextField jTextFieldGate2AeropuertoMadrid, 
+            JTextField jTextFieldGate3AeropuertoBarcelona, JTextField jTextFieldGate3AeropuertoMadrid, 
+            JTextField jTextFieldGate4AeropuertoBarcelona, JTextField jTextFieldGate4AeropuertoMadrid, 
             JTextField jTextFieldGate5AeropuertoBarcelona, JTextField jTextFieldGate5AeropuertoMadrid,
             JTextField jTextFieldGate6AeropuertoBarcelona, JTextField jTextFieldGate6AeropuertoMadrid,
-            JTextField jTextFieldHangarAeropuertoBarcelona, JTextField jTextFieldHangarAeropuertoMadrid,
-            JTextField jTextFieldNumeroPasajerosAeropuertoBarcelona, JTextField jTextFieldNumeroPasajerosAeropuertoMadrid,
-            JTextField jTextFieldPista1AeropuertoBarcelona, JTextField jTextFieldPista1AeropuertoMadrid,
-            JTextField jTextFieldPista2AeropuertoBarcelona, JTextField jTextFieldPista2AeropuertoMadrid,
-            JTextField jTextFieldPista3AeropuertoBarcelona, JTextField jTextFieldPista3AeropuertoMadrid,
-            JTextField jTextFieldPista4AeropuertoBarcelona, JTextField jTextFieldPista4AeropuertoMadrid,
-            JTextField jTextFieldTallerAeropuertoBarcelona, JTextField jTextFieldTallerAeropuertoMadrid,
+            JTextField jTextFieldHangarAeropuertoBarcelona, JTextField jTextFieldHangarAeropuertoMadrid, 
+            JTextField jTextFieldNumeroPasajerosAeropuertoBarcelona, JTextField jTextFieldNumeroPasajerosAeropuertoMadrid, 
+            JTextField jTextFieldPista1AeropuertoBarcelona, JTextField jTextFieldPista1AeropuertoMadrid, 
+            JTextField jTextFieldPista2AeropuertoBarcelona, JTextField jTextFieldPista2AeropuertoMadrid, 
+            JTextField jTextFieldPista3AeropuertoBarcelona, JTextField jTextFieldPista3AeropuertoMadrid, 
+            JTextField jTextFieldPista4AeropuertoBarcelona, JTextField jTextFieldPista4AeropuertoMadrid, 
+            JTextField jTextFieldTallerAeropuertoBarcelona, JTextField jTextFieldTallerAeropuertoMadrid, 
             JTextField jTextFieldTransferAeropuertoAutobusBarcelona, JTextField jTextFieldTransferAeropuertoAutobusMadrid,
-            JTextField jTextFieldTransferCiudadAutobusMadrid, JTextField jTextFieldTransferCiudadAutobusBarcelona) {
+            JTextField jTextFieldTransferCiudadAutobusMadrid, JTextField jTextFieldTransferCiudadAutobusBarcelona,
+        Paso paso) {
         this.jTextFieldAeroviaBarcelona_Madrid = jTextFieldAeroviaBarcelona_Madrid;
         this.jTextFieldAeroviaMadrid_Barcelona = jTextFieldAeroviaMadrid_Barcelona;
         this.jTextFieldAreaEstacionamientoAeropuertoBarcelona = jTextFieldAreaEstacionamientoAeropuertoBarcelona;
@@ -103,21 +104,20 @@ public class ProgramaPrincipal extends Thread {
         this.jTextFieldTransferAeropuertoAutobusMadrid = jTextFieldTransferAeropuertoAutobusMadrid;
         this.jTextFieldTransferCiudadAutobusMadrid = jTextFieldTransferCiudadAutobusMadrid;
         this.jTextFieldTransferCiudadAutobusBarcelona = jTextFieldTransferCiudadAutobusBarcelona;
+        this.paso = paso;
     }
 
     public void run() {
-        
         TextLog logger = new TextLog("evolucionAeropuerto.txt");
 
         Hangar hangarMadrid = new Hangar(jTextFieldHangarAeropuertoMadrid, "Madrid", logger);
         AreaEstacionamiento areaEstacionamientoMadrid = new AreaEstacionamiento(jTextFieldAreaEstacionamientoAeropuertoMadrid, "Madrid", logger);
-        PuertaEmbarque puertaEmbarqueMadrid = new PuertaEmbarque("Madrid", logger);
+        PuertaEmbarque puertaEmbarqueMadrid = new PuertaEmbarque("Madrid", logger, jTextFieldGate1AeropuertoMadrid, jTextFieldGate2AeropuertoMadrid, jTextFieldGate3AeropuertoMadrid, jTextFieldGate4AeropuertoMadrid, jTextFieldGate5AeropuertoMadrid, jTextFieldGate6AeropuertoMadrid);
         Taller tallerMadrid = new Taller(jTextFieldTallerAeropuertoMadrid, "Madrid", logger);
         AreaRodaje areaRodajeMadrid = new AreaRodaje(jTextFieldAreaRodajeAeropuertoMadrid, "Madrid", logger);
         Pista pistaMadrid = new Pista(jTextFieldPista1AeropuertoMadrid, jTextFieldPista2AeropuertoMadrid, jTextFieldPista3AeropuertoMadrid, jTextFieldPista4AeropuertoMadrid, "Madrid", logger);
         Aerovia aeroviaMadrid = new Aerovia(jTextFieldAeroviaMadrid_Barcelona, jTextFieldAeroviaBarcelona_Madrid, logger);
-        
-        
+
         Aeropuerto aeropuertoMadrid = new Aeropuerto(hangarMadrid,
                 areaEstacionamientoMadrid, puertaEmbarqueMadrid, tallerMadrid, areaRodajeMadrid,
                 pistaMadrid, aeroviaMadrid, jTextFieldGate1AeropuertoMadrid,
@@ -127,12 +127,13 @@ public class ProgramaPrincipal extends Thread {
 
         Hangar hangarBarcelona = new Hangar(jTextFieldHangarAeropuertoBarcelona, "Barcelona", logger);
         AreaEstacionamiento areaEstacionamientoBarcelona = new AreaEstacionamiento(jTextFieldAreaEstacionamientoAeropuertoBarcelona, "Barcelona", logger);
-        PuertaEmbarque puertaEmbarqueBarcelona = new PuertaEmbarque("Barcelona", logger);
+        PuertaEmbarque puertaEmbarqueBarcelona = new PuertaEmbarque("Barcelona", logger, jTextFieldGate1AeropuertoBarcelona, jTextFieldGate2AeropuertoBarcelona, jTextFieldGate3AeropuertoBarcelona, jTextFieldGate4AeropuertoBarcelona, jTextFieldGate5AeropuertoBarcelona, jTextFieldGate6AeropuertoBarcelona);
+
         Taller tallerBarcelona = new Taller(jTextFieldTallerAeropuertoBarcelona, "Barcelona", logger);
         AreaRodaje areaRodajeBarcelona = new AreaRodaje(jTextFieldAreaRodajeAeropuertoBarcelona, "Barcelona", logger);
         Pista pistaBarcelona = new Pista(jTextFieldPista1AeropuertoBarcelona, jTextFieldPista2AeropuertoBarcelona, jTextFieldPista3AeropuertoBarcelona, jTextFieldPista4AeropuertoBarcelona, "Barcelona", logger);
         Aerovia aeroviaBarcelona = new Aerovia(jTextFieldAeroviaMadrid_Barcelona, jTextFieldAeroviaBarcelona_Madrid, logger);
-        
+
         Aeropuerto aeropuertoBarcelona = new Aeropuerto(hangarBarcelona,
                 areaEstacionamientoBarcelona, puertaEmbarqueBarcelona, tallerBarcelona, areaRodajeBarcelona,
                 pistaBarcelona, aeroviaBarcelona, jTextFieldGate1AeropuertoBarcelona,
@@ -144,46 +145,10 @@ public class ProgramaPrincipal extends Thread {
                 jTextFieldTransferCiudadAutobusMadrid);
         Ciudad barcelona = new Ciudad("Barcelona", aeropuertoBarcelona, jTextFieldTransferAeropuertoAutobusBarcelona,
                 jTextFieldTransferCiudadAutobusBarcelona);
-
-//
-//
-//
-        char[] abc = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'}; //letras para el identificador del avion
-//        
-//        //creacion de los hilos de aviones
-//
-        for (int i = 0; i < 4; i ++) {  //deberian ser 8000
-
-            int r1 = (int) (Math.random() * 26);
-            int r2 = (int) (Math.random() * 26);
-            String identificador = "" + abc[r1] + abc[r2] + "";
-
-            if (i % 2 == 0) {
-                Avion avion = new Avion(identificador, i, madrid, barcelona);
-                avion.start();
-            }
-            else{
-                Avion avion = new Avion(identificador, i, barcelona, madrid);
-                avion.start();
-            }
-
-        }
-        //El numero de autobuses se cambia luego el 100 es por pruebas
-        //creacion de los hilos de autobuses
-//        for (int i = 0; i < 4; i++) { //deberian ser 4000
-//
-//            String identificador = "B";
-//
-//            if (i % 2 == 0) {
-//                Autobus autobusMadrid = new Autobus(identificador, i, 0, madrid);
-//                autobusMadrid.start();
-//            } 
-//            else {
-//                Autobus autobusBarcelona = new Autobus(identificador, i, 0, barcelona);
-//                autobusBarcelona.start();
-//            }
-//
-//        }
-//    }
-}
+        
+        ProgramaPrincipalAviones pp1 = new ProgramaPrincipalAviones(madrid, barcelona,paso);
+        ProgramaPrincipalAutobuses pp2 = new ProgramaPrincipalAutobuses(madrid, barcelona,paso);
+        pp1.start();
+        pp2.start();
+    }
 }
