@@ -46,16 +46,18 @@ public class Ciudad {
         System.out.println("El autobus " + a.getIdentificador() + " va a recoger a " + pasajerosParada + " personas.");
     }
 
-    public void irAeropuertoAutobus(Autobus a) {
+    public void irAeropuertoAutobus(Autobus a, Paso paso) {
 
         try {
             SemAutobusesHaciaAeropuerto.acquire();
 
             autobusesHaciaAeropuerto.add(a);
             imprimirArrayAutobus(jTextFieldTransferAeropuertoAutobus,autobusesHaciaAeropuerto);
+            paso.mirar();
             System.out.println("El autobus " + a.getIdentificador() + " va hacia el aeropuerto de " + nombre);
             SemAutobusesHaciaAeropuerto.release();
             dormirAutobus(5000, 10000);
+            paso.mirar();
             SemAutobusesHaciaAeropuerto.acquire();
             autobusesHaciaAeropuerto.remove(a);
             SemAutobusesHaciaAeropuerto.release();
@@ -67,11 +69,12 @@ public class Ciudad {
         }
     }
 
-    public void bajarPasajerosAlAeropuertoAutobus(Autobus a) {
+    public void bajarPasajerosAlAeropuertoAutobus(Autobus a,Paso paso) {
         try {
             SemAutobusesHaciaAeropuerto.acquire();
             autobusesHaciaAeropuerto.remove(a);
             aeropuerto.bajarPasajerosAutobus(a);
+            paso.mirar();
             imprimirArrayAutobus(jTextFieldTransferAeropuertoAutobus, autobusesHaciaAeropuerto);
             SemAutobusesHaciaAeropuerto.release();
 
@@ -94,16 +97,18 @@ public class Ciudad {
 
     }
 
-    public void irCiudadAutobus(Autobus a) {
+    public void irCiudadAutobus(Autobus a,Paso paso) {
         try {
             SemAutobusesHaciaCiudad.acquire();
             autobusesHaciaCiudad.add(a);
+            paso.mirar();
             imprimirArrayAutobus(jTextFieldTransferCiudadAutobus, autobusesHaciaCiudad);
             System.out.println("El autobus " + a.getIdentificador() + " va hacia la ciudad de " + nombre);
             SemAutobusesHaciaCiudad.release();
             dormirAutobus(5000, 10000);
             SemAutobusesHaciaCiudad.acquire();
             autobusesHaciaCiudad.remove(a);
+            paso.mirar();
             imprimirArrayAutobus(jTextFieldTransferCiudadAutobus, autobusesHaciaCiudad);
             SemAutobusesHaciaCiudad.release();
 

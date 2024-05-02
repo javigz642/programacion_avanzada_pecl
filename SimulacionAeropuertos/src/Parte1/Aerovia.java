@@ -49,7 +49,7 @@ public class Aerovia {
 
             control.release();
             //System.out.println(avion.getIdentificador() + " entrando AEROVIA " + avion.getOrigen().getNombre() + "-" + avion.getDestino().getNombre());
-            Thread.sleep((int) (Math.random() * 15000) + 15001);
+            Thread.sleep((int) (Math.random() * 15001) + 15000);
         } catch (InterruptedException ex) {
             Logger.getLogger(Aerovia.class.getName()).log(Level.SEVERE, null, ex);
         }

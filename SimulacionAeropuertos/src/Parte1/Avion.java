@@ -18,7 +18,7 @@ public class Avion extends Thread {
     private Ciudad origen;
     private Ciudad destino;
     private Ciudad aux;
-        private Paso paso;
+    private Paso paso;
 
     private String identificador;
     private int numero;
@@ -41,7 +41,7 @@ public class Avion extends Thread {
     public void run() {
 
         try {
-            
+
             System.out.println("Avion " + this.getIdentificador() + " creado");
             paso.mirar();
             origen.aeropuerto.hangar.entrarHangar(this);
@@ -49,36 +49,34 @@ public class Avion extends Thread {
             origen.aeropuerto.hangar.salirHangar(this);
 
             while (true) {
-                
-                embarque = true; //indica que va a embarcar
 
-                
+                embarque = true; //indica que va a embarcar
 
                 Thread.sleep(0);
                 paso.mirar();
                 origen.aeropuerto.areaEstacionamiento.entrarArea(this);
                 paso.mirar();
                 origen.aeropuerto.areaEstacionamiento.salirArea(this);
-paso.mirar();
-                origen.aeropuerto.puertaEmbarque.entrarPuerta(this);
+                paso.mirar();
+                origen.aeropuerto.puertaEmbarque.entrarPuerta(this,paso);
                 //sale solo de la puerta de embarque
-paso.mirar();
+                paso.mirar();
                 origen.aeropuerto.areaRodaje.entrarAreaRodaje(this);
                 paso.mirar();
                 origen.aeropuerto.areaRodaje.salirAreaRodaje(this);
-paso.mirar();
-                origen.aeropuerto.pista.pedirPista(this);
+                paso.mirar();
+                origen.aeropuerto.pista.pedirPista(this,paso);
                 //sale solo de la pista
-paso.mirar();
+                paso.mirar();
                 origen.aeropuerto.aerovia.entrarAerovia(this);
                 paso.mirar();
                 origen.aeropuerto.aerovia.abandonarAerovia(this);
-paso.mirar();
+                paso.mirar();
                 vuelos++;
 
                 embarque = false; //indica que va a desembarcar
 
-                destino.aeropuerto.pista.pedirPista(this);
+                destino.aeropuerto.pista.pedirPista(this,paso);
                 paso.mirar();
                 //sale solo de la pista
 
@@ -86,7 +84,7 @@ paso.mirar();
                 paso.mirar();
                 //sale por si solo del area cuando tiene puerta para desembarcar
 
-                destino.aeropuerto.puertaEmbarque.entrarPuerta(this);
+                destino.aeropuerto.puertaEmbarque.entrarPuerta(this,paso);
                 paso.mirar();
                 //sale solo de la puerta
 
@@ -113,7 +111,6 @@ paso.mirar();
                 origen = destino;
                 destino = aux;
             }
-
 
         } catch (InterruptedException ex) {
             Logger.getLogger(Avion.class.getName()).log(Level.SEVERE, null, ex);
@@ -156,24 +153,5 @@ paso.mirar();
     public int getVuelos() {
         return vuelos;
     }
-    
-    
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
 }

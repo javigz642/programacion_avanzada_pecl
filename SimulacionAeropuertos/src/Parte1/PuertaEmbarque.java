@@ -50,7 +50,7 @@ public class PuertaEmbarque {
         this.jTextFieldGate6Aeropuerto = jTextFieldGate6Aeropuerto;
     }
 
-    public void entrarPuerta(Avion avion) {
+    public void entrarPuerta(Avion avion, Paso paso) {
 
         try {
             if (avion.isEmbarque()) {
@@ -61,21 +61,25 @@ public class PuertaEmbarque {
                     //System.out.println(avion.getIdentificador() + " entrando Gate 5 (exclusiva Embarque)");
                     puertaEmbarque(avion);
                     aviones[4] = null;
+                    paso.mirar();
                     imprimirArrayAviones(aviones,5);
+                    
                     //System.out.println(avion.getIdentificador() + " saliendo Gate 5 (exclusiva Embarque) con " + avion.getPasajerosActual() + " pasajeros");
                     puertaEmbarque.release();
+                    
 
                 } else {
                     puertasLibres[avion.getNumero() % 4].acquire();
                     aviones[avion.getNumero() % 4] = avion;
-                    imprimirArrayAviones(aviones,avion.getNumero() % 4 + 3);
+                    imprimirArrayAviones(aviones,avion.getNumero() % 4+1);
                     //System.out.println(avion.getIdentificador() + " entrando Gate " + (avion.getNumero() % 4 + 3) + " para Embarque");
                     puertaEmbarque(avion);
                     //System.out.println(avion.getIdentificador() + " saliendo Gate " + (avion.getNumero() % 4 + 3) + " con " + avion.getPasajerosActual() + " pasajeros");
                     aviones[avion.getNumero() % 4] = null;
-                    imprimirArrayAviones(aviones,avion.getNumero() % 4 + 3);
+                    paso.mirar();
+                    imprimirArrayAviones(aviones,avion.getNumero() % 4+1);
                     puertasLibres[avion.getNumero() % 4].release();
-
+                    
                 }
             } else {
                 if (puertaDesembarque.tryAcquire()) {
@@ -87,9 +91,11 @@ public class PuertaEmbarque {
                     //System.out.println(avion.getIdentificador() + " entrando Gate 6 (exclusiva Desembarque)");
                     puertaDesembarque(avion);
                     aviones[5] = null;
+                    paso.mirar();
                     imprimirArrayAviones(aviones,6);
                     //System.out.println(avion.getIdentificador() + " saliendo Gate 6 (exclusiva Desembarque)");;
                     puertaDesembarque.release();
+                    
 
                 } else {
                     puertasLibres[avion.getNumero() % 4].acquire();
@@ -97,15 +103,18 @@ public class PuertaEmbarque {
                     //System.out.println(avion.getIdentificador() + " tiene Gate " + (avion.getNumero() % 4 + 3) + " libre. Yendo desde RODAJE hacia Desembarque");
                     Thread.sleep((int) (Math.random() * 2000) + 3001); //paso de Area de Rodaje a Desembarque
                     aviones[avion.getNumero() % 4] = avion;
-                    imprimirArrayAviones(aviones,avion.getNumero() % 4 + 3);
+                    imprimirArrayAviones(aviones,avion.getNumero() % 4+1);
                     //System.out.println(avion.getIdentificador() + " entrando Gate " + (avion.getNumero() % 4 + 3) + " para Desembarque de " + avion.getPasajerosActual() + " pasajeros");
                     puertaDesembarque(avion);
                     aviones[avion.getNumero() % 4] = null;
-                    imprimirArrayAviones(aviones,avion.getNumero() % 4 + 3);
+                    paso.mirar();
+                    imprimirArrayAviones(aviones,avion.getNumero() % 4+1);
                     //System.out.println(avion.getIdentificador() + " saliendo Gate " + (avion.getNumero() % 4 + 3));
                     puertasLibres[avion.getNumero() % 4].release();
+                    
                 }
             }
+            paso.mirar();
 
         } catch (InterruptedException ex) {
             Logger.getLogger(PuertaEmbarque.class.getName()).log(Level.SEVERE, null, ex);
@@ -129,7 +138,7 @@ public class PuertaEmbarque {
             }
 
             while (intentos < 3 && avion.getPasajerosActual() < max) {
-
+                
                 System.out.println(avion.getIdentificador() + " no esta lleno. Intentadolo llenar mas tarde. Capacidad = " + max + " Actuales = " + avion.getPasajerosActual() + " Intento numero " + (intentos + 1));
                 Thread.sleep((int) (Math.random() * 4000) + 1001);
                 pasajeros = avion.getOrigen().aeropuerto.recogerPasajerosAvion(max - avion.getPasajerosActual());

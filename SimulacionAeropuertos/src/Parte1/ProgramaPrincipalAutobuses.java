@@ -24,7 +24,7 @@ public class ProgramaPrincipalAutobuses extends Thread{
     public void run(){
                 //El numero de autobuses se cambia luego el 100 es por pruebas
         //creacion de los hilos de autobuses
-        for (int i = 0; i < 1; i++) { //deberian ser 4000
+        for (int i = 0; i < 4000; i++) { //deberian ser 4000
 
             String identificador = "B";
 

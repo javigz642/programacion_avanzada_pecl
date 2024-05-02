@@ -27,23 +27,6 @@ public interface InterfaceInformar extends Remote
     void setAbrirPasoPistaXBarcelona(int x) throws RemoteException;
 
 
-    
-//    void cerrarPista1AeropuertoMadrid() throws RemoteException;
-//    void abrirPista1AeropuertoMadrid() throws RemoteException;
-//    void cerrarPista2AeropuertoMadrid() throws RemoteException;
-//    void abrirPista2AeropuertoMadrid() throws RemoteException;
-//    void cerrarPista3AeropuertoMadrid() throws RemoteException;
-//    void abrirPista3AeropuertoMadrid() throws RemoteException;
-//    void cerrarPista4AeropuertoMadrid() throws RemoteException;
-//    void abrirPista4AeropuertoMadrid() throws RemoteException;
-//    void cerrarPista1AeropuertoBarcelona() throws RemoteException;
-//    void abrirPista1AeropuertoBarcelona() throws RemoteException;
-//    void cerrarPista2AeropuertoBarcelona() throws RemoteException;
-//    void abrirPista2AeropuertoBarcelona() throws RemoteException;
-//    void cerrarPista3AeropuertoBarcelona() throws RemoteException;
-//    void abrirPista3AeropuertoBarcelona() throws RemoteException;
-//    void cerrarPista4AeropuertoBarcelona() throws RemoteException;
-//    void abrirPista4AeropuertoBarcelona() throws RemoteException;
 
 
 }

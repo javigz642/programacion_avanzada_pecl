@@ -112,21 +112,17 @@ public class Cliente extends Thread {
     }
 
 public void mirarSiPararAlgunaPista(InterfaceInformar obj) {
-    // Eliminar las impresiones innecesarias
-    imprimir(pasoPistas);
-    imprimir(pasoPistasAux);
 
     // Comprobar si ha habido cambios en el estado de las pistas
     for (int i = 0; i < pasoPistas.length; i++) {
         boolean pasoActual = pasoPistas[i];
         boolean pasoAnterior = pasoPistasAux[i];
 
-        // Si hay cambios en el estado de la pista, actuar en consecuencia
+        // Si hay cambios en el estado de la pista se actua
         if (pasoActual != pasoAnterior) {
             try {
                 if (pasoActual) {
                     if (i < 4) {
-                        System.out.println("Entra en cerrar pista madrid");
                         obj.setCerrarPasoPistaXMadrid(i);
                     } else {
                         obj.setCerrarPasoPistaXBarcelona(i - 4);

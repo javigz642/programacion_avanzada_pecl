@@ -49,7 +49,7 @@ public class Pista {
     
 
     
-    public void pedirPista(Avion avion) {
+    public void pedirPista(Avion avion, Paso paso) {
         
         try {
             if (avion.isEmbarque()) {
@@ -58,32 +58,38 @@ public class Pista {
                 aviones[avion.getNumero()%4] = avion;
                 imprimirArrayAviones(aviones, avion.getNumero()%4);
                 //System.out.println(avion.getIdentificador() + " tiene libre la PISTA " + (avion.getNumero()+1) + " para despegar"); 
-                despegar(avion);
+                despegar(avion,paso);
                 
             } else {
                 pasoPistas.mirar(avion.getNumero()%4);
                 while (!pistas[avion.getNumero()%4].tryAcquire()) {
                     System.out.println(avion.getIdentificador() + " dando un rodeo para tener pista libre");
                     Thread.sleep((int) (Math.random() * 4000) + 1001);
+                    
                 }
                 pasoPistas.mirar(avion.getNumero()%4);
+                
                 aviones[avion.getNumero()%4] = avion;
+                imprimirArrayAviones(aviones, avion.getNumero()%4);
                 //System.out.println(avion.getIdentificador() + " tiene libre la PISTA " + (avion.getNumero()+1) + " para aterrizar");
                 aterrizar(avion);
             }
+            
         } catch (InterruptedException ex) {
             Logger.getLogger(Pista.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
     
-    private void despegar(Avion avion){
+    private void despegar(Avion avion,Paso paso){
         
         try {
             //System.out.println(avion.getIdentificador() + " realizando verificaciones PISTA");
             Thread.sleep((int) (Math.random() * 2000) + 1001);
+            paso.mirar();
             //System.out.println(avion.getIdentificador() + " despegando con " + avion.getPasajerosActual() + " pasajeros desde la PISTA " + (avion.getNumero()+1));
             Thread.sleep((int) (Math.random() * 4000) + 1001);
+            paso.mirar();
             //System.out.println(avion.getIdentificador() + " ha dejado libre la PISTA " + (avion.getNumero()+1));
             aviones[avion.getNumero()%4] = null;
             imprimirArrayAviones(aviones, avion.getNumero()%4);

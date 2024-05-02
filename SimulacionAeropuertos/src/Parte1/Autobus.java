@@ -29,16 +29,16 @@ public class Autobus extends Thread {
             paso.mirar();
             ciudad.recogerPasajerosCiudadAutobus(this);
             paso.mirar();
-            ciudad.irAeropuertoAutobus(this);
+            ciudad.irAeropuertoAutobus(this,paso);
             paso.mirar();
-            ciudad.bajarPasajerosAlAeropuertoAutobus(this);
+            ciudad.bajarPasajerosAlAeropuertoAutobus(this,paso);
             paso.mirar();
             ciudad.recogerPasajerosAeropuertoAutobus(this);
             paso.mirar();
-            ciudad.irCiudadAutobus(this);
+            ciudad.irCiudadAutobus(this,paso);
             paso.mirar();
             ciudad.bajarPasajerosACiudadAutobus(this);
-
+            
         }
 
     }
