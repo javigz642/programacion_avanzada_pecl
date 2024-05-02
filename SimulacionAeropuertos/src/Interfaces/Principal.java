@@ -13,7 +13,8 @@ import Parte1.*;
 public class Principal extends javax.swing.JFrame {
 
     Paso paso = new Paso();
-    PasoPistas pasoPistas = new PasoPistas();
+    PasoPistas pasoPistasMadrid = new PasoPistas();
+    PasoPistas pasoPistasBarcelona = new PasoPistas();
     
 
     /**
@@ -39,7 +40,7 @@ public class Principal extends javax.swing.JFrame {
                 jTextFieldPista4AeropuertoMadrid, jTextFieldTallerAeropuertoBarcelona,
                 jTextFieldTallerAeropuertoMadrid, jTextFieldTransferAeropuertoAutobusBarcelona,
                 jTextFieldTransferAeropuertoAutobusMadrid, jTextFieldTransferCiudadAutobusMadrid,
-                jTextFieldTransferCiudadAutobusBarcelona,paso, pasoPistas);
+                jTextFieldTransferCiudadAutobusBarcelona,paso, pasoPistasBarcelona,pasoPistasMadrid);
         principal.run();
 
     }

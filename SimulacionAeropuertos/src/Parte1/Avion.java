@@ -42,7 +42,7 @@ public class Avion extends Thread {
 
         try {
 
-            System.out.println("Avion " + this.getIdentificador() + " creado");
+            //System.out.println("Avion " + this.getIdentificador() + " creado");
             paso.mirar();
             origen.aeropuerto.hangar.entrarHangar(this);
             paso.mirar();

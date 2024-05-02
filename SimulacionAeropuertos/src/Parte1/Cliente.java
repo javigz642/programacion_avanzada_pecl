@@ -123,14 +123,19 @@ public void mirarSiPararAlgunaPista(InterfaceInformar obj) {
             try {
                 if (pasoActual) {
                     if (i < 4) {
+                        System.out.println("Cerrar pista madridddddd" + i);
+                        
                         obj.setCerrarPasoPistaXMadrid(i);
                     } else {
+                        System.out.println("Cerrar pista barcelonaaaaa" + (i));
                         obj.setCerrarPasoPistaXBarcelona(i - 4);
                     }
                 } else {
                     if (i < 4) {
+                        System.out.println("Abrir pista madridddddd" + i);
                         obj.setAbrirPasoPistaXMadrid(i);
                     } else {
+                        System.out.println("Abrir pista barcelonaaaaaaa" + (i));
                         obj.setAbrirPasoPistaXBarcelona(i - 4);
                     }
                 }

@@ -139,7 +139,7 @@ public class PuertaEmbarque {
 
             while (intentos < 3 && avion.getPasajerosActual() < max) {
                 
-                System.out.println(avion.getIdentificador() + " no esta lleno. Intentadolo llenar mas tarde. Capacidad = " + max + " Actuales = " + avion.getPasajerosActual() + " Intento numero " + (intentos + 1));
+                //System.out.println(avion.getIdentificador() + " no esta lleno. Intentadolo llenar mas tarde. Capacidad = " + max + " Actuales = " + avion.getPasajerosActual() + " Intento numero " + (intentos + 1));
                 Thread.sleep((int) (Math.random() * 4000) + 1001);
                 pasajeros = avion.getOrigen().aeropuerto.recogerPasajerosAvion(max - avion.getPasajerosActual());
                 avion.setPasajerosActual(avion.getPasajerosActual() + pasajeros);

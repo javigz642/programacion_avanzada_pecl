@@ -43,7 +43,8 @@ public class Ciudad {
 
     public void recogerPasajerosCiudadAutobus(Autobus a) {
         pasajerosParada = random.nextInt(51);
-        System.out.println("El autobus " + a.getIdentificador() + " va a recoger a " + pasajerosParada + " personas.");
+        a.setPasajeros(pasajerosParada);
+        //System.out.println("El autobus " + a.getIdentificador() + " va a recoger a " + pasajerosParada + " personas.");
     }
 
     public void irAeropuertoAutobus(Autobus a, Paso paso) {
@@ -54,7 +55,7 @@ public class Ciudad {
             autobusesHaciaAeropuerto.add(a);
             imprimirArrayAutobus(jTextFieldTransferAeropuertoAutobus,autobusesHaciaAeropuerto);
             paso.mirar();
-            System.out.println("El autobus " + a.getIdentificador() + " va hacia el aeropuerto de " + nombre);
+            System.out.println("El autobus " + a.getIdentificador() + " va hacia el aeropuerto de " + nombre + "con " + a.getPasajeros() + " pasajeros");
             SemAutobusesHaciaAeropuerto.release();
             dormirAutobus(5000, 10000);
             paso.mirar();
@@ -65,7 +66,7 @@ public class Ciudad {
         } catch (Exception e) {
         } finally {
 
-            System.out.println("El autobus " + a.getIdentificador() + " ha llegado al aeropuerto " + nombre);
+            //System.out.println("El autobus " + a.getIdentificador() + " ha llegado al aeropuerto " + nombre);
         }
     }
 
@@ -82,8 +83,8 @@ public class Ciudad {
         } finally {
 
         }
-        a.setPasajeros(0);
-        System.out.println("Se han bajado todos los pasajeros del autobus " + a.getIdentificador());
+        
+        //System.out.println("Se han bajado todos los pasajeros del autobus " + a.getIdentificador());
     }
 
     public void recogerPasajerosAeropuertoAutobus(Autobus a) {
@@ -103,7 +104,7 @@ public class Ciudad {
             autobusesHaciaCiudad.add(a);
             paso.mirar();
             imprimirArrayAutobus(jTextFieldTransferCiudadAutobus, autobusesHaciaCiudad);
-            System.out.println("El autobus " + a.getIdentificador() + " va hacia la ciudad de " + nombre);
+
             SemAutobusesHaciaCiudad.release();
             dormirAutobus(5000, 10000);
             SemAutobusesHaciaCiudad.acquire();
@@ -116,8 +117,7 @@ public class Ciudad {
         } finally {
 
         }
-        a.setPasajeros(0);
-        System.out.println("Se han bajado todos los pasajeros del autobus " + a.getIdentificador());
+        //System.out.println("Se han bajado todos los pasajeros del autobus " + a.getIdentificador());
     }
 
     public void bajarPasajerosACiudadAutobus(Autobus a) {
@@ -130,7 +130,7 @@ public class Ciudad {
         } catch (Exception e) {
         } finally {
 
-            System.out.println("El autobus " + a.getIdentificador() + " ha llegado a su destino " + nombre);
+            //System.out.println("El autobus " + a.getIdentificador() + " ha llegado a su destino " + nombre);
         }
     }
 
@@ -150,10 +150,10 @@ public class Ciudad {
         String stringAux = "";
         for (int i = 0; i < arrayBuses.size(); i++) {
             stringAux += arrayBuses.get(i).getIdentificador() + " / ";
-            System.out.println(arrayBuses.get(i).getIdentificador() + " circulando");
+            //System.out.println(arrayBuses.get(i).getIdentificador() + " circulando");
 
         }
         jTextFieldDestino.setText(stringAux);
-        System.out.println(stringAux);
+        //System.out.println(stringAux);
     }
 }

@@ -22,7 +22,7 @@ public class PasoPistas
         try{
             
             cerrojo.lock();
-            imprimir();
+            //imprimir();
 
             while(cerrado[numero])
             {
@@ -55,7 +55,7 @@ public class PasoPistas
     
     public void cerrar(int numero)
     {
-        System.out.println("entro en cerrarrrrrrrrrrrr la pista" + numero);
+
         try
         {
             cerrojo.lock();

@@ -587,6 +587,7 @@ public class ConsultasAeropuerto extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAbrirPista4MadridActionPerformed
 
 
+    
     private void jButtonCerrarPista1BarcelonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCerrarPista1BarcelonaActionPerformed
         // TODO add your handling code here:
         jButtonCerrarPista1Barcelona.setEnabled(false);

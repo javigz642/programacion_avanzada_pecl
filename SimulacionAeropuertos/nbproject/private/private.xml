@@ -8,11 +8,14 @@
             <file>file:/C:/Users/ediso/OneDrive/Documentos/NetBeansProjects/PL1_ProgramacionAvanzada/SimulacionAeropuertos/src/Interfaces/ConsultasAeropuerto.java</file>
             <file>file:/C:/Users/ediso/OneDrive/Documentos/NetBeansProjects/PL1_ProgramacionAvanzada/SimulacionAeropuertos/src/Parte1/Ciudad.java</file>
             <file>file:/C:/Users/ediso/OneDrive/Documentos/NetBeansProjects/PL1_ProgramacionAvanzada/SimulacionAeropuertos/src/Parte1/Paso.java</file>
+            <file>file:/C:/Users/ediso/OneDrive/Documentos/NetBeansProjects/PL1_ProgramacionAvanzada/SimulacionAeropuertos/src/Parte1/Informador.java</file>
             <file>file:/C:/Users/ediso/OneDrive/Documentos/NetBeansProjects/PL1_ProgramacionAvanzada/SimulacionAeropuertos/src/Parte1/Avion.java</file>
             <file>file:/C:/Users/ediso/OneDrive/Documentos/NetBeansProjects/PL1_ProgramacionAvanzada/SimulacionAeropuertos/src/Parte1/PuertaEmbarque.java</file>
             <file>file:/C:/Users/ediso/OneDrive/Documentos/NetBeansProjects/PL1_ProgramacionAvanzada/SimulacionAeropuertos/src/Parte1/ProgramaPrincipalAutobuses.java</file>
             <file>file:/C:/Users/ediso/OneDrive/Documentos/NetBeansProjects/PL1_ProgramacionAvanzada/SimulacionAeropuertos/src/Parte1/Pista.java</file>
+            <file>file:/C:/Users/ediso/OneDrive/Documentos/NetBeansProjects/PL1_ProgramacionAvanzada/SimulacionAeropuertos/src/Parte1/Servidor.java</file>
             <file>file:/C:/Users/ediso/OneDrive/Documentos/NetBeansProjects/PL1_ProgramacionAvanzada/SimulacionAeropuertos/src/Parte1/Autobus.java</file>
+            <file>file:/C:/Users/ediso/OneDrive/Documentos/NetBeansProjects/PL1_ProgramacionAvanzada/SimulacionAeropuertos/src/Parte1/PasoPistas.java</file>
             <file>file:/C:/Users/ediso/OneDrive/Documentos/NetBeansProjects/PL1_ProgramacionAvanzada/SimulacionAeropuertos/src/Parte1/AreaEstacionamiento.java</file>
             <file>file:/C:/Users/ediso/OneDrive/Documentos/NetBeansProjects/PL1_ProgramacionAvanzada/SimulacionAeropuertos/src/Interfaces/Principal.java</file>
             <file>file:/C:/Users/ediso/OneDrive/Documentos/NetBeansProjects/PL1_ProgramacionAvanzada/SimulacionAeropuertos/src/Parte1/Main.java</file>
@@ -20,6 +23,8 @@
             <file>file:/C:/Users/ediso/OneDrive/Documentos/NetBeansProjects/PL1_ProgramacionAvanzada/SimulacionAeropuertos/src/Parte1/Aeropuerto.java</file>
             <file>file:/C:/Users/ediso/OneDrive/Documentos/NetBeansProjects/PL1_ProgramacionAvanzada/SimulacionAeropuertos/src/Parte1/Hangar.java</file>
             <file>file:/C:/Users/ediso/OneDrive/Documentos/NetBeansProjects/PL1_ProgramacionAvanzada/SimulacionAeropuertos/src/Parte1/AreaRodaje.java</file>
+            <file>file:/C:/Users/ediso/OneDrive/Documentos/NetBeansProjects/PL1_ProgramacionAvanzada/SimulacionAeropuertos/src/Parte1/Cliente.java</file>
+            <file>file:/C:/Users/ediso/OneDrive/Documentos/NetBeansProjects/PL1_ProgramacionAvanzada/SimulacionAeropuertos/src/Parte1/InterfaceInformar.java</file>
         </group>
     </open-files>
 </project-private>

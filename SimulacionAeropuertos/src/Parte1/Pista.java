@@ -124,9 +124,9 @@ public class Pista {
         if(arrayAviones[numeroPista] != null){
             stringAux = arrayAviones[numeroPista].getIdentificador();
         }
-                
+         numeroPista++;       
 
-        switch (numeroPista+1) {
+        switch (numeroPista) {
             case 1:
                 jTextFieldPista1Aeropuerto.setText(stringAux);
                 break;
