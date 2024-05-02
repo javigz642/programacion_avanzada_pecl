@@ -31,9 +31,9 @@ public class ProgramaPrincipalAutobuses extends Thread{
             if (i % 2 == 0) {
                 Autobus autobusMadrid = new Autobus(identificador, i, 0, madrid,paso);
                 autobusMadrid.start();
-//            } else {
-//                Autobus autobusBarcelona = new Autobus(identificador, i, 0, barcelona,paso);
-//                autobusBarcelona.start();
+            } else {
+                Autobus autobusBarcelona = new Autobus(identificador, i, 0, barcelona,paso);
+                autobusBarcelona.start();
             }
             try {
                 Thread.sleep((int) (Math.random() * 501) + 500);

@@ -19,7 +19,7 @@ import javax.swing.JTextField;
  */
 public class Aeropuerto extends Thread {
 
-    private int personasDentro = 3000;
+    private int personasDentro = 300000;
 
     protected Hangar hangar;
     protected AreaEstacionamiento areaEstacionamiento;
@@ -109,6 +109,7 @@ public class Aeropuerto extends Thread {
         try {
             control.acquire();
             personasDentro += a.getPasajeros();
+            System.out.println("Pasajeeeeeeeeeeeeeeeeeeeeeeeeeeeeeros  ------> "+a.getPasajeros());
             a.setPasajeros(0);
             imprimirPasajerosEnAeropuerto(jTextFieldNumeroPasajerosAeropuerto, personasDentro);
             control.release();
