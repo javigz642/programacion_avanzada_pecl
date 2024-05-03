@@ -1,4 +1,4 @@
-package Parte1;
+package Clases;
 
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicInteger;

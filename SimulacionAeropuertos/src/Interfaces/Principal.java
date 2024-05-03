@@ -4,7 +4,9 @@
  */
 package Interfaces;
 
-import Parte1.*;
+import Clases.PasoPistas;
+import Clases.Main;
+import Clases.Paso;
 
 /**
  *
@@ -460,7 +462,7 @@ public class Principal extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(150, 150, 150)
                                 .addComponent(jLabel20)))
-                        .addGap(56, 56, 56)
+                        .addGap(82, 82, 82)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(layout.createSequentialGroup()
@@ -541,7 +543,7 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(jButtonPausar)
                         .addGap(44, 44, 44)
                         .addComponent(jButtonReanudar)))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

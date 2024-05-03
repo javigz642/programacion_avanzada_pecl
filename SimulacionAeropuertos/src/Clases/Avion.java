@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Parte1;
+package Clases;
 // Esto es un cambio
 
 import java.util.Random;
@@ -58,9 +58,11 @@ public class Avion extends Thread {
                 paso.mirar();
                 origen.aeropuerto.areaEstacionamiento.salirArea(this);
                 paso.mirar();
+                
                 origen.aeropuerto.puertaEmbarque.entrarPuerta(this,paso);
                 //sale solo de la puerta de embarque
                 paso.mirar();
+                
                 origen.aeropuerto.areaRodaje.entrarAreaRodaje(this);
                 paso.mirar();
                 origen.aeropuerto.areaRodaje.salirAreaRodaje(this);

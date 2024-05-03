@@ -4,7 +4,7 @@
  */
 package Interfaces;
 
-import Parte1.Cliente;
+import Clases.Cliente;
 import javax.swing.JTextField;
 
 /**
@@ -85,6 +85,7 @@ public class ConsultasAeropuerto extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setText("AEROPUERTO DE MADRID");
 
