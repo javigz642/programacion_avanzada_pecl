@@ -80,10 +80,13 @@ public class Aeropuerto extends Thread {
             do {
                 pasajerosParada = (int) (Math.random() * 51);
             } while (pasajerosParada > personasDentro);      
-
+            
             logger.log("Bus " + a.getIdentificador() + " esperando pasajeros en AEROPUERTO ", nombreCiudad);
             Thread.sleep((int) (Math.random() * 3000) + 2001);
             personasDentro -= pasajerosParada;
+            if(personasDentro < 0){
+                System.out.println("america");
+            }
             imprimirPasajerosEnAeropuerto(jTextFieldNumeroPasajerosAeropuerto, personasDentro);
             control.release();
             logger.log("Bus " + a.getIdentificador() + " recogiendo " + pasajerosParada + " pasajeros en AEROPUERTO ", nombreCiudad);

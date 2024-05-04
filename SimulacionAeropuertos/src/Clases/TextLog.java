@@ -18,8 +18,12 @@ public class TextLog {
 
     private String nombreArchivo;
 
-    public TextLog(String nombreArchivo) {
-        this.nombreArchivo = nombreArchivo;
+    public TextLog() {
+        // Genera un nombre de archivo único basado en la fecha y hora actual
+        SimpleDateFormat formatoT = new SimpleDateFormat("yyyyMMdd_HHmmss");
+        SimpleDateFormat formatoFecha = new SimpleDateFormat("HH-mm-ss");
+        String fechaActual = formatoFecha.format(new Date());
+        this.nombreArchivo = "evolucionAeropuerto" + fechaActual + ".txt";
     }
 
     public void log(String message, String nombreCiudad) {

@@ -80,6 +80,5 @@ public class PasoPistas {
         for (int i = 0; i < cerrado.length; i++) {
             aux += (cerrado[i] ? "true" : "false") + "/";
         }
-        System.out.println(aux);
     }
 }

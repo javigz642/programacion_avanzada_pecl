@@ -15,7 +15,7 @@ import Clases.TextLog;
  */
 public class Principal extends javax.swing.JFrame {
 
-    TextLog logger = new TextLog("evolucionAeropuerto.txt");
+    TextLog logger = new TextLog();
     Paso paso = new Paso(logger);
     PasoPistas pasoPistasMadrid = new PasoPistas(logger, "Madrid");
     PasoPistas pasoPistasBarcelona = new PasoPistas(logger, "Barcelona");
