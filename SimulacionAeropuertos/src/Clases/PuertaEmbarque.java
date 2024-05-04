@@ -30,7 +30,6 @@ public class PuertaEmbarque {
 
     private String nombreCiudad;
     private TextLog logger;
-//textfield
 
     private JTextField jTextFieldGate1Aeropuerto;
     private JTextField jTextFieldGate2Aeropuerto;
@@ -83,7 +82,7 @@ public class PuertaEmbarque {
                 }
             } else {
                 if (puertaDesembarque.tryAcquire()) {
-                    avion.getDestino().aeropuerto.areaRodaje.salirAreaRodaje(avion); //tiene que tener una puerta de desembarque libre antes de avanzar
+                    avion.getDestino().getAeropuerto().getAreaRodaje().salirAreaRodaje(avion); //tiene que tener una puerta de desembarque libre antes de avanzar
                     logger.log("Avion " + avion.getIdentificador() + " tiene Gate 6 libre. Yendo desde RODAJE hacia Desembarque", nombreCiudad);
                     Thread.sleep((int) (Math.random() * 2000) + 3001); //paso de Area de Rodaje a Desembarque
                     aviones[5] = avion;
@@ -99,7 +98,7 @@ public class PuertaEmbarque {
 
                 } else {
                     puertasLibres[avion.getNumero() % 4].acquire();
-                    avion.getDestino().aeropuerto.areaRodaje.salirAreaRodaje(avion); //tiene que tener una puerta de desembarque libre antes de avanzar
+                    avion.getDestino().getAeropuerto().getAreaRodaje().salirAreaRodaje(avion); //tiene que tener una puerta de desembarque libre antes de avanzar
                     logger.log("Avion " + avion.getIdentificador() + " tiene Gate " + (avion.getNumero() % 4 + 3) + " libre. Yendo desde RODAJE hacia Desembarque", nombreCiudad);
                     Thread.sleep((int) (Math.random() * 2000) + 3001); //paso de Area de Rodaje a Desembarque
                     aviones[avion.getNumero() % 4] = avion;
@@ -130,7 +129,7 @@ public class PuertaEmbarque {
             int intentos = 0;
             int pasajeros;
 
-            pasajeros = avion.getOrigen().aeropuerto.recogerPasajerosAvion(max);
+            pasajeros = avion.getOrigen().getAeropuerto().recogerPasajerosAvion(max);
             avion.setPasajerosActual(pasajeros);
 
             if (pasajeros > 0) {
@@ -143,7 +142,7 @@ public class PuertaEmbarque {
 
                 logger.log("Avion " + avion.getIdentificador() + " no esta lleno. Intentadolo llenar mas tarde. Capacidad = " + max + " Actuales = " + avion.getPasajerosActual() + " Intento numero " + (intentos + 1), nombreCiudad);
                 Thread.sleep((int) (Math.random() * 4000) + 1001);
-                pasajeros = avion.getOrigen().aeropuerto.recogerPasajerosAvion(max - avion.getPasajerosActual());
+                pasajeros = avion.getOrigen().getAeropuerto().recogerPasajerosAvion(max - avion.getPasajerosActual());
                 avion.setPasajerosActual(avion.getPasajerosActual() + pasajeros);
 
                 if (pasajeros > 0) {
@@ -168,7 +167,7 @@ public class PuertaEmbarque {
             if (avion.getPasajerosActual() > 0) {
 
                 logger.log("Avion " + avion.getIdentificador() + " DESEMBARCANDO " + avion.getPasajerosActual() + " pasajeros ", nombreCiudad);
-                avion.getOrigen().aeropuerto.bajarPasajerosAvion(avion.getPasajerosActual());
+                avion.getOrigen().getAeropuerto().bajarPasajerosAvion(avion.getPasajerosActual());
                 avion.setPasajerosActual(0);
                 Thread.sleep((int) (Math.random() * 4000) + 1001);
             } else {

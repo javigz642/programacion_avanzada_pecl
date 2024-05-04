@@ -23,7 +23,7 @@ public class Avion extends Thread {
 
     private String identificador;
     private int numero;
-    Random random = new Random();
+    private Random random = new Random();
 
     private int pasajerosActual;
     private final int pasajerosMax;
@@ -46,9 +46,9 @@ public class Avion extends Thread {
             
             logger.log("Avion " + this.getIdentificador() + " creado ", this.getOrigen().getNombre());
             paso.mirar();
-            origen.aeropuerto.hangar.entrarHangar(this);
+            origen.getAeropuerto().getHangar().entrarHangar(this);
             paso.mirar();
-            origen.aeropuerto.hangar.salirHangar(this);
+            origen.getAeropuerto().getHangar().salirHangar(this);
 
             while (true) {
 
@@ -57,60 +57,60 @@ public class Avion extends Thread {
                 Thread.sleep(0);
                 paso.mirar();
                 
-                origen.aeropuerto.areaEstacionamiento.entrarArea(this);
+                origen.getAeropuerto().getAreaEstacionamiento().entrarArea(this);
                 paso.mirar();
-                origen.aeropuerto.areaEstacionamiento.salirArea(this);
+                origen.getAeropuerto().getAreaEstacionamiento().salirArea(this);
                 paso.mirar();
                 
-                origen.aeropuerto.puertaEmbarque.entrarPuerta(this,paso);
+                origen.getAeropuerto().getPuertaEmbarque().entrarPuerta(this,paso);
                 //sale solo de la puerta de embarque
                 paso.mirar();
                 
-                origen.aeropuerto.areaRodaje.entrarAreaRodaje(this);
+                origen.getAeropuerto().getAreaRodaje().entrarAreaRodaje(this);
                 paso.mirar();
-                origen.aeropuerto.areaRodaje.salirAreaRodaje(this);
+                origen.getAeropuerto().getAreaRodaje().salirAreaRodaje(this);
                 paso.mirar();
                 
-                origen.aeropuerto.pista.pedirPista(this,paso);
+                origen.getAeropuerto().getPista().pedirPista(this,paso);
                 //sale solo de la pista
                 paso.mirar();
                 
-                origen.aeropuerto.aerovia.entrarAerovia(this);
+                origen.getAeropuerto().getAerovia().entrarAerovia(this);
                 paso.mirar();
-                origen.aeropuerto.aerovia.abandonarAerovia(this);
+                origen.getAeropuerto().getAerovia().abandonarAerovia(this);
                 paso.mirar();
                 
                 vuelos++;
 
                 embarque = false; //indica que va a desembarcar
 
-                destino.aeropuerto.pista.pedirPista(this,paso);
+                destino.getAeropuerto().getPista().pedirPista(this,paso);
                 paso.mirar();
                 //sale solo de la pista
 
-                destino.aeropuerto.areaRodaje.entrarAreaRodaje(this);
+                destino.getAeropuerto().getAreaRodaje().entrarAreaRodaje(this);
                 paso.mirar();
                 //sale por si solo del area cuando tiene puerta para desembarcar
 
-                destino.aeropuerto.puertaEmbarque.entrarPuerta(this,paso);
+                destino.getAeropuerto().getPuertaEmbarque().entrarPuerta(this,paso);
                 paso.mirar();
                 //sale solo de la puerta
 
-                destino.aeropuerto.areaEstacionamiento.entrarArea(this);
+                destino.getAeropuerto().getAreaEstacionamiento().entrarArea(this);
                 paso.mirar();
-                destino.aeropuerto.areaEstacionamiento.salirArea(this);
+                destino.getAeropuerto().getAreaEstacionamiento().salirArea(this);
                 paso.mirar();
 
-                destino.aeropuerto.taller.entrarTaller(this);
+                destino.getAeropuerto().getTaller().entrarTaller(this);
                 paso.mirar();
-                destino.aeropuerto.taller.salirTaller(this);
+                destino.getAeropuerto().getTaller().salirTaller(this);
                 paso.mirar();
 
                 if (random.nextInt(2) == 0) {
 
-                    destino.aeropuerto.hangar.reposar(this);
+                    destino.getAeropuerto().getHangar().reposar(this);
                     paso.mirar();
-                    destino.aeropuerto.hangar.salirHangar(this);
+                    destino.getAeropuerto().getHangar().salirHangar(this);
                     paso.mirar();
 
                 }

@@ -22,13 +22,13 @@ public class Aeropuerto extends Thread {
     private int personasDentro = 1000;
     private String nombreCiudad;
 
-    protected Hangar hangar;
-    protected AreaEstacionamiento areaEstacionamiento;
-    protected Taller taller;
-    protected PuertaEmbarque puertaEmbarque;
-    protected AreaRodaje areaRodaje;
-    protected Pista pista;
-    protected Aerovia aerovia;
+    private Hangar hangar;
+    private AreaEstacionamiento areaEstacionamiento;
+    private Taller taller;
+    private PuertaEmbarque puertaEmbarque;
+    private AreaRodaje areaRodaje;
+    private Pista pista;
+    private Aerovia aerovia;
     private TextLog logger;
 
     private Semaphore control = new Semaphore(1, true);
@@ -156,5 +156,35 @@ public class Aeropuerto extends Thread {
         int personasAux = personasDentro;
         return personasAux;
     }
+
+    public Hangar getHangar() {
+        return hangar;
+    }
+
+    public AreaEstacionamiento getAreaEstacionamiento() {
+        return areaEstacionamiento;
+    }
+
+    public Taller getTaller() {
+        return taller;
+    }
+
+    public PuertaEmbarque getPuertaEmbarque() {
+        return puertaEmbarque;
+    }
+
+    public AreaRodaje getAreaRodaje() {
+        return areaRodaje;
+    }
+
+    public Pista getPista() {
+        return pista;
+    }
+
+    public Aerovia getAerovia() {
+        return aerovia;
+    }
+    
+    
 
 }

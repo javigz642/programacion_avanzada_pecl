@@ -20,21 +20,21 @@ import javax.swing.JTextField;
  */
 public class Ciudad {
 
-    protected Aeropuerto aeropuerto;
+    private Aeropuerto aeropuerto;
     private TextLog logger;
 
     private String nombre;
     private ArrayList<Autobus> autobusesHaciaAeropuerto = new ArrayList<>();
     private ArrayList<Autobus> autobusesHaciaCiudad = new ArrayList<>();
 
-    Random random = new Random();
-    int pasajerosParada;
+    private Random random = new Random();
+    private int pasajerosParada;
 
     private Semaphore SemAutobusesHaciaAeropuerto = new Semaphore(1);
     private Semaphore SemAutobusesHaciaCiudad = new Semaphore(1);
 
-    JTextField jTextFieldTransferAeropuertoAutobus;
-    JTextField jTextFieldTransferCiudadAutobus;
+    private JTextField jTextFieldTransferAeropuertoAutobus;
+    private JTextField jTextFieldTransferCiudadAutobus;
 
     public Ciudad(String nombre, Aeropuerto aeropuerto, JTextField jTextFieldTransferAeropuertoAutobus, JTextField jTextFieldTransferCiudadAutobus, TextLog logger) {
         this.nombre = nombre;
@@ -141,4 +141,10 @@ public class Ciudad {
     public String getNombre() {
         return nombre;
     }
+
+    public Aeropuerto getAeropuerto() {
+        return aeropuerto;
+    }
+    
+    
 }

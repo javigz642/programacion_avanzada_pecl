@@ -31,67 +31,60 @@ public class Informador extends UnicastRemoteObject implements InterfaceInformar
 
 
     public String numAvionesHangarMadrid() throws RemoteException {
+    return aeropuertoMadrid.getHangar().getAvionesDentro() + "";
+}
 
-        return aeropuertoMadrid.hangar.getAvionesDentro()+""; 
-    }
+public String numAvionesHangarBarcelona() throws RemoteException {
+    return aeropuertoBarcelona.getHangar().getAvionesDentro() + "";
+}
 
+public String numAvionesTallerMadrid() throws RemoteException {
+    return aeropuertoMadrid.getTaller().getAvionesDentro() + "";
+}
 
-    public String numAvionesHangarBarcelona() throws RemoteException {
+public String numAvionesTallerBarcelona() throws RemoteException {
+    return aeropuertoBarcelona.getTaller().getAvionesDentro() + "";
+}
 
-        return aeropuertoBarcelona.hangar.getAvionesDentro()+"";
-    }
+public String numAvionesAreaEstacionamientoMadrid() throws RemoteException {
+    return aeropuertoMadrid.getAreaEstacionamiento().getAvionesDentro() + "";
+}
 
+public String numAvionesAreaEstacionamientoBarcelona() throws RemoteException {
+    return aeropuertoBarcelona.getAreaEstacionamiento().getAvionesDentro() + "";
+}
 
-    public String numAvionesTallerMadrid() throws RemoteException {
+public String numAvionesAreaRodajeMadrid() throws RemoteException {
+    return aeropuertoMadrid.getAreaRodaje().getAvionesDentro() + "";
+}
 
-        return aeropuertoMadrid.taller.getAvionesDentro()+""; 
-    }
+public String AvionesAeroviaMadrid_Barcelona() throws RemoteException {
+    return aeropuertoMadrid.getAerovia().getStringArrayAviones();
+}
 
+public String AvionesAeroviaBarcelona_Madrid() throws RemoteException {
+    return aeropuertoBarcelona.getAerovia().getStringArrayAviones();
+}
 
-    public String numAvionesTallerBarcelona() throws RemoteException {
+public String numAvionesAreaRodajeBarcelona() throws RemoteException {
+    return aeropuertoBarcelona.getAreaRodaje().getAvionesDentro() + "";
+}
 
-        return aeropuertoBarcelona.taller.getAvionesDentro()+""; 
-    }
-    public String numAvionesAreaEstacionamientoMadrid() throws RemoteException {
+public void setCerrarPasoPistaXMadrid(int x) throws RemoteException {
+    aeropuertoMadrid.getPista().cerrarPasoPistas(x);
+}
 
-        return aeropuertoMadrid.areaEstacionamiento.getAvionesDentro()+""; 
-    }
+public void setCerrarPasoPistaXBarcelona(int x) throws RemoteException {
+    aeropuertoBarcelona.getPista().cerrarPasoPistas(x);
+}
 
+public void setAbrirPasoPistaXMadrid(int x) throws RemoteException {
+    aeropuertoMadrid.getPista().abrirPasoPistas(x);
+}
 
-    public String numAvionesAreaEstacionamientoBarcelona() throws RemoteException {
-
-        return aeropuertoBarcelona.areaEstacionamiento.getAvionesDentro()+""; 
-    }
-    public String numAvionesAreaRodajeMadrid() throws RemoteException {
-
-        return aeropuertoMadrid.areaRodaje.getAvionesDentro()+""; 
-    }
-
-    public String AvionesAeroviaMadrid_Barcelona() throws RemoteException {
-
-        return aeropuertoMadrid.aerovia.getStringArrayAviones();
-    }
-    public String AvionesAeroviaBarcelona_Madrid() throws RemoteException {
-
-        return aeropuertoBarcelona.aerovia.getStringArrayAviones(); 
-    }
-
-
-    public String numAvionesAreaRodajeBarcelona() throws RemoteException {
-       return aeropuertoBarcelona.areaRodaje.getAvionesDentro()+""; 
-    }
-    public void setCerrarPasoPistaXMadrid(int x) throws RemoteException {
-        aeropuertoMadrid.pista.cerrarPasoPistas(x); 
-    }
-    public void setCerrarPasoPistaXBarcelona(int x) throws RemoteException {
-       aeropuertoBarcelona.pista.cerrarPasoPistas(x);
-    }
-    public void setAbrirPasoPistaXMadrid(int x) throws RemoteException {
-        aeropuertoMadrid.pista.abrirPasoPistas(x); 
-    }
-    public void setAbrirPasoPistaXBarcelona(int x) throws RemoteException {
-       aeropuertoBarcelona.pista.abrirPasoPistas(x); 
-    }
+public void setAbrirPasoPistaXBarcelona(int x) throws RemoteException {
+    aeropuertoBarcelona.getPista().abrirPasoPistas(x);
+}
 
 
 
