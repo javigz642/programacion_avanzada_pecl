@@ -20,82 +20,81 @@ import javax.swing.JTextField;
  */
 public class Hangar {
 
+    private TextLog logger;
+
     private ArrayList<Avion> aviones = new ArrayList<>();
     private int avionesDentro;
     private String nombreCiudad;
-    private TextLog logger;
-    
+
     private Semaphore control = new Semaphore(1);
-    
-    private JTextField jTextFieldHangarAeropuerto;  
+
+    private JTextField jTextFieldHangarAeropuerto;
 
     public Hangar(JTextField jTextFieldHangarAeropuerto, String nombreCiudad, TextLog logger) {
         this.nombreCiudad = nombreCiudad;
         this.jTextFieldHangarAeropuerto = jTextFieldHangarAeropuerto;
         this.logger = logger;
     }
-    
-      public void entrarHangar(Avion avion){
-        
-        
+
+    public void entrarHangar(Avion avion) {
+
         try {
             control.acquire();
             aviones.add(avion);
             avionesDentro++;
             imprimirArrayAviones(jTextFieldHangarAeropuerto, aviones);
             control.release();
-            //System.out.println(avion.getIdentificador()+ " entrando HANGAR");
+            logger.log("Avion " + avion.getIdentificador() + " entrando HANGAR ", nombreCiudad);
 
         } catch (InterruptedException ex) {
             Logger.getLogger(Hangar.class.getName()).log(Level.SEVERE, null, ex);
-        }  
+        }
     }
-    
-    public void salirHangar(Avion avion){
-        
+
+    public void salirHangar(Avion avion) {
+
         try {
             control.acquire();
             aviones.remove(avion);
             avionesDentro--;
             imprimirArrayAviones(jTextFieldHangarAeropuerto, aviones);
             control.release();
-            //System.out.println(avion.getIdentificador()+ " saliendo HANGAR");
+            logger.log("Avion " + avion.getIdentificador() + " saliendo HANGAR ", nombreCiudad);
         } catch (InterruptedException ex) {
             Logger.getLogger(Hangar.class.getName()).log(Level.SEVERE, null, ex);
-        } 
+        }
     }
-    
-    public void reposar (Avion avion){
-        
+
+    public void reposar(Avion avion) {
+
         try {
             control.acquire();
             aviones.add(avion);
             avionesDentro++;
             imprimirArrayAviones(jTextFieldHangarAeropuerto, aviones);
             control.release();
-            //System.out.println(avion.getIdentificador()+ " reposando HANGAR");
+            logger.log("Avion " + avion.getIdentificador() + " reposando HANGAR ", nombreCiudad);
             Thread.sleep((int) (Math.random() * 15000) + 15001);
         } catch (InterruptedException ex) {
             Logger.getLogger(Hangar.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
-    public void imprimirArrayAviones(JTextField jTextFieldDestino,ArrayList<Avion> arrayAviones) {
+
+    public void imprimirArrayAviones(JTextField jTextFieldDestino, ArrayList<Avion> arrayAviones) {
         String stringAux = "";
         for (int i = 0; i < arrayAviones.size(); i++) {
             stringAux += arrayAviones.get(i).getIdentificador() + " / ";
         }
         jTextFieldDestino.setText(stringAux);
-        //System.out.println(stringAux);
     }
-    
-        public int getAvionesDentro() {
+
+    public int getAvionesDentro() {
         int avionesAux = 0;
-  
-            avionesAux = avionesDentro;
-  
+
+        avionesAux = avionesDentro;
+
         return avionesAux;
     }
 
-    
 }

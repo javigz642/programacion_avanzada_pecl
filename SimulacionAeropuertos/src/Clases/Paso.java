@@ -9,11 +9,17 @@ import java.util.concurrent.locks.ReentrantLock;
 // Si vale false(abierto) el proceso puede continuar. Si es true(cerrado) el proceso se detiene
 public class Paso {
 
+    private TextLog logger;
+    
     private boolean cerrado = false;
     private Lock cerrojo = new ReentrantLock();
     private Condition parar = cerrojo.newCondition();
     private boolean soloUnHilo = true;
 
+    public Paso(TextLog logger) {
+        this.logger = logger;
+    }
+  
     public void mirar() {
 
         try {
@@ -33,7 +39,7 @@ public class Paso {
         try {
             cerrojo.lock();
             if (!soloUnHilo) {
-                System.out.println("Reanudando programa...");
+                logger.log("REANUDANDO PROGRAMA... ", "");
                 cerrado = false;
                 soloUnHilo = true;
                 parar.signalAll();
@@ -49,7 +55,7 @@ public class Paso {
 
             cerrojo.lock();
             if (soloUnHilo) {
-                System.out.println("Parando programa...");
+                logger.log("PARANDO PROGRAMA... ", "");
                 cerrado = true;
                 soloUnHilo = false;
             }

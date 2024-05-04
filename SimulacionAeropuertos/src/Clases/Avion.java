@@ -19,6 +19,7 @@ public class Avion extends Thread {
     private Ciudad destino;
     private Ciudad aux;
     private Paso paso;
+    private TextLog logger;
 
     private String identificador;
     private int numero;
@@ -29,20 +30,21 @@ public class Avion extends Thread {
     private boolean embarque;
     private int vuelos = 0;
 
-    public Avion(String identificador, int numero, Ciudad origen, Ciudad destino, Paso paso) {
+    public Avion(String identificador, int numero, Ciudad origen, Ciudad destino, Paso paso, TextLog logger) {
         this.identificador = identificador + "-" + String.format("%04d", numero);
         this.numero = numero;
         this.pasajerosMax = (int) (Math.random() * 201) + 100;
         this.origen = origen;
         this.destino = destino;
         this.paso = paso;
+        this.logger = logger;
     }
 
     public void run() {
 
         try {
-
-            //System.out.println("Avion " + this.getIdentificador() + " creado");
+            
+            logger.log("Avion " + this.getIdentificador() + " creado ", this.getOrigen().getNombre());
             paso.mirar();
             origen.aeropuerto.hangar.entrarHangar(this);
             paso.mirar();
@@ -54,6 +56,7 @@ public class Avion extends Thread {
 
                 Thread.sleep(0);
                 paso.mirar();
+                
                 origen.aeropuerto.areaEstacionamiento.entrarArea(this);
                 paso.mirar();
                 origen.aeropuerto.areaEstacionamiento.salirArea(this);
@@ -67,13 +70,16 @@ public class Avion extends Thread {
                 paso.mirar();
                 origen.aeropuerto.areaRodaje.salirAreaRodaje(this);
                 paso.mirar();
+                
                 origen.aeropuerto.pista.pedirPista(this,paso);
                 //sale solo de la pista
                 paso.mirar();
+                
                 origen.aeropuerto.aerovia.entrarAerovia(this);
                 paso.mirar();
                 origen.aeropuerto.aerovia.abandonarAerovia(this);
                 paso.mirar();
+                
                 vuelos++;
 
                 embarque = false; //indica que va a desembarcar

@@ -15,29 +15,32 @@ public class Autobus extends Thread {
     private String identificador;
     private int pasajeros;
     private Paso paso;
-    //private final int pasajerosMax = 50;
+    private TextLog logger;
 
-    public Autobus(String identificador, int numero, int pasajeros, Ciudad ciudad, Paso paso) {
+    public Autobus(String identificador, int numero, int pasajeros, Ciudad ciudad, Paso paso, TextLog logger) {
         this.identificador = identificador + "-" + String.format("%04d", numero);
         this.pasajeros = pasajeros;
         this.ciudad = ciudad;
         this.paso = paso;
+        this.logger = logger;
     }
 
     public void run() {
+        
+        logger.log("Bus " + this.identificador + " creado ", ciudad.getNombre());
         while (true) {
             paso.mirar();
-            ciudad.recogerPasajerosCiudadAutobus(this);
+            ciudad.recogerPasajerosAutobusCiudad(this);
             paso.mirar();
             ciudad.irAeropuertoAutobus(this,paso);
             paso.mirar();
-            ciudad.bajarPasajerosAlAeropuertoAutobus(this,paso);
+            ciudad.bajarPasajerosAutobusAeropuerto(this,paso);
             paso.mirar();
-            ciudad.recogerPasajerosAeropuertoAutobus(this);
+            ciudad.recogerPasajerosAutobusAeropuerto(this);
             paso.mirar();
             ciudad.irCiudadAutobus(this,paso);
             paso.mirar();
-            ciudad.bajarPasajerosACiudadAutobus(this);
+            ciudad.bajarPasajerosAutobusCiudad(this);
             
         }
 

@@ -17,22 +17,22 @@ import javax.swing.JTextField;
  * @author Miguel
  */
 public class AreaEstacionamiento {
-    
+
+    private TextLog logger;
+
     private ArrayList<Avion> aviones = new ArrayList<>();
     private int avionesDentro;
-    private Semaphore control = new Semaphore(1);
-    
-    private JTextField jTextFieldAreaEstacionamientoAeropuerto;
-    
     private String nombreCiudad;
-    private TextLog logger;
+
+    private Semaphore control = new Semaphore(1);
+
+    private JTextField jTextFieldAreaEstacionamientoAeropuerto;
 
     public AreaEstacionamiento(JTextField jTextFieldAreaEstacionamientoAeropuerto, String nombreCiudad, TextLog logger) {
         this.jTextFieldAreaEstacionamientoAeropuerto = jTextFieldAreaEstacionamientoAeropuerto;
         this.nombreCiudad = nombreCiudad;
         this.logger = logger;
     }
-    
 
     public void entrarArea(Avion avion) {
 
@@ -42,15 +42,16 @@ public class AreaEstacionamiento {
             avionesDentro++;
             imprimirArrayAviones(jTextFieldAreaEstacionamientoAeropuerto, aviones);
             control.release();
-            //System.out.println(avion.getIdentificador() + " entrando ESTACIONAMIENTO");
-            if(!avion.isEmbarque()){
-                System.out.println(avion.getIdentificador() + " realizando comprobaciones ESTACIONAMIENTO (tras Desembarque)");
-                Thread.sleep((int) (Math.random() * 4000) + 1001); 
+            logger.log("Avion " + avion.getIdentificador() + " entrando ESTACIONAMIENTO ", nombreCiudad);
+
+            if (!avion.isEmbarque()) {
+                logger.log("Avion " + avion.getIdentificador() + " realizando comprobaciones ESTACIONAMIENTO (tras Desembarque) ", nombreCiudad);
+                Thread.sleep((int) (Math.random() * 4000) + 1001);
             }
 
         } catch (InterruptedException ex) {
             Logger.getLogger(Hangar.class.getName()).log(Level.SEVERE, null, ex);
-        } 
+        }
     }
 
     public void salirArea(Avion avion) {
@@ -61,25 +62,25 @@ public class AreaEstacionamiento {
             avionesDentro--;
             imprimirArrayAviones(jTextFieldAreaEstacionamientoAeropuerto, aviones);
             control.release();
-            //System.out.println(avion.getIdentificador() + " saliendo ESTACIONAMIENTO");
+            logger.log("Avion " + avion.getIdentificador() + " saliendo ESTACIONAMIENTO ", nombreCiudad);
         } catch (InterruptedException ex) {
             Logger.getLogger(Hangar.class.getName()).log(Level.SEVERE, null, ex);
-        } 
+        }
     }
-    
-        public void imprimirArrayAviones(JTextField jTextFieldDestino,ArrayList<Avion> arrayAviones) {
+
+    public void imprimirArrayAviones(JTextField jTextFieldDestino, ArrayList<Avion> arrayAviones) {
         String stringAux = "";
         for (int i = 0; i < arrayAviones.size(); i++) {
             stringAux += arrayAviones.get(i).getIdentificador() + " / ";
         }
         jTextFieldDestino.setText(stringAux);
-        //System.out.println(stringAux);
     }
-        public int getAvionesDentro() {
+
+    public int getAvionesDentro() {
         int avionesAux = 0;
-  
-            avionesAux = avionesDentro;
-  
+
+        avionesAux = avionesDentro;
+
         return avionesAux;
     }
 }

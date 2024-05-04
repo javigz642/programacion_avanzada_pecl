@@ -51,6 +51,7 @@ public class Main extends Thread {
     private Paso paso;
     private PasoPistas pasoPistasBarcelona;
     private PasoPistas pasoPistasMadrid;
+    private TextLog logger;
     public Main(JTextField jTextFieldAeroviaBarcelona_Madrid, JTextField jTextFieldAeroviaMadrid_Barcelona, 
             JTextField jTextFieldAreaEstacionamientoAeropuertoBarcelona, JTextField jTextFieldAreaEstacionamientoAeropuertoMadrid,
             JTextField jTextFieldAreaRodajeAeropuertoBarcelona, JTextField jTextFieldAreaRodajeAeropuertoMadrid,
@@ -69,7 +70,7 @@ public class Main extends Thread {
             JTextField jTextFieldTallerAeropuertoBarcelona, JTextField jTextFieldTallerAeropuertoMadrid, 
             JTextField jTextFieldTransferAeropuertoAutobusBarcelona, JTextField jTextFieldTransferAeropuertoAutobusMadrid,
             JTextField jTextFieldTransferCiudadAutobusMadrid, JTextField jTextFieldTransferCiudadAutobusBarcelona,
-        Paso paso, PasoPistas pasoPistasBarcelona, PasoPistas pasoPistasMadrid) {
+        Paso paso, PasoPistas pasoPistasBarcelona, PasoPistas pasoPistasMadrid, TextLog logger) {
         this.jTextFieldAeroviaBarcelona_Madrid = jTextFieldAeroviaBarcelona_Madrid;
         this.jTextFieldAeroviaMadrid_Barcelona = jTextFieldAeroviaMadrid_Barcelona;
         this.jTextFieldAreaEstacionamientoAeropuertoBarcelona = jTextFieldAreaEstacionamientoAeropuertoBarcelona;
@@ -109,10 +110,10 @@ public class Main extends Thread {
         this.paso = paso;
         this.pasoPistasBarcelona = pasoPistasBarcelona;
         this.pasoPistasMadrid = pasoPistasMadrid;
+        this.logger = logger;
     }
 
     public void run() {
-        TextLog logger = new TextLog("evolucionAeropuerto.txt");
 
         Hangar hangarMadrid = new Hangar(jTextFieldHangarAeropuertoMadrid, "Madrid", logger);
         AreaEstacionamiento areaEstacionamientoMadrid = new AreaEstacionamiento(jTextFieldAreaEstacionamientoAeropuertoMadrid, "Madrid", logger);
@@ -127,7 +128,7 @@ public class Main extends Thread {
                 pistaMadrid, aeroviaMadrid, jTextFieldGate1AeropuertoMadrid,
                 jTextFieldGate2AeropuertoMadrid, jTextFieldGate3AeropuertoMadrid,
                 jTextFieldGate4AeropuertoMadrid, jTextFieldGate5AeropuertoMadrid,
-                jTextFieldGate6AeropuertoMadrid, jTextFieldNumeroPasajerosAeropuertoMadrid);
+                jTextFieldGate6AeropuertoMadrid, jTextFieldNumeroPasajerosAeropuertoMadrid, logger, "Madrid");
 
         Hangar hangarBarcelona = new Hangar(jTextFieldHangarAeropuertoBarcelona, "Barcelona", logger);
         AreaEstacionamiento areaEstacionamientoBarcelona = new AreaEstacionamiento(jTextFieldAreaEstacionamientoAeropuertoBarcelona, "Barcelona", logger);
@@ -143,15 +144,15 @@ public class Main extends Thread {
                 pistaBarcelona, aeroviaBarcelona, jTextFieldGate1AeropuertoBarcelona,
                 jTextFieldGate2AeropuertoBarcelona, jTextFieldGate3AeropuertoBarcelona,
                 jTextFieldGate4AeropuertoBarcelona, jTextFieldGate5AeropuertoBarcelona,
-                jTextFieldGate6AeropuertoBarcelona, jTextFieldNumeroPasajerosAeropuertoBarcelona);
+                jTextFieldGate6AeropuertoBarcelona, jTextFieldNumeroPasajerosAeropuertoBarcelona, logger, "Barcelona");
 
         Ciudad madrid = new Ciudad("Madrid", aeropuertoMadrid, jTextFieldTransferAeropuertoAutobusMadrid,
-                jTextFieldTransferCiudadAutobusMadrid);
+                jTextFieldTransferCiudadAutobusMadrid, logger);
         Ciudad barcelona = new Ciudad("Barcelona", aeropuertoBarcelona, jTextFieldTransferAeropuertoAutobusBarcelona,
-                jTextFieldTransferCiudadAutobusBarcelona);
+                jTextFieldTransferCiudadAutobusBarcelona, logger);
         
-        ProgramaPrincipalAviones pp1 = new ProgramaPrincipalAviones(madrid, barcelona,paso);
-        ProgramaPrincipalAutobuses pp2 = new ProgramaPrincipalAutobuses(madrid, barcelona,paso);
+        ProgramaPrincipalAviones pp1 = new ProgramaPrincipalAviones(madrid, barcelona, paso, logger);
+        ProgramaPrincipalAutobuses pp2 = new ProgramaPrincipalAutobuses(madrid, barcelona, paso, logger);
         pp1.start();
         pp2.start();
         

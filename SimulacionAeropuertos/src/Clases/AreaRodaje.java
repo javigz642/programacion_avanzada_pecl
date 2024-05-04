@@ -15,9 +15,9 @@ import javax.swing.JTextField;
  * @author Miguel
  */
 public class AreaRodaje {
-    
+
     private ArrayList<Avion> aviones = new ArrayList<>();
-private int avionesDentro;
+    private int avionesDentro;
     private Semaphore control = new Semaphore(1);
 
     private JTextField jTextFieldAreaRodajeAeropuerto;
@@ -39,14 +39,13 @@ private int avionesDentro;
             avionesDentro++;
             imprimirArrayAviones(jTextFieldAreaRodajeAeropuerto, aviones);
             control.release();
-            //System.out.println(avion.getIdentificador() + " entrando RODAJE");
+            logger.log("Avion " + avion.getIdentificador() + " entrando RODAJE ", nombreCiudad);
+
             if (avion.isEmbarque()) {
+
+                logger.log("Avion " + avion.getIdentificador() + " haciendo comprobaciones RODAJE ", nombreCiudad);
                 Thread.sleep((int) (Math.random() * 4000) + 1001);
-                //System.out.println(avion.getIdentificador() + " haciendo comprobaciones RODAJE");
             }
-//            else{
-//                Thread.sleep(2000);
-//            }
 
         } catch (InterruptedException ex) {
             Logger.getLogger(AreaRodaje.class.getName()).log(Level.SEVERE, null, ex);
@@ -61,7 +60,8 @@ private int avionesDentro;
             avionesDentro--;
             imprimirArrayAviones(jTextFieldAreaRodajeAeropuerto, aviones);
             control.release();
-            //System.out.println(avion.getIdentificador() + " saliendo RODAJE");
+            logger.log("Avion " + avion.getIdentificador() + " saliendo RODAJE ", nombreCiudad);
+
         } catch (InterruptedException ex) {
             Logger.getLogger(AreaRodaje.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -73,7 +73,6 @@ private int avionesDentro;
             stringAux += arrayAviones.get(i).getIdentificador() + " / ";
         }
         jTextFieldDestino.setText(stringAux);
-        //System.out.println(stringAux);
     }
 
     public int getAvionesDentro() {

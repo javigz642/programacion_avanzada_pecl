@@ -37,17 +37,17 @@ public class Taller {
         try {
             espaciosTaller.acquire();
             control.acquire();
-            System.out.println(avion.getIdentificador() + " entrando TALLER");
+            logger.log("Avion " + avion.getIdentificador() + " entrando TALLER ", nombreCiudad);
             Thread.sleep(1000);
             aviones.add(avion);
             avionesDentro++;
             imprimirArrayAviones(jTextFieldTallerAeropuerto, aviones);
             control.release();
             if (avion.getVuelos() % 15 == 0) {
-                System.out.println(avion.getIdentificador() + " realizando REVISION PROFUNDA");
+                logger.log("Avion " + avion.getIdentificador() + " realizando REVISION PRFUNDA ", nombreCiudad);
                 Thread.sleep((int) (Math.random() * 5000) + 5001);
             } else {
-                System.out.println(avion.getIdentificador() + " realizando REVISION NORMAL");
+                logger.log("Avion " + avion.getIdentificador() + " realizando REVISION NORMAL ", nombreCiudad);
                 Thread.sleep((int) (Math.random() * 4000) + 1001);
             }
 
@@ -61,7 +61,7 @@ public class Taller {
 
         try {
             control.acquire();
-            System.out.println(avion.getIdentificador() + " saliendo TALLER");
+            logger.log(avion.getIdentificador() + " saliendo TALLER ", nombreCiudad);
             Thread.sleep(1000);
             aviones.remove(avion);
             avionesDentro--;
@@ -81,7 +81,6 @@ public class Taller {
             stringAux += arrayAviones.get(i).getIdentificador() + " / ";
         }
         jTextFieldDestino.setText(stringAux);
-        System.out.println(stringAux);
     }
 
     public int getAvionesDentro() {

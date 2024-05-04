@@ -57,61 +57,62 @@ public class PuertaEmbarque {
 
                 if (puertaEmbarque.tryAcquire()) {
                     aviones[4] = avion;
-                    imprimirArrayAviones(aviones,5);
-                    //System.out.println(avion.getIdentificador() + " entrando Gate 5 (exclusiva Embarque)");
+                    imprimirArrayAviones(aviones, 5);
+                    logger.log("Avion " + avion.getIdentificador() + " entrando Gate 5 (exclusiva Embarque)", nombreCiudad);
                     puertaEmbarque(avion);
+
                     aviones[4] = null;
                     paso.mirar();
-                    imprimirArrayAviones(aviones,5);
-                    
-                    //System.out.println(avion.getIdentificador() + " saliendo Gate 5 (exclusiva Embarque) con " + avion.getPasajerosActual() + " pasajeros");
+                    imprimirArrayAviones(aviones, 5);
+                    logger.log("Avion " + avion.getIdentificador() + " saliendo Gate 5 (exclusiva Embarque) con " + avion.getPasajerosActual() + " pasajeros", nombreCiudad);
                     puertaEmbarque.release();
-                    
 
                 } else {
                     puertasLibres[avion.getNumero() % 4].acquire();
                     aviones[avion.getNumero() % 4] = avion;
-                    imprimirArrayAviones(aviones,avion.getNumero() % 4+1);
-                    //System.out.println(avion.getIdentificador() + " entrando Gate " + (avion.getNumero() % 4 + 3) + " para Embarque");
+                    imprimirArrayAviones(aviones, avion.getNumero() % 4 + 1);
+                    logger.log("Avion " + avion.getIdentificador() + " entrando Gate " + (avion.getNumero() % 4 + 3) + " para Embarque", nombreCiudad);
                     puertaEmbarque(avion);
-                    //System.out.println(avion.getIdentificador() + " saliendo Gate " + (avion.getNumero() % 4 + 3) + " con " + avion.getPasajerosActual() + " pasajeros");
+
                     aviones[avion.getNumero() % 4] = null;
                     paso.mirar();
-                    imprimirArrayAviones(aviones,avion.getNumero() % 4+1);
+                    imprimirArrayAviones(aviones, avion.getNumero() % 4 + 1);
+                    logger.log("Avion " + avion.getIdentificador() + " saliendo Gate " + (avion.getNumero() % 4 + 3) + " con " + avion.getPasajerosActual() + " pasajeros", nombreCiudad);
                     puertasLibres[avion.getNumero() % 4].release();
-                    
+
                 }
             } else {
                 if (puertaDesembarque.tryAcquire()) {
                     avion.getDestino().aeropuerto.areaRodaje.salirAreaRodaje(avion); //tiene que tener una puerta de desembarque libre antes de avanzar
-                    //System.out.println(avion.getIdentificador() + " tiene Gate 6 libre. Yendo desde RODAJE hacia Desembarque");
+                    logger.log("Avion " + avion.getIdentificador() + " tiene Gate 6 libre. Yendo desde RODAJE hacia Desembarque", nombreCiudad);
                     Thread.sleep((int) (Math.random() * 2000) + 3001); //paso de Area de Rodaje a Desembarque
                     aviones[5] = avion;
-                    imprimirArrayAviones(aviones,6);
-                    //System.out.println(avion.getIdentificador() + " entrando Gate 6 (exclusiva Desembarque)");
+                    imprimirArrayAviones(aviones, 6);
+                    logger.log("Avion " + avion.getIdentificador() + " entrando Gate 6 (exclusiva Desembarque)", nombreCiudad);
                     puertaDesembarque(avion);
+
                     aviones[5] = null;
                     paso.mirar();
-                    imprimirArrayAviones(aviones,6);
-                    //System.out.println(avion.getIdentificador() + " saliendo Gate 6 (exclusiva Desembarque)");;
+                    imprimirArrayAviones(aviones, 6);
+                    logger.log("Avion " + avion.getIdentificador() + " saliendo Gate 6 (exclusiva Desembarque)", nombreCiudad);
                     puertaDesembarque.release();
-                    
 
                 } else {
                     puertasLibres[avion.getNumero() % 4].acquire();
                     avion.getDestino().aeropuerto.areaRodaje.salirAreaRodaje(avion); //tiene que tener una puerta de desembarque libre antes de avanzar
-                    //System.out.println(avion.getIdentificador() + " tiene Gate " + (avion.getNumero() % 4 + 3) + " libre. Yendo desde RODAJE hacia Desembarque");
+                    logger.log("Avion " + avion.getIdentificador() + " tiene Gate " + (avion.getNumero() % 4 + 3) + " libre. Yendo desde RODAJE hacia Desembarque", nombreCiudad);
                     Thread.sleep((int) (Math.random() * 2000) + 3001); //paso de Area de Rodaje a Desembarque
                     aviones[avion.getNumero() % 4] = avion;
-                    imprimirArrayAviones(aviones,avion.getNumero() % 4+1);
-                    //System.out.println(avion.getIdentificador() + " entrando Gate " + (avion.getNumero() % 4 + 3) + " para Desembarque de " + avion.getPasajerosActual() + " pasajeros");
+                    imprimirArrayAviones(aviones, avion.getNumero() % 4 + 1);
+                    logger.log("Avion " + avion.getIdentificador() + " entrando Gate " + (avion.getNumero() % 4 + 3) + " para Desembarque de " + avion.getPasajerosActual() + " pasajeros", nombreCiudad);
                     puertaDesembarque(avion);
+
                     aviones[avion.getNumero() % 4] = null;
                     paso.mirar();
-                    imprimirArrayAviones(aviones,avion.getNumero() % 4+1);
-                    //System.out.println(avion.getIdentificador() + " saliendo Gate " + (avion.getNumero() % 4 + 3));
+                    imprimirArrayAviones(aviones, avion.getNumero() % 4 + 1);
+                    logger.log("Avion " + avion.getIdentificador() + " saliendo Gate " + (avion.getNumero() % 4 + 3), nombreCiudad);
                     puertasLibres[avion.getNumero() % 4].release();
-                    
+
                 }
             }
             paso.mirar();
@@ -133,19 +134,21 @@ public class PuertaEmbarque {
             avion.setPasajerosActual(pasajeros);
 
             if (pasajeros > 0) {
-                //System.out.println(avion.getIdentificador() + " EMBARCANDO " + pasajeros + " pasajeros");
+
+                logger.log("Avion " + avion.getIdentificador() + " EMBARCANDO " + pasajeros + " pasajeros ", nombreCiudad);
                 Thread.sleep((int) (Math.random() * 2000) + 1001);
             }
 
             while (intentos < 3 && avion.getPasajerosActual() < max) {
-                
-                //System.out.println(avion.getIdentificador() + " no esta lleno. Intentadolo llenar mas tarde. Capacidad = " + max + " Actuales = " + avion.getPasajerosActual() + " Intento numero " + (intentos + 1));
+
+                logger.log("Avion " + avion.getIdentificador() + " no esta lleno. Intentadolo llenar mas tarde. Capacidad = " + max + " Actuales = " + avion.getPasajerosActual() + " Intento numero " + (intentos + 1), nombreCiudad);
                 Thread.sleep((int) (Math.random() * 4000) + 1001);
                 pasajeros = avion.getOrigen().aeropuerto.recogerPasajerosAvion(max - avion.getPasajerosActual());
                 avion.setPasajerosActual(avion.getPasajerosActual() + pasajeros);
 
                 if (pasajeros > 0) {
-                    //System.out.println(avion.getIdentificador() + " EMBARCANDO " + pasajeros + " pasajeros ");
+
+                    logger.log("Avion " + avion.getIdentificador() + " EMBARCANDO " + pasajeros + " pasajeros ", nombreCiudad);
                     Thread.sleep((int) (Math.random() * 2000) + 1001);
                 }
 
@@ -164,12 +167,12 @@ public class PuertaEmbarque {
 
             if (avion.getPasajerosActual() > 0) {
 
-                //System.out.println(avion.getIdentificador() + " DESEMBARCANDO " + avion.getPasajerosActual() + " pasajeros");
+                logger.log("Avion " + avion.getIdentificador() + " DESEMBARCANDO " + avion.getPasajerosActual() + " pasajeros ", nombreCiudad);
                 avion.getOrigen().aeropuerto.bajarPasajerosAvion(avion.getPasajerosActual());
                 avion.setPasajerosActual(0);
                 Thread.sleep((int) (Math.random() * 4000) + 1001);
             } else {
-                //System.out.println(avion.getIdentificador() + " DESEMBARCANDO " + avion.getPasajerosActual() + " pasajeros. No se baja nadie.");
+                logger.log("Avion " + avion.getIdentificador() + " DESEMBARCANDO " + avion.getPasajerosActual() + " pasajeros. No se baja nadie ", nombreCiudad);
 
             }
         } catch (InterruptedException ex) {
@@ -179,10 +182,9 @@ public class PuertaEmbarque {
 
     public void imprimirArrayAviones(Avion[] arrayAviones, int numeroGate) {
         String stringAux = "";
-        if(arrayAviones[numeroGate-1] != null){
-            stringAux = arrayAviones[numeroGate-1].getIdentificador();
+        if (arrayAviones[numeroGate - 1] != null) {
+            stringAux = arrayAviones[numeroGate - 1].getIdentificador();
         }
-                
 
         switch (numeroGate) {
             case 1:
@@ -206,8 +208,7 @@ public class PuertaEmbarque {
             default:
                 throw new AssertionError();
         }
-        
-        //System.out.println(stringAux);
+
     }
 
 }

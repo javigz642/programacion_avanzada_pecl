@@ -46,7 +46,7 @@ public class Aerovia {
             }
 
             control.release();
-            //System.out.println(avion.getIdentificador() + " entrando AEROVIA " + avion.getOrigen().getNombre() + "-" + avion.getDestino().getNombre());
+            logger.log("Avion " + avion.getIdentificador() + " entrando AEROVIA " + avion.getOrigen().getNombre() + "-" + avion.getDestino().getNombre() + " ", avion.getOrigen().getNombre());
             Thread.sleep((int) (Math.random() * 15001) + 15000);
         } catch (InterruptedException ex) {
             Logger.getLogger(Aerovia.class.getName()).log(Level.SEVERE, null, ex);
@@ -65,7 +65,7 @@ public class Aerovia {
                 jTextFieldAeroviaBarcelona_Madrid.setText(getStringArrayAviones(aviones));
             }
             control.release();
-            //System.out.println(avion.getIdentificador() + " abandonando AEROVIA " + avion.getDestino().getNombre() + "-" + avion.getOrigen().getNombre());
+            logger.log("Avion " + avion.getIdentificador() + " abandonando AEROVIA " + avion.getOrigen().getNombre() + "-" + avion.getDestino().getNombre() + " ", avion.getDestino().getNombre());
         } catch (InterruptedException ex) {
             Logger.getLogger(Aerovia.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -82,7 +82,6 @@ public class Aerovia {
             stringAux += identificadorAux +"("+numeroPasejosAvionAux+")"+ " / ";
         }
         avionesDentro = stringAux;
-        //System.out.println(stringAux);
         return avionesDentro;
     }
     public String getStringArrayAviones() {

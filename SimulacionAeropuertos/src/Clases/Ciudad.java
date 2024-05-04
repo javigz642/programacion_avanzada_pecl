@@ -9,6 +9,8 @@ import java.util.Random;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
@@ -19,141 +21,124 @@ import javax.swing.JTextField;
 public class Ciudad {
 
     protected Aeropuerto aeropuerto;
+    private TextLog logger;
 
     private String nombre;
     private ArrayList<Autobus> autobusesHaciaAeropuerto = new ArrayList<>();
     private ArrayList<Autobus> autobusesHaciaCiudad = new ArrayList<>();
-    
+
     Random random = new Random();
     int pasajerosParada;
 
     private Semaphore SemAutobusesHaciaAeropuerto = new Semaphore(1);
     private Semaphore SemAutobusesHaciaCiudad = new Semaphore(1);
 
-    //declaracion de los text field;
     JTextField jTextFieldTransferAeropuertoAutobus;
     JTextField jTextFieldTransferCiudadAutobus;
 
-    public Ciudad(String nombre,Aeropuerto aeropuerto, JTextField jTextFieldTransferAeropuertoAutobus, JTextField jTextFieldTransferCiudadAutobus) {
+    public Ciudad(String nombre, Aeropuerto aeropuerto, JTextField jTextFieldTransferAeropuertoAutobus, JTextField jTextFieldTransferCiudadAutobus, TextLog logger) {
         this.nombre = nombre;
         this.aeropuerto = aeropuerto;
         this.jTextFieldTransferAeropuertoAutobus = jTextFieldTransferAeropuertoAutobus;
         this.jTextFieldTransferCiudadAutobus = jTextFieldTransferCiudadAutobus;
+        this.logger = logger;
     }
 
-    public void recogerPasajerosCiudadAutobus(Autobus a) {
-        pasajerosParada = random.nextInt(51);
-        a.setPasajeros(pasajerosParada);
-        //System.out.println("El autobus " + a.getIdentificador() + " va a recoger a " + pasajerosParada + " personas.");
+    public void recogerPasajerosAutobusCiudad(Autobus a) {
+        try {
+            logger.log("Bus " + a.getIdentificador() + " esperando pasajeros en CIUDAD ", nombre);
+            Thread.sleep((int) (Math.random() * 3000) + 2001);
+            pasajerosParada = random.nextInt(51);
+            a.setPasajeros(pasajerosParada);
+            logger.log("Bus " + a.getIdentificador() + " recogiendo " + pasajerosParada + " pasajeros en CIUDAD ", nombre);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Ciudad.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void bajarPasajerosAutobusCiudad(Autobus a) {
+
+        logger.log("Bus " + a.getIdentificador() + " bajando " + a.getPasajeros() + " pasajeros en CIUDAD ", nombre);
+        a.setPasajeros(0);
+
+    }
+    
+    public void recogerPasajerosAutobusAeropuerto(Autobus a) {
+
+        aeropuerto.recogerPasajerosAutobus(a);
+
+    }
+    
+    public void bajarPasajerosAutobusAeropuerto(Autobus a, Paso paso) {
+        
+        try {
+            SemAutobusesHaciaAeropuerto.acquire();
+            autobusesHaciaAeropuerto.remove(a);
+            SemAutobusesHaciaAeropuerto.release();
+            aeropuerto.bajarPasajerosAutobus(a);
+            SemAutobusesHaciaAeropuerto.acquire();
+            paso.mirar();
+            imprimirArrayAutobus(jTextFieldTransferAeropuertoAutobus, autobusesHaciaAeropuerto);
+            SemAutobusesHaciaAeropuerto.release();
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Ciudad.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public void irAeropuertoAutobus(Autobus a, Paso paso) {
 
         try {
             SemAutobusesHaciaAeropuerto.acquire();
-
             autobusesHaciaAeropuerto.add(a);
-            imprimirArrayAutobus(jTextFieldTransferAeropuertoAutobus,autobusesHaciaAeropuerto);
-            paso.mirar();
-            System.out.println("El autobus " + a.getIdentificador() + " va hacia el aeropuerto de " + nombre + " con " + a.getPasajeros() + " pasajeros");
-            SemAutobusesHaciaAeropuerto.release();
-            dormirAutobus(5000, 10000);
-            paso.mirar();
-            SemAutobusesHaciaAeropuerto.acquire();
-            autobusesHaciaAeropuerto.remove(a);
-            SemAutobusesHaciaAeropuerto.release();
-
-        } catch (Exception e) {
-        } finally {
-
-            //System.out.println("El autobus " + a.getIdentificador() + " ha llegado al aeropuerto " + nombre);
-        }
-    }
-
-    public void bajarPasajerosAlAeropuertoAutobus(Autobus a,Paso paso) {
-        try {
-            SemAutobusesHaciaAeropuerto.acquire();
-            autobusesHaciaAeropuerto.remove(a);
-            aeropuerto.bajarPasajerosAutobus(a);
-            paso.mirar();
             imprimirArrayAutobus(jTextFieldTransferAeropuertoAutobus, autobusesHaciaAeropuerto);
+            paso.mirar();
             SemAutobusesHaciaAeropuerto.release();
-
-        } catch (Exception e) {
-        } finally {
-
-        }
-        
-        //System.out.println("Se han bajado todos los pasajeros del autobus " + a.getIdentificador());
-    }
-
-    public void recogerPasajerosAeropuertoAutobus(Autobus a) {
-        try {
-            aeropuerto.recogerPasajerosAutobus(a);
-
-        } catch (Exception e) {
-        } finally {
-
+            logger.log("Bus " + a.getIdentificador() + " yendo hacia AEROPUERTO con " + a.getPasajeros() + " pasajeros ", nombre);
+            Thread.sleep((int) (Math.random() * 5000) + 5001);
+            paso.mirar();
+            SemAutobusesHaciaAeropuerto.acquire();
+            autobusesHaciaAeropuerto.remove(a);
+            SemAutobusesHaciaAeropuerto.release();
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Ciudad.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
 
-    public void irCiudadAutobus(Autobus a,Paso paso) {
+    public void irCiudadAutobus(Autobus a, Paso paso) {
+
         try {
             SemAutobusesHaciaCiudad.acquire();
             autobusesHaciaCiudad.add(a);
             paso.mirar();
             imprimirArrayAutobus(jTextFieldTransferCiudadAutobus, autobusesHaciaCiudad);
-
             SemAutobusesHaciaCiudad.release();
-            dormirAutobus(5000, 10000);
+            logger.log("Bus " + a.getIdentificador() + " yendo hacia CIUDAD con " + a.getPasajeros() + " pasajeros ", nombre);
+            Thread.sleep((int) (Math.random() * 5000) + 5001);
             SemAutobusesHaciaCiudad.acquire();
             autobusesHaciaCiudad.remove(a);
             paso.mirar();
             imprimirArrayAutobus(jTextFieldTransferCiudadAutobus, autobusesHaciaCiudad);
             SemAutobusesHaciaCiudad.release();
-
-        } catch (Exception e) {
-        } finally {
-
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Ciudad.class.getName()).log(Level.SEVERE, null, ex);
         }
-        //System.out.println("Se han bajado todos los pasajeros del autobus " + a.getIdentificador());
+
     }
 
-    public void bajarPasajerosACiudadAutobus(Autobus a) {
-        try {
+    
 
-            a.setPasajeros(0);
-
-
-
-        } catch (Exception e) {
-        } finally {
-
-            //System.out.println("El autobus " + a.getIdentificador() + " ha llegado a su destino " + nombre);
-        }
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void dormirAutobus(int desde, int hasta) {
-        try {
-            int desdeAux = hasta - desde + 1;
-            Thread.sleep((int) (Math.random() * desdeAux) + desde);
-        } catch (Exception e) {
-        }
-    }
-
-    public void imprimirArrayAutobus(JTextField jTextFieldDestino,ArrayList<Autobus> arrayBuses) {
+    public void imprimirArrayAutobus(JTextField jTextFieldDestino, ArrayList<Autobus> arrayBuses) {
         String stringAux = "";
         for (int i = 0; i < arrayBuses.size(); i++) {
             stringAux += arrayBuses.get(i).getIdentificador() + " / ";
-            //System.out.println(arrayBuses.get(i).getIdentificador() + " circulando");
 
         }
         jTextFieldDestino.setText(stringAux);
         //System.out.println(stringAux);
+    }
+
+    public String getNombre() {
+        return nombre;
     }
 }

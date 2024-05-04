@@ -24,10 +24,10 @@ public class TextLog {
 
     public void log(String message, String nombreCiudad) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(nombreArchivo, true))) {
-            SimpleDateFormat formatoT = new SimpleDateFormat("mm:ss");
+            SimpleDateFormat formatoT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String timestamp = formatoT.format(new Date());
 
-            writer.write("[" + timestamp + "] " + message + " - Ciudad: " + nombreCiudad);
+            writer.write("[" + timestamp + "] " + message + "- " + nombreCiudad);
             writer.newLine();
         } catch (IOException e) {
             e.printStackTrace();

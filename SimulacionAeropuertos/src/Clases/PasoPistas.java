@@ -13,10 +13,19 @@ import java.util.concurrent.locks.ReentrantLock;
 // Si vale false(abierto) el proceso puede continuar. Si es true(cerrado) el proceso se detiene
 public class PasoPistas {
 
+    private TextLog logger;
+    private String nombreCiudad;
+    
     private boolean cerrado[] = {false, false, false, false};
     private Lock cerrojo = new ReentrantLock();
     private Condition parar = cerrojo.newCondition();
     private boolean soloUnHilo[] = {true, true, true, true};
+
+    public PasoPistas(TextLog logger, String nombreCiudad) {
+        this.logger = logger;
+        this.nombreCiudad = nombreCiudad;
+    }
+
 
     public void mirar(int numero) {
         try {
@@ -40,7 +49,7 @@ public class PasoPistas {
         try {
             cerrojo.lock();
             if (!soloUnHilo[numero]) {
-                System.out.println("Reanudando pista numero " + (numero + 1));
+                logger.log("Reanudando PISTA " + (numero + 1), nombreCiudad);
                 cerrado[numero] = false;
                 soloUnHilo[numero] = true;
                 parar.signalAll();
@@ -56,7 +65,7 @@ public class PasoPistas {
 
             cerrojo.lock();
             if (soloUnHilo[numero]) {
-                System.out.println("Parando pista numero " + (numero + 1));
+                logger.log("Parando PISTA " + (numero + 1), nombreCiudad);
                 cerrado[numero] = true;
                 soloUnHilo[numero] = false;
             }

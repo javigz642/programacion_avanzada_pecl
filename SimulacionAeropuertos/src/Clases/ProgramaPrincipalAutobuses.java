@@ -10,29 +10,30 @@ package Clases;
  */
 public class ProgramaPrincipalAutobuses extends Thread{
         private Ciudad madrid;
-    private Ciudad barcelona;
+        private Ciudad barcelona;
         private Paso paso;
+        private TextLog logger;
 
-    public ProgramaPrincipalAutobuses(Ciudad madrid, Ciudad barcelona, Paso paso) {
+    public ProgramaPrincipalAutobuses(Ciudad madrid, Ciudad barcelona, Paso paso, TextLog logger) {
         this.madrid = madrid;
         this.barcelona = barcelona;
         this.paso = paso;
+        this.logger = logger;
     }
 
 
     
     public void run(){
-                //El numero de autobuses se cambia luego el 100 es por pruebas
-        //creacion de los hilos de autobuses
-        for (int i = 0; i < 4000; i++) { //deberian ser 4000
+                
+        for (int i = 0; i < 8; i++) { //deberian ser 4000
 
             String identificador = "B";
 
             if (i % 2 == 0) {
-                Autobus autobusMadrid = new Autobus(identificador, i, 0, madrid,paso);
+                Autobus autobusMadrid = new Autobus(identificador, i, 0, madrid, paso, logger);
                 autobusMadrid.start();
             } else {
-                Autobus autobusBarcelona = new Autobus(identificador, i, 0, barcelona,paso);
+                Autobus autobusBarcelona = new Autobus(identificador, i, 0, barcelona,paso, logger);
                 autobusBarcelona.start();
             }
             try {

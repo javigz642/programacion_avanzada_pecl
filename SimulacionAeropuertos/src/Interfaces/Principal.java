@@ -7,6 +7,7 @@ package Interfaces;
 import Clases.PasoPistas;
 import Clases.Main;
 import Clases.Paso;
+import Clases.TextLog;
 
 /**
  *
@@ -14,9 +15,11 @@ import Clases.Paso;
  */
 public class Principal extends javax.swing.JFrame {
 
-    Paso paso = new Paso();
-    PasoPistas pasoPistasMadrid = new PasoPistas();
-    PasoPistas pasoPistasBarcelona = new PasoPistas();
+    TextLog logger = new TextLog("evolucionAeropuerto.txt");
+    Paso paso = new Paso(logger);
+    PasoPistas pasoPistasMadrid = new PasoPistas(logger, "Madrid");
+    PasoPistas pasoPistasBarcelona = new PasoPistas(logger, "Barcelona");
+    
     
 
     /**
@@ -42,7 +45,7 @@ public class Principal extends javax.swing.JFrame {
                 jTextFieldPista4AeropuertoMadrid, jTextFieldTallerAeropuertoBarcelona,
                 jTextFieldTallerAeropuertoMadrid, jTextFieldTransferAeropuertoAutobusBarcelona,
                 jTextFieldTransferAeropuertoAutobusMadrid, jTextFieldTransferCiudadAutobusMadrid,
-                jTextFieldTransferCiudadAutobusBarcelona,paso, pasoPistasBarcelona,pasoPistasMadrid);
+                jTextFieldTransferCiudadAutobusBarcelona,paso, pasoPistasBarcelona,pasoPistasMadrid, logger);
         principal.run();
 
     }
