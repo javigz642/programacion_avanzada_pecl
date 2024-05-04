@@ -18,7 +18,7 @@ public class Aerovia {
 
     private ArrayList<Avion> aviones = new ArrayList<>();
     private String avionesDentro;
-    private Semaphore control = new Semaphore(1, true);
+    private Semaphore control = new Semaphore(1);
 
     private JTextField jTextFieldAeroviaMadrid_Barcelona;
     private JTextField jTextFieldAeroviaBarcelona_Madrid;
