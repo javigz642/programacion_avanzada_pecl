@@ -14,14 +14,14 @@ import javax.swing.JTextField;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 /**
- *
- * @author ediso
+ * Clase que representa un aeropuerto con diferentes áreas y funcionalidades.
  */
 public class Aeropuerto extends Thread {
 
     private int personasDentro = 5000;
     private String nombreCiudad;
 
+    // Instancias de otras clases relacionadas con el aeropuerto
     private Hangar hangar;
     private AreaEstacionamiento areaEstacionamiento;
     private Taller taller;
@@ -33,6 +33,7 @@ public class Aeropuerto extends Thread {
 
     private Semaphore control = new Semaphore(1, true);
 
+    // Elementos de la interfaz de usuario relacionados con el aeropuerto
     private JTextField jTextFieldGate1Aeropuerto;
     private JTextField jTextFieldGate2Aeropuerto;
     private JTextField jTextFieldGate3Aeropuerto;
@@ -72,6 +73,11 @@ public class Aeropuerto extends Thread {
 
     }
 
+    /**
+     * Método para recoger pasajeros del autobús en el aeropuerto.
+     *
+     * @param a Autobús que recoge pasajeros.
+     */
     public void recogerPasajerosAutobus(Autobus a) {
         int pasajerosParada;
 
@@ -96,6 +102,11 @@ public class Aeropuerto extends Thread {
         }
     }
 
+    /**
+     * Método para bajar pasajeros del autobús en el aeropuerto.
+     *
+     * @param a Autobús del que bajan pasajeros.
+     */
     public void bajarPasajerosAutobus(Autobus a) {
 
         try {
@@ -110,6 +121,12 @@ public class Aeropuerto extends Thread {
         }
     }
 
+    /**
+     * Método para recoger pasajeros del avión en el aeropuerto.
+     *
+     * @param pasajeros Cantidad de pasajeros a recoger.
+     * @return La cantidad de pasajeros que realmente se pudieron recoger.
+     */
     public int recogerPasajerosAvion(int pasajeros) {
 
         int pasajerosCogidos = 0;
@@ -135,6 +152,11 @@ public class Aeropuerto extends Thread {
         return pasajerosCogidos;
     }
 
+    /**
+     * Método para bajar pasajeros del avión en el aeropuerto.
+     *
+     * @param pasajeros Cantidad de pasajeros que bajan del avión.
+     */
     public void bajarPasajerosAvion(int pasajeros) {
         try {
             control.acquire();
@@ -147,10 +169,18 @@ public class Aeropuerto extends Thread {
         }
     }
 
+    /**
+     * Método para imprimir el número de pasajeros en el aeropuerto en un
+     * JTextField.
+     *
+     * @param j JTextField donde se imprimirá el número de pasajeros.
+     * @param personas Número de personas en el aeropuerto.
+     */
     public void imprimirPasajerosEnAeropuerto(JTextField j, int personas) {
         j.setText(personas + "");
     }
 
+    //Métodos getter
     public int getPersonasDentro() {
         int personasAux = personasDentro;
         return personasAux;

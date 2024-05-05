@@ -22,11 +22,11 @@ public class ProgramaPrincipalAutobuses extends Thread {
         this.logger = logger;
     }
 
-
+    //COMENTARIO DE PRUEBA
     
     public void run(){
                 
-        for (int i = 0; i < 4000; i++) { //deberian ser 4000
+        for (int i = 0; i < 0; i++) { //deberian ser 4000
 
             String identificador = "B";
 
