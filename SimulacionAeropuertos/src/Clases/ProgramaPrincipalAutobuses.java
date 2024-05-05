@@ -27,7 +27,7 @@ public class ProgramaPrincipalAutobuses extends Thread {
     public void run(){
                 
         for (int i = 0; i < 4000; i++) { //deberian ser 4000
-
+            paso.mirar();
             String identificador = "B";
 
             if (i % 2 == 0) {
