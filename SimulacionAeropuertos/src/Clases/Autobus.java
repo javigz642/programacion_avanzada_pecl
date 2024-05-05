@@ -26,22 +26,22 @@ public class Autobus extends Thread {
     }
 
     public void run() {
-        
+
         logger.log("Bus " + this.identificador + " creado ", ciudad.getNombre());
         while (true) {
             paso.mirar();
-            ciudad.recogerPasajerosAutobusCiudad(this);
+            ciudad.recogerPasajerosAutobusCiudad(this, paso);
             paso.mirar();
-            ciudad.irAeropuertoAutobus(this,paso);
+            ciudad.irAeropuertoAutobus(this, paso);
             paso.mirar();
-            ciudad.bajarPasajerosAutobusAeropuerto(this,paso);
+            ciudad.bajarPasajerosAutobusAeropuerto(this, paso);
             paso.mirar();
             ciudad.recogerPasajerosAutobusAeropuerto(this);
             paso.mirar();
-            ciudad.irCiudadAutobus(this,paso);
+            ciudad.irCiudadAutobus(this, paso);
             paso.mirar();
             ciudad.bajarPasajerosAutobusCiudad(this);
-            
+
         }
 
     }

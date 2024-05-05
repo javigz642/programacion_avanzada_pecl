@@ -19,7 +19,7 @@ import javax.swing.JTextField;
  */
 public class Aeropuerto extends Thread {
 
-    private int personasDentro = 1000;
+    private int personasDentro = 5000;
     private String nombreCiudad;
 
     private Hangar hangar;
@@ -79,12 +79,12 @@ public class Aeropuerto extends Thread {
             control.acquire();
             do {
                 pasajerosParada = (int) (Math.random() * 51);
-            } while (pasajerosParada > personasDentro);      
-            
+            } while (pasajerosParada > personasDentro);
+
             logger.log("Bus " + a.getIdentificador() + " esperando pasajeros en AEROPUERTO ", nombreCiudad);
             Thread.sleep((int) (Math.random() * 3000) + 2001);
             personasDentro -= pasajerosParada;
-            if(personasDentro < 0){
+            if (personasDentro < 0) {
                 System.out.println("america");
             }
             imprimirPasajerosEnAeropuerto(jTextFieldNumeroPasajerosAeropuerto, personasDentro);
@@ -95,7 +95,6 @@ public class Aeropuerto extends Thread {
             Logger.getLogger(Aeropuerto.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
 
     public void bajarPasajerosAutobus(Autobus a) {
 
@@ -184,7 +183,5 @@ public class Aeropuerto extends Thread {
     public Aerovia getAerovia() {
         return aerovia;
     }
-    
-    
 
 }

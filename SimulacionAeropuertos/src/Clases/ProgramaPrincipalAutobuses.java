@@ -8,11 +8,12 @@ package Clases;
  *
  * @author ediso
  */
-public class ProgramaPrincipalAutobuses extends Thread{
-        private Ciudad madrid;
-        private Ciudad barcelona;
-        private Paso paso;
-        private TextLog logger;
+public class ProgramaPrincipalAutobuses extends Thread {
+
+    private Ciudad madrid;
+    private Ciudad barcelona;
+    private Paso paso;
+    private TextLog logger;
 
     public ProgramaPrincipalAutobuses(Ciudad madrid, Ciudad barcelona, Paso paso, TextLog logger) {
         this.madrid = madrid;
@@ -33,9 +34,10 @@ public class ProgramaPrincipalAutobuses extends Thread{
                 Autobus autobusMadrid = new Autobus(identificador, i, 0, madrid, paso, logger);
                 autobusMadrid.start();
             } else {
-                Autobus autobusBarcelona = new Autobus(identificador, i, 0, barcelona,paso, logger);
+                Autobus autobusBarcelona = new Autobus(identificador, i, 0, barcelona, paso, logger);
                 autobusBarcelona.start();
             }
+
             try {
                 Thread.sleep((int) (Math.random() * 501) + 500);
             } catch (Exception e) {

@@ -43,7 +43,7 @@ public class Avion extends Thread {
     public void run() {
 
         try {
-            
+
             logger.log("Avion " + this.getIdentificador() + " creado ", this.getOrigen().getNombre());
             paso.mirar();
             origen.getAeropuerto().getHangar().entrarHangar(this);
@@ -62,31 +62,31 @@ public class Avion extends Thread {
                 //origen.getAeropuerto().getAreaEstacionamiento().salirAreaEstacionamiento(this);
                 //sale solo del area de estacionamiento cuando tiene una puerta de embarque disponible
                 paso.mirar();
-                
-                origen.getAeropuerto().getPuertaEmbarque().entrarPuerta(this,paso);
+
+                origen.getAeropuerto().getPuertaEmbarque().entrarPuerta(this, paso);
                 //sale solo de la puerta de embarque
                 paso.mirar();
-                
+
                 origen.getAeropuerto().getAreaRodaje().entrarAreaRodaje(this);
                 paso.mirar();
                 //origen.getAeropuerto().getAreaRodaje().salirAreaRodaje(this);
                 //sale solo del area de rodaje cuando consigue una pista disponible
                 paso.mirar();
-                
-                origen.getAeropuerto().getPista().pedirPista(this,paso);
+
+                origen.getAeropuerto().getPista().pedirPista(this, paso);
                 //sale solo de la pista
                 paso.mirar();
-                
+
                 origen.getAeropuerto().getAerovia().entrarAerovia(this);
                 paso.mirar();
                 origen.getAeropuerto().getAerovia().abandonarAerovia(this);
                 paso.mirar();
-                
+
                 vuelos++;
 
                 embarque = false; //indica que va a desembarcar
 
-                destino.getAeropuerto().getPista().pedirPista(this,paso);
+                destino.getAeropuerto().getPista().pedirPista(this, paso);
                 paso.mirar();
                 //sale solo de la pista
 
@@ -94,7 +94,7 @@ public class Avion extends Thread {
                 paso.mirar();
                 //sale por si solo del area cuando tiene puerta para desembarcar
 
-                destino.getAeropuerto().getPuertaEmbarque().entrarPuerta(this,paso);
+                destino.getAeropuerto().getPuertaEmbarque().entrarPuerta(this, paso);
                 paso.mirar();
                 //sale solo de la puerta
 

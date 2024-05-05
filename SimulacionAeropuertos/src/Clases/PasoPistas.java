@@ -15,7 +15,7 @@ public class PasoPistas {
 
     private TextLog logger;
     private String nombreCiudad;
-    
+
     private boolean cerrado[] = {false, false, false, false};
     private Lock cerrojo = new ReentrantLock();
     private Condition parar = cerrojo.newCondition();
@@ -25,7 +25,6 @@ public class PasoPistas {
         this.logger = logger;
         this.nombreCiudad = nombreCiudad;
     }
-
 
     public void mirar(int numero) {
         try {

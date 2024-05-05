@@ -29,7 +29,7 @@ public class ProgramaPrincipalAviones extends Thread {
         char[] abc = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'}; //letras para el identificador del avion
 
         for (int i = 0; i < 8000; i++) {  //deberian ser 8000
-
+            paso.mirar();
             int r1 = (int) (Math.random() * 26);
             int r2 = (int) (Math.random() * 26);
             String identificador = "" + abc[r1] + abc[r2] + "";
@@ -38,9 +38,10 @@ public class ProgramaPrincipalAviones extends Thread {
                 Avion avion = new Avion(identificador, i, madrid, barcelona, paso, logger);
                 avion.start();
             } else {
-                Avion avion = new Avion(identificador, i, barcelona, madrid,paso, logger);
+                Avion avion = new Avion(identificador, i, barcelona, madrid, paso, logger);
                 avion.start();
             }
+
             try {
                 Thread.sleep((int) (Math.random() * 2001) + 1000);
             } catch (Exception e) {
@@ -50,4 +51,3 @@ public class ProgramaPrincipalAviones extends Thread {
 
     }
 }
-

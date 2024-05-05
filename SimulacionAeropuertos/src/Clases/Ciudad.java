@@ -44,10 +44,11 @@ public class Ciudad {
         this.logger = logger;
     }
 
-    public void recogerPasajerosAutobusCiudad(Autobus a) {
+    public void recogerPasajerosAutobusCiudad(Autobus a, Paso paso) {
         try {
             logger.log("Bus " + a.getIdentificador() + " esperando pasajeros en CIUDAD ", nombre);
             Thread.sleep((int) (Math.random() * 3000) + 2001);
+            paso.mirar();
             pasajerosParada = random.nextInt(51);
             a.setPasajeros(pasajerosParada);
             logger.log("Bus " + a.getIdentificador() + " recogiendo " + pasajerosParada + " pasajeros en CIUDAD ", nombre);
@@ -55,22 +56,22 @@ public class Ciudad {
             Logger.getLogger(Ciudad.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     public void bajarPasajerosAutobusCiudad(Autobus a) {
 
         logger.log("Bus " + a.getIdentificador() + " bajando " + a.getPasajeros() + " pasajeros en CIUDAD ", nombre);
         a.setPasajeros(0);
 
     }
-    
+
     public void recogerPasajerosAutobusAeropuerto(Autobus a) {
 
         aeropuerto.recogerPasajerosAutobus(a);
 
     }
-    
+
     public void bajarPasajerosAutobusAeropuerto(Autobus a, Paso paso) {
-        
+
         try {
             SemAutobusesHaciaAeropuerto.acquire();
             autobusesHaciaAeropuerto.remove(a);
@@ -109,8 +110,8 @@ public class Ciudad {
 
         try {
             SemAutobusesHaciaCiudad.acquire();
-            autobusesHaciaCiudad.add(a);
             paso.mirar();
+            autobusesHaciaCiudad.add(a);
             imprimirArrayAutobus(jTextFieldTransferCiudadAutobus, autobusesHaciaCiudad);
             SemAutobusesHaciaCiudad.release();
             logger.log("Bus " + a.getIdentificador() + " yendo hacia CIUDAD con " + a.getPasajeros() + " pasajeros ", nombre);
@@ -125,8 +126,6 @@ public class Ciudad {
         }
 
     }
-
-    
 
     public void imprimirArrayAutobus(JTextField jTextFieldDestino, ArrayList<Autobus> arrayBuses) {
         String stringAux = "";
@@ -145,6 +144,5 @@ public class Ciudad {
     public Aeropuerto getAeropuerto() {
         return aeropuerto;
     }
-    
-    
+
 }
