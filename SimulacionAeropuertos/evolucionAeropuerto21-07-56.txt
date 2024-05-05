@@ -1,0 +1,64 @@
+[2024-05-05 21:07:56] Avion ZZ-0000 creado - Madrid
+[2024-05-05 21:07:56] Avion ZZ-0000 entrando HANGAR - Madrid
+[2024-05-05 21:07:56] Avion ZZ-0000 saliendo HANGAR - Madrid
+[2024-05-05 21:07:56] Avion ZZ-0000 entrando ESTACIONAMIENTO - Madrid
+[2024-05-05 21:07:56] Avion ZZ-0000 tiene Gate 5 libre (exclusiva Embarque) - Madrid
+[2024-05-05 21:07:56] Avion ZZ-0000 saliendo ESTACIONAMIENTO - Madrid
+[2024-05-05 21:07:56] Avion ZZ-0000 entrando Gate 5 (exclusiva Embarque)- Madrid
+[2024-05-05 21:07:56] Avion ZZ-0000 EMBARCANDO 212 pasajeros - Madrid
+[2024-05-05 21:07:59] Avion ZZ-0000 saliendo Gate 5 (exclusiva Embarque) con 212 pasajeros - Madrid
+[2024-05-05 21:07:59] Avion ZZ-0000 entrando RODAJE - Madrid
+[2024-05-05 21:07:59] Avion ZZ-0000 haciendo comprobaciones RODAJE - Madrid
+[2024-05-05 21:08:01] Avion ZZ-0000 tiene libre la PISTA 1 para despegar - Madrid
+[2024-05-05 21:08:01] Avion ZZ-0000 saliendo RODAJE - Madrid
+[2024-05-05 21:08:01] Avion ZZ-0000 entrando PISTA 1 para despegar - Madrid
+[2024-05-05 21:08:01] Avion ZZ-0000 realizando verificaciones PISTA - Madrid
+[2024-05-05 21:08:03] Avion ZZ-0000 despegando con 212 pasajeros desde la PISTA 1- Madrid
+[2024-05-05 21:08:06] Avion ZZ-0000 ha dejado libre la PISTA 1- Madrid
+[2024-05-05 21:08:06] Avion ZZ-0000 entrando AEROVIA Madrid-Barcelona - Madrid
+[2024-05-05 21:08:06] Avion ZZ-0000 abandonando AEROVIA Madrid-Barcelona - Barcelona
+[2024-05-05 21:08:06] Avion ZZ-0000 tiene libre la PISTA 1 para aterrizar - Barcelona
+[2024-05-05 21:08:06] Avion ZZ-0000 aterrizando con 212 pasajeros en la PISTA 1- Barcelona
+[2024-05-05 21:08:07] Avion ZZ-0000 ha dejado libre la PISTA 1- Barcelona
+[2024-05-05 21:08:07] Avion ZZ-0000 entrando RODAJE - Barcelona
+[2024-05-05 21:08:07] Avion ZZ-0000 tiene Gate 6 libre (exclusiva Desembarque). Yendo hacia Gate 6... - Barcelona
+[2024-05-05 21:08:11] Avion ZZ-0000 saliendo RODAJE - Barcelona
+[2024-05-05 21:08:11] Avion ZZ-0000 entrando Gate 6 (exclusiva Desembarque) - Barcelona
+[2024-05-05 21:08:11] Avion ZZ-0000 DESEMBARCANDO 212 pasajeros - Barcelona
+[2024-05-05 21:08:13] Avion ZZ-0000 saliendo Gate 6 (exclusiva Desembarque)- Barcelona
+[2024-05-05 21:08:13] Avion ZZ-0000 entrando ESTACIONAMIENTO - Barcelona
+[2024-05-05 21:08:13] Avion ZZ-0000 realizando comprobaciones ESTACIONAMIENTO (tras Desembarque) - Barcelona
+[2024-05-05 21:08:15] Avion ZZ-0000 saliendo ESTACIONAMIENTO - Barcelona
+[2024-05-05 21:08:15] Avion ZZ-0000 entrando TALLER - Barcelona
+[2024-05-05 21:08:16] Avion ZZ-0000 realizando REVISION NORMAL - Barcelona
+[2024-05-05 21:08:19] ZZ-0000 saliendo TALLER - Barcelona
+[2024-05-05 21:08:20] Avion ZZ-0000 entrando ESTACIONAMIENTO - Barcelona
+[2024-05-05 21:08:20] Avion ZZ-0000 tiene Gate 5 libre (exclusiva Embarque) - Barcelona
+[2024-05-05 21:08:20] Avion ZZ-0000 saliendo ESTACIONAMIENTO - Barcelona
+[2024-05-05 21:08:20] Avion ZZ-0000 entrando Gate 5 (exclusiva Embarque)- Barcelona
+[2024-05-05 21:08:20] Avion ZZ-0000 EMBARCANDO 212 pasajeros - Barcelona
+[2024-05-05 21:08:21] Avion ZZ-0000 saliendo Gate 5 (exclusiva Embarque) con 212 pasajeros - Barcelona
+[2024-05-05 21:08:21] Avion ZZ-0000 entrando RODAJE - Barcelona
+[2024-05-05 21:08:21] Avion ZZ-0000 haciendo comprobaciones RODAJE - Barcelona
+[2024-05-05 21:08:25] Avion ZZ-0000 tiene libre la PISTA 1 para despegar - Barcelona
+[2024-05-05 21:08:25] Avion ZZ-0000 saliendo RODAJE - Barcelona
+[2024-05-05 21:08:25] Avion ZZ-0000 entrando PISTA 1 para despegar - Barcelona
+[2024-05-05 21:08:25] Avion ZZ-0000 realizando verificaciones PISTA - Barcelona
+[2024-05-05 21:08:27] Avion ZZ-0000 despegando con 212 pasajeros desde la PISTA 1- Barcelona
+[2024-05-05 21:08:28] Avion ZZ-0000 ha dejado libre la PISTA 1- Barcelona
+[2024-05-05 21:08:28] Avion ZZ-0000 entrando AEROVIA Barcelona-Madrid - Barcelona
+[2024-05-05 21:08:28] Avion ZZ-0000 abandonando AEROVIA Barcelona-Madrid - Madrid
+[2024-05-05 21:08:28] Avion ZZ-0000 tiene libre la PISTA 1 para aterrizar - Madrid
+[2024-05-05 21:08:28] Avion ZZ-0000 aterrizando con 212 pasajeros en la PISTA 1- Madrid
+[2024-05-05 21:08:31] Avion ZZ-0000 ha dejado libre la PISTA 1- Madrid
+[2024-05-05 21:08:31] Avion ZZ-0000 entrando RODAJE - Madrid
+[2024-05-05 21:08:31] Avion ZZ-0000 tiene Gate 6 libre (exclusiva Desembarque). Yendo hacia Gate 6... - Madrid
+[2024-05-05 21:08:34] Avion ZZ-0000 saliendo RODAJE - Madrid
+[2024-05-05 21:08:34] Avion ZZ-0000 entrando Gate 6 (exclusiva Desembarque) - Madrid
+[2024-05-05 21:08:34] Avion ZZ-0000 DESEMBARCANDO 212 pasajeros - Madrid
+[2024-05-05 21:08:35] Avion ZZ-0000 saliendo Gate 6 (exclusiva Desembarque)- Madrid
+[2024-05-05 21:08:35] Avion ZZ-0000 entrando ESTACIONAMIENTO - Madrid
+[2024-05-05 21:08:35] Avion ZZ-0000 realizando comprobaciones ESTACIONAMIENTO (tras Desembarque) - Madrid
+[2024-05-05 21:08:40] Avion ZZ-0000 saliendo ESTACIONAMIENTO - Madrid
+[2024-05-05 21:08:40] Avion ZZ-0000 entrando TALLER - Madrid
+[2024-05-05 21:08:41] Avion ZZ-0000 realizando REVISION NORMAL - Madrid

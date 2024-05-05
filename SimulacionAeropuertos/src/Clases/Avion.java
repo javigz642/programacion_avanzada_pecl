@@ -57,9 +57,10 @@ public class Avion extends Thread {
                 Thread.sleep(0);
                 paso.mirar();
                 
-                origen.getAeropuerto().getAreaEstacionamiento().entrarArea(this);
+                origen.getAeropuerto().getAreaEstacionamiento().entrarAreaEstacionamiento(this);
                 paso.mirar();
-                origen.getAeropuerto().getAreaEstacionamiento().salirArea(this);
+                //origen.getAeropuerto().getAreaEstacionamiento().salirAreaEstacionamiento(this);
+                //sale solo del area de estacionamiento cuando tiene una puerta de embarque disponible
                 paso.mirar();
                 
                 origen.getAeropuerto().getPuertaEmbarque().entrarPuerta(this,paso);
@@ -68,7 +69,8 @@ public class Avion extends Thread {
                 
                 origen.getAeropuerto().getAreaRodaje().entrarAreaRodaje(this);
                 paso.mirar();
-                origen.getAeropuerto().getAreaRodaje().salirAreaRodaje(this);
+                //origen.getAeropuerto().getAreaRodaje().salirAreaRodaje(this);
+                //sale solo del area de rodaje cuando consigue una pista disponible
                 paso.mirar();
                 
                 origen.getAeropuerto().getPista().pedirPista(this,paso);
@@ -96,9 +98,10 @@ public class Avion extends Thread {
                 paso.mirar();
                 //sale solo de la puerta
 
-                destino.getAeropuerto().getAreaEstacionamiento().entrarArea(this);
+                destino.getAeropuerto().getAreaEstacionamiento().entrarAreaEstacionamiento(this);
                 paso.mirar();
-                destino.getAeropuerto().getAreaEstacionamiento().salirArea(this);
+                //destino.getAeropuerto().getAreaEstacionamiento().salirAreaEstacionamiento(this);
+                //sale solo al entrar al taller
                 paso.mirar();
 
                 destino.getAeropuerto().getTaller().entrarTaller(this);

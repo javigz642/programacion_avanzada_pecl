@@ -57,9 +57,11 @@ public class Pista {
                 paso.mirar();
                 pasoPistas.mirar(avion.getNumero()%4);
                 pistas[avion.getNumero()%4].acquire();
+                logger.log("Avion " + avion.getIdentificador() + " tiene libre la PISTA " + (avion.getNumero()+1) + " para despegar ", nombreCiudad);
+                avion.getOrigen().getAeropuerto().getAreaRodaje().salirAreaRodaje(avion);
                 aviones[avion.getNumero()%4] = avion;
                 imprimirArrayAviones(aviones, avion.getNumero()%4);
-                logger.log("Avion " + avion.getIdentificador() + " tiene libre la PISTA " + (avion.getNumero()+1) + " para despegar ", nombreCiudad);
+                logger.log("Avion " + avion.getIdentificador() + " entrando PISTA " + (avion.getNumero()+1) + " para despegar ", nombreCiudad);
                 despegar(avion,paso);
                 
             } else {
@@ -67,15 +69,13 @@ public class Pista {
                 pasoPistas.mirar(avion.getNumero()%4);
                 while (!pistas[avion.getNumero()%4].tryAcquire()) {
                     logger.log("Avion " + avion.getIdentificador() + " dando un rodeo para tener pista libre ", nombreCiudad);
-                    Thread.sleep((int) (Math.random() * 4000) + 1001);
-                    
+                    Thread.sleep((int) (Math.random() * 4000) + 1001);   
                 }
                 paso.mirar();
                 pasoPistas.mirar(avion.getNumero()%4);
-                
                 aviones[avion.getNumero()%4] = avion;
-                imprimirArrayAviones(aviones, avion.getNumero()%4);
                 logger.log("Avion " + avion.getIdentificador() + " tiene libre la PISTA " + (avion.getNumero()+1) + " para aterrizar ", nombreCiudad);
+                imprimirArrayAviones(aviones, avion.getNumero()%4);
                 aterrizar(avion,paso);
             }
             

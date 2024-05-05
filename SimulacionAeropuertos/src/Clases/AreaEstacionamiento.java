@@ -34,7 +34,7 @@ public class AreaEstacionamiento {
         this.logger = logger;
     }
 
-    public void entrarArea(Avion avion) {
+    public void entrarAreaEstacionamiento(Avion avion) {
 
         try {
             control.acquire();
@@ -54,7 +54,7 @@ public class AreaEstacionamiento {
         }
     }
 
-    public void salirArea(Avion avion) {
+    public void salirAreaEstacionamiento(Avion avion) {
 
         try {
             control.acquire();

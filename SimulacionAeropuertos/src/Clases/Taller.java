@@ -37,11 +37,12 @@ public class Taller {
         try {
             espaciosTaller.acquire();
             control.acquire();
+            avion.getDestino().getAeropuerto().getAreaEstacionamiento().salirAreaEstacionamiento(avion);
+            aviones.add(avion);
+            imprimirArrayAviones(jTextFieldTallerAeropuerto, aviones);
             logger.log("Avion " + avion.getIdentificador() + " entrando TALLER ", nombreCiudad);
             Thread.sleep(1000);
-            aviones.add(avion);
             avionesDentro++;
-            imprimirArrayAviones(jTextFieldTallerAeropuerto, aviones);
             control.release();
             if (avion.getVuelos() % 15 == 0) {
                 logger.log("Avion " + avion.getIdentificador() + " realizando REVISION PRFUNDA ", nombreCiudad);
@@ -61,7 +62,7 @@ public class Taller {
 
         try {
             control.acquire();
-            logger.log(avion.getIdentificador() + " saliendo TALLER ", nombreCiudad);
+            logger.log("Avion " + avion.getIdentificador() + " saliendo TALLER ", nombreCiudad);
             Thread.sleep(1000);
             aviones.remove(avion);
             avionesDentro--;
