@@ -132,7 +132,7 @@ public class PuertaEmbarque {
             int max = avion.getPasajerosMax();
             int intentos = 0;
             int pasajeros;
-
+            
             pasajeros = avion.getOrigen().getAeropuerto().recogerPasajerosAvion(max);
             avion.setPasajerosActual(pasajeros);
 

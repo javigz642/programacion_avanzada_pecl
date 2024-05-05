@@ -39,7 +39,7 @@ public class Avion extends Thread {
         this.paso = paso;
         this.logger = logger;
     }
-
+    
     public void run() {
 
         try {
