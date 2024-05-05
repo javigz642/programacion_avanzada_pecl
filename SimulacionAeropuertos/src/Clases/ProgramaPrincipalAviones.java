@@ -4,6 +4,8 @@
  */
 package Clases;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JTextField;
 
 /**
@@ -28,7 +30,8 @@ public class ProgramaPrincipalAviones extends Thread {
 
         char[] abc = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'}; //letras para el identificador del avion
 
-        for (int i = 0; i < 8000; i++) {  //deberian ser 8000
+        for (int i = 0; i < 8000; i++) {  try {
+            //deberian ser 8000
             paso.mirar();
             int r1 = (int) (Math.random() * 26);
             int r2 = (int) (Math.random() * 26);
@@ -41,11 +44,13 @@ public class ProgramaPrincipalAviones extends Thread {
                 Avion avion = new Avion(identificador, i, barcelona, madrid, paso, logger);
                 avion.start();
             }
+            
 
-            try {
-                Thread.sleep((int) (Math.random() * 2001) + 1000);
-            } catch (Exception e) {
+            Thread.sleep((int) (Math.random() * 2001) + 1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(ProgramaPrincipalAviones.class.getName()).log(Level.SEVERE, null, ex);
             }
+            
 
         }
 

@@ -82,17 +82,14 @@ public class Aeropuerto extends Thread {
         int pasajerosParada;
 
         try {
+            logger.log("Bus " + a.getIdentificador() + " esperando pasajeros en AEROPUERTO ", nombreCiudad);
+            Thread.sleep((int) (Math.random() * 3000) + 2001);
             control.acquire();
             do {
                 pasajerosParada = (int) (Math.random() * 51);
             } while (pasajerosParada > personasDentro);
-
-            logger.log("Bus " + a.getIdentificador() + " esperando pasajeros en AEROPUERTO ", nombreCiudad);
-            Thread.sleep((int) (Math.random() * 3000) + 2001);
+            
             personasDentro -= pasajerosParada;
-            if (personasDentro < 0) {
-                System.out.println("america");
-            }
             imprimirPasajerosEnAeropuerto(jTextFieldNumeroPasajerosAeropuerto, personasDentro);
             control.release();
             logger.log("Bus " + a.getIdentificador() + " recogiendo " + pasajerosParada + " pasajeros en AEROPUERTO ", nombreCiudad);
@@ -136,14 +133,16 @@ public class Aeropuerto extends Thread {
             if (personasDentro > pasajeros) {
                 personasDentro -= pasajeros;
                 imprimirPasajerosEnAeropuerto(jTextFieldNumeroPasajerosAeropuerto, personasDentro);
+                control.release();
                 pasajerosCogidos = pasajeros;
             } else {
 
                 pasajerosCogidos = personasDentro;
                 personasDentro -= pasajerosCogidos;
                 imprimirPasajerosEnAeropuerto(jTextFieldNumeroPasajerosAeropuerto, personasDentro);
+                control.release();
             }
-            control.release();
+            
 
         } catch (InterruptedException ex) {
             Logger.getLogger(Aeropuerto.class.getName()).log(Level.SEVERE, null, ex);
@@ -215,3 +214,9 @@ public class Aeropuerto extends Thread {
     }
 
 }
+
+//AVIONES SE SIGUEN CREANDO
+//BUSES SE SIGUEN CREANDO
+//AVIONES SIGUEN ESPERANDO PISTA PARA ATERRIZAR
+//BUS SIGUE RECOGIENDO PASAJEROS Y ESPERANDO PASAJEROS
+//BUS LITERALMENTE NO PARAN
