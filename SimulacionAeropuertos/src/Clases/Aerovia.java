@@ -22,7 +22,7 @@ public class Aerovia {
 
     private JTextField jTextFieldAeroviaMadrid_Barcelona;
     private JTextField jTextFieldAeroviaBarcelona_Madrid;
-    
+
     private TextLog logger;
 
     public Aerovia(JTextField jTextFieldAeroviaMadrid_Barcelona, JTextField jTextFieldAeroviaBarcelona_Madrid, TextLog logger) {
@@ -30,8 +30,6 @@ public class Aerovia {
         this.jTextFieldAeroviaBarcelona_Madrid = jTextFieldAeroviaBarcelona_Madrid;
         this.logger = logger;
     }
-    
-    
 
     public void entrarAerovia(Avion avion) {
 
@@ -40,7 +38,7 @@ public class Aerovia {
             aviones.add(avion);
             if (avion.getOrigen().getNombre().equals("Madrid")) {
                 jTextFieldAeroviaMadrid_Barcelona.setText(getStringArrayAviones(aviones));
-                
+
             } else {
                 jTextFieldAeroviaBarcelona_Madrid.setText(getStringArrayAviones(aviones));
             }
@@ -79,11 +77,12 @@ public class Aerovia {
         for (int i = 0; i < arrayAviones.size(); i++) {
             identificadorAux = arrayAviones.get(i).getIdentificador();
             numeroPasejosAvionAux = arrayAviones.get(i).getPasajerosActual();
-            stringAux += identificadorAux +"("+numeroPasejosAvionAux+")"+ " / ";
+            stringAux += identificadorAux + "(" + numeroPasejosAvionAux + ")" + " / ";
         }
         avionesDentro = stringAux;
         return avionesDentro;
     }
+
     public String getStringArrayAviones() {
         return avionesDentro;
     }

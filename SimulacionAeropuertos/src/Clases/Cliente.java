@@ -10,6 +10,7 @@ import static java.lang.Thread.sleep;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class Cliente extends Thread {
@@ -91,6 +92,8 @@ public class Cliente extends Thread {
                     respuesta = obj.AvionesAeroviaBarcelona_Madrid();
                     jTextFieldAeroviaBarcelona_Madrid.setText(respuesta);
 
+                } catch (ConnectException ce) {
+                    System.out.println("Se ha perdido la conexion con el servidor, reinicie el programa");
                 } catch (Exception e) {
                     System.out.println("Excepción : " + e.getMessage());
                     e.printStackTrace();
@@ -111,38 +114,37 @@ public class Cliente extends Thread {
 
     }
 
-public void mirarSiPararAlgunaPista(InterfaceInformar obj) {
+    public void mirarSiPararAlgunaPista(InterfaceInformar obj) {
 
-    // Comprobar si ha habido cambios en el estado de las pistas
-    for (int i = 0; i < pasoPistas.length; i++) {
-        boolean pasoActual = pasoPistas[i];
-        boolean pasoAnterior = pasoPistasAux[i];
+        // Comprobar si ha habido cambios en el estado de las pistas
+        for (int i = 0; i < pasoPistas.length; i++) {
+            boolean pasoActual = pasoPistas[i];
+            boolean pasoAnterior = pasoPistasAux[i];
 
-        // Si hay cambios en el estado de la pista se actua
-        if (pasoActual != pasoAnterior) {
-            try {
-                if (pasoActual) {
-                    if (i < 4) {
-                        obj.setCerrarPasoPistaXMadrid(i);
+            // Si hay cambios en el estado de la pista se actua
+            if (pasoActual != pasoAnterior) {
+                try {
+                    if (pasoActual) {
+                        if (i < 4) {
+                            obj.setCerrarPasoPistaXMadrid(i);
+                        } else {
+                            obj.setCerrarPasoPistaXBarcelona(i - 4);
+                        }
                     } else {
-                        obj.setCerrarPasoPistaXBarcelona(i - 4);
+                        if (i < 4) {
+                            obj.setAbrirPasoPistaXMadrid(i);
+                        } else {
+                            obj.setAbrirPasoPistaXBarcelona(i - 4);
+                        }
                     }
-                } else {
-                    if (i < 4) {
-                        obj.setAbrirPasoPistaXMadrid(i);
-                    } else {
-                        obj.setAbrirPasoPistaXBarcelona(i - 4);
-                    }
+                    pasoPistasAux[i] = pasoActual;
+                } catch (Exception e) {
+                    // Manejar la excepción apropiadamente, por ejemplo, registrándola
+                    e.printStackTrace();
                 }
-                pasoPistasAux[i] = pasoActual;
-            } catch (Exception e) {
-                // Manejar la excepción apropiadamente, por ejemplo, registrándola
-                e.printStackTrace();
             }
         }
     }
-}
-
 
     public void imprimir(boolean[] b) {
         String aux = "";

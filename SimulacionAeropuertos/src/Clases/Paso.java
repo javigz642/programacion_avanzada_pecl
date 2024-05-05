@@ -10,7 +10,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class Paso {
 
     private TextLog logger;
-    
+
     private boolean cerrado = false;
     private Lock cerrojo = new ReentrantLock();
     private Condition parar = cerrojo.newCondition();
@@ -19,7 +19,7 @@ public class Paso {
     public Paso(TextLog logger) {
         this.logger = logger;
     }
-  
+
     public void mirar() {
 
         try {

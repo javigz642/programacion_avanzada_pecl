@@ -11,7 +11,7 @@ import javax.swing.JTextField;
  * @author ediso
  */
 public class Main extends Thread {
-    
+
     private JTextField jTextFieldAeroviaBarcelona_Madrid;
     private JTextField jTextFieldAeroviaMadrid_Barcelona;
     private JTextField jTextFieldAreaEstacionamientoAeropuertoBarcelona;
@@ -52,25 +52,26 @@ public class Main extends Thread {
     private PasoPistas pasoPistasBarcelona;
     private PasoPistas pasoPistasMadrid;
     private TextLog logger;
-    public Main(JTextField jTextFieldAeroviaBarcelona_Madrid, JTextField jTextFieldAeroviaMadrid_Barcelona, 
+
+    public Main(JTextField jTextFieldAeroviaBarcelona_Madrid, JTextField jTextFieldAeroviaMadrid_Barcelona,
             JTextField jTextFieldAreaEstacionamientoAeropuertoBarcelona, JTextField jTextFieldAreaEstacionamientoAeropuertoMadrid,
             JTextField jTextFieldAreaRodajeAeropuertoBarcelona, JTextField jTextFieldAreaRodajeAeropuertoMadrid,
-            JTextField jTextFieldGate1AeropuertoBarcelona, JTextField jTextFieldGate1AeropuertoMadrid, 
-            JTextField jTextFieldGate2AeropuertoBarcelona, JTextField jTextFieldGate2AeropuertoMadrid, 
-            JTextField jTextFieldGate3AeropuertoBarcelona, JTextField jTextFieldGate3AeropuertoMadrid, 
-            JTextField jTextFieldGate4AeropuertoBarcelona, JTextField jTextFieldGate4AeropuertoMadrid, 
+            JTextField jTextFieldGate1AeropuertoBarcelona, JTextField jTextFieldGate1AeropuertoMadrid,
+            JTextField jTextFieldGate2AeropuertoBarcelona, JTextField jTextFieldGate2AeropuertoMadrid,
+            JTextField jTextFieldGate3AeropuertoBarcelona, JTextField jTextFieldGate3AeropuertoMadrid,
+            JTextField jTextFieldGate4AeropuertoBarcelona, JTextField jTextFieldGate4AeropuertoMadrid,
             JTextField jTextFieldGate5AeropuertoBarcelona, JTextField jTextFieldGate5AeropuertoMadrid,
             JTextField jTextFieldGate6AeropuertoBarcelona, JTextField jTextFieldGate6AeropuertoMadrid,
-            JTextField jTextFieldHangarAeropuertoBarcelona, JTextField jTextFieldHangarAeropuertoMadrid, 
-            JTextField jTextFieldNumeroPasajerosAeropuertoBarcelona, JTextField jTextFieldNumeroPasajerosAeropuertoMadrid, 
-            JTextField jTextFieldPista1AeropuertoBarcelona, JTextField jTextFieldPista1AeropuertoMadrid, 
-            JTextField jTextFieldPista2AeropuertoBarcelona, JTextField jTextFieldPista2AeropuertoMadrid, 
-            JTextField jTextFieldPista3AeropuertoBarcelona, JTextField jTextFieldPista3AeropuertoMadrid, 
-            JTextField jTextFieldPista4AeropuertoBarcelona, JTextField jTextFieldPista4AeropuertoMadrid, 
-            JTextField jTextFieldTallerAeropuertoBarcelona, JTextField jTextFieldTallerAeropuertoMadrid, 
+            JTextField jTextFieldHangarAeropuertoBarcelona, JTextField jTextFieldHangarAeropuertoMadrid,
+            JTextField jTextFieldNumeroPasajerosAeropuertoBarcelona, JTextField jTextFieldNumeroPasajerosAeropuertoMadrid,
+            JTextField jTextFieldPista1AeropuertoBarcelona, JTextField jTextFieldPista1AeropuertoMadrid,
+            JTextField jTextFieldPista2AeropuertoBarcelona, JTextField jTextFieldPista2AeropuertoMadrid,
+            JTextField jTextFieldPista3AeropuertoBarcelona, JTextField jTextFieldPista3AeropuertoMadrid,
+            JTextField jTextFieldPista4AeropuertoBarcelona, JTextField jTextFieldPista4AeropuertoMadrid,
+            JTextField jTextFieldTallerAeropuertoBarcelona, JTextField jTextFieldTallerAeropuertoMadrid,
             JTextField jTextFieldTransferAeropuertoAutobusBarcelona, JTextField jTextFieldTransferAeropuertoAutobusMadrid,
             JTextField jTextFieldTransferCiudadAutobusMadrid, JTextField jTextFieldTransferCiudadAutobusBarcelona,
-        Paso paso, PasoPistas pasoPistasBarcelona, PasoPistas pasoPistasMadrid, TextLog logger) {
+            Paso paso, PasoPistas pasoPistasBarcelona, PasoPistas pasoPistasMadrid, TextLog logger) {
         this.jTextFieldAeroviaBarcelona_Madrid = jTextFieldAeroviaBarcelona_Madrid;
         this.jTextFieldAeroviaMadrid_Barcelona = jTextFieldAeroviaMadrid_Barcelona;
         this.jTextFieldAreaEstacionamientoAeropuertoBarcelona = jTextFieldAreaEstacionamientoAeropuertoBarcelona;
@@ -150,12 +151,12 @@ public class Main extends Thread {
                 jTextFieldTransferCiudadAutobusMadrid, logger);
         Ciudad barcelona = new Ciudad("Barcelona", aeropuertoBarcelona, jTextFieldTransferAeropuertoAutobusBarcelona,
                 jTextFieldTransferCiudadAutobusBarcelona, logger);
-        
+
         ProgramaPrincipalAviones pp1 = new ProgramaPrincipalAviones(madrid, barcelona, paso, logger);
         ProgramaPrincipalAutobuses pp2 = new ProgramaPrincipalAutobuses(madrid, barcelona, paso, logger);
         pp1.start();
         pp2.start();
-        
+
         Servidor server = new Servidor(aeropuertoMadrid, aeropuertoBarcelona);
         server.start();
     }
