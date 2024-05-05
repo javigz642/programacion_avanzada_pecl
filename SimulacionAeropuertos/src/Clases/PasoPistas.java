@@ -8,12 +8,13 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-// La clase Paso define un cerrojo con un Condition para la variable booleana cerrado
-// que es comprobada por un proceso.
-// Si vale false(abierto) el proceso puede continuar. Si es true(cerrado) el proceso se detiene
-//
-// El array booleano soloUnHilo permite que al pararse una determinada pista solo un hilo 
-// perteneciente a esa pista imprima en el log.
+/* La clase Paso define un cerrojo con un Condition para la variable booleana cerrado
+* que es comprobada por un proceso.
+* Si vale false(abierto) el proceso puede continuar. Si es true(cerrado) el proceso se detiene
+*
+* El array booleano soloUnHilo permite que al pararse una determinada pista solo un hilo 
+* perteneciente a esa pista imprima en el log.
+*/
 public class PasoPistas {
 
     private TextLog logger;
