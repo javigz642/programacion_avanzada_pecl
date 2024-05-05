@@ -9,10 +9,6 @@ import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author ediso
- */
 public class Avion extends Thread {
 
     private Ciudad origen;
@@ -39,92 +35,79 @@ public class Avion extends Thread {
         this.paso = paso;
         this.logger = logger;
     }
-    
+
     public void run() {
 
-        try {
+        logger.log("Avion " + this.getIdentificador() + " creado ", this.getOrigen().getNombre());
+        paso.mirar();
+        origen.getAeropuerto().getHangar().entrarHangar(this);
+        paso.mirar();
+        origen.getAeropuerto().getHangar().salirHangar(this);
 
-            logger.log("Avion " + this.getIdentificador() + " creado ", this.getOrigen().getNombre());
+        while (true) {
+
+            embarque = true; //indica que va a embarcar
             paso.mirar();
-            origen.getAeropuerto().getHangar().entrarHangar(this);
+
+            origen.getAeropuerto().getAreaEstacionamiento().entrarAreaEstacionamiento(this);
             paso.mirar();
-            origen.getAeropuerto().getHangar().salirHangar(this);
+            //sale solo del area de estacionamiento cuando tiene una puerta de embarque disponible
 
-            while (true) {
+            origen.getAeropuerto().getPuertaEmbarque().entrarPuerta(this, paso);
+            paso.mirar();
+            //sale solo de la puerta de embarque
 
-                embarque = true; //indica que va a embarcar
+            origen.getAeropuerto().getAreaRodaje().entrarAreaRodaje(this);
+            paso.mirar();
+            //sale solo del area de rodaje cuando consigue una pista disponible
 
-                Thread.sleep(0);
-                paso.mirar();
-                
-                origen.getAeropuerto().getAreaEstacionamiento().entrarAreaEstacionamiento(this);
-                paso.mirar();
-                //origen.getAeropuerto().getAreaEstacionamiento().salirAreaEstacionamiento(this);
-                //sale solo del area de estacionamiento cuando tiene una puerta de embarque disponible
-                paso.mirar();
+            origen.getAeropuerto().getPista().pedirPista(this, paso);
+            paso.mirar();
+            //sale solo de la pista
 
-                origen.getAeropuerto().getPuertaEmbarque().entrarPuerta(this, paso);
-                //sale solo de la puerta de embarque
-                paso.mirar();
+            origen.getAeropuerto().getAerovia().entrarAerovia(this);
+            paso.mirar();
+            origen.getAeropuerto().getAerovia().abandonarAerovia(this);
+            paso.mirar();
 
-                origen.getAeropuerto().getAreaRodaje().entrarAreaRodaje(this);
-                paso.mirar();
-                //origen.getAeropuerto().getAreaRodaje().salirAreaRodaje(this);
-                //sale solo del area de rodaje cuando consigue una pista disponible
-                paso.mirar();
+            vuelos++;
 
-                origen.getAeropuerto().getPista().pedirPista(this, paso);
-                //sale solo de la pista
-                paso.mirar();
+            embarque = false; //indica que va a desembarcar
 
-                origen.getAeropuerto().getAerovia().entrarAerovia(this);
-                paso.mirar();
-                origen.getAeropuerto().getAerovia().abandonarAerovia(this);
-                paso.mirar();
+            destino.getAeropuerto().getPista().pedirPista(this, paso);
+            paso.mirar();
+            //sale solo de la pista
 
-                vuelos++;
+            destino.getAeropuerto().getAreaRodaje().entrarAreaRodaje(this);
+            paso.mirar();
+            //sale por si solo del area cuando tiene puerta para desembarcar
 
-                embarque = false; //indica que va a desembarcar
+            destino.getAeropuerto().getPuertaEmbarque().entrarPuerta(this, paso);
+            paso.mirar();
+            //sale solo de la puerta
 
-                destino.getAeropuerto().getPista().pedirPista(this, paso);
+            destino.getAeropuerto().getAreaEstacionamiento().entrarAreaEstacionamiento(this);
+            paso.mirar();
+            //destino.getAeropuerto().getAreaEstacionamiento().salirAreaEstacionamiento(this);
+            //sale solo al entrar al taller
+            paso.mirar();
+
+            destino.getAeropuerto().getTaller().entrarTaller(this);
+            paso.mirar();
+            destino.getAeropuerto().getTaller().salirTaller(this);
+            paso.mirar();
+
+            if (random.nextInt(2) == 0) {
+
+                destino.getAeropuerto().getHangar().reposar(this);
                 paso.mirar();
-                //sale solo de la pista
-
-                destino.getAeropuerto().getAreaRodaje().entrarAreaRodaje(this);
-                paso.mirar();
-                //sale por si solo del area cuando tiene puerta para desembarcar
-
-                destino.getAeropuerto().getPuertaEmbarque().entrarPuerta(this, paso);
-                paso.mirar();
-                //sale solo de la puerta
-
-                destino.getAeropuerto().getAreaEstacionamiento().entrarAreaEstacionamiento(this);
-                paso.mirar();
-                //destino.getAeropuerto().getAreaEstacionamiento().salirAreaEstacionamiento(this);
-                //sale solo al entrar al taller
+                destino.getAeropuerto().getHangar().salirHangar(this);
                 paso.mirar();
 
-                destino.getAeropuerto().getTaller().entrarTaller(this);
-                paso.mirar();
-                destino.getAeropuerto().getTaller().salirTaller(this);
-                paso.mirar();
-
-                if (random.nextInt(2) == 0) {
-
-                    destino.getAeropuerto().getHangar().reposar(this);
-                    paso.mirar();
-                    destino.getAeropuerto().getHangar().salirHangar(this);
-                    paso.mirar();
-
-                }
-
-                aux = origen;
-                origen = destino;
-                destino = aux;
             }
-
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Avion.class.getName()).log(Level.SEVERE, null, ex);
+            aux = origen;
+            origen = destino;
+            destino = aux;
         }
 
     }

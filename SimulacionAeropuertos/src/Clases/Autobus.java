@@ -4,16 +4,13 @@
  */
 package Clases;
 
-/**
- *
- * @author ediso
- */
+
 public class Autobus extends Thread {
 
     private Ciudad ciudad;
-
     private String identificador;
     private int pasajeros;
+    
     private Paso paso;
     private TextLog logger;
 
@@ -46,6 +43,7 @@ public class Autobus extends Thread {
 
     }
 
+    //Metodos getter y setter
     public int getPasajeros() {
         return pasajeros;
     }

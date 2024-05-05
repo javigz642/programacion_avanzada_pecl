@@ -115,7 +115,7 @@ public class Main extends Thread {
     }
 
     public void run() {
-
+        //Creacion de los componentes del aeropuerto de Madrid
         Hangar hangarMadrid = new Hangar(jTextFieldHangarAeropuertoMadrid, "Madrid", logger);
         AreaEstacionamiento areaEstacionamientoMadrid = new AreaEstacionamiento(jTextFieldAreaEstacionamientoAeropuertoMadrid, "Madrid", logger);
         PuertaEmbarque puertaEmbarqueMadrid = new PuertaEmbarque("Madrid", logger, jTextFieldGate1AeropuertoMadrid, jTextFieldGate2AeropuertoMadrid, jTextFieldGate3AeropuertoMadrid, jTextFieldGate4AeropuertoMadrid, jTextFieldGate5AeropuertoMadrid, jTextFieldGate6AeropuertoMadrid);
@@ -131,10 +131,10 @@ public class Main extends Thread {
                 jTextFieldGate4AeropuertoMadrid, jTextFieldGate5AeropuertoMadrid,
                 jTextFieldGate6AeropuertoMadrid, jTextFieldNumeroPasajerosAeropuertoMadrid, logger, "Madrid");
 
+        //Creacion de los componentes del aeropuerto de Barcelona
         Hangar hangarBarcelona = new Hangar(jTextFieldHangarAeropuertoBarcelona, "Barcelona", logger);
         AreaEstacionamiento areaEstacionamientoBarcelona = new AreaEstacionamiento(jTextFieldAreaEstacionamientoAeropuertoBarcelona, "Barcelona", logger);
         PuertaEmbarque puertaEmbarqueBarcelona = new PuertaEmbarque("Barcelona", logger, jTextFieldGate1AeropuertoBarcelona, jTextFieldGate2AeropuertoBarcelona, jTextFieldGate3AeropuertoBarcelona, jTextFieldGate4AeropuertoBarcelona, jTextFieldGate5AeropuertoBarcelona, jTextFieldGate6AeropuertoBarcelona);
-
         Taller tallerBarcelona = new Taller(jTextFieldTallerAeropuertoBarcelona, "Barcelona", logger);
         AreaRodaje areaRodajeBarcelona = new AreaRodaje(jTextFieldAreaRodajeAeropuertoBarcelona, "Barcelona", logger);
         Pista pistaBarcelona = new Pista(jTextFieldPista1AeropuertoBarcelona, jTextFieldPista2AeropuertoBarcelona, jTextFieldPista3AeropuertoBarcelona, jTextFieldPista4AeropuertoBarcelona, "Barcelona", logger, pasoPistasBarcelona);
@@ -147,16 +147,19 @@ public class Main extends Thread {
                 jTextFieldGate4AeropuertoBarcelona, jTextFieldGate5AeropuertoBarcelona,
                 jTextFieldGate6AeropuertoBarcelona, jTextFieldNumeroPasajerosAeropuertoBarcelona, logger, "Barcelona");
 
+        //Creacion de las ciudades
         Ciudad madrid = new Ciudad("Madrid", aeropuertoMadrid, jTextFieldTransferAeropuertoAutobusMadrid,
                 jTextFieldTransferCiudadAutobusMadrid, logger);
         Ciudad barcelona = new Ciudad("Barcelona", aeropuertoBarcelona, jTextFieldTransferAeropuertoAutobusBarcelona,
                 jTextFieldTransferCiudadAutobusBarcelona, logger);
 
+        //Creacion y ejecucion de los hilos que van a crear los autobuses y los aviones
         ProgramaPrincipalAviones pp1 = new ProgramaPrincipalAviones(madrid, barcelona, paso, logger);
         ProgramaPrincipalAutobuses pp2 = new ProgramaPrincipalAutobuses(madrid, barcelona, paso, logger);
         pp1.start();
         pp2.start();
 
+        //Creacion y ejecución del servidor que da servicio al cliente
         Servidor server = new Servidor(aeropuertoMadrid, aeropuertoBarcelona);
         server.start();
     }

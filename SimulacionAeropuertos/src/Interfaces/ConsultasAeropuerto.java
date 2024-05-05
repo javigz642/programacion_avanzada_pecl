@@ -532,114 +532,97 @@ public class ConsultasAeropuerto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCerrarPista1MadridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCerrarPista1MadridActionPerformed
-        // TODO add your handling code here:
         jButtonCerrarPista1Madrid.setEnabled(false);
         cliente.setPasoPistasNumero(1);
         jButtonAbrirPista1Madrid.setEnabled(true);
     }//GEN-LAST:event_jButtonCerrarPista1MadridActionPerformed
 
     private void jButtonCerrarPista2MadridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCerrarPista2MadridActionPerformed
-        // TODO add your handling code here:
         jButtonCerrarPista2Madrid.setEnabled(false);
         cliente.setPasoPistasNumero(2);
         jButtonAbrirPista2Madrid.setEnabled(true);
     }//GEN-LAST:event_jButtonCerrarPista2MadridActionPerformed
 
     private void jButtonCerrarPista3MadridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCerrarPista3MadridActionPerformed
-        // TODO add your handling code here:
         jButtonCerrarPista3Madrid.setEnabled(false);
         cliente.setPasoPistasNumero(3);
         jButtonAbrirPista3Madrid.setEnabled(true);
     }//GEN-LAST:event_jButtonCerrarPista3MadridActionPerformed
 
     private void jButtonCerrarPista4MadridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCerrarPista4MadridActionPerformed
-        // TODO add your handling code here:
         jButtonCerrarPista4Madrid.setEnabled(false);
         cliente.setPasoPistasNumero(4);
         jButtonAbrirPista4Madrid.setEnabled(true);
     }//GEN-LAST:event_jButtonCerrarPista4MadridActionPerformed
 
     private void jButtonAbrirPista1MadridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAbrirPista1MadridActionPerformed
-        // TODO add your handling code here:
         jButtonAbrirPista1Madrid.setEnabled(false);
         cliente.setPasoPistasNumero(1);
         jButtonCerrarPista1Madrid.setEnabled(true);
     }//GEN-LAST:event_jButtonAbrirPista1MadridActionPerformed
 
     private void jButtonAbrirPista2MadridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAbrirPista2MadridActionPerformed
-        // TODO add your handling code here:
         jButtonAbrirPista2Madrid.setEnabled(false);
         cliente.setPasoPistasNumero(2);
         jButtonCerrarPista2Madrid.setEnabled(true);
     }//GEN-LAST:event_jButtonAbrirPista2MadridActionPerformed
 
     private void jButtonAbrirPista3MadridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAbrirPista3MadridActionPerformed
-        // TODO add your handling code here:
         jButtonAbrirPista3Madrid.setEnabled(false);
         cliente.setPasoPistasNumero(3);
         jButtonCerrarPista3Madrid.setEnabled(true);
     }//GEN-LAST:event_jButtonAbrirPista3MadridActionPerformed
 
     private void jButtonAbrirPista4MadridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAbrirPista4MadridActionPerformed
-        // TODO add your handling code here:
         jButtonAbrirPista4Madrid.setEnabled(false);
         cliente.setPasoPistasNumero(4);
         jButtonCerrarPista4Madrid.setEnabled(true);
     }//GEN-LAST:event_jButtonAbrirPista4MadridActionPerformed
 
 
-    
     private void jButtonCerrarPista1BarcelonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCerrarPista1BarcelonaActionPerformed
-        // TODO add your handling code here:
         jButtonCerrarPista1Barcelona.setEnabled(false);
         cliente.setPasoPistasNumero(5);
         jButtonAbrirPista1Barcelona.setEnabled(true);
     }//GEN-LAST:event_jButtonCerrarPista1BarcelonaActionPerformed
 
     private void jButtonCerrarPista2BarcelonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCerrarPista2BarcelonaActionPerformed
-        // TODO add your handling code here:
         jButtonCerrarPista2Barcelona.setEnabled(false);
         cliente.setPasoPistasNumero(6);
         jButtonAbrirPista2Barcelona.setEnabled(true);
     }//GEN-LAST:event_jButtonCerrarPista2BarcelonaActionPerformed
 
     private void jButtonCerrarPista3BarcelonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCerrarPista3BarcelonaActionPerformed
-        // TODO add your handling code here:
         jButtonCerrarPista3Barcelona.setEnabled(false);
         cliente.setPasoPistasNumero(7);
         jButtonAbrirPista3Barcelona.setEnabled(true);
     }//GEN-LAST:event_jButtonCerrarPista3BarcelonaActionPerformed
 
     private void jButtonCerrarPista4BarcelonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCerrarPista4BarcelonaActionPerformed
-        // TODO add your handling code here:
         jButtonCerrarPista4Barcelona.setEnabled(false);
         cliente.setPasoPistasNumero(8);
         jButtonAbrirPista4Barcelona.setEnabled(true);
     }//GEN-LAST:event_jButtonCerrarPista4BarcelonaActionPerformed
 
     private void jButtonAbrirPista1BarcelonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAbrirPista1BarcelonaActionPerformed
-        // TODO add your handling code here:
         jButtonAbrirPista1Barcelona.setEnabled(false);
         cliente.setPasoPistasNumero(5);
         jButtonCerrarPista1Barcelona.setEnabled(true);
     }//GEN-LAST:event_jButtonAbrirPista1BarcelonaActionPerformed
 
     private void jButtonAbrirPista2BarcelonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAbrirPista2BarcelonaActionPerformed
-        // TODO add your handling code here:
         jButtonAbrirPista2Barcelona.setEnabled(false);
         cliente.setPasoPistasNumero(6);
         jButtonCerrarPista2Barcelona.setEnabled(true);
     }//GEN-LAST:event_jButtonAbrirPista2BarcelonaActionPerformed
 
     private void jButtonAbrirPista3BarcelonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAbrirPista3BarcelonaActionPerformed
-        // TODO add your handling code here:
         jButtonAbrirPista3Barcelona.setEnabled(false);
         cliente.setPasoPistasNumero(7);
         jButtonCerrarPista3Barcelona.setEnabled(true);
     }//GEN-LAST:event_jButtonAbrirPista3BarcelonaActionPerformed
 
     private void jButtonAbrirPista4BarcelonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAbrirPista4BarcelonaActionPerformed
-        // TODO add your handling code here:
         jButtonAbrirPista4Barcelona.setEnabled(false);
         cliente.setPasoPistasNumero(8);
         jButtonCerrarPista4Barcelona.setEnabled(true);

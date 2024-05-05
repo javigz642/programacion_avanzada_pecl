@@ -11,8 +11,11 @@ import java.util.logging.Logger;
 import javax.swing.JTextField;
 
 /**
+ * Clase que representa un taller de mantenimiento de aviones en un aeropuerto.
+ * Los aviones pueden entrar y salir del taller para realizar revisiones y
+ * reparaciones. El taller tiene un límite de capacidad de aviones que pueden
+ * estar dentro simultáneamente.
  *
- * @author sombe
  */
 public class Taller {
 
@@ -32,16 +35,23 @@ public class Taller {
         this.logger = logger;
     }
 
+    /**
+     * Método para que un avión entre en el taller. El avión realiza una
+     * revisión o reparación, y se agrega al listado de aviones en el taller.
+     *
+     * @param avion Avión que entra en el taller.
+     */
     public void entrarTaller(Avion avion) {
 
         try {
             espaciosTaller.acquire();
             control.acquire();
+            logger.log("Avion " + avion.getIdentificador() + " entrando TALLER ", nombreCiudad);
+            Thread.sleep(1000);
             avion.getDestino().getAeropuerto().getAreaEstacionamiento().salirAreaEstacionamiento(avion);
             aviones.add(avion);
             imprimirArrayAviones(jTextFieldTallerAeropuerto, aviones);
-            logger.log("Avion " + avion.getIdentificador() + " entrando TALLER ", nombreCiudad);
-            Thread.sleep(1000);
+
             avionesDentro++;
             control.release();
             if (avion.getVuelos() % 15 == 0) {
@@ -58,6 +68,13 @@ public class Taller {
 
     }
 
+    /**
+     * Método para que un avión salga del taller. El avión sale del taller
+     * después de la revisión o reparación y se elimina del listado de aviones
+     * en el taller.
+     *
+     * @param avion Avión que sale del taller.
+     */
     public void salirTaller(Avion avion) {
 
         try {
@@ -76,6 +93,14 @@ public class Taller {
 
     }
 
+    /**
+     * Método para imprimir la lista de aviones en el taller en un campo de
+     * texto.
+     *
+     * @param jTextFieldDestino Campo de texto donde se mostrará la información
+     * sobre los aviones en el taller.
+     * @param arrayAviones Lista de aviones en el taller.
+     */
     public void imprimirArrayAviones(JTextField jTextFieldDestino, ArrayList<Avion> arrayAviones) {
         String stringAux = "";
         for (int i = 0; i < arrayAviones.size(); i++) {
@@ -84,6 +109,7 @@ public class Taller {
         jTextFieldDestino.setText(stringAux);
     }
 
+    //Métodos getter
     public int getAvionesDentro() {
         int avionesAux = 0;
 

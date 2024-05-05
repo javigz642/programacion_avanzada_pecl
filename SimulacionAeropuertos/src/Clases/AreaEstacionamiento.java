@@ -13,27 +13,30 @@ import java.util.logging.Logger;
 import javax.swing.JTextField;
 
 /**
- *
- * @author Miguel
+ * Clase que representa un área de estacionamiento para aviones en un
+ * aeropuerto.
  */
 public class AreaEstacionamiento {
 
-    private TextLog logger;
-
     private ArrayList<Avion> aviones = new ArrayList<>();
     private int avionesDentro;
-    private String nombreCiudad;
+    private String nombreCiudad; 
 
     private Semaphore control = new Semaphore(1);
-
     private JTextField jTextFieldAreaEstacionamientoAeropuerto;
-
+    private TextLog logger;
+    
     public AreaEstacionamiento(JTextField jTextFieldAreaEstacionamientoAeropuerto, String nombreCiudad, TextLog logger) {
         this.jTextFieldAreaEstacionamientoAeropuerto = jTextFieldAreaEstacionamientoAeropuerto;
         this.nombreCiudad = nombreCiudad;
         this.logger = logger;
     }
 
+    /**
+     * Método para que un avión entre en el área de estacionamiento.
+     *
+     * @param avion Avión que entra en el área de estacionamiento.
+     */
     public void entrarAreaEstacionamiento(Avion avion) {
 
         try {
@@ -54,6 +57,11 @@ public class AreaEstacionamiento {
         }
     }
 
+    /**
+     * Método para que un avión salga del área de estacionamiento.
+     *
+     * @param avion Avión que sale del área de estacionamiento.
+     */
     public void salirAreaEstacionamiento(Avion avion) {
 
         try {
@@ -68,6 +76,14 @@ public class AreaEstacionamiento {
         }
     }
 
+    /**
+     * Método para imprimir la lista de aviones en el área de estacionamiento en
+     * un JTextField.
+     *
+     * @param jTextFieldDestino JTextField donde se imprimirá la lista de
+     * aviones.
+     * @param arrayAviones ArrayList de aviones en el área de estacionamiento.
+     */
     public void imprimirArrayAviones(JTextField jTextFieldDestino, ArrayList<Avion> arrayAviones) {
         String stringAux = "";
         for (int i = 0; i < arrayAviones.size(); i++) {
@@ -76,6 +92,7 @@ public class AreaEstacionamiento {
         jTextFieldDestino.setText(stringAux);
     }
 
+    //Método getter
     public int getAvionesDentro() {
         int avionesAux = 0;
 

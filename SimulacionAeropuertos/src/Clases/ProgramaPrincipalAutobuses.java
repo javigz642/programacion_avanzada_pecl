@@ -4,10 +4,6 @@
  */
 package Clases;
 
-/**
- *
- * @author ediso
- */
 public class ProgramaPrincipalAutobuses extends Thread {
 
     private Ciudad madrid;
@@ -22,11 +18,9 @@ public class ProgramaPrincipalAutobuses extends Thread {
         this.logger = logger;
     }
 
-    //COMENTARIO DE PRUEBA
-    
-    public void run(){
-                
-        for (int i = 0; i < 4000; i++) { //deberian ser 4000
+    public void run() {
+
+        for (int i = 0; i < 4000; i++) {
             paso.mirar();
             String identificador = "B";
 

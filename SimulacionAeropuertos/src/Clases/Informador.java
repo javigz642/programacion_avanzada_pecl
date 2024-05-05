@@ -7,6 +7,11 @@ package Clases;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
+/**
+ * Implementación de la interfaz InterfaceInformar que proporciona métodos para
+ * obtener información sobre el estado de los aeropuertos y controlar las
+ * pistas.
+ */
 public class Informador extends UnicastRemoteObject implements InterfaceInformar {
 
     private Aeropuerto aeropuertoMadrid;

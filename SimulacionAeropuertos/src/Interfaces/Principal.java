@@ -19,8 +19,6 @@ public class Principal extends javax.swing.JFrame {
     Paso paso = new Paso(logger);
     PasoPistas pasoPistasMadrid = new PasoPistas(logger, "Madrid");
     PasoPistas pasoPistasBarcelona = new PasoPistas(logger, "Barcelona");
-    
-    
 
     /**
      * Creates new form Principal
@@ -45,7 +43,7 @@ public class Principal extends javax.swing.JFrame {
                 jTextFieldPista4AeropuertoMadrid, jTextFieldTallerAeropuertoBarcelona,
                 jTextFieldTallerAeropuertoMadrid, jTextFieldTransferAeropuertoAutobusBarcelona,
                 jTextFieldTransferAeropuertoAutobusMadrid, jTextFieldTransferCiudadAutobusMadrid,
-                jTextFieldTransferCiudadAutobusBarcelona,paso, pasoPistasBarcelona,pasoPistasMadrid, logger);
+                jTextFieldTransferCiudadAutobusBarcelona, paso, pasoPistasBarcelona, pasoPistasMadrid, logger);
         principal.run();
 
     }
@@ -740,18 +738,18 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldHangarAeropuertoBarcelonaActionPerformed
 
     private void jTextFieldGate5AeropuertoBarcelonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldGate5AeropuertoBarcelonaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldGate5AeropuertoBarcelonaActionPerformed
 
     private void jButtonPausarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPausarActionPerformed
-        // TODO add your handling code here:
+
         paso.cerrar();
         jButtonPausar.setEnabled(false);
         jButtonReanudar.setEnabled(true);
     }//GEN-LAST:event_jButtonPausarActionPerformed
 
     private void jButtonReanudarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonReanudarActionPerformed
-        // TODO add your handling code here:
+
         paso.abrir();
         jButtonReanudar.setEnabled(false);
         jButtonPausar.setEnabled(true);

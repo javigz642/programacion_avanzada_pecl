@@ -7,6 +7,10 @@ package Clases;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
+/**
+ * Interfaz remota que define los métodos para obtener información sobre el
+ * estado de los aeropuertos y controlar las pistas.
+ */
 public interface InterfaceInformar extends Remote {
 
     String numPasajerosAeropuertoMadrid() throws RemoteException;

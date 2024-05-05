@@ -10,10 +10,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JTextField;
 
-/**
- *
- * @author Miguel
- */
 public class Pista {
 
     private Avion[] aviones = new Avion[4];
@@ -45,33 +41,41 @@ public class Pista {
         this.pasoPistas = pasoPistas;
     }
 
+    /**
+     * Método que permite a un avión solicitar acceso a la pista para aterrizar
+     * o despegar.
+     *
+     * @param avion Avión que solicita acceso a la pista.
+     * @param paso Instancia de Paso para comprobar si el programa esta
+     * detenido.
+     */
     public void pedirPista(Avion avion, Paso paso) {
 
         try {
             if (avion.isEmbarque()) {
                 paso.mirar();
-                pasoPistas.mirar(avion.getNumero()%4);
-                pistas[avion.getNumero()%4].acquire();
-                logger.log("Avion " + avion.getIdentificador() + " tiene libre la PISTA " + (avion.getNumero()+1) + " para despegar ", nombreCiudad);
+                pasoPistas.mirar(avion.getNumero() % 4);
+                pistas[avion.getNumero() % 4].acquire();
+                logger.log("Avion " + avion.getIdentificador() + " tiene libre la PISTA " + (avion.getNumero() + 1) + " para despegar ", nombreCiudad);
                 avion.getOrigen().getAeropuerto().getAreaRodaje().salirAreaRodaje(avion);
-                aviones[avion.getNumero()%4] = avion;
-                imprimirArrayAviones(aviones, avion.getNumero()%4);
-                logger.log("Avion " + avion.getIdentificador() + " entrando PISTA " + (avion.getNumero()+1) + " para despegar ", nombreCiudad);
-                despegar(avion,paso);
-                
+                aviones[avion.getNumero() % 4] = avion;
+                imprimirArrayAviones(aviones, avion.getNumero() % 4);
+                logger.log("Avion " + avion.getIdentificador() + " entrando PISTA " + (avion.getNumero() + 1) + " para despegar ", nombreCiudad);
+                despegar(avion, paso);
+
             } else {
                 paso.mirar();
                 pasoPistas.mirar(avion.getNumero() % 4);
                 while (!pistas[avion.getNumero() % 4].tryAcquire()) {
                     logger.log("Avion " + avion.getIdentificador() + " dando un rodeo para tener pista libre ", nombreCiudad);
-                    Thread.sleep((int) (Math.random() * 4000) + 1001);   
+                    Thread.sleep((int) (Math.random() * 4000) + 1001);
                 }
                 paso.mirar();
-                pasoPistas.mirar(avion.getNumero()%4);
-                aviones[avion.getNumero()%4] = avion;
-                logger.log("Avion " + avion.getIdentificador() + " tiene libre la PISTA " + (avion.getNumero()+1) + " para aterrizar ", nombreCiudad);
-                imprimirArrayAviones(aviones, avion.getNumero()%4);
-                aterrizar(avion,paso);
+                pasoPistas.mirar(avion.getNumero() % 4);
+                aviones[avion.getNumero() % 4] = avion;
+                logger.log("Avion " + avion.getIdentificador() + " tiene libre la PISTA " + (avion.getNumero() + 1) + " para aterrizar ", nombreCiudad);
+                imprimirArrayAviones(aviones, avion.getNumero() % 4);
+                aterrizar(avion, paso);
             }
 
         } catch (InterruptedException ex) {
@@ -80,6 +84,13 @@ public class Pista {
 
     }
 
+    /**
+     * Método que gestiona el despegue de un avión desde la pista.
+     *
+     * @param avion Avión que realiza el despegue.
+     * @param paso Instancia de Paso para comprobar si el programa esta
+     * detenido.
+     */
     private void despegar(Avion avion, Paso paso) {
 
         try {
@@ -100,6 +111,13 @@ public class Pista {
 
     }
 
+    /**
+     * Método que gestiona el aterrizaje de un avión en la pista.
+     *
+     * @param avion Avión que realiza el aterrizaje.
+     * @param paso Instancia de Paso para comprobar si el programa esta
+     * detenido.
+     */
     private void aterrizar(Avion avion, Paso paso) {
 
         try {
@@ -117,6 +135,12 @@ public class Pista {
 
     }
 
+    /**
+     * Método que actualiza la impresion de los aviones en las pistas.
+     *
+     * @param arrayAviones Array de aviones que ocupan las pistas.
+     * @param numeroPista Número de la pista.
+     */
     public void imprimirArrayAviones(Avion[] arrayAviones, int numeroPista) {
         String stringAux = "";
         if (arrayAviones[numeroPista] != null) {

@@ -14,27 +14,20 @@ import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
-/**
- *
- * @author ediso
- */
 public class Ciudad {
 
     private Aeropuerto aeropuerto;
-    private TextLog logger;
-
+    private int pasajerosParada;
     private String nombre;
     private ArrayList<Autobus> autobusesHaciaAeropuerto = new ArrayList<>();
     private ArrayList<Autobus> autobusesHaciaCiudad = new ArrayList<>();
 
     private Random random = new Random();
-    private int pasajerosParada;
-
     private Semaphore SemAutobusesHaciaAeropuerto = new Semaphore(1);
     private Semaphore SemAutobusesHaciaCiudad = new Semaphore(1);
-
     private JTextField jTextFieldTransferAeropuertoAutobus;
     private JTextField jTextFieldTransferCiudadAutobus;
+    private TextLog logger;
 
     public Ciudad(String nombre, Aeropuerto aeropuerto, JTextField jTextFieldTransferAeropuertoAutobus, JTextField jTextFieldTransferCiudadAutobus, TextLog logger) {
         this.nombre = nombre;
@@ -44,6 +37,12 @@ public class Ciudad {
         this.logger = logger;
     }
 
+    /**
+     * Método para que un autobús recoja pasajeros en la ciudad.
+     *
+     * @param a Autobús que recoge pasajeros.
+     * @param paso Paso utilizado para sincronización.
+     */
     public void recogerPasajerosAutobusCiudad(Autobus a, Paso paso) {
         try {
             logger.log("Bus " + a.getIdentificador() + " esperando pasajeros en CIUDAD ", nombre);
@@ -57,6 +56,11 @@ public class Ciudad {
         }
     }
 
+    /**
+     * Método para que un autobús deje pasajeros en la ciudad.
+     *
+     * @param a Autobús que deja pasajeros.
+     */
     public void bajarPasajerosAutobusCiudad(Autobus a) {
 
         logger.log("Bus " + a.getIdentificador() + " bajando " + a.getPasajeros() + " pasajeros en CIUDAD ", nombre);
@@ -64,12 +68,23 @@ public class Ciudad {
 
     }
 
+    /**
+     * Método para que un autobús recoja pasajeros en el aeropuerto.
+     *
+     * @param a Autobús que recoge pasajeros.
+     */
     public void recogerPasajerosAutobusAeropuerto(Autobus a) {
 
         aeropuerto.recogerPasajerosAutobus(a);
 
     }
 
+    /**
+     * Método para que un autobús deje pasajeros en el aeropuerto.
+     *
+     * @param a Autobús que deja pasajeros.
+     * @param paso Paso utilizado para sincronización.
+     */
     public void bajarPasajerosAutobusAeropuerto(Autobus a, Paso paso) {
 
         try {
@@ -86,6 +101,12 @@ public class Ciudad {
         }
     }
 
+    /**
+     * Método para que un autobús se dirija hacia el aeropuerto.
+     *
+     * @param a Autobús que se dirige hacia el aeropuerto.
+     * @param paso Paso utilizado para sincronización.
+     */
     public void irAeropuertoAutobus(Autobus a, Paso paso) {
 
         try {
@@ -103,9 +124,14 @@ public class Ciudad {
         } catch (InterruptedException ex) {
             Logger.getLogger(Ciudad.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
+    /**
+     * Método para que un autobús se dirija hacia la ciudad.
+     *
+     * @param a Autobús que se dirige hacia la ciudad.
+     * @param paso Paso utilizado para sincronización.
+     */
     public void irCiudadAutobus(Autobus a, Paso paso) {
 
         try {
@@ -124,19 +150,25 @@ public class Ciudad {
         } catch (InterruptedException ex) {
             Logger.getLogger(Ciudad.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
+    /**
+     * Método para imprimir la lista de autobuses hacia un destino en un
+     * JTextField.
+     *
+     * @param jTextFieldDestino JTextField donde se imprimirá la lista de
+     * autobuses.
+     * @param arrayBuses ArrayList de autobuses hacia el destino.
+     */
     public void imprimirArrayAutobus(JTextField jTextFieldDestino, ArrayList<Autobus> arrayBuses) {
         String stringAux = "";
         for (int i = 0; i < arrayBuses.size(); i++) {
             stringAux += arrayBuses.get(i).getIdentificador() + " / ";
-
         }
         jTextFieldDestino.setText(stringAux);
-        //System.out.println(stringAux);
     }
 
+    //Métodos getter
     public String getNombre() {
         return nombre;
     }

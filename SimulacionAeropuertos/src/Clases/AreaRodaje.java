@@ -11,19 +11,17 @@ import java.util.logging.Logger;
 import javax.swing.JTextField;
 
 /**
- *
- * @author Miguel
+ * Clase que representa un area de rodaje para aviones en un aeropuerto.
  */
 public class AreaRodaje {
 
-    private ArrayList<Avion> aviones = new ArrayList<>();
-    private int avionesDentro;
-    private Semaphore control = new Semaphore(1);
-
-    private JTextField jTextFieldAreaRodajeAeropuerto;
-
     private String nombreCiudad;
     private TextLog logger;
+    private ArrayList<Avion> aviones = new ArrayList<>();
+    private int avionesDentro;
+
+    private Semaphore control = new Semaphore(1);
+    private JTextField jTextFieldAreaRodajeAeropuerto;
 
     public AreaRodaje(JTextField jTextFieldAreaRodajeAeropuerto, String nombreCiudad, TextLog logger) {
         this.jTextFieldAreaRodajeAeropuerto = jTextFieldAreaRodajeAeropuerto;
@@ -31,6 +29,11 @@ public class AreaRodaje {
         this.logger = logger;
     }
 
+    /**
+     * Metodo para que un avion entre en el area de rodaje.
+     *
+     * @param avion Avion que entra en el area de rodaje.
+     */
     public void entrarAreaRodaje(Avion avion) {
 
         try {
@@ -53,6 +56,11 @@ public class AreaRodaje {
 
     }
 
+    /**
+     * Metodo para que un avion salga del area de rodaje.
+     *
+     * @param avion Avion que sale del area de rodaje.
+     */
     public void salirAreaRodaje(Avion avion) {
         try {
             control.acquire();
@@ -67,6 +75,14 @@ public class AreaRodaje {
         }
     }
 
+    /**
+     * Metodo para imprimir la lista de aviones en el área de rodaje en un
+     * JTextField.
+     *
+     * @param jTextFieldDestino JTextField donde se imprimirá la lista de
+     * aviones.
+     * @param arrayAviones ArrayList de aviones en el área de rodaje.
+     */
     public void imprimirArrayAviones(JTextField jTextFieldDestino, ArrayList<Avion> arrayAviones) {
         String stringAux = "";
         for (int i = 0; i < arrayAviones.size(); i++) {
@@ -75,6 +91,7 @@ public class AreaRodaje {
         jTextFieldDestino.setText(stringAux);
     }
 
+    //Métodos getter
     public int getAvionesDentro() {
         int avionesAux = 0;
 

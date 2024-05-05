@@ -88,7 +88,7 @@ public class Aeropuerto extends Thread {
             do {
                 pasajerosParada = (int) (Math.random() * 51);
             } while (pasajerosParada > personasDentro);
-            
+
             personasDentro -= pasajerosParada;
             imprimirPasajerosEnAeropuerto(jTextFieldNumeroPasajerosAeropuerto, personasDentro);
             control.release();
@@ -142,7 +142,6 @@ public class Aeropuerto extends Thread {
                 imprimirPasajerosEnAeropuerto(jTextFieldNumeroPasajerosAeropuerto, personasDentro);
                 control.release();
             }
-            
 
         } catch (InterruptedException ex) {
             Logger.getLogger(Aeropuerto.class.getName()).log(Level.SEVERE, null, ex);
@@ -214,9 +213,3 @@ public class Aeropuerto extends Thread {
     }
 
 }
-
-//AVIONES SE SIGUEN CREANDO
-//BUSES SE SIGUEN CREANDO
-//AVIONES SIGUEN ESPERANDO PISTA PARA ATERRIZAR
-//BUS SIGUE RECOGIENDO PASAJEROS Y ESPERANDO PASAJEROS
-//BUS LITERALMENTE NO PARAN

@@ -12,8 +12,11 @@ import java.util.Date;
 import java.util.concurrent.Semaphore;
 
 /**
+ * Clase TextLog para registrar eventos y acciones en un archivo de texto.
+ * Permite escribir mensajes con un timestamp y el nombre de la ciudad asociada
+ * al evento. Utiliza un archivo de texto para almacenar los registros de
+ * eventos.
  *
- * @author Miguel
  */
 public class TextLog {
 
@@ -29,6 +32,13 @@ public class TextLog {
         this.nombreArchivo = "evolucionAeropuerto" + fechaActual + ".txt";
     }
 
+    /**
+     * Método para registrar un mensaje en el archivo de texto. El mensaje
+     * incluye un timestamp y el nombre de la ciudad asociada al evento.
+     *
+     * @param message Mensaje a registrar en el archivo de texto.
+     * @param nombreCiudad Nombre de la ciudad asociada al evento.
+     */
     public void log(String message, String nombreCiudad) {
         try {
             control.acquire();

@@ -12,24 +12,22 @@ import java.util.logging.Logger;
 import javax.swing.JTextField;
 
 /**
+ * Clase que representa una puerta de embarque en un aeropuerto. Gestiona el
+ * embarque y desembarque de pasajeros de los aviones en la puerta de embarque.
  *
- * @author Miguel
  */
 public class PuertaEmbarque {
 
+    private String nombreCiudad;
     private Avion[] aviones = new Avion[6];
 
     private Semaphore puertaEmbarque = new Semaphore(1, true);
     private Semaphore puertaDesembarque = new Semaphore(1, true);
-
     private Semaphore puertaLibre1 = new Semaphore(1, true);
     private Semaphore puertaLibre2 = new Semaphore(1, true);
     private Semaphore puertaLibre3 = new Semaphore(1, true);
     private Semaphore puertaLibre4 = new Semaphore(1, true);
     private Semaphore[] puertasLibres = {puertaLibre1, puertaLibre2, puertaLibre3, puertaLibre4};
-
-    private String nombreCiudad;
-    private TextLog logger;
 
     private JTextField jTextFieldGate1Aeropuerto;
     private JTextField jTextFieldGate2Aeropuerto;
@@ -37,6 +35,7 @@ public class PuertaEmbarque {
     private JTextField jTextFieldGate4Aeropuerto;
     private JTextField jTextFieldGate5Aeropuerto;
     private JTextField jTextFieldGate6Aeropuerto;
+    private TextLog logger;
 
     public PuertaEmbarque(String nombreCiudad, TextLog logger, JTextField jTextFieldGate1Aeropuerto, JTextField jTextFieldGate2Aeropuerto, JTextField jTextFieldGate3Aeropuerto, JTextField jTextFieldGate4Aeropuerto, JTextField jTextFieldGate5Aeropuerto, JTextField jTextFieldGate6Aeropuerto) {
         this.nombreCiudad = nombreCiudad;
@@ -49,6 +48,14 @@ public class PuertaEmbarque {
         this.jTextFieldGate6Aeropuerto = jTextFieldGate6Aeropuerto;
     }
 
+    /**
+     * Método que permite a un avión entrar a la puerta de embarque para
+     * embarcar o desembarcar pasajeros.
+     *
+     * @param avion Avion que desea entrar a la puerta de embarque.
+     * @param paso Instancia de Paso para comprobar si el programa tiene que
+     * pausarse
+     */
     public void entrarPuerta(Avion avion, Paso paso) {
 
         try {
@@ -70,7 +77,7 @@ public class PuertaEmbarque {
 
                 } else {
                     puertasLibres[avion.getNumero() % 4].acquire();
-                    logger.log("Avion " + avion.getIdentificador() + " tiene Gate " + (avion.getNumero()%4 + 3) + " libre para Embarque ", nombreCiudad);
+                    logger.log("Avion " + avion.getIdentificador() + " tiene Gate " + (avion.getNumero() % 4 + 3) + " libre para Embarque ", nombreCiudad);
                     avion.getOrigen().getAeropuerto().getAreaEstacionamiento().salirAreaEstacionamiento(avion);//debe de tener una puerta de embarque antes de salir del area de estacionamiento
                     aviones[avion.getNumero() % 4] = avion;
                     imprimirArrayAviones(aviones, avion.getNumero() % 4 + 1);
@@ -126,13 +133,19 @@ public class PuertaEmbarque {
 
     }
 
+    /**
+     * Método privado que gestiona el proceso de embarque de pasajeros en la
+     * puerta de embarque.
+     *
+     * @param avion Avion que está siendo embarcado.
+     */
     private void puertaEmbarque(Avion avion) {
 
         try {
             int max = avion.getPasajerosMax();
             int intentos = 0;
             int pasajeros;
-            
+
             pasajeros = avion.getOrigen().getAeropuerto().recogerPasajerosAvion(max);
             avion.setPasajerosActual(pasajeros);
 
@@ -165,6 +178,12 @@ public class PuertaEmbarque {
 
     }
 
+    /**
+     * Método privado que gestiona el proceso de desembarque de pasajeros en la
+     * puerta de embarque.
+     *
+     * @param avion Avion que está siendo desembarcado.
+     */
     private void puertaDesembarque(Avion avion) {
         try {
 
@@ -183,6 +202,15 @@ public class PuertaEmbarque {
         }
     }
 
+    /**
+     * Método que actualiza la impresion de la ocupación de las
+     * puertas de embarque.
+     *
+     * @param arrayAviones Array de aviones que están ocupando las puertas de
+     * embarque.
+     * @param numeroGate Número de la puerta de embarque que se debe actualizar
+     * visualmente.
+     */
     public void imprimirArrayAviones(Avion[] arrayAviones, int numeroGate) {
         String stringAux = "";
         if (arrayAviones[numeroGate - 1] != null) {

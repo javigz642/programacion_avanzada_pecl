@@ -8,6 +8,12 @@ import java.rmi.*;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
+/**
+ * Clase que representa un servidor de registro RMI.
+ * Este servidor registra un objeto de tipo Informador que implementa la interfaz RMI.
+ * Extiende la clase Thread para permitir la ejecución del servidor en un hilo separado.
+ * 
+ */
 public class Servidor extends Thread {
 
     private Aeropuerto aeropuertoMadrid;
@@ -22,8 +28,8 @@ public class Servidor extends Thread {
         try {
             Informador obj = new Informador(aeropuertoMadrid, aeropuertoBarcelona); //Crea una instancia del objeto que implementa la interfaz, como objeto a registrar 
             Registry registry = LocateRegistry.createRegistry(1099); //Arranca rmiregistry local en el puerto 1099
-            Naming.rebind("//localhost/ObjetoSaluda", obj);   //rebind sólo funciona sobre una url del equipo local 
-            System.out.println("El Objeto Saluda ha quedado registrado");
+            Naming.rebind("//localhost/ObjetoInformador", obj);   
+            System.out.println("El Objeto Informador ha quedado registrado");
 
         } catch (Exception e) {
             System.out.println(" Error: " + e.getMessage());

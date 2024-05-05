@@ -11,18 +11,19 @@ import java.util.logging.Logger;
 import javax.swing.JTextField;
 
 /**
- *
- * @author Miguel
+ * Clase que representa una aerovía donde los aviones pueden entrar y abandonar.
  */
 public class Aerovia {
 
     private ArrayList<Avion> aviones = new ArrayList<>();
-    private String avionesDentro;
-    private Semaphore control = new Semaphore(1);
+    private String avionesDentro; 
+    private Semaphore control = new Semaphore(1); 
 
+    // Campos de la interfaz de usuario relacionados con la aerovía
     private JTextField jTextFieldAeroviaMadrid_Barcelona;
     private JTextField jTextFieldAeroviaBarcelona_Madrid;
 
+    // Logger para registrar eventos en la aerovía
     private TextLog logger;
 
     public Aerovia(JTextField jTextFieldAeroviaMadrid_Barcelona, JTextField jTextFieldAeroviaBarcelona_Madrid, TextLog logger) {
@@ -31,6 +32,11 @@ public class Aerovia {
         this.logger = logger;
     }
 
+    /**
+     * Método para que un avión entre en la aerovía.
+     *
+     * @param avion Avión que entra en la aerovía.
+     */
     public void entrarAerovia(Avion avion) {
 
         try {
@@ -52,6 +58,11 @@ public class Aerovia {
 
     }
 
+    /**
+     * Método para que un avión abandone la aerovía.
+     *
+     * @param avion Avión que abandona la aerovía.
+     */
     public void abandonarAerovia(Avion avion) {
 
         try {
@@ -70,6 +81,13 @@ public class Aerovia {
 
     }
 
+    /**
+     * Método para obtener una representación en cadena de los aviones en la
+     * aerovía.
+     *
+     * @param arrayAviones ArrayList de aviones.
+     * @return Una cadena que representa los aviones dentro de la aerovía.
+     */
     public String getStringArrayAviones(ArrayList<Avion> arrayAviones) {
         String stringAux = "";
         String identificadorAux = "";
@@ -83,6 +101,7 @@ public class Aerovia {
         return avionesDentro;
     }
 
+    //Método getter
     public String getStringArrayAviones() {
         return avionesDentro;
     }

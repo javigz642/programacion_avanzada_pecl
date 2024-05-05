@@ -51,7 +51,7 @@ public class Cliente extends Thread {
 
         String respuesta = "";
         try {
-            InterfaceInformar obj = (InterfaceInformar) Naming.lookup("//localhost/ObjetoSaluda");
+            InterfaceInformar obj = (InterfaceInformar) Naming.lookup("//localhost/ObjetoInformador");
 
             while (true) {
                 try {
@@ -114,16 +114,21 @@ public class Cliente extends Thread {
 
     }
 
+    /**
+     * Método para verificar si se debe detener alguna pista y en consecuencia
+     * realizar el acceso o la denegacion del paso a la pista.
+     *
+     * @param obj Objeto para comunicarse con el servidor.
+     */
     public void mirarSiPararAlgunaPista(InterfaceInformar obj) {
+        try {
+            // Comprobar si ha habido cambios en el estado de las pistas
+            for (int i = 0; i < pasoPistas.length; i++) {
+                boolean pasoActual = pasoPistas[i];
+                boolean pasoAnterior = pasoPistasAux[i];
 
-        // Comprobar si ha habido cambios en el estado de las pistas
-        for (int i = 0; i < pasoPistas.length; i++) {
-            boolean pasoActual = pasoPistas[i];
-            boolean pasoAnterior = pasoPistasAux[i];
-
-            // Si hay cambios en el estado de la pista se actua
-            if (pasoActual != pasoAnterior) {
-                try {
+                // Si hay cambios en el estado de la pista se actua
+                if (pasoActual != pasoAnterior) {
                     if (pasoActual) {
                         if (i < 4) {
                             obj.setCerrarPasoPistaXMadrid(i);
@@ -138,20 +143,11 @@ public class Cliente extends Thread {
                         }
                     }
                     pasoPistasAux[i] = pasoActual;
-                } catch (Exception e) {
-                    // Manejar la excepción apropiadamente, por ejemplo, registrándola
-                    e.printStackTrace();
+
                 }
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-    }
-
-    public void imprimir(boolean[] b) {
-        String aux = "";
-        for (int i = 0; i < b.length; i++) {
-            String s = (b[i] ? "true" : "false");
-            aux += s + "/";
-        }
-        System.out.println(aux);
     }
 }
