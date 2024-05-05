@@ -4,8 +4,6 @@
  */
 package Clases;
 
-import java.time.Duration;
-import java.util.ArrayList;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,8 +16,8 @@ import javax.swing.JTextField;
  */
 public class PuertaEmbarque {
 
-    private String nombreCiudad;
     private Avion[] aviones = new Avion[6];
+    private String nombreCiudad;
 
     private Semaphore puertaEmbarque = new Semaphore(1, true);
     private Semaphore puertaDesembarque = new Semaphore(1, true);
@@ -35,6 +33,7 @@ public class PuertaEmbarque {
     private JTextField jTextFieldGate4Aeropuerto;
     private JTextField jTextFieldGate5Aeropuerto;
     private JTextField jTextFieldGate6Aeropuerto;
+    
     private TextLog logger;
 
     public PuertaEmbarque(String nombreCiudad, TextLog logger, JTextField jTextFieldGate1Aeropuerto, JTextField jTextFieldGate2Aeropuerto, JTextField jTextFieldGate3Aeropuerto, JTextField jTextFieldGate4Aeropuerto, JTextField jTextFieldGate5Aeropuerto, JTextField jTextFieldGate6Aeropuerto) {

@@ -17,13 +17,16 @@ import java.util.concurrent.locks.ReentrantLock;
 */
 public class PasoPistas {
 
-    private TextLog logger;
+    
     private String nombreCiudad;
 
-    private boolean cerrado[] = {false, false, false, false};
     private Lock cerrojo = new ReentrantLock();
     private Condition parar = cerrojo.newCondition();
+    
+    private boolean cerrado[] = {false, false, false, false};
     private boolean soloUnHilo[] = {true, true, true, true};
+    
+    private TextLog logger;
 
     public PasoPistas(TextLog logger, String nombreCiudad) {
         this.logger = logger;

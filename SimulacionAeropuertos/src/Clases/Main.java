@@ -48,9 +48,12 @@ public class Main extends Thread {
     private JTextField jTextFieldTransferAeropuertoAutobusMadrid;
     private JTextField jTextFieldTransferCiudadAutobusMadrid;
     private JTextField jTextFieldTransferCiudadAutobusBarcelona;
+    
     private Paso paso;
+    
     private PasoPistas pasoPistasBarcelona;
     private PasoPistas pasoPistasMadrid;
+    
     private TextLog logger;
 
     public Main(JTextField jTextFieldAeroviaBarcelona_Madrid, JTextField jTextFieldAeroviaMadrid_Barcelona,

@@ -21,12 +21,13 @@ public class Taller {
 
     private ArrayList<Avion> aviones = new ArrayList<>();
     private int avionesDentro;
+    private String nombreCiudad;
+    
     private Semaphore espaciosTaller = new Semaphore(20, true);
     private Semaphore control = new Semaphore(1, true);
 
     private JTextField jTextFieldTallerAeropuerto;
 
-    private String nombreCiudad;
     private TextLog logger;
 
     public Taller(JTextField jTextFieldTallerAeropuerto, String nombreCiudad, TextLog logger) {

@@ -17,6 +17,7 @@ public class Aerovia {
 
     private ArrayList<Avion> aviones = new ArrayList<>();
     private String avionesDentro; 
+    
     private Semaphore control = new Semaphore(1); 
 
     // Campos de la interfaz de usuario relacionados con la aerovía

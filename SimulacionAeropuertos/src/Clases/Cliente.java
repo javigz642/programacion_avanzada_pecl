@@ -5,12 +5,7 @@
 package Clases;
 
 import java.rmi.*;
-import java.io.*;
 import static java.lang.Thread.sleep;
-import java.util.Arrays;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class Cliente extends Thread {

@@ -14,14 +14,18 @@ import javax.swing.JTextField;
  * Clase que representa un area de rodaje para aviones en un aeropuerto.
  */
 public class AreaRodaje {
-
-    private String nombreCiudad;
-    private TextLog logger;
+    
     private ArrayList<Avion> aviones = new ArrayList<>();
+    private String nombreCiudad;
     private int avionesDentro;
 
     private Semaphore control = new Semaphore(1);
+    
+    // Campos de la interfaz de usuario relacionado con el AreaRodaje
     private JTextField jTextFieldAreaRodajeAeropuerto;
+    
+    // Logger para registrar eventos en el AreaRodaje
+    private TextLog logger;
 
     public AreaRodaje(JTextField jTextFieldAreaRodajeAeropuerto, String nombreCiudad, TextLog logger) {
         this.jTextFieldAreaRodajeAeropuerto = jTextFieldAreaRodajeAeropuerto;

@@ -1,10 +1,6 @@
 package Clases;
 
 import java.util.concurrent.Semaphore;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JTextField;
@@ -29,8 +25,7 @@ public class Aeropuerto extends Thread {
     private AreaRodaje areaRodaje;
     private Pista pista;
     private Aerovia aerovia;
-    private TextLog logger;
-
+    
     private Semaphore control = new Semaphore(1, true);
 
     // Elementos de la interfaz de usuario relacionados con el aeropuerto
@@ -42,6 +37,8 @@ public class Aeropuerto extends Thread {
     private JTextField jTextFieldGate6Aeropuerto;
 
     private JTextField jTextFieldNumeroPasajerosAeropuerto;
+    
+    private TextLog logger;
 
     public Aeropuerto(Hangar hangar, AreaEstacionamiento areaEstacionamiento, PuertaEmbarque puertaEmbarque, Taller taller,
             AreaRodaje areaRodaje, Pista pista, Aerovia aerovia,

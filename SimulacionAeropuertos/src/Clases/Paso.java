@@ -18,6 +18,7 @@ public class Paso {
 
     private Lock cerrojo = new ReentrantLock();
     private Condition parar = cerrojo.newCondition();
+    
     private TextLog logger;
 
     public Paso(TextLog logger) {
