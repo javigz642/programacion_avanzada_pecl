@@ -28,7 +28,7 @@ public class ProgramaPrincipalAviones extends Thread {
 
         char[] abc = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'}; //letras para el identificador del avion
 
-        for (int i = 0; i < 1; i++) {  //deberian ser 8000
+        for (int i = 0; i < 8000; i++) {  //deberian ser 8000
             paso.mirar();
             int r1 = (int) (Math.random() * 26);
             int r2 = (int) (Math.random() * 26);
