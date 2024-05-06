@@ -49,7 +49,7 @@ public class ProgramaPrincipalAviones extends Thread {
                     avion.start();
                 }
 
-                Thread.sleep((int) (Math.random() * 2001) + 1000);
+                Thread.sleep((int) (Math.random() * 01) + 0);
             } catch (InterruptedException ex) {
                 Logger.getLogger(ProgramaPrincipalAviones.class.getName()).log(Level.SEVERE, null, ex);
             }
