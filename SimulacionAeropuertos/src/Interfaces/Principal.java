@@ -8,6 +8,7 @@ import Clases.PasoPistas;
 import Clases.Main;
 import Clases.Paso;
 import Clases.TextLog;
+import java.awt.Color;
 
 /**
  *
@@ -24,7 +25,10 @@ public class Principal extends javax.swing.JFrame {
      * Creates new form Principal
      */
     public Principal() {
+        this.setTitle("Simulacion aeropuertos");
         initComponents();
+        java.awt.Image icono = new javax.swing.ImageIcon("src\\Imagenes\\Icono_ventana.png").getImage();
+        this.setIconImage(icono);
         Main principal = new Main(jTextFieldAeroviaBarcelona_Madrid,
                 jTextFieldAeroviaMadrid_Barcelona, jTextFieldAreaEstacionamientoAeropuertoBarcelona,
                 jTextFieldAreaEstacionamientoAeropuertoMadrid, jTextFieldAreaRodajeAeropuertoBarcelona,
@@ -135,6 +139,11 @@ public class Principal extends javax.swing.JFrame {
         jButtonReanudar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jLabel1.setText("Hacia Aeropuerto:");
 
@@ -354,14 +363,20 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        jButtonPausar.setBackground(new java.awt.Color(57, 62, 65));
+        jButtonPausar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonPausar.setText("Pausar");
+        jButtonPausar.setBorder(null);
         jButtonPausar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonPausarActionPerformed(evt);
             }
         });
 
+        jButtonReanudar.setBackground(new java.awt.Color(233, 79, 55));
+        jButtonReanudar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonReanudar.setText("Reanudar");
+        jButtonReanudar.setBorder(null);
         jButtonReanudar.setEnabled(false);
         jButtonReanudar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -538,31 +553,32 @@ public class Principal extends javax.swing.JFrame {
                                     .addComponent(jTextFieldTransferCiudadAutobusBarcelona, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(150, 150, 150)
-                                .addComponent(jLabel37))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(445, 445, 445)
-                        .addComponent(jButtonPausar)
-                        .addGap(44, 44, 44)
-                        .addComponent(jButtonReanudar)))
+                                .addComponent(jLabel37)))))
                 .addContainerGap(45, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButtonPausar, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(jButtonReanudar, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(464, 464, 464))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonPausar)
-                    .addComponent(jButtonReanudar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                    .addComponent(jButtonPausar, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonReanudar, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel20)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(jTextFieldTransferAeropuertoAutobusMadrid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2)
-                            .addComponent(jTextFieldTransferCiudadAutobusMadrid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextFieldTransferCiudadAutobusMadrid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldTransferAeropuertoAutobusMadrid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
@@ -754,6 +770,16 @@ public class Principal extends javax.swing.JFrame {
         jButtonReanudar.setEnabled(false);
         jButtonPausar.setEnabled(true);
     }//GEN-LAST:event_jButtonReanudarActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+
+        int r = 228; // Componente de rojo
+        int g = 230; // Componente de verde
+        int b = 235; // Componente de azul
+
+        Color color = new Color(r, g, b);
+        getContentPane().setBackground(color);
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments

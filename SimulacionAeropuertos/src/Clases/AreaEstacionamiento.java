@@ -20,12 +20,12 @@ public class AreaEstacionamiento {
 
     private ArrayList<Avion> aviones = new ArrayList<>();
     private int avionesDentro;
-    private String nombreCiudad; 
+    private String nombreCiudad;
 
     private Semaphore control = new Semaphore(1);
     private JTextField jTextFieldAreaEstacionamientoAeropuerto;
     private TextLog logger;
-    
+
     public AreaEstacionamiento(JTextField jTextFieldAreaEstacionamientoAeropuerto, String nombreCiudad, TextLog logger) {
         this.jTextFieldAreaEstacionamientoAeropuerto = jTextFieldAreaEstacionamientoAeropuerto;
         this.nombreCiudad = nombreCiudad;

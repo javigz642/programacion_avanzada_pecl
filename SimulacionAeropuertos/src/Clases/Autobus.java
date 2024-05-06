@@ -4,13 +4,12 @@
  */
 package Clases;
 
-
 public class Autobus extends Thread {
 
     private Ciudad ciudad;
     private String identificador;
     private int pasajeros;
-    
+
     private Paso paso;
     private TextLog logger;
 

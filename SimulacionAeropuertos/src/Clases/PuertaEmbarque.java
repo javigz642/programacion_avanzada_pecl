@@ -203,8 +203,8 @@ public class PuertaEmbarque {
     }
 
     /**
-     * Método que actualiza la impresion de la ocupación de las
-     * puertas de embarque.
+     * Método que actualiza la impresion de la ocupación de las puertas de
+     * embarque.
      *
      * @param arrayAviones Array de aviones que están ocupando las puertas de
      * embarque.
