@@ -1,0 +1,69 @@
+[2024-05-06 17:48:02] Bus B-0000 creado - Madrid
+[2024-05-06 17:48:02] Avion IE-0000 creado - Madrid
+[2024-05-06 17:48:02] Bus B-0000 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:02] Avion IE-0000 entrando HANGAR - Madrid
+[2024-05-06 17:48:02] Avion IE-0000 saliendo HANGAR - Madrid
+[2024-05-06 17:48:02] Avion IE-0000 entrando ESTACIONAMIENTO - Madrid
+[2024-05-06 17:48:02] Avion IE-0000 tiene Gate 5 libre (exclusiva Embarque) - Madrid
+[2024-05-06 17:48:02] Avion IE-0000 saliendo ESTACIONAMIENTO - Madrid
+[2024-05-06 17:48:02] Avion IE-0000 entrando Gate 5 (exclusiva Embarque)- Madrid
+[2024-05-06 17:48:02] Avion IE-0000 EMBARCANDO 100 pasajeros - Madrid
+[2024-05-06 17:48:03] Bus B-0001 creado - Barcelona
+[2024-05-06 17:48:03] Bus B-0001 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:04] Bus B-0002 creado - Madrid
+[2024-05-06 17:48:04] Bus B-0002 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:04] Bus B-0003 creado - Barcelona
+[2024-05-06 17:48:04] Bus B-0003 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:05] Avion HT-0001 creado - Barcelona
+[2024-05-06 17:48:05] Avion HT-0001 entrando HANGAR - Barcelona
+[2024-05-06 17:48:05] Avion HT-0001 saliendo HANGAR - Barcelona
+[2024-05-06 17:48:05] Avion HT-0001 entrando ESTACIONAMIENTO - Barcelona
+[2024-05-06 17:48:05] Avion HT-0001 tiene Gate 5 libre (exclusiva Embarque) - Barcelona
+[2024-05-06 17:48:05] Avion HT-0001 saliendo ESTACIONAMIENTO - Barcelona
+[2024-05-06 17:48:05] Avion HT-0001 entrando Gate 5 (exclusiva Embarque)- Barcelona
+[2024-05-06 17:48:05] Avion HT-0001 EMBARCANDO 262 pasajeros - Barcelona
+[2024-05-06 17:48:05] Bus B-0004 creado - Madrid
+[2024-05-06 17:48:05] Bus B-0004 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:05] Avion IE-0000 saliendo Gate 5 (exclusiva Embarque) con 100 pasajeros - Madrid
+[2024-05-06 17:48:05] Avion IE-0000 entrando RODAJE - Madrid
+[2024-05-06 17:48:05] Avion IE-0000 haciendo comprobaciones RODAJE - Madrid
+[2024-05-06 17:48:05] Bus B-0001 recogiendo 34 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:05] Bus B-0001 yendo hacia AEROPUERTO con 34 pasajeros - Barcelona
+[2024-05-06 17:48:06] Bus B-0000 recogiendo 6 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:06] Bus B-0000 yendo hacia AEROPUERTO con 6 pasajeros - Madrid
+[2024-05-06 17:48:06] Avion DG-0002 creado - Madrid
+[2024-05-06 17:48:06] Avion DG-0002 entrando HANGAR - Madrid
+[2024-05-06 17:48:06] Avion DG-0002 saliendo HANGAR - Madrid
+[2024-05-06 17:48:06] Avion DG-0002 entrando ESTACIONAMIENTO - Madrid
+[2024-05-06 17:48:06] Avion DG-0002 tiene Gate 5 libre (exclusiva Embarque) - Madrid
+[2024-05-06 17:48:06] Avion DG-0002 saliendo ESTACIONAMIENTO - Madrid
+[2024-05-06 17:48:06] Avion DG-0002 entrando Gate 5 (exclusiva Embarque)- Madrid
+[2024-05-06 17:48:06] Avion DG-0002 EMBARCANDO 266 pasajeros - Madrid
+[2024-05-06 17:48:06] Bus B-0005 creado - Barcelona
+[2024-05-06 17:48:06] Bus B-0005 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:06] Bus B-0002 recogiendo 9 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:06] Bus B-0002 yendo hacia AEROPUERTO con 9 pasajeros - Madrid
+[2024-05-06 17:48:06] Bus B-0006 creado - Madrid
+[2024-05-06 17:48:06] Bus B-0006 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:07] Bus B-0003 recogiendo 7 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:07] Bus B-0003 yendo hacia AEROPUERTO con 7 pasajeros - Barcelona
+[2024-05-06 17:48:07] Avion HT-0001 saliendo Gate 5 (exclusiva Embarque) con 262 pasajeros - Barcelona
+[2024-05-06 17:48:07] Avion HT-0001 entrando RODAJE - Barcelona
+[2024-05-06 17:48:07] Avion HT-0001 haciendo comprobaciones RODAJE - Barcelona
+[2024-05-06 17:48:07] Avion DG-0002 saliendo Gate 5 (exclusiva Embarque) con 266 pasajeros - Madrid
+[2024-05-06 17:48:07] Avion DG-0002 entrando RODAJE - Madrid
+[2024-05-06 17:48:07] Avion DG-0002 haciendo comprobaciones RODAJE - Madrid
+[2024-05-06 17:48:07] Bus B-0007 creado - Barcelona
+[2024-05-06 17:48:07] Bus B-0007 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:07] Avion IE-0000 tiene libre la PISTA 1 para despegar - Madrid
+[2024-05-06 17:48:07] Avion IE-0000 saliendo RODAJE - Madrid
+[2024-05-06 17:48:07] Avion IE-0000 entrando PISTA 1 para despegar - Madrid
+[2024-05-06 17:48:07] Avion IE-0000 realizando verificaciones PISTA - Madrid
+[2024-05-06 17:48:08] Avion DT-0003 creado - Barcelona
+[2024-05-06 17:48:08] Avion DT-0003 entrando HANGAR - Barcelona
+[2024-05-06 17:48:08] Avion DT-0003 saliendo HANGAR - Barcelona
+[2024-05-06 17:48:08] Avion DT-0003 entrando ESTACIONAMIENTO - Barcelona
+[2024-05-06 17:48:08] Avion DT-0003 tiene Gate 5 libre (exclusiva Embarque) - Barcelona
+[2024-05-06 17:48:08] Avion DT-0003 saliendo ESTACIONAMIENTO - Barcelona
+[2024-05-06 17:48:08] Avion DT-0003 entrando Gate 5 (exclusiva Embarque)- Barcelona
+[2024-05-06 17:48:08] Avion DT-0003 EMBARCANDO 189 pasajeros - Barcelona

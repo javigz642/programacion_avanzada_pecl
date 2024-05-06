@@ -1,0 +1,930 @@
+[2024-05-06 17:48:38] Bus B-0000 creado - Madrid
+[2024-05-06 17:48:38] Avion VX-0000 creado - Madrid
+[2024-05-06 17:48:38] Bus B-0000 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:38] Avion VX-0000 entrando HANGAR - Madrid
+[2024-05-06 17:48:38] Avion VX-0000 saliendo HANGAR - Madrid
+[2024-05-06 17:48:38] Avion VX-0000 entrando ESTACIONAMIENTO - Madrid
+[2024-05-06 17:48:38] Avion VX-0000 tiene Gate 5 libre (exclusiva Embarque) - Madrid
+[2024-05-06 17:48:38] Avion VX-0000 saliendo ESTACIONAMIENTO - Madrid
+[2024-05-06 17:48:38] Avion VX-0000 entrando Gate 5 (exclusiva Embarque)- Madrid
+[2024-05-06 17:48:38] Avion VX-0000 EMBARCANDO 203 pasajeros - Madrid
+[2024-05-06 17:48:39] Bus B-0001 creado - Barcelona
+[2024-05-06 17:48:39] Bus B-0001 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:40] Bus B-0002 creado - Madrid
+[2024-05-06 17:48:40] Bus B-0002 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:40] Avion XR-0001 creado - Barcelona
+[2024-05-06 17:48:40] Avion XR-0001 entrando HANGAR - Barcelona
+[2024-05-06 17:48:40] Avion XR-0001 saliendo HANGAR - Barcelona
+[2024-05-06 17:48:40] Avion XR-0001 entrando ESTACIONAMIENTO - Barcelona
+[2024-05-06 17:48:40] Avion XR-0001 tiene Gate 5 libre (exclusiva Embarque) - Barcelona
+[2024-05-06 17:48:40] Avion XR-0001 saliendo ESTACIONAMIENTO - Barcelona
+[2024-05-06 17:48:40] Avion XR-0001 entrando Gate 5 (exclusiva Embarque)- Barcelona
+[2024-05-06 17:48:40] Avion XR-0001 EMBARCANDO 170 pasajeros - Barcelona
+[2024-05-06 17:48:40] Avion VX-0000 saliendo Gate 5 (exclusiva Embarque) con 203 pasajeros - Madrid
+[2024-05-06 17:48:40] Avion VX-0000 entrando RODAJE - Madrid
+[2024-05-06 17:48:40] Avion VX-0000 haciendo comprobaciones RODAJE - Madrid
+[2024-05-06 17:48:41] Bus B-0003 creado - Barcelona
+[2024-05-06 17:48:41] Bus B-0003 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:41] Bus B-0004 creado - Madrid
+[2024-05-06 17:48:41] Bus B-0004 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:42] Bus B-0001 recogiendo 42 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:42] Bus B-0001 yendo hacia AEROPUERTO con 42 pasajeros - Barcelona
+[2024-05-06 17:48:42] Avion VX-0000 tiene libre la PISTA 1 para despegar - Madrid
+[2024-05-06 17:48:42] Avion VX-0000 saliendo RODAJE - Madrid
+[2024-05-06 17:48:42] Avion VX-0000 entrando PISTA 1 para despegar - Madrid
+[2024-05-06 17:48:42] Avion VX-0000 realizando verificaciones PISTA - Madrid
+[2024-05-06 17:48:42] Bus B-0005 creado - Barcelona
+[2024-05-06 17:48:42] Bus B-0005 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:42] Avion XR-0001 saliendo Gate 5 (exclusiva Embarque) con 170 pasajeros - Barcelona
+[2024-05-06 17:48:42] Avion XR-0001 entrando RODAJE - Barcelona
+[2024-05-06 17:48:42] Avion XR-0001 haciendo comprobaciones RODAJE - Barcelona
+[2024-05-06 17:48:43] Bus B-0000 recogiendo 49 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:43] Bus B-0000 yendo hacia AEROPUERTO con 49 pasajeros - Madrid
+[2024-05-06 17:48:43] Avion IV-0002 creado - Madrid
+[2024-05-06 17:48:43] Avion IV-0002 entrando HANGAR - Madrid
+[2024-05-06 17:48:43] Avion IV-0002 saliendo HANGAR - Madrid
+[2024-05-06 17:48:43] Avion IV-0002 entrando ESTACIONAMIENTO - Madrid
+[2024-05-06 17:48:43] Avion IV-0002 tiene Gate 5 libre (exclusiva Embarque) - Madrid
+[2024-05-06 17:48:43] Avion IV-0002 saliendo ESTACIONAMIENTO - Madrid
+[2024-05-06 17:48:43] Avion IV-0002 entrando Gate 5 (exclusiva Embarque)- Madrid
+[2024-05-06 17:48:43] Avion IV-0002 EMBARCANDO 232 pasajeros - Madrid
+[2024-05-06 17:48:43] Bus B-0006 creado - Madrid
+[2024-05-06 17:48:43] Bus B-0006 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:43] Bus B-0002 recogiendo 27 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:43] Bus B-0002 yendo hacia AEROPUERTO con 27 pasajeros - Madrid
+[2024-05-06 17:48:43] Avion VX-0000 despegando con 203 pasajeros desde la PISTA 1- Madrid
+[2024-05-06 17:48:44] Bus B-0003 recogiendo 21 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:44] Bus B-0003 yendo hacia AEROPUERTO con 21 pasajeros - Barcelona
+[2024-05-06 17:48:44] Bus B-0007 creado - Barcelona
+[2024-05-06 17:48:44] Bus B-0007 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:44] Bus B-0004 recogiendo 50 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:44] Bus B-0004 yendo hacia AEROPUERTO con 50 pasajeros - Madrid
+[2024-05-06 17:48:44] Avion VX-0000 ha dejado libre la PISTA 1- Madrid
+[2024-05-06 17:48:44] Avion VX-0000 entrando AEROVIA Madrid-Barcelona - Madrid
+[2024-05-06 17:48:45] Avion IV-0002 saliendo Gate 5 (exclusiva Embarque) con 232 pasajeros - Madrid
+[2024-05-06 17:48:45] Avion IV-0002 entrando RODAJE - Madrid
+[2024-05-06 17:48:45] Avion IV-0002 haciendo comprobaciones RODAJE - Madrid
+[2024-05-06 17:48:45] Bus B-0008 creado - Madrid
+[2024-05-06 17:48:45] Bus B-0008 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:46] Avion TD-0003 creado - Barcelona
+[2024-05-06 17:48:46] Avion TD-0003 entrando HANGAR - Barcelona
+[2024-05-06 17:48:46] Avion TD-0003 saliendo HANGAR - Barcelona
+[2024-05-06 17:48:46] Avion TD-0003 entrando ESTACIONAMIENTO - Barcelona
+[2024-05-06 17:48:46] Avion TD-0003 tiene Gate 5 libre (exclusiva Embarque) - Barcelona
+[2024-05-06 17:48:46] Avion TD-0003 saliendo ESTACIONAMIENTO - Barcelona
+[2024-05-06 17:48:46] Avion TD-0003 entrando Gate 5 (exclusiva Embarque)- Barcelona
+[2024-05-06 17:48:46] Avion TD-0003 EMBARCANDO 184 pasajeros - Barcelona
+[2024-05-06 17:48:46] Bus B-0009 creado - Barcelona
+[2024-05-06 17:48:46] Bus B-0009 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:46] Avion XR-0001 tiene libre la PISTA 2 para despegar - Barcelona
+[2024-05-06 17:48:46] Avion XR-0001 saliendo RODAJE - Barcelona
+[2024-05-06 17:48:46] Avion XR-0001 entrando PISTA 2 para despegar - Barcelona
+[2024-05-06 17:48:46] Avion XR-0001 realizando verificaciones PISTA - Barcelona
+[2024-05-06 17:48:46] Avion IV-0002 tiene libre la PISTA 3 para despegar - Madrid
+[2024-05-06 17:48:46] Avion IV-0002 saliendo RODAJE - Madrid
+[2024-05-06 17:48:46] Avion IV-0002 entrando PISTA 3 para despegar - Madrid
+[2024-05-06 17:48:46] Avion IV-0002 realizando verificaciones PISTA - Madrid
+[2024-05-06 17:48:46] Bus B-0005 recogiendo 39 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:46] Bus B-0005 yendo hacia AEROPUERTO con 39 pasajeros - Barcelona
+[2024-05-06 17:48:46] Bus B-0007 recogiendo 35 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:46] Bus B-0007 yendo hacia AEROPUERTO con 35 pasajeros - Barcelona
+[2024-05-06 17:48:47] Bus B-0010 creado - Madrid
+[2024-05-06 17:48:47] Bus B-0010 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:47] Avion UG-0004 creado - Madrid
+[2024-05-06 17:48:47] Avion UG-0004 entrando HANGAR - Madrid
+[2024-05-06 17:48:47] Avion UG-0004 saliendo HANGAR - Madrid
+[2024-05-06 17:48:47] Avion UG-0004 entrando ESTACIONAMIENTO - Madrid
+[2024-05-06 17:48:47] Avion UG-0004 tiene Gate 5 libre (exclusiva Embarque) - Madrid
+[2024-05-06 17:48:47] Avion UG-0004 saliendo ESTACIONAMIENTO - Madrid
+[2024-05-06 17:48:47] Avion UG-0004 entrando Gate 5 (exclusiva Embarque)- Madrid
+[2024-05-06 17:48:47] Avion UG-0004 EMBARCANDO 159 pasajeros - Madrid
+[2024-05-06 17:48:47] Avion TD-0003 saliendo Gate 5 (exclusiva Embarque) con 184 pasajeros - Barcelona
+[2024-05-06 17:48:47] Avion TD-0003 entrando RODAJE - Barcelona
+[2024-05-06 17:48:47] Avion TD-0003 haciendo comprobaciones RODAJE - Barcelona
+[2024-05-06 17:48:47] Bus B-0011 creado - Barcelona
+[2024-05-06 17:48:47] Bus B-0011 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:47] Bus B-0001 bajando 42 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:48:47] Bus B-0001 esperando pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:48:48] Bus B-0000 bajando 49 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:48:48] Bus B-0000 esperando pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:48:48] Bus B-0006 recogiendo 26 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:48] Bus B-0006 yendo hacia AEROPUERTO con 26 pasajeros - Madrid
+[2024-05-06 17:48:48] Bus B-0012 creado - Madrid
+[2024-05-06 17:48:48] Bus B-0012 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:49] Avion MC-0005 creado - Barcelona
+[2024-05-06 17:48:49] Avion MC-0005 entrando HANGAR - Barcelona
+[2024-05-06 17:48:49] Avion MC-0005 saliendo HANGAR - Barcelona
+[2024-05-06 17:48:49] Avion MC-0005 entrando ESTACIONAMIENTO - Barcelona
+[2024-05-06 17:48:49] Avion MC-0005 tiene Gate 5 libre (exclusiva Embarque) - Barcelona
+[2024-05-06 17:48:49] Avion MC-0005 saliendo ESTACIONAMIENTO - Barcelona
+[2024-05-06 17:48:49] Avion MC-0005 entrando Gate 5 (exclusiva Embarque)- Barcelona
+[2024-05-06 17:48:49] Avion MC-0005 EMBARCANDO 251 pasajeros - Barcelona
+[2024-05-06 17:48:49] Avion XR-0001 despegando con 170 pasajeros desde la PISTA 2- Barcelona
+[2024-05-06 17:48:49] Bus B-0008 recogiendo 23 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:49] Bus B-0008 yendo hacia AEROPUERTO con 23 pasajeros - Madrid
+[2024-05-06 17:48:49] Avion IV-0002 despegando con 232 pasajeros desde la PISTA 3- Madrid
+[2024-05-06 17:48:49] Bus B-0013 creado - Barcelona
+[2024-05-06 17:48:49] Bus B-0013 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:49] Avion UG-0004 saliendo Gate 5 (exclusiva Embarque) con 159 pasajeros - Madrid
+[2024-05-06 17:48:49] Avion UG-0004 entrando RODAJE - Madrid
+[2024-05-06 17:48:49] Avion UG-0004 haciendo comprobaciones RODAJE - Madrid
+[2024-05-06 17:48:50] Bus B-0011 recogiendo 22 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:50] Bus B-0011 yendo hacia AEROPUERTO con 22 pasajeros - Barcelona
+[2024-05-06 17:48:50] Bus B-0014 creado - Madrid
+[2024-05-06 17:48:50] Bus B-0014 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:50] Bus B-0004 bajando 50 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:48:50] Bus B-0004 esperando pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:48:50] Bus B-0015 creado - Barcelona
+[2024-05-06 17:48:50] Bus B-0015 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:50] Bus B-0009 recogiendo 4 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:50] Bus B-0009 yendo hacia AEROPUERTO con 4 pasajeros - Barcelona
+[2024-05-06 17:48:50] Avion MC-0005 saliendo Gate 5 (exclusiva Embarque) con 251 pasajeros - Barcelona
+[2024-05-06 17:48:50] Avion MC-0005 entrando RODAJE - Barcelona
+[2024-05-06 17:48:50] Avion MC-0005 haciendo comprobaciones RODAJE - Barcelona
+[2024-05-06 17:48:51] Bus B-0010 recogiendo 37 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:51] Bus B-0010 yendo hacia AEROPUERTO con 37 pasajeros - Madrid
+[2024-05-06 17:48:51] Avion IV-0002 ha dejado libre la PISTA 3- Madrid
+[2024-05-06 17:48:51] Avion IV-0002 entrando AEROVIA Madrid-Barcelona - Madrid
+[2024-05-06 17:48:51] Bus B-0016 creado - Madrid
+[2024-05-06 17:48:51] Bus B-0016 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:51] Bus B-0012 recogiendo 32 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:51] Bus B-0012 yendo hacia AEROPUERTO con 32 pasajeros - Madrid
+[2024-05-06 17:48:51] Avion GG-0006 creado - Madrid
+[2024-05-06 17:48:51] Avion GG-0006 entrando HANGAR - Madrid
+[2024-05-06 17:48:51] Avion GG-0006 saliendo HANGAR - Madrid
+[2024-05-06 17:48:51] Avion GG-0006 entrando ESTACIONAMIENTO - Madrid
+[2024-05-06 17:48:51] Avion GG-0006 tiene Gate 5 libre (exclusiva Embarque) - Madrid
+[2024-05-06 17:48:51] Avion GG-0006 saliendo ESTACIONAMIENTO - Madrid
+[2024-05-06 17:48:51] Avion GG-0006 entrando Gate 5 (exclusiva Embarque)- Madrid
+[2024-05-06 17:48:51] Avion GG-0006 EMBARCANDO 191 pasajeros - Madrid
+[2024-05-06 17:48:52] Bus B-0017 creado - Barcelona
+[2024-05-06 17:48:52] Bus B-0017 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:52] Bus B-0000 recogiendo 7 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:48:52] Bus B-0000 yendo hacia CIUDAD con 7 pasajeros - Madrid
+[2024-05-06 17:48:52] Bus B-0002 bajando 27 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:48:52] Bus B-0002 esperando pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:48:52] Avion TD-0003 tiene libre la PISTA 4 para despegar - Barcelona
+[2024-05-06 17:48:52] Avion TD-0003 saliendo RODAJE - Barcelona
+[2024-05-06 17:48:52] Avion TD-0003 entrando PISTA 4 para despegar - Barcelona
+[2024-05-06 17:48:52] Avion TD-0003 realizando verificaciones PISTA - Barcelona
+[2024-05-06 17:48:52] Bus B-0001 recogiendo 32 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:48:52] Bus B-0001 yendo hacia CIUDAD con 32 pasajeros - Barcelona
+[2024-05-06 17:48:52] Bus B-0004 recogiendo 36 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:48:52] Bus B-0004 yendo hacia CIUDAD con 36 pasajeros - Madrid
+[2024-05-06 17:48:52] Bus B-0018 creado - Madrid
+[2024-05-06 17:48:52] Bus B-0018 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:52] Bus B-0003 bajando 21 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:48:52] Bus B-0003 esperando pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:48:53] Bus B-0007 bajando 35 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:48:53] Bus B-0007 esperando pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:48:53] Bus B-0019 creado - Barcelona
+[2024-05-06 17:48:53] Bus B-0019 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:53] Bus B-0013 recogiendo 4 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:53] Bus B-0013 yendo hacia AEROPUERTO con 4 pasajeros - Barcelona
+[2024-05-06 17:48:53] Avion XR-0001 ha dejado libre la PISTA 2- Barcelona
+[2024-05-06 17:48:53] Avion XR-0001 entrando AEROVIA Barcelona-Madrid - Barcelona
+[2024-05-06 17:48:53] Avion UG-0004 tiene libre la PISTA 5 para despegar - Madrid
+[2024-05-06 17:48:53] Avion UG-0004 saliendo RODAJE - Madrid
+[2024-05-06 17:48:53] Avion UG-0004 entrando PISTA 5 para despegar - Madrid
+[2024-05-06 17:48:53] Avion UG-0004 realizando verificaciones PISTA - Madrid
+[2024-05-06 17:48:54] Bus B-0015 recogiendo 13 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:54] Bus B-0015 yendo hacia AEROPUERTO con 13 pasajeros - Barcelona
+[2024-05-06 17:48:54] Avion DE-0007 creado - Barcelona
+[2024-05-06 17:48:54] Avion DE-0007 entrando HANGAR - Barcelona
+[2024-05-06 17:48:54] Avion DE-0007 saliendo HANGAR - Barcelona
+[2024-05-06 17:48:54] Avion DE-0007 entrando ESTACIONAMIENTO - Barcelona
+[2024-05-06 17:48:54] Avion DE-0007 tiene Gate 5 libre (exclusiva Embarque) - Barcelona
+[2024-05-06 17:48:54] Avion DE-0007 saliendo ESTACIONAMIENTO - Barcelona
+[2024-05-06 17:48:54] Avion DE-0007 entrando Gate 5 (exclusiva Embarque)- Barcelona
+[2024-05-06 17:48:54] Avion DE-0007 EMBARCANDO 112 pasajeros - Barcelona
+[2024-05-06 17:48:54] Bus B-0006 bajando 26 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:48:54] Bus B-0006 esperando pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:48:54] Avion MC-0005 tiene libre la PISTA 6 para despegar - Barcelona
+[2024-05-06 17:48:54] Avion MC-0005 saliendo RODAJE - Barcelona
+[2024-05-06 17:48:54] Avion MC-0005 entrando PISTA 6 para despegar - Barcelona
+[2024-05-06 17:48:54] Avion MC-0005 realizando verificaciones PISTA - Barcelona
+[2024-05-06 17:48:54] Bus B-0020 creado - Madrid
+[2024-05-06 17:48:54] Bus B-0020 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:54] Avion GG-0006 saliendo Gate 5 (exclusiva Embarque) con 191 pasajeros - Madrid
+[2024-05-06 17:48:54] Avion GG-0006 entrando RODAJE - Madrid
+[2024-05-06 17:48:54] Avion GG-0006 haciendo comprobaciones RODAJE - Madrid
+[2024-05-06 17:48:54] Bus B-0008 bajando 23 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:48:54] Bus B-0008 esperando pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:48:54] Bus B-0014 recogiendo 13 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:54] Bus B-0014 yendo hacia AEROPUERTO con 13 pasajeros - Madrid
+[2024-05-06 17:48:55] Avion TD-0003 despegando con 184 pasajeros desde la PISTA 4- Barcelona
+[2024-05-06 17:48:55] Bus B-0021 creado - Barcelona
+[2024-05-06 17:48:55] Bus B-0021 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:55] Avion DE-0007 saliendo Gate 5 (exclusiva Embarque) con 112 pasajeros - Barcelona
+[2024-05-06 17:48:55] Avion DE-0007 entrando RODAJE - Barcelona
+[2024-05-06 17:48:55] Avion DE-0007 haciendo comprobaciones RODAJE - Barcelona
+[2024-05-06 17:48:55] Bus B-0016 recogiendo 36 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:55] Bus B-0016 yendo hacia AEROPUERTO con 36 pasajeros - Madrid
+[2024-05-06 17:48:55] Bus B-0005 bajando 39 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:48:55] Bus B-0005 esperando pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:48:55] Avion MC-0005 despegando con 251 pasajeros desde la PISTA 6- Barcelona
+[2024-05-06 17:48:56] Bus B-0002 recogiendo 7 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:48:56] Bus B-0002 yendo hacia CIUDAD con 7 pasajeros - Madrid
+[2024-05-06 17:48:56] Bus B-0022 creado - Madrid
+[2024-05-06 17:48:56] Bus B-0022 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:56] Avion BI-0008 creado - Madrid
+[2024-05-06 17:48:56] Avion BI-0008 entrando HANGAR - Madrid
+[2024-05-06 17:48:56] Avion BI-0008 saliendo HANGAR - Madrid
+[2024-05-06 17:48:56] Avion BI-0008 entrando ESTACIONAMIENTO - Madrid
+[2024-05-06 17:48:56] Avion BI-0008 tiene Gate 5 libre (exclusiva Embarque) - Madrid
+[2024-05-06 17:48:56] Avion BI-0008 saliendo ESTACIONAMIENTO - Madrid
+[2024-05-06 17:48:56] Avion BI-0008 entrando Gate 5 (exclusiva Embarque)- Madrid
+[2024-05-06 17:48:56] Avion BI-0008 EMBARCANDO 188 pasajeros - Madrid
+[2024-05-06 17:48:56] Bus B-0018 recogiendo 50 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:56] Bus B-0018 yendo hacia AEROPUERTO con 50 pasajeros - Madrid
+[2024-05-06 17:48:56] Avion UG-0004 despegando con 159 pasajeros desde la PISTA 5- Madrid
+[2024-05-06 17:48:56] Bus B-0003 recogiendo 16 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:48:56] Bus B-0003 yendo hacia CIUDAD con 16 pasajeros - Barcelona
+[2024-05-06 17:48:56] Bus B-0017 recogiendo 32 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:56] Bus B-0017 yendo hacia AEROPUERTO con 32 pasajeros - Barcelona
+[2024-05-06 17:48:56] Bus B-0023 creado - Barcelona
+[2024-05-06 17:48:56] Bus B-0023 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:57] Bus B-0024 creado - Madrid
+[2024-05-06 17:48:57] Bus B-0024 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:57] Bus B-0020 recogiendo 7 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:57] Bus B-0020 yendo hacia AEROPUERTO con 7 pasajeros - Madrid
+[2024-05-06 17:48:57] Avion QT-0009 creado - Barcelona
+[2024-05-06 17:48:57] Avion QT-0009 entrando HANGAR - Barcelona
+[2024-05-06 17:48:57] Avion QT-0009 saliendo HANGAR - Barcelona
+[2024-05-06 17:48:57] Avion QT-0009 entrando ESTACIONAMIENTO - Barcelona
+[2024-05-06 17:48:57] Avion QT-0009 tiene Gate 5 libre (exclusiva Embarque) - Barcelona
+[2024-05-06 17:48:57] Avion QT-0009 saliendo ESTACIONAMIENTO - Barcelona
+[2024-05-06 17:48:57] Avion QT-0009 entrando Gate 5 (exclusiva Embarque)- Barcelona
+[2024-05-06 17:48:57] Avion QT-0009 EMBARCANDO 174 pasajeros - Barcelona
+[2024-05-06 17:48:58] Bus B-0007 recogiendo 9 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:48:58] Bus B-0007 yendo hacia CIUDAD con 9 pasajeros - Barcelona
+[2024-05-06 17:48:58] Bus B-0012 bajando 32 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:48:58] Bus B-0012 esperando pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:48:58] Bus B-0010 bajando 37 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:48:58] Bus B-0010 esperando pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:48:58] Bus B-0019 recogiendo 28 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:58] Bus B-0019 yendo hacia AEROPUERTO con 28 pasajeros - Barcelona
+[2024-05-06 17:48:58] Bus B-0006 recogiendo 28 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:48:58] Bus B-0006 yendo hacia CIUDAD con 28 pasajeros - Madrid
+[2024-05-06 17:48:58] Avion GG-0006 tiene libre la PISTA 7 para despegar - Madrid
+[2024-05-06 17:48:58] Avion GG-0006 saliendo RODAJE - Madrid
+[2024-05-06 17:48:58] Avion GG-0006 entrando PISTA 7 para despegar - Madrid
+[2024-05-06 17:48:58] Avion GG-0006 realizando verificaciones PISTA - Madrid
+[2024-05-06 17:48:58] Bus B-0025 creado - Barcelona
+[2024-05-06 17:48:58] Bus B-0025 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:58] Bus B-0005 recogiendo 45 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:48:58] Bus B-0005 yendo hacia CIUDAD con 45 pasajeros - Barcelona
+[2024-05-06 17:48:58] Avion TD-0003 ha dejado libre la PISTA 4- Barcelona
+[2024-05-06 17:48:58] Avion DE-0007 tiene libre la PISTA 8 para despegar - Barcelona
+[2024-05-06 17:48:58] Avion TD-0003 entrando AEROVIA Barcelona-Madrid - Barcelona
+[2024-05-06 17:48:58] Avion DE-0007 saliendo RODAJE - Barcelona
+[2024-05-06 17:48:58] Avion DE-0007 entrando PISTA 8 para despegar - Barcelona
+[2024-05-06 17:48:58] Avion DE-0007 realizando verificaciones PISTA - Barcelona
+[2024-05-06 17:48:59] Bus B-0023 recogiendo 23 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:59] Bus B-0023 yendo hacia AEROPUERTO con 23 pasajeros - Barcelona
+[2024-05-06 17:48:59] Bus B-0008 recogiendo 17 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:48:59] Bus B-0008 yendo hacia CIUDAD con 17 pasajeros - Madrid
+[2024-05-06 17:48:59] Bus B-0026 creado - Madrid
+[2024-05-06 17:48:59] Bus B-0026 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:59] Avion BI-0008 saliendo Gate 5 (exclusiva Embarque) con 188 pasajeros - Madrid
+[2024-05-06 17:48:59] Avion BI-0008 entrando RODAJE - Madrid
+[2024-05-06 17:48:59] Avion BI-0008 haciendo comprobaciones RODAJE - Madrid
+[2024-05-06 17:48:59] Bus B-0011 bajando 22 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:48:59] Bus B-0011 esperando pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:48:59] Avion SJ-0010 creado - Madrid
+[2024-05-06 17:48:59] Avion SJ-0010 entrando HANGAR - Madrid
+[2024-05-06 17:48:59] Avion SJ-0010 saliendo HANGAR - Madrid
+[2024-05-06 17:48:59] Avion SJ-0010 entrando ESTACIONAMIENTO - Madrid
+[2024-05-06 17:48:59] Avion SJ-0010 tiene Gate 5 libre (exclusiva Embarque) - Madrid
+[2024-05-06 17:48:59] Avion SJ-0010 saliendo ESTACIONAMIENTO - Madrid
+[2024-05-06 17:48:59] Avion SJ-0010 entrando Gate 5 (exclusiva Embarque)- Madrid
+[2024-05-06 17:48:59] Avion SJ-0010 EMBARCANDO 274 pasajeros - Madrid
+[2024-05-06 17:48:59] Bus B-0001 bajando 32 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:59] Bus B-0001 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:59] Bus B-0000 bajando 7 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:59] Bus B-0000 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:48:59] Bus B-0021 recogiendo 17 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:48:59] Bus B-0021 yendo hacia AEROPUERTO con 17 pasajeros - Barcelona
+[2024-05-06 17:49:00] Bus B-0027 creado - Barcelona
+[2024-05-06 17:49:00] Bus B-0027 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:00] Bus B-0024 recogiendo 33 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:00] Bus B-0024 yendo hacia AEROPUERTO con 33 pasajeros - Madrid
+[2024-05-06 17:49:00] Avion QT-0009 saliendo Gate 5 (exclusiva Embarque) con 174 pasajeros - Barcelona
+[2024-05-06 17:49:00] Avion QT-0009 entrando RODAJE - Barcelona
+[2024-05-06 17:49:00] Avion QT-0009 haciendo comprobaciones RODAJE - Barcelona
+[2024-05-06 17:49:00] Bus B-0015 bajando 13 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:00] Bus B-0015 esperando pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:00] Bus B-0004 bajando 36 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:00] Bus B-0004 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:00] Bus B-0009 bajando 4 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:00] Bus B-0009 esperando pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:00] Avion MC-0005 ha dejado libre la PISTA 6- Barcelona
+[2024-05-06 17:49:00] Avion MC-0005 entrando AEROVIA Barcelona-Madrid - Barcelona
+[2024-05-06 17:49:00] Avion UG-0004 ha dejado libre la PISTA 5- Madrid
+[2024-05-06 17:49:00] Avion BI-0008 tiene libre la PISTA 9 para despegar - Madrid
+[2024-05-06 17:49:00] Avion UG-0004 entrando AEROVIA Madrid-Barcelona - Madrid
+[2024-05-06 17:49:00] Avion BI-0008 saliendo RODAJE - Madrid
+[2024-05-06 17:49:00] Avion BI-0008 entrando PISTA 9 para despegar - Madrid
+[2024-05-06 17:49:00] Avion BI-0008 realizando verificaciones PISTA - Madrid
+[2024-05-06 17:49:00] Avion VX-0000 abandonando AEROVIA Madrid-Barcelona - Barcelona
+[2024-05-06 17:49:00] Avion VX-0000 tiene libre la PISTA 1 para aterrizar - Barcelona
+[2024-05-06 17:49:00] Avion VX-0000 aterrizando con 203 pasajeros en la PISTA 1- Barcelona
+[2024-05-06 17:49:00] Bus B-0014 bajando 13 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:00] Bus B-0014 esperando pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:00] Avion GG-0006 despegando con 191 pasajeros desde la PISTA 7- Madrid
+[2024-05-06 17:49:00] Avion SV-0011 creado - Barcelona
+[2024-05-06 17:49:00] Avion SV-0011 entrando HANGAR - Barcelona
+[2024-05-06 17:49:00] Avion SV-0011 saliendo HANGAR - Barcelona
+[2024-05-06 17:49:00] Avion SV-0011 entrando ESTACIONAMIENTO - Barcelona
+[2024-05-06 17:49:00] Avion SV-0011 tiene Gate 5 libre (exclusiva Embarque) - Barcelona
+[2024-05-06 17:49:00] Avion SV-0011 saliendo ESTACIONAMIENTO - Barcelona
+[2024-05-06 17:49:00] Avion SV-0011 entrando Gate 5 (exclusiva Embarque)- Barcelona
+[2024-05-06 17:49:00] Avion SV-0011 EMBARCANDO 218 pasajeros - Barcelona
+[2024-05-06 17:49:00] Bus B-0028 creado - Madrid
+[2024-05-06 17:49:00] Bus B-0028 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:01] Bus B-0012 recogiendo 46 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:01] Bus B-0012 yendo hacia CIUDAD con 46 pasajeros - Madrid
+[2024-05-06 17:49:01] Bus B-0022 recogiendo 41 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:01] Bus B-0022 yendo hacia AEROPUERTO con 41 pasajeros - Madrid
+[2024-05-06 17:49:01] Bus B-0010 recogiendo 1 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:01] Bus B-0010 yendo hacia CIUDAD con 1 pasajeros - Madrid
+[2024-05-06 17:49:01] Avion SJ-0010 saliendo Gate 5 (exclusiva Embarque) con 274 pasajeros - Madrid
+[2024-05-06 17:49:01] Avion SJ-0010 entrando RODAJE - Madrid
+[2024-05-06 17:49:01] Avion SJ-0010 haciendo comprobaciones RODAJE - Madrid
+[2024-05-06 17:49:01] Bus B-0025 recogiendo 35 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:01] Bus B-0025 yendo hacia AEROPUERTO con 35 pasajeros - Barcelona
+[2024-05-06 17:49:01] Bus B-0013 bajando 4 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:01] Bus B-0013 esperando pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:01] Bus B-0029 creado - Barcelona
+[2024-05-06 17:49:01] Bus B-0029 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:01] Avion BI-0008 despegando con 188 pasajeros desde la PISTA 9- Madrid
+[2024-05-06 17:49:01] Avion SV-0011 saliendo Gate 5 (exclusiva Embarque) con 218 pasajeros - Barcelona
+[2024-05-06 17:49:01] Avion SV-0011 entrando RODAJE - Barcelona
+[2024-05-06 17:49:01] Avion SV-0011 haciendo comprobaciones RODAJE - Barcelona
+[2024-05-06 17:49:01] Avion DE-0007 despegando con 112 pasajeros desde la PISTA 8- Barcelona
+[2024-05-06 17:49:02] Bus B-0026 recogiendo 10 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:02] Bus B-0026 yendo hacia AEROPUERTO con 10 pasajeros - Madrid
+[2024-05-06 17:49:02] Bus B-0001 recogiendo 18 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:02] Bus B-0001 yendo hacia AEROPUERTO con 18 pasajeros - Barcelona
+[2024-05-06 17:49:02] Bus B-0016 bajando 36 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:02] Bus B-0016 esperando pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:02] Bus B-0002 bajando 7 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:02] Bus B-0002 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:02] Bus B-0018 bajando 50 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:02] Bus B-0018 esperando pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:02] Bus B-0030 creado - Madrid
+[2024-05-06 17:49:02] Bus B-0030 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:02] Bus B-0004 recogiendo 36 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:02] Bus B-0004 yendo hacia AEROPUERTO con 36 pasajeros - Madrid
+[2024-05-06 17:49:02] Avion CD-0012 creado - Madrid
+[2024-05-06 17:49:02] Avion CD-0012 entrando HANGAR - Madrid
+[2024-05-06 17:49:02] Avion CD-0012 saliendo HANGAR - Madrid
+[2024-05-06 17:49:02] Avion CD-0012 entrando ESTACIONAMIENTO - Madrid
+[2024-05-06 17:49:02] Avion CD-0012 tiene Gate 5 libre (exclusiva Embarque) - Madrid
+[2024-05-06 17:49:02] Avion CD-0012 saliendo ESTACIONAMIENTO - Madrid
+[2024-05-06 17:49:02] Avion CD-0012 entrando Gate 5 (exclusiva Embarque)- Madrid
+[2024-05-06 17:49:02] Avion CD-0012 EMBARCANDO 299 pasajeros - Madrid
+[2024-05-06 17:49:02] Bus B-0000 recogiendo 8 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:02] Bus B-0000 yendo hacia AEROPUERTO con 8 pasajeros - Madrid
+[2024-05-06 17:49:02] Bus B-0031 creado - Barcelona
+[2024-05-06 17:49:02] Bus B-0031 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:02] Bus B-0027 recogiendo 2 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:02] Bus B-0027 yendo hacia AEROPUERTO con 2 pasajeros - Barcelona
+[2024-05-06 17:49:03] Avion VX-0000 ha dejado libre la PISTA 1- Barcelona
+[2024-05-06 17:49:03] Avion VX-0000 entrando RODAJE - Barcelona
+[2024-05-06 17:49:03] Avion VX-0000 tiene Gate 6 libre (exclusiva Desembarque). Yendo hacia Gate 6... - Barcelona
+[2024-05-06 17:49:03] Avion DE-0007 ha dejado libre la PISTA 8- Barcelona
+[2024-05-06 17:49:03] Avion DE-0007 entrando AEROVIA Barcelona-Madrid - Barcelona
+[2024-05-06 17:49:03] Bus B-0032 creado - Madrid
+[2024-05-06 17:49:03] Bus B-0032 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:03] Bus B-0011 recogiendo 10 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:03] Bus B-0011 yendo hacia CIUDAD con 10 pasajeros - Barcelona
+[2024-05-06 17:49:04] Bus B-0033 creado - Barcelona
+[2024-05-06 17:49:04] Bus B-0033 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:04] Bus B-0028 recogiendo 24 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:04] Bus B-0028 yendo hacia AEROPUERTO con 24 pasajeros - Madrid
+[2024-05-06 17:49:04] Avion BI-0008 ha dejado libre la PISTA 9- Madrid
+[2024-05-06 17:49:04] Avion BI-0008 entrando AEROVIA Madrid-Barcelona - Madrid
+[2024-05-06 17:49:04] Avion QT-0009 tiene libre la PISTA 10 para despegar - Barcelona
+[2024-05-06 17:49:04] Avion QT-0009 saliendo RODAJE - Barcelona
+[2024-05-06 17:49:04] Avion QT-0009 entrando PISTA 10 para despegar - Barcelona
+[2024-05-06 17:49:04] Avion QT-0009 realizando verificaciones PISTA - Barcelona
+[2024-05-06 17:49:04] Avion GG-0006 ha dejado libre la PISTA 7- Madrid
+[2024-05-06 17:49:04] Avion SJ-0010 tiene libre la PISTA 11 para despegar - Madrid
+[2024-05-06 17:49:04] Avion GG-0006 entrando AEROVIA Madrid-Barcelona - Madrid
+[2024-05-06 17:49:04] Avion SJ-0010 saliendo RODAJE - Madrid
+[2024-05-06 17:49:04] Avion SJ-0010 entrando PISTA 11 para despegar - Madrid
+[2024-05-06 17:49:04] Avion SJ-0010 realizando verificaciones PISTA - Madrid
+[2024-05-06 17:49:04] Bus B-0002 recogiendo 23 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:04] Bus B-0002 yendo hacia AEROPUERTO con 23 pasajeros - Madrid
+[2024-05-06 17:49:04] Bus B-0018 recogiendo 27 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:04] Bus B-0018 yendo hacia CIUDAD con 27 pasajeros - Madrid
+[2024-05-06 17:49:04] Avion CD-0012 saliendo Gate 5 (exclusiva Embarque) con 299 pasajeros - Madrid
+[2024-05-06 17:49:04] Avion CD-0012 entrando RODAJE - Madrid
+[2024-05-06 17:49:04] Avion CD-0012 haciendo comprobaciones RODAJE - Madrid
+[2024-05-06 17:49:04] Avion YJ-0013 creado - Barcelona
+[2024-05-06 17:49:04] Avion YJ-0013 entrando HANGAR - Barcelona
+[2024-05-06 17:49:04] Avion YJ-0013 saliendo HANGAR - Barcelona
+[2024-05-06 17:49:04] Avion YJ-0013 entrando ESTACIONAMIENTO - Barcelona
+[2024-05-06 17:49:04] Avion YJ-0013 tiene Gate 5 libre (exclusiva Embarque) - Barcelona
+[2024-05-06 17:49:04] Avion YJ-0013 saliendo ESTACIONAMIENTO - Barcelona
+[2024-05-06 17:49:04] Avion YJ-0013 entrando Gate 5 (exclusiva Embarque)- Barcelona
+[2024-05-06 17:49:04] Avion YJ-0013 EMBARCANDO 207 pasajeros - Barcelona
+[2024-05-06 17:49:04] Bus B-0015 recogiendo 14 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:04] Bus B-0015 yendo hacia CIUDAD con 14 pasajeros - Barcelona
+[2024-05-06 17:49:04] Bus B-0009 recogiendo 29 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:04] Bus B-0009 yendo hacia CIUDAD con 29 pasajeros - Barcelona
+[2024-05-06 17:49:05] Bus B-0005 bajando 45 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:05] Bus B-0005 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:05] Bus B-0003 bajando 16 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:05] Bus B-0003 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:05] Bus B-0019 bajando 28 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:05] Bus B-0019 esperando pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:05] Bus B-0034 creado - Madrid
+[2024-05-06 17:49:05] Bus B-0034 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:05] Bus B-0030 recogiendo 39 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:05] Bus B-0030 yendo hacia AEROPUERTO con 39 pasajeros - Madrid
+[2024-05-06 17:49:05] Bus B-0029 recogiendo 34 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:05] Bus B-0029 yendo hacia AEROPUERTO con 34 pasajeros - Barcelona
+[2024-05-06 17:49:05] Bus B-0035 creado - Barcelona
+[2024-05-06 17:49:05] Bus B-0035 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:05] Bus B-0014 recogiendo 42 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:05] Bus B-0014 yendo hacia CIUDAD con 42 pasajeros - Madrid
+[2024-05-06 17:49:05] Avion SJ-0010 despegando con 274 pasajeros desde la PISTA 11- Madrid
+[2024-05-06 17:49:05] Bus B-0017 bajando 32 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:05] Bus B-0017 esperando pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:06] Bus B-0013 recogiendo 9 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:06] Bus B-0013 yendo hacia CIUDAD con 9 pasajeros - Barcelona
+[2024-05-06 17:49:06] Bus B-0031 recogiendo 41 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:06] Bus B-0031 yendo hacia AEROPUERTO con 41 pasajeros - Barcelona
+[2024-05-06 17:49:06] Avion YJ-0013 saliendo Gate 5 (exclusiva Embarque) con 207 pasajeros - Barcelona
+[2024-05-06 17:49:06] Avion YJ-0013 entrando RODAJE - Barcelona
+[2024-05-06 17:49:06] Avion YJ-0013 haciendo comprobaciones RODAJE - Barcelona
+[2024-05-06 17:49:06] Avion QT-0009 despegando con 174 pasajeros desde la PISTA 10- Barcelona
+[2024-05-06 17:49:06] Bus B-0036 creado - Madrid
+[2024-05-06 17:49:06] Bus B-0036 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:06] Bus B-0008 bajando 17 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:06] Bus B-0008 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:06] Avion SV-0011 tiene libre la PISTA 12 para despegar - Barcelona
+[2024-05-06 17:49:06] Avion SV-0011 saliendo RODAJE - Barcelona
+[2024-05-06 17:49:06] Avion SV-0011 entrando PISTA 12 para despegar - Barcelona
+[2024-05-06 17:49:06] Avion SV-0011 realizando verificaciones PISTA - Barcelona
+[2024-05-06 17:49:06] Avion KT-0014 creado - Madrid
+[2024-05-06 17:49:06] Avion KT-0014 entrando HANGAR - Madrid
+[2024-05-06 17:49:06] Avion KT-0014 saliendo HANGAR - Madrid
+[2024-05-06 17:49:06] Avion KT-0014 entrando ESTACIONAMIENTO - Madrid
+[2024-05-06 17:49:06] Avion KT-0014 tiene Gate 5 libre (exclusiva Embarque) - Madrid
+[2024-05-06 17:49:06] Avion KT-0014 saliendo ESTACIONAMIENTO - Madrid
+[2024-05-06 17:49:06] Avion KT-0014 entrando Gate 5 (exclusiva Embarque)- Madrid
+[2024-05-06 17:49:06] Avion KT-0014 EMBARCANDO 243 pasajeros - Madrid
+[2024-05-06 17:49:06] Bus B-0033 recogiendo 0 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:06] Bus B-0033 yendo hacia AEROPUERTO con 0 pasajeros - Barcelona
+[2024-05-06 17:49:06] Bus B-0016 recogiendo 0 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:06] Bus B-0016 yendo hacia CIUDAD con 0 pasajeros - Madrid
+[2024-05-06 17:49:07] Bus B-0037 creado - Barcelona
+[2024-05-06 17:49:07] Bus B-0037 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:07] Bus B-0021 bajando 17 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:07] Bus B-0021 esperando pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:07] Bus B-0020 bajando 7 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:07] Bus B-0020 esperando pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:07] Avion VX-0000 saliendo RODAJE - Barcelona
+[2024-05-06 17:49:07] Avion VX-0000 entrando Gate 6 (exclusiva Desembarque) - Barcelona
+[2024-05-06 17:49:07] Avion VX-0000 DESEMBARCANDO 203 pasajeros - Barcelona
+[2024-05-06 17:49:07] Bus B-0034 recogiendo 45 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:07] Bus B-0034 yendo hacia AEROPUERTO con 45 pasajeros - Madrid
+[2024-05-06 17:49:07] Avion SJ-0010 ha dejado libre la PISTA 11- Madrid
+[2024-05-06 17:49:07] Avion SJ-0010 entrando AEROVIA Madrid-Barcelona - Madrid
+[2024-05-06 17:49:07] Bus B-0023 bajando 23 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:07] Bus B-0023 esperando pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:07] Bus B-0003 recogiendo 12 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:07] Bus B-0003 yendo hacia AEROPUERTO con 12 pasajeros - Barcelona
+[2024-05-06 17:49:07] Bus B-0007 bajando 9 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:07] Bus B-0007 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:08] Bus B-0038 creado - Madrid
+[2024-05-06 17:49:08] Bus B-0038 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:08] Bus B-0006 bajando 28 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:08] Bus B-0006 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:08] Bus B-0000 bajando 8 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:08] Bus B-0000 esperando pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:08] Bus B-0032 recogiendo 16 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:08] Bus B-0032 yendo hacia AEROPUERTO con 16 pasajeros - Madrid
+[2024-05-06 17:49:08] Avion GB-0015 creado - Barcelona
+[2024-05-06 17:49:08] Avion GB-0015 entrando HANGAR - Barcelona
+[2024-05-06 17:49:08] Avion GB-0015 saliendo HANGAR - Barcelona
+[2024-05-06 17:49:08] Avion GB-0015 entrando ESTACIONAMIENTO - Barcelona
+[2024-05-06 17:49:08] Avion GB-0015 tiene Gate 5 libre (exclusiva Embarque) - Barcelona
+[2024-05-06 17:49:08] Avion GB-0015 saliendo ESTACIONAMIENTO - Barcelona
+[2024-05-06 17:49:08] Avion GB-0015 entrando Gate 5 (exclusiva Embarque)- Barcelona
+[2024-05-06 17:49:08] Avion GB-0015 EMBARCANDO 263 pasajeros - Barcelona
+[2024-05-06 17:49:08] Avion KT-0014 saliendo Gate 5 (exclusiva Embarque) con 243 pasajeros - Madrid
+[2024-05-06 17:49:08] Avion KT-0014 entrando RODAJE - Madrid
+[2024-05-06 17:49:08] Avion KT-0014 haciendo comprobaciones RODAJE - Madrid
+[2024-05-06 17:49:08] Avion CD-0012 tiene libre la PISTA 13 para despegar - Madrid
+[2024-05-06 17:49:08] Avion CD-0012 saliendo RODAJE - Madrid
+[2024-05-06 17:49:08] Avion CD-0012 entrando PISTA 13 para despegar - Madrid
+[2024-05-06 17:49:08] Avion CD-0012 realizando verificaciones PISTA - Madrid
+[2024-05-06 17:49:08] Bus B-0025 bajando 35 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:08] Bus B-0025 esperando pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:08] Bus B-0019 recogiendo 42 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:08] Bus B-0019 yendo hacia CIUDAD con 42 pasajeros - Barcelona
+[2024-05-06 17:49:08] Bus B-0039 creado - Barcelona
+[2024-05-06 17:49:08] Bus B-0039 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:08] Avion SV-0011 despegando con 218 pasajeros desde la PISTA 12- Barcelona
+[2024-05-06 17:49:09] Bus B-0005 recogiendo 26 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:09] Bus B-0005 yendo hacia AEROPUERTO con 26 pasajeros - Barcelona
+[2024-05-06 17:49:09] Bus B-0040 creado - Madrid
+[2024-05-06 17:49:09] Bus B-0040 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:09] Bus B-0008 recogiendo 29 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:09] Bus B-0008 yendo hacia AEROPUERTO con 29 pasajeros - Madrid
+[2024-05-06 17:49:09] Bus B-0035 recogiendo 31 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:09] Bus B-0035 yendo hacia AEROPUERTO con 31 pasajeros - Barcelona
+[2024-05-06 17:49:09] Avion QT-0009 ha dejado libre la PISTA 10- Barcelona
+[2024-05-06 17:49:09] Avion YJ-0013 tiene libre la PISTA 14 para despegar - Barcelona
+[2024-05-06 17:49:09] Avion QT-0009 entrando AEROVIA Barcelona-Madrid - Barcelona
+[2024-05-06 17:49:09] Avion YJ-0013 saliendo RODAJE - Barcelona
+[2024-05-06 17:49:09] Avion YJ-0013 entrando PISTA 14 para despegar - Barcelona
+[2024-05-06 17:49:09] Avion YJ-0013 realizando verificaciones PISTA - Barcelona
+[2024-05-06 17:49:09] Avion GB-0015 saliendo Gate 5 (exclusiva Embarque) con 263 pasajeros - Barcelona
+[2024-05-06 17:49:09] Avion GB-0015 entrando RODAJE - Barcelona
+[2024-05-06 17:49:09] Avion GB-0015 haciendo comprobaciones RODAJE - Barcelona
+[2024-05-06 17:49:09] Bus B-0022 bajando 41 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:09] Bus B-0022 esperando pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:09] Bus B-0026 bajando 10 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:09] Bus B-0026 esperando pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:10] Bus B-0024 bajando 33 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:10] Bus B-0024 esperando pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:10] Avion SV-0011 ha dejado libre la PISTA 12- Barcelona
+[2024-05-06 17:49:10] Avion SV-0011 entrando AEROVIA Barcelona-Madrid - Barcelona
+[2024-05-06 17:49:10] Bus B-0038 recogiendo 5 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:10] Bus B-0038 yendo hacia AEROPUERTO con 5 pasajeros - Madrid
+[2024-05-06 17:49:10] Avion CD-0012 despegando con 299 pasajeros desde la PISTA 13- Madrid
+[2024-05-06 17:49:10] Bus B-0007 recogiendo 10 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:10] Bus B-0007 yendo hacia AEROPUERTO con 10 pasajeros - Barcelona
+[2024-05-06 17:49:10] Bus B-0017 recogiendo 6 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:10] Bus B-0017 yendo hacia CIUDAD con 6 pasajeros - Barcelona
+[2024-05-06 17:49:10] Bus B-0041 creado - Barcelona
+[2024-05-06 17:49:10] Bus B-0041 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:10] Bus B-0012 bajando 46 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:10] Bus B-0012 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:10] Bus B-0036 recogiendo 2 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:10] Bus B-0036 yendo hacia AEROPUERTO con 2 pasajeros - Madrid
+[2024-05-06 17:49:10] Avion YJ-0013 despegando con 207 pasajeros desde la PISTA 14- Barcelona
+[2024-05-06 17:49:10] Bus B-0021 recogiendo 18 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:10] Bus B-0021 yendo hacia CIUDAD con 18 pasajeros - Barcelona
+[2024-05-06 17:49:10] Bus B-0037 recogiendo 35 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:10] Bus B-0037 yendo hacia AEROPUERTO con 35 pasajeros - Barcelona
+[2024-05-06 17:49:11] Avion KT-0014 tiene libre la PISTA 15 para despegar - Madrid
+[2024-05-06 17:49:11] Bus B-0010 bajando 1 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:11] Avion KT-0014 saliendo RODAJE - Madrid
+[2024-05-06 17:49:11] Bus B-0010 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:11] Avion KT-0014 entrando PISTA 15 para despegar - Madrid
+[2024-05-06 17:49:11] Avion KT-0014 realizando verificaciones PISTA - Madrid
+[2024-05-06 17:49:11] Avion BZ-0016 creado - Madrid
+[2024-05-06 17:49:11] Avion BZ-0016 entrando HANGAR - Madrid
+[2024-05-06 17:49:11] Avion BZ-0016 saliendo HANGAR - Madrid
+[2024-05-06 17:49:11] Avion BZ-0016 entrando ESTACIONAMIENTO - Madrid
+[2024-05-06 17:49:11] Avion BZ-0016 tiene Gate 5 libre (exclusiva Embarque) - Madrid
+[2024-05-06 17:49:11] Avion BZ-0016 saliendo ESTACIONAMIENTO - Madrid
+[2024-05-06 17:49:11] Avion BZ-0016 entrando Gate 5 (exclusiva Embarque)- Madrid
+[2024-05-06 17:49:11] Avion BZ-0016 EMBARCANDO 244 pasajeros - Madrid
+[2024-05-06 17:49:11] Bus B-0028 bajando 24 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:11] Bus B-0028 esperando pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:11] Bus B-0004 bajando 36 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:11] Bus B-0004 esperando pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:11] Bus B-0042 creado - Madrid
+[2024-05-06 17:49:11] Bus B-0042 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:11] Bus B-0025 recogiendo 29 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:11] Bus B-0025 yendo hacia CIUDAD con 29 pasajeros - Barcelona
+[2024-05-06 17:49:11] Bus B-0001 bajando 18 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:11] Bus B-0001 esperando pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:11] Bus B-0020 recogiendo 25 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:11] Bus B-0020 yendo hacia CIUDAD con 25 pasajeros - Madrid
+[2024-05-06 17:49:11] Bus B-0029 bajando 34 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:11] Bus B-0029 esperando pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:11] Bus B-0006 recogiendo 47 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:11] Bus B-0006 yendo hacia AEROPUERTO con 47 pasajeros - Madrid
+[2024-05-06 17:49:11] Bus B-0016 bajando 0 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:11] Bus B-0016 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:12] Bus B-0027 bajando 2 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:12] Bus B-0027 esperando pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:12] Bus B-0018 bajando 27 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:12] Bus B-0018 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:12] Bus B-0024 recogiendo 44 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:12] Bus B-0024 yendo hacia CIUDAD con 44 pasajeros - Madrid
+[2024-05-06 17:49:12] Avion BZ-0016 saliendo Gate 5 (exclusiva Embarque) con 244 pasajeros - Madrid
+[2024-05-06 17:49:12] Avion BZ-0016 entrando RODAJE - Madrid
+[2024-05-06 17:49:12] Avion BZ-0016 haciendo comprobaciones RODAJE - Madrid
+[2024-05-06 17:49:12] Avion GB-0015 tiene libre la PISTA 16 para despegar - Barcelona
+[2024-05-06 17:49:12] Avion GB-0015 saliendo RODAJE - Barcelona
+[2024-05-06 17:49:12] Avion GB-0015 entrando PISTA 16 para despegar - Barcelona
+[2024-05-06 17:49:12] Avion GB-0015 realizando verificaciones PISTA - Barcelona
+[2024-05-06 17:49:12] Avion SN-0017 creado - Barcelona
+[2024-05-06 17:49:12] Avion SN-0017 entrando HANGAR - Barcelona
+[2024-05-06 17:49:12] Avion SN-0017 saliendo HANGAR - Barcelona
+[2024-05-06 17:49:12] Avion SN-0017 entrando ESTACIONAMIENTO - Barcelona
+[2024-05-06 17:49:12] Avion SN-0017 tiene Gate 5 libre (exclusiva Embarque) - Barcelona
+[2024-05-06 17:49:12] Avion SN-0017 saliendo ESTACIONAMIENTO - Barcelona
+[2024-05-06 17:49:12] Avion SN-0017 entrando Gate 5 (exclusiva Embarque)- Barcelona
+[2024-05-06 17:49:12] Avion SN-0017 EMBARCANDO 226 pasajeros - Barcelona
+[2024-05-06 17:49:12] Bus B-0043 creado - Barcelona
+[2024-05-06 17:49:12] Bus B-0043 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:12] Bus B-0023 recogiendo 27 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:12] Bus B-0023 yendo hacia CIUDAD con 27 pasajeros - Barcelona
+[2024-05-06 17:49:12] Avion YJ-0013 ha dejado libre la PISTA 14- Barcelona
+[2024-05-06 17:49:12] Avion YJ-0013 entrando AEROVIA Barcelona-Madrid - Barcelona
+[2024-05-06 17:49:12] Bus B-0030 bajando 39 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:12] Bus B-0030 esperando pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:12] Avion VX-0000 saliendo Gate 6 (exclusiva Desembarque)- Barcelona
+[2024-05-06 17:49:12] Avion VX-0000 entrando ESTACIONAMIENTO - Barcelona
+[2024-05-06 17:49:12] Avion VX-0000 realizando comprobaciones ESTACIONAMIENTO (tras Desembarque) - Barcelona
+[2024-05-06 17:49:12] Bus B-0000 recogiendo 16 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:12] Bus B-0000 yendo hacia CIUDAD con 16 pasajeros - Madrid
+[2024-05-06 17:49:12] Bus B-0041 recogiendo 5 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:12] Bus B-0041 yendo hacia AEROPUERTO con 5 pasajeros - Barcelona
+[2024-05-06 17:49:13] Bus B-0044 creado - Madrid
+[2024-05-06 17:49:13] Bus B-0044 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:13] Bus B-0012 recogiendo 2 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:13] Bus B-0012 yendo hacia AEROPUERTO con 2 pasajeros - Madrid
+[2024-05-06 17:49:13] Bus B-0015 bajando 14 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:13] Bus B-0015 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:13] Bus B-0022 recogiendo 30 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:13] Bus B-0022 yendo hacia CIUDAD con 30 pasajeros - Madrid
+[2024-05-06 17:49:13] Avion KT-0014 despegando con 243 pasajeros desde la PISTA 15- Madrid
+[2024-05-06 17:49:13] Avion CD-0012 ha dejado libre la PISTA 13- Madrid
+[2024-05-06 17:49:13] Avion CD-0012 entrando AEROVIA Madrid-Barcelona - Madrid
+[2024-05-06 17:49:13] Bus B-0040 recogiendo 29 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:13] Bus B-0040 yendo hacia AEROPUERTO con 29 pasajeros - Madrid
+[2024-05-06 17:49:13] Bus B-0011 bajando 10 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:13] Bus B-0011 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:13] Avion SN-0017 saliendo Gate 5 (exclusiva Embarque) con 226 pasajeros - Barcelona
+[2024-05-06 17:49:13] Avion SN-0017 entrando RODAJE - Barcelona
+[2024-05-06 17:49:13] Avion SN-0017 haciendo comprobaciones RODAJE - Barcelona
+[2024-05-06 17:49:13] Bus B-0039 recogiendo 32 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:13] Bus B-0039 yendo hacia AEROPUERTO con 32 pasajeros - Barcelona
+[2024-05-06 17:49:13] Avion JF-0018 creado - Madrid
+[2024-05-06 17:49:13] Avion JF-0018 entrando HANGAR - Madrid
+[2024-05-06 17:49:13] Avion JF-0018 saliendo HANGAR - Madrid
+[2024-05-06 17:49:13] Avion JF-0018 entrando ESTACIONAMIENTO - Madrid
+[2024-05-06 17:49:13] Avion JF-0018 tiene Gate 5 libre (exclusiva Embarque) - Madrid
+[2024-05-06 17:49:13] Avion JF-0018 saliendo ESTACIONAMIENTO - Madrid
+[2024-05-06 17:49:13] Avion JF-0018 entrando Gate 5 (exclusiva Embarque)- Madrid
+[2024-05-06 17:49:13] Avion JF-0018 EMBARCANDO 193 pasajeros - Madrid
+[2024-05-06 17:49:13] Avion VX-0000 entrando TALLER - Barcelona
+[2024-05-06 17:49:13] Bus B-0045 creado - Barcelona
+[2024-05-06 17:49:13] Bus B-0045 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:14] Avion XR-0001 abandonando AEROVIA Barcelona-Madrid - Madrid
+[2024-05-06 17:49:14] Avion XR-0001 tiene libre la PISTA 2 para aterrizar - Madrid
+[2024-05-06 17:49:14] Avion XR-0001 aterrizando con 170 pasajeros en la PISTA 2- Madrid
+[2024-05-06 17:49:14] Bus B-0018 recogiendo 19 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:14] Bus B-0018 yendo hacia AEROPUERTO con 19 pasajeros - Madrid
+[2024-05-06 17:49:14] Bus B-0014 bajando 42 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:14] Bus B-0014 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:14] Bus B-0026 recogiendo 42 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:14] Bus B-0026 yendo hacia CIUDAD con 42 pasajeros - Madrid
+[2024-05-06 17:49:14] Bus B-0043 recogiendo 19 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:14] Bus B-0043 yendo hacia AEROPUERTO con 19 pasajeros - Barcelona
+[2024-05-06 17:49:14] Bus B-0019 bajando 42 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:14] Bus B-0019 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:14] Bus B-0009 bajando 29 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:14] Bus B-0009 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:14] Bus B-0028 recogiendo 21 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:14] Bus B-0002 bajando 23 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:14] Bus B-0028 yendo hacia CIUDAD con 21 pasajeros - Madrid
+[2024-05-06 17:49:14] Bus B-0002 esperando pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:14] Bus B-0031 bajando 41 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:14] Bus B-0031 esperando pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:14] Avion GB-0015 despegando con 263 pasajeros desde la PISTA 16- Barcelona
+[2024-05-06 17:49:14] Bus B-0001 recogiendo 7 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:14] Bus B-0001 yendo hacia CIUDAD con 7 pasajeros - Barcelona
+[2024-05-06 17:49:14] Bus B-0046 creado - Madrid
+[2024-05-06 17:49:14] Bus B-0046 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:14] Avion VX-0000 saliendo ESTACIONAMIENTO - Barcelona
+[2024-05-06 17:49:14] Avion VX-0000 realizando REVISION NORMAL - Barcelona
+[2024-05-06 17:49:14] Bus B-0010 recogiendo 44 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:14] Bus B-0010 yendo hacia AEROPUERTO con 44 pasajeros - Madrid
+[2024-05-06 17:49:14] Bus B-0034 bajando 45 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:14] Bus B-0034 esperando pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:14] Bus B-0005 bajando 26 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:14] Bus B-0005 esperando pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:15] Bus B-0030 recogiendo 6 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:15] Bus B-0030 yendo hacia CIUDAD con 6 pasajeros - Madrid
+[2024-05-06 17:49:15] Bus B-0042 recogiendo 3 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:15] Bus B-0042 yendo hacia AEROPUERTO con 3 pasajeros - Madrid
+[2024-05-06 17:49:15] Bus B-0004 recogiendo 8 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:15] Bus B-0004 yendo hacia CIUDAD con 8 pasajeros - Madrid
+[2024-05-06 17:49:15] Avion BZ-0016 tiene libre la PISTA 17 para despegar - Madrid
+[2024-05-06 17:49:15] Avion BZ-0016 saliendo RODAJE - Madrid
+[2024-05-06 17:49:15] Avion BZ-0016 entrando PISTA 17 para despegar - Madrid
+[2024-05-06 17:49:15] Avion BZ-0016 realizando verificaciones PISTA - Madrid
+[2024-05-06 17:49:15] Avion JF-0018 saliendo Gate 5 (exclusiva Embarque) con 193 pasajeros - Madrid
+[2024-05-06 17:49:15] Avion JF-0018 entrando RODAJE - Madrid
+[2024-05-06 17:49:15] Avion JF-0018 haciendo comprobaciones RODAJE - Madrid
+[2024-05-06 17:49:15] Avion GB-0015 ha dejado libre la PISTA 16- Barcelona
+[2024-05-06 17:49:15] Avion GB-0015 entrando AEROVIA Barcelona-Madrid - Barcelona
+[2024-05-06 17:49:15] Avion KT-0014 ha dejado libre la PISTA 15- Madrid
+[2024-05-06 17:49:15] Avion KT-0014 entrando AEROVIA Madrid-Barcelona - Madrid
+[2024-05-06 17:49:15] Bus B-0047 creado - Barcelona
+[2024-05-06 17:49:15] Bus B-0047 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:15] Bus B-0016 recogiendo 17 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:15] Bus B-0016 yendo hacia AEROPUERTO con 17 pasajeros - Madrid
+[2024-05-06 17:49:15] Bus B-0015 recogiendo 0 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:15] Bus B-0015 yendo hacia AEROPUERTO con 0 pasajeros - Barcelona
+[2024-05-06 17:49:15] Avion XR-0001 ha dejado libre la PISTA 2- Madrid
+[2024-05-06 17:49:15] Avion XR-0001 entrando RODAJE - Madrid
+[2024-05-06 17:49:15] Avion XR-0001 tiene Gate 6 libre (exclusiva Desembarque). Yendo hacia Gate 6... - Madrid
+[2024-05-06 17:49:15] Bus B-0033 bajando 0 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:15] Bus B-0033 esperando pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:15] Bus B-0029 recogiendo 34 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:15] Bus B-0029 yendo hacia CIUDAD con 34 pasajeros - Barcelona
+[2024-05-06 17:49:15] Bus B-0013 bajando 9 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:15] Bus B-0013 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:16] Bus B-0007 bajando 10 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:16] Bus B-0007 esperando pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:16] Avion BQ-0019 creado - Barcelona
+[2024-05-06 17:49:16] Avion BQ-0019 entrando HANGAR - Barcelona
+[2024-05-06 17:49:16] Avion BQ-0019 saliendo HANGAR - Barcelona
+[2024-05-06 17:49:16] Avion BQ-0019 entrando ESTACIONAMIENTO - Barcelona
+[2024-05-06 17:49:16] Avion BQ-0019 tiene Gate 5 libre (exclusiva Embarque) - Barcelona
+[2024-05-06 17:49:16] Avion BQ-0019 saliendo ESTACIONAMIENTO - Barcelona
+[2024-05-06 17:49:16] Avion BQ-0019 entrando Gate 5 (exclusiva Embarque)- Barcelona
+[2024-05-06 17:49:16] Avion BQ-0019 EMBARCANDO 207 pasajeros - Barcelona
+[2024-05-06 17:49:16] Bus B-0003 bajando 12 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:16] Bus B-0003 esperando pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:16] Bus B-0037 bajando 35 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:16] Bus B-0037 esperando pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:16] Bus B-0048 creado - Madrid
+[2024-05-06 17:49:16] Bus B-0048 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:16] Avion BZ-0016 despegando con 244 pasajeros desde la PISTA 17- Madrid
+[2024-05-06 17:49:16] Avion SN-0017 tiene libre la PISTA 18 para despegar - Barcelona
+[2024-05-06 17:49:16] Avion SN-0017 saliendo RODAJE - Barcelona
+[2024-05-06 17:49:16] Avion SN-0017 entrando PISTA 18 para despegar - Barcelona
+[2024-05-06 17:49:16] Avion SN-0017 realizando verificaciones PISTA - Barcelona
+[2024-05-06 17:49:16] Avion JF-0018 tiene libre la PISTA 19 para despegar - Madrid
+[2024-05-06 17:49:16] Avion JF-0018 saliendo RODAJE - Madrid
+[2024-05-06 17:49:16] Avion JF-0018 entrando PISTA 19 para despegar - Madrid
+[2024-05-06 17:49:16] Avion JF-0018 realizando verificaciones PISTA - Madrid
+[2024-05-06 17:49:16] Bus B-0031 recogiendo 6 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:16] Bus B-0031 yendo hacia CIUDAD con 6 pasajeros - Barcelona
+[2024-05-06 17:49:16] Bus B-0045 recogiendo 10 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:16] Bus B-0045 yendo hacia AEROPUERTO con 10 pasajeros - Barcelona
+[2024-05-06 17:49:16] Bus B-0036 bajando 2 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:16] Bus B-0036 esperando pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:16] Bus B-0044 recogiendo 11 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:16] Bus B-0044 yendo hacia AEROPUERTO con 11 pasajeros - Madrid
+[2024-05-06 17:49:17] Bus B-0027 recogiendo 28 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:17] Bus B-0027 yendo hacia CIUDAD con 28 pasajeros - Barcelona
+[2024-05-06 17:49:17] Bus B-0032 bajando 16 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:17] Bus B-0032 esperando pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:17] Avion TD-0003 abandonando AEROVIA Barcelona-Madrid - Madrid
+[2024-05-06 17:49:17] Avion TD-0003 tiene libre la PISTA 4 para aterrizar - Madrid
+[2024-05-06 17:49:17] Avion TD-0003 aterrizando con 184 pasajeros en la PISTA 4- Madrid
+[2024-05-06 17:49:17] Bus B-0021 bajando 18 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:17] Bus B-0021 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:17] Bus B-0014 recogiendo 10 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:17] Bus B-0014 yendo hacia AEROPUERTO con 10 pasajeros - Madrid
+[2024-05-06 17:49:17] Bus B-0019 recogiendo 35 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:17] Bus B-0019 yendo hacia AEROPUERTO con 35 pasajeros - Barcelona
+[2024-05-06 17:49:17] Bus B-0049 creado - Barcelona
+[2024-05-06 17:49:17] Bus B-0049 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:17] Bus B-0035 bajando 31 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:17] Bus B-0035 esperando pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:17] Avion BQ-0019 saliendo Gate 5 (exclusiva Embarque) con 207 pasajeros - Barcelona
+[2024-05-06 17:49:17] Avion BQ-0019 entrando RODAJE - Barcelona
+[2024-05-06 17:49:17] Avion BQ-0019 haciendo comprobaciones RODAJE - Barcelona
+[2024-05-06 17:49:17] Bus B-0046 recogiendo 42 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:17] Bus B-0046 yendo hacia AEROPUERTO con 42 pasajeros - Madrid
+[2024-05-06 17:49:17] Bus B-0009 recogiendo 38 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:17] Bus B-0009 yendo hacia AEROPUERTO con 38 pasajeros - Barcelona
+[2024-05-06 17:49:17] Avion JF-0018 despegando con 193 pasajeros desde la PISTA 19- Madrid
+[2024-05-06 17:49:17] Avion SN-0017 despegando con 226 pasajeros desde la PISTA 18- Barcelona
+[2024-05-06 17:49:17] Bus B-0050 creado - Madrid
+[2024-05-06 17:49:17] Bus B-0050 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:17] Bus B-0047 recogiendo 36 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:17] Bus B-0047 yendo hacia AEROPUERTO con 36 pasajeros - Barcelona
+[2024-05-06 17:49:18] Bus B-0017 bajando 6 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:18] Bus B-0017 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:18] Bus B-0011 recogiendo 0 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:18] Bus B-0011 yendo hacia AEROPUERTO con 0 pasajeros - Barcelona
+[2024-05-06 17:49:18] Avion IV-0002 abandonando AEROVIA Madrid-Barcelona - Barcelona
+[2024-05-06 17:49:18] Avion IV-0002 tiene libre la PISTA 3 para aterrizar - Barcelona
+[2024-05-06 17:49:18] Avion IV-0002 aterrizando con 232 pasajeros en la PISTA 3- Barcelona
+[2024-05-06 17:49:18] Bus B-0038 bajando 5 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:18] Bus B-0038 esperando pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:18] Avion TD-0003 ha dejado libre la PISTA 4- Madrid
+[2024-05-06 17:49:18] Avion TD-0003 entrando RODAJE - Madrid
+[2024-05-06 17:49:18] Avion TD-0003 tiene Gate 6 libre para Desembarque. Yendo hacia Gate 6... - Madrid
+[2024-05-06 17:49:18] Bus B-0003 recogiendo 34 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:18] Bus B-0003 yendo hacia CIUDAD con 34 pasajeros - Barcelona
+[2024-05-06 17:49:18] Avion US-0020 creado - Madrid
+[2024-05-06 17:49:18] Avion US-0020 entrando HANGAR - Madrid
+[2024-05-06 17:49:18] Avion US-0020 saliendo HANGAR - Madrid
+[2024-05-06 17:49:18] Avion US-0020 entrando ESTACIONAMIENTO - Madrid
+[2024-05-06 17:49:18] Avion US-0020 tiene Gate 5 libre (exclusiva Embarque) - Madrid
+[2024-05-06 17:49:18] Avion US-0020 saliendo ESTACIONAMIENTO - Madrid
+[2024-05-06 17:49:18] Avion US-0020 entrando Gate 5 (exclusiva Embarque)- Madrid
+[2024-05-06 17:49:18] Avion US-0020 EMBARCANDO 292 pasajeros - Madrid
+[2024-05-06 17:49:18] Bus B-0048 recogiendo 23 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:18] Bus B-0041 bajando 5 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:18] Bus B-0048 yendo hacia AEROPUERTO con 23 pasajeros - Madrid
+[2024-05-06 17:49:18] Bus B-0041 esperando pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:18] Bus B-0007 recogiendo 24 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:18] Bus B-0007 yendo hacia CIUDAD con 24 pasajeros - Barcelona
+[2024-05-06 17:49:18] Bus B-0025 bajando 29 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:18] Bus B-0025 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:18] Bus B-0051 creado - Barcelona
+[2024-05-06 17:49:18] Bus B-0051 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:18] Bus B-0008 bajando 29 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:18] Bus B-0008 esperando pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:18] Bus B-0006 bajando 47 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:18] Bus B-0006 esperando pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:19] Bus B-0002 recogiendo 7 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:19] Bus B-0002 yendo hacia CIUDAD con 7 pasajeros - Madrid
+[2024-05-06 17:49:19] Avion XR-0001 saliendo RODAJE - Madrid
+[2024-05-06 17:49:19] Avion XR-0001 entrando Gate 6 (exclusiva Desembarque) - Madrid
+[2024-05-06 17:49:19] Avion XR-0001 DESEMBARCANDO 170 pasajeros - Madrid
+[2024-05-06 17:49:19] Bus B-0024 bajando 44 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:19] Bus B-0024 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:19] Bus B-0039 bajando 32 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:19] Bus B-0039 esperando pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:19] Bus B-0005 recogiendo 37 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:19] Bus B-0005 yendo hacia CIUDAD con 37 pasajeros - Barcelona
+[2024-05-06 17:49:19] Bus B-0052 creado - Madrid
+[2024-05-06 17:49:19] Bus B-0052 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:19] Avion US-0020 saliendo Gate 5 (exclusiva Embarque) con 292 pasajeros - Madrid
+[2024-05-06 17:49:19] Avion US-0020 entrando RODAJE - Madrid
+[2024-05-06 17:49:19] Avion US-0020 haciendo comprobaciones RODAJE - Madrid
+[2024-05-06 17:49:19] Bus B-0034 recogiendo 22 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:19] Bus B-0034 yendo hacia CIUDAD con 22 pasajeros - Madrid
+[2024-05-06 17:49:19] Bus B-0049 recogiendo 42 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:19] Bus B-0049 yendo hacia AEROPUERTO con 42 pasajeros - Barcelona
+[2024-05-06 17:49:19] Avion JF-0018 ha dejado libre la PISTA 19- Madrid
+[2024-05-06 17:49:19] Avion JF-0018 entrando AEROVIA Madrid-Barcelona - Madrid
+[2024-05-06 17:49:19] Avion VX-0000 saliendo TALLER - Barcelona
+[2024-05-06 17:49:19] Bus B-0012 bajando 2 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:19] Bus B-0012 esperando pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:19] Bus B-0050 recogiendo 16 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:19] Bus B-0050 yendo hacia AEROPUERTO con 16 pasajeros - Madrid
+[2024-05-06 17:49:20] Bus B-0053 creado - Barcelona
+[2024-05-06 17:49:20] Bus B-0053 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:20] Avion BQ-0019 tiene libre la PISTA 20 para despegar - Barcelona
+[2024-05-06 17:49:20] Avion BQ-0019 saliendo RODAJE - Barcelona
+[2024-05-06 17:49:20] Avion BQ-0019 entrando PISTA 20 para despegar - Barcelona
+[2024-05-06 17:49:20] Avion BQ-0019 realizando verificaciones PISTA - Barcelona
+[2024-05-06 17:49:20] Avion XN-0021 creado - Barcelona
+[2024-05-06 17:49:20] Avion XN-0021 entrando HANGAR - Barcelona
+[2024-05-06 17:49:20] Avion XN-0021 saliendo HANGAR - Barcelona
+[2024-05-06 17:49:20] Avion XN-0021 entrando ESTACIONAMIENTO - Barcelona
+[2024-05-06 17:49:20] Avion XN-0021 tiene Gate 5 libre (exclusiva Embarque) - Barcelona
+[2024-05-06 17:49:20] Avion XN-0021 saliendo ESTACIONAMIENTO - Barcelona
+[2024-05-06 17:49:20] Avion XN-0021 entrando Gate 5 (exclusiva Embarque)- Barcelona
+[2024-05-06 17:49:20] Avion XN-0021 EMBARCANDO 174 pasajeros - Barcelona
+[2024-05-06 17:49:20] Bus B-0032 recogiendo 29 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:20] Bus B-0032 yendo hacia CIUDAD con 29 pasajeros - Madrid
+[2024-05-06 17:49:20] Bus B-0040 bajando 29 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:20] Bus B-0040 esperando pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:20] Bus B-0013 recogiendo 27 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:20] Bus B-0013 yendo hacia AEROPUERTO con 27 pasajeros - Barcelona
+[2024-05-06 17:49:20] Avion BZ-0016 ha dejado libre la PISTA 17- Madrid
+[2024-05-06 17:49:20] Avion BZ-0016 entrando AEROVIA Madrid-Barcelona - Madrid
+[2024-05-06 17:49:20] Bus B-0043 bajando 19 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:20] Bus B-0043 esperando pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:20] Avion BI-0008 abandonando AEROVIA Madrid-Barcelona - Barcelona
+[2024-05-06 17:49:20] Avion BI-0008 tiene libre la PISTA 9 para aterrizar - Barcelona
+[2024-05-06 17:49:20] Avion BI-0008 aterrizando con 188 pasajeros en la PISTA 9- Barcelona
+[2024-05-06 17:49:20] Bus B-0023 bajando 27 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:20] Bus B-0023 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:20] Bus B-0033 recogiendo 20 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:20] Bus B-0033 yendo hacia CIUDAD con 20 pasajeros - Barcelona
+[2024-05-06 17:49:20] Avion SN-0017 ha dejado libre la PISTA 18- Barcelona
+[2024-05-06 17:49:20] Avion SN-0017 entrando AEROVIA Barcelona-Madrid - Barcelona
+[2024-05-06 17:49:20] Avion VX-0000 reposando HANGAR - Barcelona
+[2024-05-06 17:49:20] Bus B-0020 bajando 25 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:20] Bus B-0020 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:20] Bus B-0021 recogiendo 0 pasajeros en CIUDAD - Barcelona
+[2024-05-06 17:49:20] Bus B-0021 yendo hacia AEROPUERTO con 0 pasajeros - Barcelona
+[2024-05-06 17:49:21] Bus B-0054 creado - Madrid
+[2024-05-06 17:49:21] Bus B-0054 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:21] Bus B-0037 recogiendo 40 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:21] Bus B-0037 yendo hacia CIUDAD con 40 pasajeros - Barcelona
+[2024-05-06 17:49:21] Bus B-0036 recogiendo 7 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:21] Bus B-0036 yendo hacia CIUDAD con 7 pasajeros - Madrid
+[2024-05-06 17:49:21] Avion XR-0001 saliendo Gate 6 (exclusiva Desembarque)- Madrid
+[2024-05-06 17:49:21] Avion XR-0001 entrando ESTACIONAMIENTO - Madrid
+[2024-05-06 17:49:21] Avion XR-0001 realizando comprobaciones ESTACIONAMIENTO (tras Desembarque) - Madrid
+[2024-05-06 17:49:21] Bus B-0028 bajando 21 pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:21] Bus B-0028 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 17:49:21] Bus B-0038 recogiendo 26 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:21] Bus B-0038 yendo hacia CIUDAD con 26 pasajeros - Madrid
+[2024-05-06 17:49:21] Avion BQ-0019 despegando con 207 pasajeros desde la PISTA 20- Barcelona
+[2024-05-06 17:49:21] PARANDO PROGRAMA... - **********************************************************************************************************
+[2024-05-06 17:49:22] Bus B-0035 recogiendo 43 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:22] Avion TD-0003 saliendo RODAJE - Madrid
+[2024-05-06 17:49:22] Avion TD-0003 entrando Gate 6 para Desembarque de 184 pasajeros - Madrid
+[2024-05-06 17:49:22] Avion TD-0003 DESEMBARCANDO 184 pasajeros - Madrid
+[2024-05-06 17:49:22] Bus B-0040 recogiendo 9 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:22] Bus B-0041 recogiendo 41 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:23] Bus B-0043 recogiendo 32 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:23] Bus B-0008 recogiendo 32 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:23] Bus B-0006 recogiendo 20 pasajeros en AEROPUERTO - Madrid
+[2024-05-06 17:49:23] Bus B-0039 recogiendo 22 pasajeros en AEROPUERTO - Barcelona
+[2024-05-06 17:49:24] Bus B-0012 recogiendo 30 pasajeros en AEROPUERTO - Madrid
