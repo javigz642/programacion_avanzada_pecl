@@ -6,7 +6,6 @@ package Clases;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JTextField;
 
 /**
  * Clase que representa el programa principal para la gestión de aviones. Genera
@@ -18,7 +17,9 @@ public class ProgramaPrincipalAviones extends Thread {
 
     private Ciudad madrid;
     private Ciudad barcelona;
+    
     private Paso paso;
+    
     private TextLog logger;
 
     public ProgramaPrincipalAviones(Ciudad madrid, Ciudad barcelona, Paso paso, TextLog logger) {

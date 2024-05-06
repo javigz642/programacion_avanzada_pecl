@@ -7,26 +7,27 @@ package Clases;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.Semaphore;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JFrame;
 import javax.swing.JTextField;
 
 public class Ciudad {
 
     private Aeropuerto aeropuerto;
-    private int pasajerosParada;
-    private String nombre;
+    
     private ArrayList<Autobus> autobusesHaciaAeropuerto = new ArrayList<>();
     private ArrayList<Autobus> autobusesHaciaCiudad = new ArrayList<>();
-
+    private int pasajerosParada;
+    private String nombre;
+    
     private Random random = new Random();
+    
     private Semaphore SemAutobusesHaciaAeropuerto = new Semaphore(1);
     private Semaphore SemAutobusesHaciaCiudad = new Semaphore(1);
+    
     private JTextField jTextFieldTransferAeropuertoAutobus;
     private JTextField jTextFieldTransferCiudadAutobus;
+    
     private TextLog logger;
 
     public Ciudad(String nombre, Aeropuerto aeropuerto, JTextField jTextFieldTransferAeropuertoAutobus, JTextField jTextFieldTransferCiudadAutobus, TextLog logger) {

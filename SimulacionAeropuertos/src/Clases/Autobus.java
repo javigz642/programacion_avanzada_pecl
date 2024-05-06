@@ -11,6 +11,8 @@ public class Autobus extends Thread {
     private int pasajeros;
 
     private Paso paso;
+    
+    // Logger para registrar eventos en el Autobus
     private TextLog logger;
 
     public Autobus(String identificador, int numero, int pasajeros, Ciudad ciudad, Paso paso, TextLog logger) {

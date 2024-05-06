@@ -6,25 +6,27 @@ package Clases;
 // Esto es un cambio
 
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Avion extends Thread {
 
     private Ciudad origen;
     private Ciudad destino;
     private Ciudad aux;
-    private Paso paso;
-    private TextLog logger;
-
+    
     private String identificador;
     private int numero;
+    
     private Random random = new Random();
 
     private int pasajerosActual;
     private final int pasajerosMax;
     private boolean embarque;
     private int vuelos = 0;
+    
+    private Paso paso;
+    
+    // Logger para registrar eventos en el Avion
+    private TextLog logger;
 
     public Avion(String identificador, int numero, Ciudad origen, Ciudad destino, Paso paso, TextLog logger) {
         this.identificador = identificador + "-" + String.format("%04d", numero);

@@ -5,10 +5,6 @@
 package Clases;
 
 import java.util.ArrayList;
-import java.util.Queue;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,7 +17,9 @@ public class Hangar {
     private String nombreCiudad;
 
     private Semaphore control = new Semaphore(1);
+    
     private JTextField jTextFieldHangarAeropuerto;
+    
     private TextLog logger;
 
     public Hangar(JTextField jTextFieldHangarAeropuerto, String nombreCiudad, TextLog logger) {

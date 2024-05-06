@@ -10,10 +10,6 @@ import Clases.Paso;
 import Clases.TextLog;
 import java.awt.Color;
 
-/**
- *
- * @author ediso
- */
 public class Principal extends javax.swing.JFrame {
 
     TextLog logger = new TextLog();
@@ -702,55 +698,55 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextFieldTransferAeropuertoAutobusMadridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTransferAeropuertoAutobusMadridActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldTransferAeropuertoAutobusMadridActionPerformed
 
     private void jTextFieldHangarAeropuertoMadridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldHangarAeropuertoMadridActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldHangarAeropuertoMadridActionPerformed
 
     private void jTextFieldAreaEstacionamientoAeropuertoMadridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAreaEstacionamientoAeropuertoMadridActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldAreaEstacionamientoAeropuertoMadridActionPerformed
 
     private void jTextFieldGate5AeropuertoMadridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldGate5AeropuertoMadridActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldGate5AeropuertoMadridActionPerformed
 
     private void jTextFieldPista3AeropuertoMadridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPista3AeropuertoMadridActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldPista3AeropuertoMadridActionPerformed
 
     private void jTextFieldPista4AeropuertoMadridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPista4AeropuertoMadridActionPerformed
-        // TODO add your handling code here:
+    
     }//GEN-LAST:event_jTextFieldPista4AeropuertoMadridActionPerformed
 
     private void jTextFieldAreaRodajeAeropuertoMadridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAreaRodajeAeropuertoMadridActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldAreaRodajeAeropuertoMadridActionPerformed
 
     private void jTextFieldPista3AeropuertoBarcelonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPista3AeropuertoBarcelonaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldPista3AeropuertoBarcelonaActionPerformed
 
     private void jTextFieldPista4AeropuertoBarcelonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPista4AeropuertoBarcelonaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldPista4AeropuertoBarcelonaActionPerformed
 
     private void jTextFieldAreaEstacionamientoAeropuertoBarcelonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAreaEstacionamientoAeropuertoBarcelonaActionPerformed
-        // TODO add your handling code here:
+      
     }//GEN-LAST:event_jTextFieldAreaEstacionamientoAeropuertoBarcelonaActionPerformed
 
     private void jTextFieldAreaRodajeAeropuertoBarcelonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAreaRodajeAeropuertoBarcelonaActionPerformed
-        // TODO add your handling code here:
+    
     }//GEN-LAST:event_jTextFieldAreaRodajeAeropuertoBarcelonaActionPerformed
 
     private void jTextFieldTransferAeropuertoAutobusBarcelonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTransferAeropuertoAutobusBarcelonaActionPerformed
-        // TODO add your handling code here:
+   
     }//GEN-LAST:event_jTextFieldTransferAeropuertoAutobusBarcelonaActionPerformed
 
     private void jTextFieldHangarAeropuertoBarcelonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldHangarAeropuertoBarcelonaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldHangarAeropuertoBarcelonaActionPerformed
 
     private void jTextFieldGate5AeropuertoBarcelonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldGate5AeropuertoBarcelonaActionPerformed

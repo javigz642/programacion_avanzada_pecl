@@ -8,7 +8,9 @@ public class ProgramaPrincipalAutobuses extends Thread {
 
     private Ciudad madrid;
     private Ciudad barcelona;
+    
     private Paso paso;
+    
     private TextLog logger;
 
     public ProgramaPrincipalAutobuses(Ciudad madrid, Ciudad barcelona, Paso paso, TextLog logger) {

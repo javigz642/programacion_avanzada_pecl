@@ -5,13 +5,11 @@
 package Interfaces;
 
 import Clases.Cliente;
+
 import java.awt.Color;
 import javax.swing.JTextField;
 
-/**
- *
- * @author ediso
- */
+
 public class ConsultasAeropuerto extends javax.swing.JFrame {
 
     Cliente cliente;
@@ -670,7 +668,7 @@ public class ConsultasAeropuerto extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAbrirPista4BarcelonaActionPerformed
 
     private void jTextFieldAvionesAreaEstacionamientoBarcelonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAvionesAreaEstacionamientoBarcelonaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldAvionesAreaEstacionamientoBarcelonaActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened

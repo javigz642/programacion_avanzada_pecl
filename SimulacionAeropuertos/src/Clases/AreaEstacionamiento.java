@@ -5,8 +5,6 @@
 package Clases;
 
 import java.util.ArrayList;
-import java.util.Queue;
-import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,7 +21,11 @@ public class AreaEstacionamiento {
     private String nombreCiudad;
 
     private Semaphore control = new Semaphore(1);
+    
+    // Campos de la interfaz de usuario relacionado con el AreaEstacionamiento
     private JTextField jTextFieldAreaEstacionamientoAeropuerto;
+    
+    // Logger para registrar eventos en el AreaEstacionamiento
     private TextLog logger;
 
     public AreaEstacionamiento(JTextField jTextFieldAreaEstacionamientoAeropuerto, String nombreCiudad, TextLog logger) {

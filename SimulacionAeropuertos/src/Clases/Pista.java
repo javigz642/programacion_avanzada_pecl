@@ -4,7 +4,6 @@
  */
 package Clases;
 
-import java.util.ArrayList;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -13,6 +12,7 @@ import javax.swing.JTextField;
 public class Pista {
 
     private Avion[] aviones = new Avion[4];
+    private String nombreCiudad;
 
     private Semaphore pista1 = new Semaphore(1, true);
     private Semaphore pista2 = new Semaphore(1, true);
@@ -24,10 +24,10 @@ public class Pista {
     private JTextField jTextFieldPista2Aeropuerto;
     private JTextField jTextFieldPista3Aeropuerto;
     private JTextField jTextFieldPista4Aeropuerto;
-
-    private String nombreCiudad;
-    private TextLog logger;
+    
     private PasoPistas pasoPistas;
+    
+    private TextLog logger;
 
     public Pista(JTextField jTextFieldPista1Aeropuerto, JTextField jTextFieldPista2Aeropuerto,
             JTextField jTextFieldPista3Aeropuerto, JTextField jTextFieldPista4Aeropuerto,
