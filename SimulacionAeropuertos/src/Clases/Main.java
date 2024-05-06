@@ -48,12 +48,12 @@ public class Main extends Thread {
     private JTextField jTextFieldTransferAeropuertoAutobusMadrid;
     private JTextField jTextFieldTransferCiudadAutobusMadrid;
     private JTextField jTextFieldTransferCiudadAutobusBarcelona;
-    
+
     private Paso paso;
-    
+
     private PasoPistas pasoPistasBarcelona;
     private PasoPistas pasoPistasMadrid;
-    
+
     private TextLog logger;
 
     public Main(JTextField jTextFieldAeroviaBarcelona_Madrid, JTextField jTextFieldAeroviaMadrid_Barcelona,
@@ -149,6 +149,10 @@ public class Main extends Thread {
                 jTextFieldGate2AeropuertoBarcelona, jTextFieldGate3AeropuertoBarcelona,
                 jTextFieldGate4AeropuertoBarcelona, jTextFieldGate5AeropuertoBarcelona,
                 jTextFieldGate6AeropuertoBarcelona, jTextFieldNumeroPasajerosAeropuertoBarcelona, logger, "Barcelona");
+        
+        //Creacion y ejecución del servidor que da servicio al cliente
+        Servidor server = new Servidor(aeropuertoMadrid, aeropuertoBarcelona);
+        server.start();
 
         //Creacion de las ciudades
         Ciudad madrid = new Ciudad("Madrid", aeropuertoMadrid, jTextFieldTransferAeropuertoAutobusMadrid,
@@ -162,8 +166,6 @@ public class Main extends Thread {
         pp1.start();
         pp2.start();
 
-        //Creacion y ejecución del servidor que da servicio al cliente
-        Servidor server = new Servidor(aeropuertoMadrid, aeropuertoBarcelona);
-        server.start();
+
     }
 }

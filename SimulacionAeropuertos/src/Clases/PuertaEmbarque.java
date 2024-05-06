@@ -62,7 +62,7 @@ public class PuertaEmbarque {
 
                 if (puertaEmbarque.tryAcquire()) {
                     logger.log("Avion " + avion.getIdentificador() + " tiene Gate 5 libre (exclusiva Embarque) ", nombreCiudad);
-                    avion.getOrigen().getAeropuerto().getAreaEstacionamiento().salirAreaEstacionamiento(avion); //debe de tener una puerta de embarque antes de salir del area de estacionamiento
+                    avion.getOrigen().getAeropuerto().getAreaEstacionamiento().salirAreaEstacionamiento(avion, paso); //debe de tener una puerta de embarque antes de salir del area de estacionamiento
                     aviones[4] = avion;
                     imprimirArrayAviones(aviones, 5);
                     logger.log("Avion " + avion.getIdentificador() + " entrando Gate 5 (exclusiva Embarque)", nombreCiudad);
@@ -77,7 +77,7 @@ public class PuertaEmbarque {
                 } else {
                     puertasLibres[avion.getNumero() % 4].acquire();
                     logger.log("Avion " + avion.getIdentificador() + " tiene Gate " + (avion.getNumero() % 4 + 3) + " libre para Embarque ", nombreCiudad);
-                    avion.getOrigen().getAeropuerto().getAreaEstacionamiento().salirAreaEstacionamiento(avion);//debe de tener una puerta de embarque antes de salir del area de estacionamiento
+                    avion.getOrigen().getAeropuerto().getAreaEstacionamiento().salirAreaEstacionamiento(avion,paso);//debe de tener una puerta de embarque antes de salir del area de estacionamiento
                     aviones[avion.getNumero() % 4] = avion;
                     imprimirArrayAviones(aviones, avion.getNumero() % 4 + 1);
                     logger.log("Avion " + avion.getIdentificador() + " entrando Gate " + (avion.getNumero() % 4 + 3) + " para Embarque ", nombreCiudad);

@@ -12,19 +12,17 @@ public class Avion extends Thread {
     private Ciudad origen;
     private Ciudad destino;
     private Ciudad aux;
-    
+
     private String identificador;
     private int numero;
-    
-    private Random random = new Random();
-
     private int pasajerosActual;
     private final int pasajerosMax;
     private boolean embarque;
     private int vuelos = 0;
     
+    private Random random = new Random();
     private Paso paso;
-    
+
     // Logger para registrar eventos en el Avion
     private TextLog logger;
 
@@ -94,9 +92,9 @@ public class Avion extends Thread {
             //sale solo al entrar al taller
             paso.mirar();
 
-            destino.getAeropuerto().getTaller().entrarTaller(this);
+            destino.getAeropuerto().getTaller().entrarTaller(this,paso);
             paso.mirar();
-            destino.getAeropuerto().getTaller().salirTaller(this);
+            destino.getAeropuerto().getTaller().salirTaller(this, paso);
             paso.mirar();
 
             if (random.nextInt(2) == 0) {

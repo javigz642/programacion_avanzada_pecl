@@ -24,9 +24,9 @@ public class Pista {
     private JTextField jTextFieldPista2Aeropuerto;
     private JTextField jTextFieldPista3Aeropuerto;
     private JTextField jTextFieldPista4Aeropuerto;
-    
+
     private PasoPistas pasoPistas;
-    
+
     private TextLog logger;
 
     public Pista(JTextField jTextFieldPista1Aeropuerto, JTextField jTextFieldPista2Aeropuerto,
@@ -69,8 +69,8 @@ public class Pista {
                 while (!pistas[avion.getNumero() % 4].tryAcquire()) {
                     logger.log("Avion " + avion.getIdentificador() + " dando un rodeo para tener pista libre ", nombreCiudad);
                     Thread.sleep((int) (Math.random() * 4000) + 1001);
+                    paso.mirar();
                 }
-                paso.mirar();
                 pasoPistas.mirar(avion.getNumero() % 4);
                 aviones[avion.getNumero() % 4] = avion;
                 logger.log("Avion " + avion.getIdentificador() + " tiene libre la PISTA " + (avion.getNumero() + 1) + " para aterrizar ", nombreCiudad);

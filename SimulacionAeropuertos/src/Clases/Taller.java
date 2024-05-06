@@ -29,6 +29,7 @@ public class Taller {
     private JTextField jTextFieldTallerAeropuerto;
 
     private TextLog logger;
+    private Paso paso;
 
     public Taller(JTextField jTextFieldTallerAeropuerto, String nombreCiudad, TextLog logger) {
         this.jTextFieldTallerAeropuerto = jTextFieldTallerAeropuerto;
@@ -42,16 +43,17 @@ public class Taller {
      *
      * @param avion Avión que entra en el taller.
      */
-    public void entrarTaller(Avion avion) {
+    public void entrarTaller(Avion avion, Paso paso) {
 
         try {
             espaciosTaller.acquire();
             control.acquire();
             logger.log("Avion " + avion.getIdentificador() + " entrando TALLER ", nombreCiudad);
             Thread.sleep(1000);
-            avion.getDestino().getAeropuerto().getAreaEstacionamiento().salirAreaEstacionamiento(avion);
+            avion.getDestino().getAeropuerto().getAreaEstacionamiento().salirAreaEstacionamiento(avion,paso);
             aviones.add(avion);
             imprimirArrayAviones(jTextFieldTallerAeropuerto, aviones);
+            paso.mirar();
 
             avionesDentro++;
             control.release();
@@ -62,6 +64,7 @@ public class Taller {
                 logger.log("Avion " + avion.getIdentificador() + " realizando REVISION NORMAL ", nombreCiudad);
                 Thread.sleep((int) (Math.random() * 4000) + 1001);
             }
+            paso.mirar();
 
         } catch (InterruptedException ex) {
             Logger.getLogger(Taller.class.getName()).log(Level.SEVERE, null, ex);
@@ -76,7 +79,7 @@ public class Taller {
      *
      * @param avion Avión que sale del taller.
      */
-    public void salirTaller(Avion avion) {
+    public void salirTaller(Avion avion, Paso paso) {
 
         try {
             control.acquire();
@@ -85,6 +88,7 @@ public class Taller {
             aviones.remove(avion);
             avionesDentro--;
             imprimirArrayAviones(jTextFieldTallerAeropuerto, aviones);
+            paso.mirar();
             control.release();
             espaciosTaller.release();
 

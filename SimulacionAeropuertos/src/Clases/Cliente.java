@@ -6,6 +6,7 @@ package Clases;
 
 import java.rmi.*;
 import static java.lang.Thread.sleep;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class Cliente extends Thread {
@@ -88,8 +89,9 @@ public class Cliente extends Thread {
                     jTextFieldAeroviaBarcelona_Madrid.setText(respuesta);
 
                 } catch (ConnectException ce) {
-                    System.out.println("Se ha perdido la conexion con el servidor, reinicie el programa");
-                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Se ha perdido la conexion con el servidor, reinicie el programa.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+                catch (Exception e) {
                     System.out.println("Excepción : " + e.getMessage());
                     e.printStackTrace();
                 }
@@ -97,7 +99,10 @@ public class Cliente extends Thread {
                 sleep(1000); //Para que dé tiempo a leer la respuesta antes de que se cierre la ventana
             }
 
-        } catch (Exception e) {
+        } catch(ConnectException ce){
+            JOptionPane.showMessageDialog(null, "Inicia primero el programa principal para consultar los datos", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        } 
+        catch (Exception e) {
             System.out.println("Excepción : " + e.getMessage());
             e.printStackTrace();
         }

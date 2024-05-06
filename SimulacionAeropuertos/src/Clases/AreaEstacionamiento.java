@@ -64,12 +64,13 @@ public class AreaEstacionamiento {
      *
      * @param avion Avión que sale del área de estacionamiento.
      */
-    public void salirAreaEstacionamiento(Avion avion) {
+    public void salirAreaEstacionamiento(Avion avion, Paso paso) {
 
         try {
             control.acquire();
             aviones.remove(avion);
             avionesDentro--;
+            paso.mirar();
             imprimirArrayAviones(jTextFieldAreaEstacionamientoAeropuerto, aviones);
             control.release();
             logger.log("Avion " + avion.getIdentificador() + " saliendo ESTACIONAMIENTO ", nombreCiudad);
