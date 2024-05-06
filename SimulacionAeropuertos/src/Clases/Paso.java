@@ -51,7 +51,7 @@ public class Paso {
         try {
             cerrojo.lock();
             if (!soloUnHilo) {
-                logger.log("REANUDANDO PROGRAMA... ", "**********************************************************************************************************");
+                logger.log("***************************** - REANUDANDO PROGRAMA... ", "*****************************");
                 cerrado = false;
                 soloUnHilo = true;
                 parar.signalAll();
@@ -70,7 +70,7 @@ public class Paso {
 
             cerrojo.lock();
             if (soloUnHilo) {
-                logger.log("PARANDO PROGRAMA... ", "**********************************************************************************************************");
+                logger.log("***************************** - PARANDO PROGRAMA... ", "********************************");
                 cerrado = true;
                 soloUnHilo = false;
             }
