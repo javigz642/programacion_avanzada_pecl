@@ -1,0 +1,42 @@
+[2024-05-06 21:10:20] Bus B-0000 creado - Madrid
+[2024-05-06 21:10:20] Avion IB-0000 creado - Madrid
+[2024-05-06 21:10:20] Bus B-0000 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 21:10:20] Avion IB-0000 entrando HANGAR - Madrid
+[2024-05-06 21:10:20] Avion IB-0000 saliendo HANGAR - Madrid
+[2024-05-06 21:10:20] Avion IB-0000 entrando ESTACIONAMIENTO - Madrid
+[2024-05-06 21:10:20] Avion IB-0000 tiene Gate 5 libre (exclusiva Embarque) - Madrid
+[2024-05-06 21:10:20] Avion IB-0000 saliendo ESTACIONAMIENTO - Madrid
+[2024-05-06 21:10:20] Avion IB-0000 entrando Gate 5 (exclusiva Embarque)- Madrid
+[2024-05-06 21:10:20] Avion IB-0000 EMBARCANDO 108 pasajeros - Madrid
+[2024-05-06 21:10:21] Bus B-0001 creado - Barcelona
+[2024-05-06 21:10:21] Bus B-0001 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 21:10:22] Bus B-0002 creado - Madrid
+[2024-05-06 21:10:22] Bus B-0002 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 21:10:22] Bus B-0003 creado - Barcelona
+[2024-05-06 21:10:22] Bus B-0003 esperando pasajeros en CIUDAD - Barcelona
+[2024-05-06 21:10:22] Avion JZ-0001 creado - Barcelona
+[2024-05-06 21:10:22] Avion JZ-0001 entrando HANGAR - Barcelona
+[2024-05-06 21:10:22] Avion JZ-0001 saliendo HANGAR - Barcelona
+[2024-05-06 21:10:22] Avion JZ-0001 entrando ESTACIONAMIENTO - Barcelona
+[2024-05-06 21:10:22] Avion JZ-0001 tiene Gate 5 libre (exclusiva Embarque) - Barcelona
+[2024-05-06 21:10:22] Avion JZ-0001 saliendo ESTACIONAMIENTO - Barcelona
+[2024-05-06 21:10:22] Avion JZ-0001 entrando Gate 5 (exclusiva Embarque)- Barcelona
+[2024-05-06 21:10:22] Avion JZ-0001 EMBARCANDO 221 pasajeros - Barcelona
+[2024-05-06 21:10:23] Avion IB-0000 saliendo Gate 5 (exclusiva Embarque) con 108 pasajeros - Madrid
+[2024-05-06 21:10:23] Avion IB-0000 entrando RODAJE - Madrid
+[2024-05-06 21:10:23] Avion IB-0000 haciendo comprobaciones RODAJE - Madrid
+[2024-05-06 21:10:23] Bus B-0004 creado - Madrid
+[2024-05-06 21:10:23] Bus B-0004 esperando pasajeros en CIUDAD - Madrid
+[2024-05-06 21:10:23] Avion QI-0002 creado - Madrid
+[2024-05-06 21:10:23] Avion QI-0002 entrando HANGAR - Madrid
+[2024-05-06 21:10:23] Avion QI-0002 saliendo HANGAR - Madrid
+[2024-05-06 21:10:23] Avion QI-0002 entrando ESTACIONAMIENTO - Madrid
+[2024-05-06 21:10:23] Avion QI-0002 tiene Gate 5 libre (exclusiva Embarque) - Madrid
+[2024-05-06 21:10:23] Avion QI-0002 saliendo ESTACIONAMIENTO - Madrid
+[2024-05-06 21:10:23] Avion QI-0002 entrando Gate 5 (exclusiva Embarque)- Madrid
+[2024-05-06 21:10:23] Avion QI-0002 EMBARCANDO 187 pasajeros - Madrid
+[2024-05-06 21:10:24] Avion JZ-0001 saliendo Gate 5 (exclusiva Embarque) con 221 pasajeros - Barcelona
+[2024-05-06 21:10:24] Avion JZ-0001 entrando RODAJE - Barcelona
+[2024-05-06 21:10:24] Avion JZ-0001 haciendo comprobaciones RODAJE - Barcelona
+[2024-05-06 21:10:24] Bus B-0005 creado - Barcelona
+[2024-05-06 21:10:24] Bus B-0005 esperando pasajeros en CIUDAD - Barcelona

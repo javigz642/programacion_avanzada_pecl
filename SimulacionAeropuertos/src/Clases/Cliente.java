@@ -93,10 +93,12 @@ public class Cliente extends Thread {
                 }
                 catch (Exception e) {
                     System.out.println("Excepción : " + e.getMessage());
+                    
                     e.printStackTrace();
+                    break;
                 }
 
-                sleep(1000); //Para que dé tiempo a leer la respuesta antes de que se cierre la ventana
+                sleep(500);
             }
 
         } catch(ConnectException ce){
