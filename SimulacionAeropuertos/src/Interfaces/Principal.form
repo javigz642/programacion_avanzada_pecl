@@ -100,7 +100,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextFieldAreaRodajeAeropuertoMadrid" max="32767" attributes="0"/>
+                                  <Component id="jTextFieldAreaRodajeAeropuertoMadrid" min="-2" pref="303" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
@@ -192,7 +192,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextFieldAreaRodajeAeropuertoBarcelona" max="32767" attributes="0"/>
+                                  <Component id="jTextFieldAreaRodajeAeropuertoBarcelona" min="-2" pref="303" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
